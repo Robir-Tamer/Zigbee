@@ -1,0 +1,961 @@
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do ../Script/run.do
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# Copying C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 23:45:01 on Sep 02,2026
+# vlog -reportprogress 300 ../RTL/DQOSK.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# ** Error: (vlog-7) Failed to open design unit file "../RTL/DQOSK.V" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 23:45:01 on Sep 02,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera_lite/25.1std/questa_fse/win64/vlog failed.
+# Error in macro ./../Script/run.do line 3
+# C:/altera_lite/25.1std/questa_fse/win64/vlog failed.
+#     while executing
+# "vlog ../RTL/DQOSK.V"
+do ../Script/run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 23:45:33 on Sep 02,2026
+# vlog -reportprogress 300 ../RTL/DQPSK.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK
+# 
+# Top level modules:
+# 	DQPSK
+# End time: 23:45:33 on Sep 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 23:45:33 on Sep 02,2026
+# vlog -reportprogress 300 ../TB/DQPSK_TB.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK_TB
+# ** Error: (vlog-13069) ../TB/DQPSK_TB.V(63): near "label": syntax error, unexpected IDENTIFIER, expecting ')'.
+# ** Error: (vlog-13069) ../TB/DQPSK_TB.V(82): near "label": syntax error, unexpected IDENTIFIER, expecting ')'.
+# End time: 23:45:33 on Sep 02,2026, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/altera_lite/25.1std/questa_fse/win64/vlog failed.
+# Error in macro ./../Script/run.do line 4
+# C:/altera_lite/25.1std/questa_fse/win64/vlog failed.
+#     while executing
+# "vlog ../TB/DQPSK_TB.V"
+do ../Script/run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 23:46:48 on Sep 02,2026
+# vlog -reportprogress 300 ../RTL/DQPSK.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK
+# 
+# Top level modules:
+# 	DQPSK
+# End time: 23:46:48 on Sep 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 23:46:49 on Sep 02,2026
+# vlog -reportprogress 300 ../TB/DQPSK_TB.SV 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK_TB
+# 
+# Top level modules:
+# 	DQPSK_TB
+# End time: 23:46:49 on Sep 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" DQPSK_TB 
+# Start time: 23:46:50 on Sep 02,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.DQPSK_TB(fast)
+# Loading work.DQPSK(fast)
+# [PASS] Reset: o_valid correctly deasserted
+# 
+# --- TEST 2: Individual legal symbols from reset state ---
+# 
+# --- TEST 3: i_valid deassertion (pipeline hold) ---
+# [FAIL] i_valid=0: o_valid should deassert, got 1
+# [FAIL] Post-gap resume Symbol#0 : Real_o expected 1, got -1 at time 76000
+# [FAIL] Post-gap resume Symbol#0 : Imag_o expected 1, got -1 at time 76000
+# 
+# --- TEST 4: Exhaustive (current x 4-cycles-prior) coverage ---
+# [FAIL] Priming pass, sym=0, fill#0 : Imag_o expected -1, got 1 at time 86000
+# [FAIL] Priming pass, sym=0, fill#1 : Real_o expected -1, got 1 at time 96000
+# [FAIL] Priming pass, sym=0, fill#1 : Imag_o expected 1, got -1 at time 96000
+# [FAIL] Priming pass, sym=0, fill#2 : Imag_o expected -1, got 1 at time 106000
+# [FAIL] Priming pass, sym=0, fill#3 : Real_o expected 1, got -1 at time 116000
+# [FAIL] Priming pass, sym=0, fill#3 : Imag_o expected 1, got -1 at time 116000
+# [FAIL] Edge case: current=Sym0 x prior(n-4)=Sym0 : Imag_o expected -1, got 1 at time 126000
+# [FAIL] Edge case: current=Sym1 x prior(n-4)=Sym0 : Real_o expected 1, got -1 at time 136000
+# [FAIL] Edge case: current=Sym1 x prior(n-4)=Sym0 : Imag_o expected -1, got 1 at time 136000
+# [FAIL] Edge case: current=Sym2 x prior(n-4)=Sym0 : Real_o expected 1, got -1 at time 146000
+# [FAIL] Edge case: current=Sym3 x prior(n-4)=Sym0 : Real_o expected 1, got -1 at time 156000
+# [FAIL] Edge case: current=Sym3 x prior(n-4)=Sym0 : Imag_o expected -1, got 1 at time 156000
+# [FAIL] Priming pass, sym=1, fill#0 : Real_o expected 1, got -1 at time 166000
+# [FAIL] Priming pass, sym=1, fill#1 : Imag_o expected 1, got -1 at time 176000
+# [FAIL] Priming pass, sym=1, fill#2 : Imag_o expected -1, got 1 at time 186000
+# [FAIL] Priming pass, sym=1, fill#3 : Imag_o expected 1, got -1 at time 196000
+# [FAIL] Edge case: current=Sym0 x prior(n-4)=Sym1 : Real_o expected 1, got -1 at time 206000
+# [FAIL] Edge case: current=Sym1 x prior(n-4)=Sym1 : Imag_o expected -1, got 1 at time 216000
+# [FAIL] Edge case: current=Sym2 x prior(n-4)=Sym1 : Real_o expected 1, got -1 at time 226000
+# [FAIL] Edge case: current=Sym3 x prior(n-4)=Sym1 : Imag_o expected 1, got -1 at time 236000
+# [FAIL] Priming pass, sym=2, fill#0 : Real_o expected -1, got 1 at time 246000
+# [FAIL] Priming pass, sym=2, fill#2 : Real_o expected 1, got -1 at time 266000
+# [FAIL] Priming pass, sym=2, fill#3 : Imag_o expected 1, got -1 at time 276000
+# [FAIL] Edge case: current=Sym0 x prior(n-4)=Sym2 : Real_o expected -1, got 1 at time 286000
+# [FAIL] Edge case: current=Sym2 x prior(n-4)=Sym2 : Imag_o expected 1, got -1 at time 306000
+# [FAIL] Priming pass, sym=3, fill#0 : Real_o expected 1, got -1 at time 326000
+# [FAIL] Priming pass, sym=3, fill#1 : Real_o expected -1, got 1 at time 336000
+# [FAIL] Priming pass, sym=3, fill#2 : Imag_o expected 1, got -1 at time 346000
+# [FAIL] Edge case: current=Sym0 x prior(n-4)=Sym3 : Real_o expected 1, got -1 at time 366000
+# [FAIL] Edge case: current=Sym1 x prior(n-4)=Sym3 : Real_o expected 1, got -1 at time 376000
+# [FAIL] Edge case: current=Sym2 x prior(n-4)=Sym3 : Real_o expected -1, got 1 at time 386000
+# [FAIL] Edge case: current=Sym3 x prior(n-4)=Sym3 : Real_o expected -1, got 1 at time 396000
+# 
+# --- TEST 5: Long randomized sequence (200 symbols) ---
+# [FAIL] Random cycle 0, sym=0 : Imag_o expected 1, got -1 at time 406000
+# [FAIL] Random cycle 1, sym=2 : Real_o expected 1, got -1 at time 416000
+# [FAIL] Random cycle 1, sym=2 : Imag_o expected 1, got -1 at time 416000
+# [FAIL] Random cycle 2, sym=2 : Real_o expected -1, got 1 at time 426000
+# [FAIL] Random cycle 3, sym=2 : Real_o expected 1, got -1 at time 436000
+# [FAIL] Random cycle 3, sym=2 : Imag_o expected -1, got 1 at time 436000
+# [FAIL] Random cycle 5, sym=1 : Real_o expected -1, got 1 at time 456000
+# [FAIL] Random cycle 5, sym=1 : Imag_o expected -1, got 1 at time 456000
+# [FAIL] Random cycle 6, sym=1 : Real_o expected 1, got -1 at time 466000
+# [FAIL] Random cycle 7, sym=1 : Real_o expected -1, got 1 at time 476000
+# [FAIL] Random cycle 9, sym=3 : Real_o expected -1, got 1 at time 496000
+# [FAIL] Random cycle 9, sym=3 : Imag_o expected 1, got -1 at time 496000
+# [FAIL] Random cycle 10, sym=0 : Real_o expected 1, got -1 at time 506000
+# [FAIL] Random cycle 11, sym=3 : Real_o expected 1, got -1 at time 516000
+# [FAIL] Random cycle 12, sym=2 : Real_o expected 1, got -1 at time 526000
+# [FAIL] Random cycle 13, sym=3 : Imag_o expected 1, got -1 at time 536000
+# [FAIL] Random cycle 15, sym=0 : Imag_o expected 1, got -1 at time 556000
+# [FAIL] Random cycle 16, sym=1 : Imag_o expected 1, got -1 at time 566000
+# [FAIL] Random cycle 17, sym=3 : Imag_o expected -1, got 1 at time 576000
+# [FAIL] Random cycle 18, sym=1 : Real_o expected 1, got -1 at time 586000
+# [FAIL] Random cycle 19, sym=3 : Imag_o expected -1, got 1 at time 596000
+# [FAIL] Random cycle 20, sym=1 : Real_o expected 1, got -1 at time 606000
+# [FAIL] Random cycle 20, sym=1 : Imag_o expected -1, got 1 at time 606000
+# [FAIL] Random cycle 24, sym=3 : Real_o expected -1, got 1 at time 646000
+# [FAIL] Random cycle 24, sym=3 : Imag_o expected -1, got 1 at time 646000
+# [FAIL] Random cycle 25, sym=3 : Imag_o expected 1, got -1 at time 656000
+# [FAIL] Random cycle 26, sym=0 : Real_o expected 1, got -1 at time 666000
+# [FAIL] Random cycle 27, sym=2 : Real_o expected -1, got 1 at time 676000
+# [FAIL] Random cycle 28, sym=0 : Real_o expected -1, got 1 at time 686000
+# [FAIL] Random cycle 28, sym=0 : Imag_o expected -1, got 1 at time 686000
+# [FAIL] Random cycle 30, sym=2 : Real_o expected -1, got 1 at time 706000
+# [FAIL] Random cycle 30, sym=2 : Imag_o expected 1, got -1 at time 706000
+# [FAIL] Random cycle 33, sym=0 : Imag_o expected -1, got 1 at time 736000
+# [FAIL] Random cycle 34, sym=3 : Real_o expected 1, got -1 at time 746000
+# [FAIL] Random cycle 34, sym=3 : Imag_o expected 1, got -1 at time 746000
+# [FAIL] Random cycle 35, sym=2 : Imag_o expected 1, got -1 at time 756000
+# [FAIL] Random cycle 37, sym=0 : Real_o expected -1, got 1 at time 776000
+# [FAIL] Random cycle 37, sym=0 : Imag_o expected -1, got 1 at time 776000
+# [FAIL] Random cycle 39, sym=1 : Real_o expected -1, got 1 at time 796000
+# [FAIL] Random cycle 39, sym=1 : Imag_o expected -1, got 1 at time 796000
+# [FAIL] Random cycle 41, sym=3 : Imag_o expected 1, got -1 at time 816000
+# [FAIL] Random cycle 42, sym=2 : Imag_o expected 1, got -1 at time 826000
+# [FAIL] Random cycle 43, sym=3 : Real_o expected -1, got 1 at time 836000
+# [FAIL] Random cycle 43, sym=3 : Imag_o expected 1, got -1 at time 836000
+# [FAIL] Random cycle 44, sym=1 : Real_o expected -1, got 1 at time 846000
+# [FAIL] Random cycle 45, sym=3 : Imag_o expected 1, got -1 at time 856000
+# [FAIL] Random cycle 46, sym=1 : Real_o expected -1, got 1 at time 866000
+# [FAIL] Random cycle 47, sym=0 : Imag_o expected 1, got -1 at time 876000
+# [FAIL] Random cycle 48, sym=2 : Real_o expected 1, got -1 at time 886000
+# [FAIL] Random cycle 48, sym=2 : Imag_o expected -1, got 1 at time 886000
+# [FAIL] Random cycle 49, sym=0 : Real_o expected 1, got -1 at time 896000
+# [FAIL] Random cycle 49, sym=0 : Imag_o expected 1, got -1 at time 896000
+# [FAIL] Random cycle 50, sym=1 : Imag_o expected 1, got -1 at time 906000
+# [FAIL] Random cycle 51, sym=1 : Real_o expected 1, got -1 at time 916000
+# [FAIL] Random cycle 51, sym=1 : Imag_o expected -1, got 1 at time 916000
+# [FAIL] Random cycle 52, sym=2 : Real_o expected 1, got -1 at time 926000
+# [FAIL] Random cycle 54, sym=0 : Imag_o expected 1, got -1 at time 946000
+# [FAIL] Random cycle 55, sym=0 : Imag_o expected -1, got 1 at time 956000
+# [FAIL] Random cycle 56, sym=2 : Real_o expected -1, got 1 at time 966000
+# [FAIL] Random cycle 57, sym=1 : Imag_o expected 1, got -1 at time 976000
+# [FAIL] Random cycle 58, sym=1 : Imag_o expected -1, got 1 at time 986000
+# [FAIL] Random cycle 59, sym=0 : Real_o expected 1, got -1 at time 996000
+# [FAIL] Random cycle 59, sym=0 : Imag_o expected -1, got 1 at time 996000
+# [FAIL] Random cycle 61, sym=3 : Real_o expected 1, got -1 at time 1016000
+# [FAIL] Random cycle 62, sym=1 : Real_o expected 1, got -1 at time 1026000
+# [FAIL] Random cycle 63, sym=2 : Real_o expected 1, got -1 at time 1036000
+# [FAIL] Random cycle 63, sym=2 : Imag_o expected 1, got -1 at time 1036000
+# [FAIL] Random cycle 64, sym=1 : Real_o expected 1, got -1 at time 1046000
+# [FAIL] Random cycle 67, sym=0 : Imag_o expected 1, got -1 at time 1076000
+# [FAIL] Random cycle 68, sym=2 : Imag_o expected 1, got -1 at time 1086000
+# [FAIL] Random cycle 69, sym=0 : Real_o expected -1, got 1 at time 1096000
+# [FAIL] Random cycle 70, sym=3 : Real_o expected -1, got 1 at time 1106000
+# [FAIL] Random cycle 72, sym=1 : Real_o expected -1, got 1 at time 1126000
+# [FAIL] Random cycle 72, sym=1 : Imag_o expected -1, got 1 at time 1126000
+# [FAIL] Random cycle 74, sym=0 : Imag_o expected -1, got 1 at time 1146000
+# [FAIL] Random cycle 75, sym=3 : Real_o expected 1, got -1 at time 1156000
+# [FAIL] Random cycle 78, sym=2 : Real_o expected 1, got -1 at time 1186000
+# [FAIL] Random cycle 78, sym=2 : Imag_o expected -1, got 1 at time 1186000
+# [FAIL] Random cycle 79, sym=1 : Real_o expected -1, got 1 at time 1196000
+# [FAIL] Random cycle 81, sym=1 : Real_o expected 1, got -1 at time 1216000
+# [FAIL] Random cycle 81, sym=1 : Imag_o expected -1, got 1 at time 1216000
+# [FAIL] Random cycle 82, sym=1 : Real_o expected -1, got 1 at time 1226000
+# [FAIL] Random cycle 83, sym=1 : Imag_o expected 1, got -1 at time 1236000
+# [FAIL] Random cycle 84, sym=1 : Real_o expected 1, got -1 at time 1246000
+# [FAIL] Random cycle 84, sym=1 : Imag_o expected -1, got 1 at time 1246000
+# [FAIL] Random cycle 85, sym=2 : Real_o expected 1, got -1 at time 1256000
+# [FAIL] Random cycle 85, sym=2 : Imag_o expected 1, got -1 at time 1256000
+# [FAIL] Random cycle 86, sym=0 : Real_o expected -1, got 1 at time 1266000
+# [FAIL] Random cycle 87, sym=3 : Real_o expected 1, got -1 at time 1276000
+# [FAIL] Random cycle 88, sym=2 : Real_o expected 1, got -1 at time 1286000
+# [FAIL] Random cycle 89, sym=3 : Imag_o expected -1, got 1 at time 1296000
+# [FAIL] Random cycle 90, sym=1 : Real_o expected 1, got -1 at time 1306000
+# [FAIL] Random cycle 90, sym=1 : Imag_o expected -1, got 1 at time 1306000
+# [FAIL] Random cycle 91, sym=2 : Real_o expected 1, got -1 at time 1316000
+# [FAIL] Random cycle 92, sym=2 : Real_o expected -1, got 1 at time 1326000
+# [FAIL] Random cycle 94, sym=3 : Real_o expected -1, got 1 at time 1346000
+# [FAIL] Random cycle 95, sym=0 : Real_o expected 1, got -1 at time 1356000
+# [FAIL] Random cycle 97, sym=0 : Imag_o expected 1, got -1 at time 1376000
+# [FAIL] Random cycle 98, sym=3 : Real_o expected -1, got 1 at time 1386000
+# [FAIL] Random cycle 98, sym=3 : Imag_o expected 1, got -1 at time 1386000
+# [FAIL] Random cycle 99, sym=3 : Imag_o expected -1, got 1 at time 1396000
+# [FAIL] Random cycle 102, sym=0 : Real_o expected -1, got 1 at time 1426000
+# [FAIL] Random cycle 102, sym=0 : Imag_o expected 1, got -1 at time 1426000
+# [FAIL] Random cycle 103, sym=0 : Real_o expected 1, got -1 at time 1436000
+# [FAIL] Random cycle 105, sym=1 : Imag_o expected 1, got -1 at time 1456000
+# [FAIL] Random cycle 106, sym=1 : Real_o expected 1, got -1 at time 1466000
+# [FAIL] Random cycle 106, sym=1 : Imag_o expected -1, got 1 at time 1466000
+# [FAIL] Random cycle 108, sym=1 : Imag_o expected 1, got -1 at time 1486000
+# [FAIL] Random cycle 109, sym=0 : Imag_o expected 1, got -1 at time 1496000
+# [FAIL] Random cycle 111, sym=3 : Real_o expected -1, got 1 at time 1516000
+# [FAIL] Random cycle 111, sym=3 : Imag_o expected -1, got 1 at time 1516000
+# [FAIL] Random cycle 112, sym=1 : Real_o expected 1, got -1 at time 1526000
+# [FAIL] Random cycle 113, sym=2 : Real_o expected -1, got 1 at time 1536000
+# [FAIL] Random cycle 113, sym=2 : Imag_o expected 1, got -1 at time 1536000
+# [FAIL] Random cycle 115, sym=3 : Imag_o expected 1, got -1 at time 1556000
+# [FAIL] Random cycle 116, sym=0 : Real_o expected 1, got -1 at time 1566000
+# [FAIL] Random cycle 116, sym=0 : Imag_o expected -1, got 1 at time 1566000
+# [FAIL] Random cycle 117, sym=1 : Real_o expected 1, got -1 at time 1576000
+# [FAIL] Random cycle 117, sym=1 : Imag_o expected -1, got 1 at time 1576000
+# [FAIL] Random cycle 118, sym=2 : Real_o expected 1, got -1 at time 1586000
+# [FAIL] Random cycle 118, sym=2 : Imag_o expected 1, got -1 at time 1586000
+# [FAIL] Random cycle 119, sym=3 : Real_o expected 1, got -1 at time 1596000
+# [FAIL] Random cycle 119, sym=3 : Imag_o expected 1, got -1 at time 1596000
+# [FAIL] Random cycle 121, sym=2 : Real_o expected 1, got -1 at time 1616000
+# [FAIL] Random cycle 123, sym=0 : Imag_o expected 1, got -1 at time 1636000
+# [FAIL] Random cycle 124, sym=2 : Real_o expected 1, got -1 at time 1646000
+# [FAIL] Random cycle 125, sym=3 : Real_o expected 1, got -1 at time 1656000
+# [FAIL] Random cycle 126, sym=0 : Imag_o expected -1, got 1 at time 1666000
+# [FAIL] Random cycle 128, sym=0 : Imag_o expected 1, got -1 at time 1686000
+# [FAIL] Random cycle 130, sym=1 : Imag_o expected 1, got -1 at time 1706000
+# [FAIL] Random cycle 132, sym=1 : Real_o expected -1, got 1 at time 1726000
+# [FAIL] Random cycle 134, sym=1 : Imag_o expected -1, got 1 at time 1746000
+# [FAIL] Random cycle 136, sym=2 : Real_o expected 1, got -1 at time 1766000
+# [FAIL] Random cycle 136, sym=2 : Imag_o expected -1, got 1 at time 1766000
+# [FAIL] Random cycle 137, sym=0 : Imag_o expected 1, got -1 at time 1776000
+# [FAIL] Random cycle 138, sym=1 : Real_o expected -1, got 1 at time 1786000
+# [FAIL] Random cycle 138, sym=1 : Imag_o expected 1, got -1 at time 1786000
+# [FAIL] Random cycle 139, sym=0 : Real_o expected -1, got 1 at time 1796000
+# [FAIL] Random cycle 139, sym=0 : Imag_o expected 1, got -1 at time 1796000
+# [FAIL] Random cycle 140, sym=1 : Imag_o expected 1, got -1 at time 1806000
+# [FAIL] Random cycle 141, sym=3 : Imag_o expected -1, got 1 at time 1816000
+# [FAIL] Random cycle 144, sym=3 : Real_o expected 1, got -1 at time 1846000
+# [FAIL] Random cycle 144, sym=3 : Imag_o expected 1, got -1 at time 1846000
+# [FAIL] Random cycle 145, sym=0 : Imag_o expected -1, got 1 at time 1856000
+# [FAIL] Random cycle 146, sym=3 : Real_o expected 1, got -1 at time 1866000
+# [FAIL] Random cycle 146, sym=3 : Imag_o expected -1, got 1 at time 1866000
+# [FAIL] Random cycle 147, sym=3 : Real_o expected -1, got 1 at time 1876000
+# [FAIL] Random cycle 147, sym=3 : Imag_o expected 1, got -1 at time 1876000
+# [FAIL] Random cycle 148, sym=1 : Imag_o expected -1, got 1 at time 1886000
+# [FAIL] Random cycle 150, sym=0 : Real_o expected 1, got -1 at time 1906000
+# [FAIL] Random cycle 150, sym=0 : Imag_o expected -1, got 1 at time 1906000
+# [FAIL] Random cycle 151, sym=0 : Imag_o expected 1, got -1 at time 1916000
+# [FAIL] Random cycle 152, sym=1 : Real_o expected 1, got -1 at time 1926000
+# [FAIL] Random cycle 152, sym=1 : Imag_o expected 1, got -1 at time 1926000
+# [FAIL] Random cycle 153, sym=2 : Real_o expected -1, got 1 at time 1936000
+# [FAIL] Random cycle 154, sym=0 : Real_o expected 1, got -1 at time 1946000
+# [FAIL] Random cycle 154, sym=0 : Imag_o expected -1, got 1 at time 1946000
+# [FAIL] Random cycle 155, sym=0 : Real_o expected -1, got 1 at time 1956000
+# [FAIL] Random cycle 156, sym=1 : Real_o expected -1, got 1 at time 1966000
+# [FAIL] Random cycle 157, sym=0 : Real_o expected -1, got 1 at time 1976000
+# [FAIL] Random cycle 157, sym=0 : Imag_o expected 1, got -1 at time 1976000
+# [FAIL] Random cycle 158, sym=3 : Real_o expected -1, got 1 at time 1986000
+# [FAIL] Random cycle 158, sym=3 : Imag_o expected -1, got 1 at time 1986000
+# [FAIL] Random cycle 159, sym=1 : Imag_o expected -1, got 1 at time 1996000
+# [FAIL] Random cycle 160, sym=2 : Real_o expected 1, got -1 at time 2006000
+# [FAIL] Random cycle 161, sym=3 : Real_o expected 1, got -1 at time 2016000
+# [FAIL] Random cycle 162, sym=3 : Imag_o expected 1, got -1 at time 2026000
+# [FAIL] Random cycle 164, sym=2 : Real_o expected 1, got -1 at time 2046000
+# [FAIL] Random cycle 165, sym=2 : Imag_o expected 1, got -1 at time 2056000
+# [FAIL] Random cycle 167, sym=0 : Real_o expected -1, got 1 at time 2076000
+# [FAIL] Random cycle 168, sym=1 : Real_o expected -1, got 1 at time 2086000
+# [FAIL] Random cycle 169, sym=3 : Real_o expected 1, got -1 at time 2096000
+# [FAIL] Random cycle 169, sym=3 : Imag_o expected 1, got -1 at time 2096000
+# [FAIL] Random cycle 170, sym=2 : Real_o expected 1, got -1 at time 2106000
+# [FAIL] Random cycle 170, sym=2 : Imag_o expected 1, got -1 at time 2106000
+# [FAIL] Random cycle 171, sym=0 : Imag_o expected 1, got -1 at time 2116000
+# [FAIL] Random cycle 172, sym=3 : Real_o expected -1, got 1 at time 2126000
+# [FAIL] Random cycle 172, sym=3 : Imag_o expected 1, got -1 at time 2126000
+# [FAIL] Random cycle 174, sym=2 : Imag_o expected 1, got -1 at time 2146000
+# [FAIL] Random cycle 176, sym=0 : Real_o expected -1, got 1 at time 2166000
+# [FAIL] Random cycle 176, sym=0 : Imag_o expected 1, got -1 at time 2166000
+# [FAIL] Random cycle 177, sym=0 : Real_o expected 1, got -1 at time 2176000
+# [FAIL] Random cycle 177, sym=0 : Imag_o expected -1, got 1 at time 2176000
+# [FAIL] Random cycle 178, sym=2 : Imag_o expected -1, got 1 at time 2186000
+# [FAIL] Random cycle 179, sym=2 : Imag_o expected 1, got -1 at time 2196000
+# [FAIL] Random cycle 180, sym=0 : Real_o expected -1, got 1 at time 2206000
+# [FAIL] Random cycle 180, sym=0 : Imag_o expected 1, got -1 at time 2206000
+# [FAIL] Random cycle 181, sym=2 : Imag_o expected 1, got -1 at time 2216000
+# [FAIL] Random cycle 182, sym=3 : Real_o expected -1, got 1 at time 2226000
+# [FAIL] Random cycle 184, sym=0 : Real_o expected -1, got 1 at time 2246000
+# [FAIL] Random cycle 185, sym=3 : Imag_o expected -1, got 1 at time 2256000
+# [FAIL] Random cycle 186, sym=2 : Real_o expected -1, got 1 at time 2266000
+# [FAIL] Random cycle 187, sym=1 : Imag_o expected 1, got -1 at time 2276000
+# [FAIL] Random cycle 188, sym=3 : Real_o expected 1, got -1 at time 2286000
+# [FAIL] Random cycle 188, sym=3 : Imag_o expected 1, got -1 at time 2286000
+# [FAIL] Random cycle 189, sym=0 : Real_o expected 1, got -1 at time 2296000
+# [FAIL] Random cycle 190, sym=3 : Real_o expected -1, got 1 at time 2306000
+# [FAIL] Random cycle 190, sym=3 : Imag_o expected 1, got -1 at time 2306000
+# [FAIL] Random cycle 192, sym=0 : Imag_o expected 1, got -1 at time 2326000
+# [FAIL] Random cycle 193, sym=2 : Real_o expected 1, got -1 at time 2336000
+# [FAIL] Random cycle 193, sym=2 : Imag_o expected 1, got -1 at time 2336000
+# [FAIL] Random cycle 194, sym=3 : Imag_o expected 1, got -1 at time 2346000
+# [FAIL] Random cycle 199, sym=2 : Imag_o expected 1, got -1 at time 2396000
+# 
+# --- TEST 6: Randomized valid/invalid gaps ---
+# [FAIL] Gap cycle 1: o_valid should be 0
+# [FAIL] Gap cycle 2: o_valid should be 0
+# [FAIL] Gapped-random cycle 3, sym=0 : Real_o expected -1, got 1 at time 2436000
+# [FAIL] Gapped-random cycle 3, sym=0 : Imag_o expected 1, got -1 at time 2436000
+# [FAIL] Gapped-random cycle 4, sym=1 : Real_o expected -1, got 1 at time 2446000
+# [FAIL] Gapped-random cycle 4, sym=1 : Imag_o expected 1, got -1 at time 2446000
+# [FAIL] Gap cycle 8: o_valid should be 0
+# [FAIL] Gapped-random cycle 9, sym=3 : Real_o expected 1, got -1 at time 2496000
+# [FAIL] Gap cycle 10: o_valid should be 0
+# [FAIL] Gapped-random cycle 11, sym=1 : Real_o expected 1, got -1 at time 2516000
+# [FAIL] Gapped-random cycle 11, sym=1 : Imag_o expected 1, got -1 at time 2516000
+# [FAIL] Gapped-random cycle 12, sym=0 : Imag_o expected 1, got -1 at time 2526000
+# [FAIL] Gapped-random cycle 13, sym=2 : Real_o expected 1, got -1 at time 2536000
+# [FAIL] Gapped-random cycle 17, sym=0 : Real_o expected 1, got -1 at time 2576000
+# [FAIL] Gapped-random cycle 17, sym=0 : Imag_o expected 1, got -1 at time 2576000
+# [FAIL] Gapped-random cycle 18, sym=1 : Real_o expected 1, got -1 at time 2586000
+# [FAIL] Gapped-random cycle 18, sym=1 : Imag_o expected 1, got -1 at time 2586000
+# [FAIL] Gapped-random cycle 19, sym=1 : Imag_o expected -1, got 1 at time 2596000
+# [FAIL] Gapped-random cycle 20, sym=1 : Imag_o expected 1, got -1 at time 2606000
+# [FAIL] Gap cycle 21: o_valid should be 0
+# [FAIL] Gapped-random cycle 23, sym=2 : Real_o expected -1, got 1 at time 2636000
+# [FAIL] Gapped-random cycle 23, sym=2 : Imag_o expected 1, got -1 at time 2636000
+# [FAIL] Gapped-random cycle 24, sym=3 : Real_o expected -1, got 1 at time 2646000
+# [FAIL] Gapped-random cycle 28, sym=2 : Real_o expected -1, got 1 at time 2686000
+# [FAIL] Gapped-random cycle 29, sym=2 : Real_o expected 1, got -1 at time 2696000
+# [FAIL] Gap cycle 30: o_valid should be 0
+# [FAIL] Gapped-random cycle 31, sym=2 : Real_o expected -1, got 1 at time 2716000
+# [FAIL] Gap cycle 33: o_valid should be 0
+# [FAIL] Gapped-random cycle 34, sym=1 : Real_o expected 1, got -1 at time 2746000
+# [FAIL] Gap cycle 35: o_valid should be 0
+# [FAIL] Gap cycle 36: o_valid should be 0
+# [FAIL] Gapped-random cycle 37, sym=1 : Real_o expected -1, got 1 at time 2776000
+# [FAIL] Gap cycle 38: o_valid should be 0
+# [FAIL] Gapped-random cycle 39, sym=1 : Imag_o expected 1, got -1 at time 2796000
+# [FAIL] Gap cycle 40: o_valid should be 0
+# [FAIL] Gapped-random cycle 41, sym=3 : Imag_o expected 1, got -1 at time 2816000
+# [FAIL] Gapped-random cycle 42, sym=0 : Real_o expected 1, got -1 at time 2826000
+# [FAIL] Gapped-random cycle 43, sym=1 : Real_o expected 1, got -1 at time 2836000
+# [FAIL] Gapped-random cycle 46, sym=0 : Imag_o expected 1, got -1 at time 2866000
+# [FAIL] Gapped-random cycle 47, sym=2 : Real_o expected 1, got -1 at time 2876000
+# [FAIL] Gap cycle 48: o_valid should be 0
+# [FAIL] Gapped-random cycle 49, sym=3 : Real_o expected 1, got -1 at time 2896000
+# [FAIL] Gapped-random cycle 49, sym=3 : Imag_o expected -1, got 1 at time 2896000
+# [FAIL] Gapped-random cycle 50, sym=3 : Real_o expected -1, got 1 at time 2906000
+# [FAIL] Gapped-random cycle 50, sym=3 : Imag_o expected 1, got -1 at time 2906000
+# [FAIL] Gap cycle 51: o_valid should be 0
+# [FAIL] Gapped-random cycle 53, sym=0 : Imag_o expected 1, got -1 at time 2936000
+# [FAIL] Gapped-random cycle 54, sym=0 : Real_o expected 1, got -1 at time 2946000
+# [FAIL] Gapped-random cycle 54, sym=0 : Imag_o expected -1, got 1 at time 2946000
+# [FAIL] Gap cycle 56: o_valid should be 0
+# [FAIL] Gapped-random cycle 57, sym=1 : Real_o expected 1, got -1 at time 2976000
+# [FAIL] Gapped-random cycle 58, sym=1 : Imag_o expected -1, got 1 at time 2986000
+# [FAIL] Gapped-random cycle 59, sym=3 : Real_o expected -1, got 1 at time 2996000
+# [FAIL] Gapped-random cycle 59, sym=3 : Imag_o expected -1, got 1 at time 2996000
+# [FAIL] Gapped-random cycle 60, sym=3 : Real_o expected 1, got -1 at time 3006000
+# [FAIL] Gapped-random cycle 60, sym=3 : Imag_o expected 1, got -1 at time 3006000
+# [FAIL] Gapped-random cycle 61, sym=0 : Real_o expected 1, got -1 at time 3016000
+# [FAIL] Gapped-random cycle 63, sym=2 : Real_o expected 1, got -1 at time 3036000
+# [FAIL] Gapped-random cycle 63, sym=2 : Imag_o expected -1, got 1 at time 3036000
+# [FAIL] Gapped-random cycle 64, sym=0 : Imag_o expected 1, got -1 at time 3046000
+# [FAIL] Gapped-random cycle 65, sym=1 : Real_o expected -1, got 1 at time 3056000
+# [FAIL] Gap cycle 66: o_valid should be 0
+# [FAIL] Gapped-random cycle 67, sym=3 : Imag_o expected 1, got -1 at time 3076000
+# [FAIL] Gapped-random cycle 68, sym=0 : Imag_o expected -1, got 1 at time 3086000
+# [FAIL] Gap cycle 69: o_valid should be 0
+# [FAIL] Gapped-random cycle 70, sym=3 : Imag_o expected -1, got 1 at time 3106000
+# [FAIL] Gapped-random cycle 72, sym=1 : Real_o expected 1, got -1 at time 3126000
+# [FAIL] Gapped-random cycle 72, sym=1 : Imag_o expected -1, got 1 at time 3126000
+# [FAIL] Gapped-random cycle 74, sym=3 : Real_o expected -1, got 1 at time 3146000
+# [FAIL] Gapped-random cycle 75, sym=2 : Real_o expected -1, got 1 at time 3156000
+# [FAIL] Gapped-random cycle 76, sym=1 : Imag_o expected 1, got -1 at time 3166000
+# [FAIL] Gapped-random cycle 77, sym=3 : Real_o expected 1, got -1 at time 3176000
+# [FAIL] Gapped-random cycle 77, sym=3 : Imag_o expected -1, got 1 at time 3176000
+# [FAIL] Gap cycle 78: o_valid should be 0
+# [FAIL] Gap cycle 79: o_valid should be 0
+# [FAIL] Gapped-random cycle 80, sym=0 : Imag_o expected -1, got 1 at time 3206000
+# [FAIL] Gapped-random cycle 82, sym=2 : Real_o expected -1, got 1 at time 3226000
+# [FAIL] Gapped-random cycle 82, sym=2 : Imag_o expected -1, got 1 at time 3226000
+# [FAIL] Gapped-random cycle 83, sym=2 : Imag_o expected 1, got -1 at time 3236000
+# [FAIL] Gapped-random cycle 84, sym=1 : Imag_o expected 1, got -1 at time 3246000
+# [FAIL] Gap cycle 85: o_valid should be 0
+# [FAIL] Gap cycle 86: o_valid should be 0
+# [FAIL] Gapped-random cycle 87, sym=0 : Imag_o expected 1, got -1 at time 3276000
+# [FAIL] Gap cycle 88: o_valid should be 0
+# [FAIL] Gapped-random cycle 89, sym=1 : Real_o expected 1, got -1 at time 3296000
+# [FAIL] Gapped-random cycle 89, sym=1 : Imag_o expected 1, got -1 at time 3296000
+# [FAIL] Gap cycle 90: o_valid should be 0
+# [FAIL] Gapped-random cycle 92, sym=2 : Imag_o expected 1, got -1 at time 3326000
+# [FAIL] Gapped-random cycle 93, sym=1 : Real_o expected 1, got -1 at time 3336000
+# [FAIL] Gapped-random cycle 94, sym=3 : Real_o expected 1, got -1 at time 3346000
+# [FAIL] Gap cycle 95: o_valid should be 0
+# [FAIL] Gapped-random cycle 96, sym=2 : Real_o expected 1, got -1 at time 3366000
+# [FAIL] Gapped-random cycle 96, sym=2 : Imag_o expected 1, got -1 at time 3366000
+# [FAIL] Gapped-random cycle 97, sym=3 : Real_o expected 1, got -1 at time 3376000
+# [FAIL] Gapped-random cycle 97, sym=3 : Imag_o expected 1, got -1 at time 3376000
+# [FAIL] Gapped-random cycle 99, sym=3 : Real_o expected -1, got 1 at time 3396000
+# 
+# =========================================================
+#  334 OF 339 CHECKS FAILED. See log above.
+# =========================================================
+# ** Note: $finish    : ../TB/DQPSK_TB.SV(224)
+#    Time: 3396 ns  Iteration: 0  Instance: /DQPSK_TB
+# 1
+# Break in Module DQPSK_TB at ../TB/DQPSK_TB.SV line 224
+# Causality operation skipped due to absence of debug database file
+do ../Script/run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 23:53:34 on Sep 02,2026
+# vlog -reportprogress 300 ../RTL/DQPSK.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK
+# 
+# Top level modules:
+# 	DQPSK
+# End time: 23:53:34 on Sep 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 23:53:34 on Sep 02,2026
+# vlog -reportprogress 300 ../TB/DQPSK_TB.SV 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK_tb
+# 
+# Top level modules:
+# 	DQPSK_tb
+# End time: 23:53:35 on Sep 02,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 23:53:35 on Sep 02,2026, Elapsed time: 0:06:45
+# Errors: 0, Warnings: 1
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" DQPSK_TB 
+# Start time: 23:53:35 on Sep 02,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.DQPSK_TB(fast)
+# Loading work.DQPSK(fast)
+# [PASS] Reset: o_valid correctly deasserted
+# 
+# --- TEST 2: Individual legal symbols from reset state ---
+# 
+# --- TEST 3: i_valid deassertion (pipeline hold) ---
+# [FAIL] i_valid=0: o_valid should deassert, got 1
+# [FAIL] Post-gap resume Symbol#0 : Real_o expected 1, got -1 at time 76000
+# [FAIL] Post-gap resume Symbol#0 : Imag_o expected 1, got -1 at time 76000
+# 
+# --- TEST 4: Exhaustive (current x 4-cycles-prior) coverage ---
+# [FAIL] Priming pass, sym=0, fill#0 : Imag_o expected -1, got 1 at time 86000
+# [FAIL] Priming pass, sym=0, fill#1 : Real_o expected -1, got 1 at time 96000
+# [FAIL] Priming pass, sym=0, fill#1 : Imag_o expected 1, got -1 at time 96000
+# [FAIL] Priming pass, sym=0, fill#2 : Imag_o expected -1, got 1 at time 106000
+# [FAIL] Priming pass, sym=0, fill#3 : Real_o expected 1, got -1 at time 116000
+# [FAIL] Priming pass, sym=0, fill#3 : Imag_o expected 1, got -1 at time 116000
+# [FAIL] Edge case: current=Sym0 x prior(n-4)=Sym0 : Imag_o expected -1, got 1 at time 126000
+# [FAIL] Edge case: current=Sym1 x prior(n-4)=Sym0 : Real_o expected 1, got -1 at time 136000
+# [FAIL] Edge case: current=Sym1 x prior(n-4)=Sym0 : Imag_o expected -1, got 1 at time 136000
+# [FAIL] Edge case: current=Sym2 x prior(n-4)=Sym0 : Real_o expected 1, got -1 at time 146000
+# [FAIL] Edge case: current=Sym3 x prior(n-4)=Sym0 : Real_o expected 1, got -1 at time 156000
+# [FAIL] Edge case: current=Sym3 x prior(n-4)=Sym0 : Imag_o expected -1, got 1 at time 156000
+# [FAIL] Priming pass, sym=1, fill#0 : Real_o expected 1, got -1 at time 166000
+# [FAIL] Priming pass, sym=1, fill#1 : Imag_o expected 1, got -1 at time 176000
+# [FAIL] Priming pass, sym=1, fill#2 : Imag_o expected -1, got 1 at time 186000
+# [FAIL] Priming pass, sym=1, fill#3 : Imag_o expected 1, got -1 at time 196000
+# [FAIL] Edge case: current=Sym0 x prior(n-4)=Sym1 : Real_o expected 1, got -1 at time 206000
+# [FAIL] Edge case: current=Sym1 x prior(n-4)=Sym1 : Imag_o expected -1, got 1 at time 216000
+# [FAIL] Edge case: current=Sym2 x prior(n-4)=Sym1 : Real_o expected 1, got -1 at time 226000
+# [FAIL] Edge case: current=Sym3 x prior(n-4)=Sym1 : Imag_o expected 1, got -1 at time 236000
+# [FAIL] Priming pass, sym=2, fill#0 : Real_o expected -1, got 1 at time 246000
+# [FAIL] Priming pass, sym=2, fill#2 : Real_o expected 1, got -1 at time 266000
+# [FAIL] Priming pass, sym=2, fill#3 : Imag_o expected 1, got -1 at time 276000
+# [FAIL] Edge case: current=Sym0 x prior(n-4)=Sym2 : Real_o expected -1, got 1 at time 286000
+# [FAIL] Edge case: current=Sym2 x prior(n-4)=Sym2 : Imag_o expected 1, got -1 at time 306000
+# [FAIL] Priming pass, sym=3, fill#0 : Real_o expected 1, got -1 at time 326000
+# [FAIL] Priming pass, sym=3, fill#1 : Real_o expected -1, got 1 at time 336000
+# [FAIL] Priming pass, sym=3, fill#2 : Imag_o expected 1, got -1 at time 346000
+# [FAIL] Edge case: current=Sym0 x prior(n-4)=Sym3 : Real_o expected 1, got -1 at time 366000
+# [FAIL] Edge case: current=Sym1 x prior(n-4)=Sym3 : Real_o expected 1, got -1 at time 376000
+# [FAIL] Edge case: current=Sym2 x prior(n-4)=Sym3 : Real_o expected -1, got 1 at time 386000
+# [FAIL] Edge case: current=Sym3 x prior(n-4)=Sym3 : Real_o expected -1, got 1 at time 396000
+# 
+# --- TEST 5: Long randomized sequence (200 symbols) ---
+# [FAIL] Random cycle 0, sym=0 : Imag_o expected 1, got -1 at time 406000
+# [FAIL] Random cycle 1, sym=2 : Real_o expected 1, got -1 at time 416000
+# [FAIL] Random cycle 1, sym=2 : Imag_o expected 1, got -1 at time 416000
+# [FAIL] Random cycle 2, sym=2 : Real_o expected -1, got 1 at time 426000
+# [FAIL] Random cycle 3, sym=2 : Real_o expected 1, got -1 at time 436000
+# [FAIL] Random cycle 3, sym=2 : Imag_o expected -1, got 1 at time 436000
+# [FAIL] Random cycle 5, sym=1 : Real_o expected -1, got 1 at time 456000
+# [FAIL] Random cycle 5, sym=1 : Imag_o expected -1, got 1 at time 456000
+# [FAIL] Random cycle 6, sym=1 : Real_o expected 1, got -1 at time 466000
+# [FAIL] Random cycle 7, sym=1 : Real_o expected -1, got 1 at time 476000
+# [FAIL] Random cycle 9, sym=3 : Real_o expected -1, got 1 at time 496000
+# [FAIL] Random cycle 9, sym=3 : Imag_o expected 1, got -1 at time 496000
+# [FAIL] Random cycle 10, sym=0 : Real_o expected 1, got -1 at time 506000
+# [FAIL] Random cycle 11, sym=3 : Real_o expected 1, got -1 at time 516000
+# [FAIL] Random cycle 12, sym=2 : Real_o expected 1, got -1 at time 526000
+# [FAIL] Random cycle 13, sym=3 : Imag_o expected 1, got -1 at time 536000
+# [FAIL] Random cycle 15, sym=0 : Imag_o expected 1, got -1 at time 556000
+# [FAIL] Random cycle 16, sym=1 : Imag_o expected 1, got -1 at time 566000
+# [FAIL] Random cycle 17, sym=3 : Imag_o expected -1, got 1 at time 576000
+# [FAIL] Random cycle 18, sym=1 : Real_o expected 1, got -1 at time 586000
+# [FAIL] Random cycle 19, sym=3 : Imag_o expected -1, got 1 at time 596000
+# [FAIL] Random cycle 20, sym=1 : Real_o expected 1, got -1 at time 606000
+# [FAIL] Random cycle 20, sym=1 : Imag_o expected -1, got 1 at time 606000
+# [FAIL] Random cycle 24, sym=3 : Real_o expected -1, got 1 at time 646000
+# [FAIL] Random cycle 24, sym=3 : Imag_o expected -1, got 1 at time 646000
+# [FAIL] Random cycle 25, sym=3 : Imag_o expected 1, got -1 at time 656000
+# [FAIL] Random cycle 26, sym=0 : Real_o expected 1, got -1 at time 666000
+# [FAIL] Random cycle 27, sym=2 : Real_o expected -1, got 1 at time 676000
+# [FAIL] Random cycle 28, sym=0 : Real_o expected -1, got 1 at time 686000
+# [FAIL] Random cycle 28, sym=0 : Imag_o expected -1, got 1 at time 686000
+# [FAIL] Random cycle 30, sym=2 : Real_o expected -1, got 1 at time 706000
+# [FAIL] Random cycle 30, sym=2 : Imag_o expected 1, got -1 at time 706000
+# [FAIL] Random cycle 33, sym=0 : Imag_o expected -1, got 1 at time 736000
+# [FAIL] Random cycle 34, sym=3 : Real_o expected 1, got -1 at time 746000
+# [FAIL] Random cycle 34, sym=3 : Imag_o expected 1, got -1 at time 746000
+# [FAIL] Random cycle 35, sym=2 : Imag_o expected 1, got -1 at time 756000
+# [FAIL] Random cycle 37, sym=0 : Real_o expected -1, got 1 at time 776000
+# [FAIL] Random cycle 37, sym=0 : Imag_o expected -1, got 1 at time 776000
+# [FAIL] Random cycle 39, sym=1 : Real_o expected -1, got 1 at time 796000
+# [FAIL] Random cycle 39, sym=1 : Imag_o expected -1, got 1 at time 796000
+# [FAIL] Random cycle 41, sym=3 : Imag_o expected 1, got -1 at time 816000
+# [FAIL] Random cycle 42, sym=2 : Imag_o expected 1, got -1 at time 826000
+# [FAIL] Random cycle 43, sym=3 : Real_o expected -1, got 1 at time 836000
+# [FAIL] Random cycle 43, sym=3 : Imag_o expected 1, got -1 at time 836000
+# [FAIL] Random cycle 44, sym=1 : Real_o expected -1, got 1 at time 846000
+# [FAIL] Random cycle 45, sym=3 : Imag_o expected 1, got -1 at time 856000
+# [FAIL] Random cycle 46, sym=1 : Real_o expected -1, got 1 at time 866000
+# [FAIL] Random cycle 47, sym=0 : Imag_o expected 1, got -1 at time 876000
+# [FAIL] Random cycle 48, sym=2 : Real_o expected 1, got -1 at time 886000
+# [FAIL] Random cycle 48, sym=2 : Imag_o expected -1, got 1 at time 886000
+# [FAIL] Random cycle 49, sym=0 : Real_o expected 1, got -1 at time 896000
+# [FAIL] Random cycle 49, sym=0 : Imag_o expected 1, got -1 at time 896000
+# [FAIL] Random cycle 50, sym=1 : Imag_o expected 1, got -1 at time 906000
+# [FAIL] Random cycle 51, sym=1 : Real_o expected 1, got -1 at time 916000
+# [FAIL] Random cycle 51, sym=1 : Imag_o expected -1, got 1 at time 916000
+# [FAIL] Random cycle 52, sym=2 : Real_o expected 1, got -1 at time 926000
+# [FAIL] Random cycle 54, sym=0 : Imag_o expected 1, got -1 at time 946000
+# [FAIL] Random cycle 55, sym=0 : Imag_o expected -1, got 1 at time 956000
+# [FAIL] Random cycle 56, sym=2 : Real_o expected -1, got 1 at time 966000
+# [FAIL] Random cycle 57, sym=1 : Imag_o expected 1, got -1 at time 976000
+# [FAIL] Random cycle 58, sym=1 : Imag_o expected -1, got 1 at time 986000
+# [FAIL] Random cycle 59, sym=0 : Real_o expected 1, got -1 at time 996000
+# [FAIL] Random cycle 59, sym=0 : Imag_o expected -1, got 1 at time 996000
+# [FAIL] Random cycle 61, sym=3 : Real_o expected 1, got -1 at time 1016000
+# [FAIL] Random cycle 62, sym=1 : Real_o expected 1, got -1 at time 1026000
+# [FAIL] Random cycle 63, sym=2 : Real_o expected 1, got -1 at time 1036000
+# [FAIL] Random cycle 63, sym=2 : Imag_o expected 1, got -1 at time 1036000
+# [FAIL] Random cycle 64, sym=1 : Real_o expected 1, got -1 at time 1046000
+# [FAIL] Random cycle 67, sym=0 : Imag_o expected 1, got -1 at time 1076000
+# [FAIL] Random cycle 68, sym=2 : Imag_o expected 1, got -1 at time 1086000
+# [FAIL] Random cycle 69, sym=0 : Real_o expected -1, got 1 at time 1096000
+# [FAIL] Random cycle 70, sym=3 : Real_o expected -1, got 1 at time 1106000
+# [FAIL] Random cycle 72, sym=1 : Real_o expected -1, got 1 at time 1126000
+# [FAIL] Random cycle 72, sym=1 : Imag_o expected -1, got 1 at time 1126000
+# [FAIL] Random cycle 74, sym=0 : Imag_o expected -1, got 1 at time 1146000
+# [FAIL] Random cycle 75, sym=3 : Real_o expected 1, got -1 at time 1156000
+# [FAIL] Random cycle 78, sym=2 : Real_o expected 1, got -1 at time 1186000
+# [FAIL] Random cycle 78, sym=2 : Imag_o expected -1, got 1 at time 1186000
+# [FAIL] Random cycle 79, sym=1 : Real_o expected -1, got 1 at time 1196000
+# [FAIL] Random cycle 81, sym=1 : Real_o expected 1, got -1 at time 1216000
+# [FAIL] Random cycle 81, sym=1 : Imag_o expected -1, got 1 at time 1216000
+# [FAIL] Random cycle 82, sym=1 : Real_o expected -1, got 1 at time 1226000
+# [FAIL] Random cycle 83, sym=1 : Imag_o expected 1, got -1 at time 1236000
+# [FAIL] Random cycle 84, sym=1 : Real_o expected 1, got -1 at time 1246000
+# [FAIL] Random cycle 84, sym=1 : Imag_o expected -1, got 1 at time 1246000
+# [FAIL] Random cycle 85, sym=2 : Real_o expected 1, got -1 at time 1256000
+# [FAIL] Random cycle 85, sym=2 : Imag_o expected 1, got -1 at time 1256000
+# [FAIL] Random cycle 86, sym=0 : Real_o expected -1, got 1 at time 1266000
+# [FAIL] Random cycle 87, sym=3 : Real_o expected 1, got -1 at time 1276000
+# [FAIL] Random cycle 88, sym=2 : Real_o expected 1, got -1 at time 1286000
+# [FAIL] Random cycle 89, sym=3 : Imag_o expected -1, got 1 at time 1296000
+# [FAIL] Random cycle 90, sym=1 : Real_o expected 1, got -1 at time 1306000
+# [FAIL] Random cycle 90, sym=1 : Imag_o expected -1, got 1 at time 1306000
+# [FAIL] Random cycle 91, sym=2 : Real_o expected 1, got -1 at time 1316000
+# [FAIL] Random cycle 92, sym=2 : Real_o expected -1, got 1 at time 1326000
+# [FAIL] Random cycle 94, sym=3 : Real_o expected -1, got 1 at time 1346000
+# [FAIL] Random cycle 95, sym=0 : Real_o expected 1, got -1 at time 1356000
+# [FAIL] Random cycle 97, sym=0 : Imag_o expected 1, got -1 at time 1376000
+# [FAIL] Random cycle 98, sym=3 : Real_o expected -1, got 1 at time 1386000
+# [FAIL] Random cycle 98, sym=3 : Imag_o expected 1, got -1 at time 1386000
+# [FAIL] Random cycle 99, sym=3 : Imag_o expected -1, got 1 at time 1396000
+# [FAIL] Random cycle 102, sym=0 : Real_o expected -1, got 1 at time 1426000
+# [FAIL] Random cycle 102, sym=0 : Imag_o expected 1, got -1 at time 1426000
+# [FAIL] Random cycle 103, sym=0 : Real_o expected 1, got -1 at time 1436000
+# [FAIL] Random cycle 105, sym=1 : Imag_o expected 1, got -1 at time 1456000
+# [FAIL] Random cycle 106, sym=1 : Real_o expected 1, got -1 at time 1466000
+# [FAIL] Random cycle 106, sym=1 : Imag_o expected -1, got 1 at time 1466000
+# [FAIL] Random cycle 108, sym=1 : Imag_o expected 1, got -1 at time 1486000
+# [FAIL] Random cycle 109, sym=0 : Imag_o expected 1, got -1 at time 1496000
+# [FAIL] Random cycle 111, sym=3 : Real_o expected -1, got 1 at time 1516000
+# [FAIL] Random cycle 111, sym=3 : Imag_o expected -1, got 1 at time 1516000
+# [FAIL] Random cycle 112, sym=1 : Real_o expected 1, got -1 at time 1526000
+# [FAIL] Random cycle 113, sym=2 : Real_o expected -1, got 1 at time 1536000
+# [FAIL] Random cycle 113, sym=2 : Imag_o expected 1, got -1 at time 1536000
+# [FAIL] Random cycle 115, sym=3 : Imag_o expected 1, got -1 at time 1556000
+# [FAIL] Random cycle 116, sym=0 : Real_o expected 1, got -1 at time 1566000
+# [FAIL] Random cycle 116, sym=0 : Imag_o expected -1, got 1 at time 1566000
+# [FAIL] Random cycle 117, sym=1 : Real_o expected 1, got -1 at time 1576000
+# [FAIL] Random cycle 117, sym=1 : Imag_o expected -1, got 1 at time 1576000
+# [FAIL] Random cycle 118, sym=2 : Real_o expected 1, got -1 at time 1586000
+# [FAIL] Random cycle 118, sym=2 : Imag_o expected 1, got -1 at time 1586000
+# [FAIL] Random cycle 119, sym=3 : Real_o expected 1, got -1 at time 1596000
+# [FAIL] Random cycle 119, sym=3 : Imag_o expected 1, got -1 at time 1596000
+# [FAIL] Random cycle 121, sym=2 : Real_o expected 1, got -1 at time 1616000
+# [FAIL] Random cycle 123, sym=0 : Imag_o expected 1, got -1 at time 1636000
+# [FAIL] Random cycle 124, sym=2 : Real_o expected 1, got -1 at time 1646000
+# [FAIL] Random cycle 125, sym=3 : Real_o expected 1, got -1 at time 1656000
+# [FAIL] Random cycle 126, sym=0 : Imag_o expected -1, got 1 at time 1666000
+# [FAIL] Random cycle 128, sym=0 : Imag_o expected 1, got -1 at time 1686000
+# [FAIL] Random cycle 130, sym=1 : Imag_o expected 1, got -1 at time 1706000
+# [FAIL] Random cycle 132, sym=1 : Real_o expected -1, got 1 at time 1726000
+# [FAIL] Random cycle 134, sym=1 : Imag_o expected -1, got 1 at time 1746000
+# [FAIL] Random cycle 136, sym=2 : Real_o expected 1, got -1 at time 1766000
+# [FAIL] Random cycle 136, sym=2 : Imag_o expected -1, got 1 at time 1766000
+# [FAIL] Random cycle 137, sym=0 : Imag_o expected 1, got -1 at time 1776000
+# [FAIL] Random cycle 138, sym=1 : Real_o expected -1, got 1 at time 1786000
+# [FAIL] Random cycle 138, sym=1 : Imag_o expected 1, got -1 at time 1786000
+# [FAIL] Random cycle 139, sym=0 : Real_o expected -1, got 1 at time 1796000
+# [FAIL] Random cycle 139, sym=0 : Imag_o expected 1, got -1 at time 1796000
+# [FAIL] Random cycle 140, sym=1 : Imag_o expected 1, got -1 at time 1806000
+# [FAIL] Random cycle 141, sym=3 : Imag_o expected -1, got 1 at time 1816000
+# [FAIL] Random cycle 144, sym=3 : Real_o expected 1, got -1 at time 1846000
+# [FAIL] Random cycle 144, sym=3 : Imag_o expected 1, got -1 at time 1846000
+# [FAIL] Random cycle 145, sym=0 : Imag_o expected -1, got 1 at time 1856000
+# [FAIL] Random cycle 146, sym=3 : Real_o expected 1, got -1 at time 1866000
+# [FAIL] Random cycle 146, sym=3 : Imag_o expected -1, got 1 at time 1866000
+# [FAIL] Random cycle 147, sym=3 : Real_o expected -1, got 1 at time 1876000
+# [FAIL] Random cycle 147, sym=3 : Imag_o expected 1, got -1 at time 1876000
+# [FAIL] Random cycle 148, sym=1 : Imag_o expected -1, got 1 at time 1886000
+# [FAIL] Random cycle 150, sym=0 : Real_o expected 1, got -1 at time 1906000
+# [FAIL] Random cycle 150, sym=0 : Imag_o expected -1, got 1 at time 1906000
+# [FAIL] Random cycle 151, sym=0 : Imag_o expected 1, got -1 at time 1916000
+# [FAIL] Random cycle 152, sym=1 : Real_o expected 1, got -1 at time 1926000
+# [FAIL] Random cycle 152, sym=1 : Imag_o expected 1, got -1 at time 1926000
+# [FAIL] Random cycle 153, sym=2 : Real_o expected -1, got 1 at time 1936000
+# [FAIL] Random cycle 154, sym=0 : Real_o expected 1, got -1 at time 1946000
+# [FAIL] Random cycle 154, sym=0 : Imag_o expected -1, got 1 at time 1946000
+# [FAIL] Random cycle 155, sym=0 : Real_o expected -1, got 1 at time 1956000
+# [FAIL] Random cycle 156, sym=1 : Real_o expected -1, got 1 at time 1966000
+# [FAIL] Random cycle 157, sym=0 : Real_o expected -1, got 1 at time 1976000
+# [FAIL] Random cycle 157, sym=0 : Imag_o expected 1, got -1 at time 1976000
+# [FAIL] Random cycle 158, sym=3 : Real_o expected -1, got 1 at time 1986000
+# [FAIL] Random cycle 158, sym=3 : Imag_o expected -1, got 1 at time 1986000
+# [FAIL] Random cycle 159, sym=1 : Imag_o expected -1, got 1 at time 1996000
+# [FAIL] Random cycle 160, sym=2 : Real_o expected 1, got -1 at time 2006000
+# [FAIL] Random cycle 161, sym=3 : Real_o expected 1, got -1 at time 2016000
+# [FAIL] Random cycle 162, sym=3 : Imag_o expected 1, got -1 at time 2026000
+# [FAIL] Random cycle 164, sym=2 : Real_o expected 1, got -1 at time 2046000
+# [FAIL] Random cycle 165, sym=2 : Imag_o expected 1, got -1 at time 2056000
+# [FAIL] Random cycle 167, sym=0 : Real_o expected -1, got 1 at time 2076000
+# [FAIL] Random cycle 168, sym=1 : Real_o expected -1, got 1 at time 2086000
+# [FAIL] Random cycle 169, sym=3 : Real_o expected 1, got -1 at time 2096000
+# [FAIL] Random cycle 169, sym=3 : Imag_o expected 1, got -1 at time 2096000
+# [FAIL] Random cycle 170, sym=2 : Real_o expected 1, got -1 at time 2106000
+# [FAIL] Random cycle 170, sym=2 : Imag_o expected 1, got -1 at time 2106000
+# [FAIL] Random cycle 171, sym=0 : Imag_o expected 1, got -1 at time 2116000
+# [FAIL] Random cycle 172, sym=3 : Real_o expected -1, got 1 at time 2126000
+# [FAIL] Random cycle 172, sym=3 : Imag_o expected 1, got -1 at time 2126000
+# [FAIL] Random cycle 174, sym=2 : Imag_o expected 1, got -1 at time 2146000
+# [FAIL] Random cycle 176, sym=0 : Real_o expected -1, got 1 at time 2166000
+# [FAIL] Random cycle 176, sym=0 : Imag_o expected 1, got -1 at time 2166000
+# [FAIL] Random cycle 177, sym=0 : Real_o expected 1, got -1 at time 2176000
+# [FAIL] Random cycle 177, sym=0 : Imag_o expected -1, got 1 at time 2176000
+# [FAIL] Random cycle 178, sym=2 : Imag_o expected -1, got 1 at time 2186000
+# [FAIL] Random cycle 179, sym=2 : Imag_o expected 1, got -1 at time 2196000
+# [FAIL] Random cycle 180, sym=0 : Real_o expected -1, got 1 at time 2206000
+# [FAIL] Random cycle 180, sym=0 : Imag_o expected 1, got -1 at time 2206000
+# [FAIL] Random cycle 181, sym=2 : Imag_o expected 1, got -1 at time 2216000
+# [FAIL] Random cycle 182, sym=3 : Real_o expected -1, got 1 at time 2226000
+# [FAIL] Random cycle 184, sym=0 : Real_o expected -1, got 1 at time 2246000
+# [FAIL] Random cycle 185, sym=3 : Imag_o expected -1, got 1 at time 2256000
+# [FAIL] Random cycle 186, sym=2 : Real_o expected -1, got 1 at time 2266000
+# [FAIL] Random cycle 187, sym=1 : Imag_o expected 1, got -1 at time 2276000
+# [FAIL] Random cycle 188, sym=3 : Real_o expected 1, got -1 at time 2286000
+# [FAIL] Random cycle 188, sym=3 : Imag_o expected 1, got -1 at time 2286000
+# [FAIL] Random cycle 189, sym=0 : Real_o expected 1, got -1 at time 2296000
+# [FAIL] Random cycle 190, sym=3 : Real_o expected -1, got 1 at time 2306000
+# [FAIL] Random cycle 190, sym=3 : Imag_o expected 1, got -1 at time 2306000
+# [FAIL] Random cycle 192, sym=0 : Imag_o expected 1, got -1 at time 2326000
+# [FAIL] Random cycle 193, sym=2 : Real_o expected 1, got -1 at time 2336000
+# [FAIL] Random cycle 193, sym=2 : Imag_o expected 1, got -1 at time 2336000
+# [FAIL] Random cycle 194, sym=3 : Imag_o expected 1, got -1 at time 2346000
+# [FAIL] Random cycle 199, sym=2 : Imag_o expected 1, got -1 at time 2396000
+# 
+# --- TEST 6: Randomized valid/invalid gaps ---
+# [FAIL] Gap cycle 1: o_valid should be 0
+# [FAIL] Gap cycle 2: o_valid should be 0
+# [FAIL] Gapped-random cycle 3, sym=0 : Real_o expected -1, got 1 at time 2436000
+# [FAIL] Gapped-random cycle 3, sym=0 : Imag_o expected 1, got -1 at time 2436000
+# [FAIL] Gapped-random cycle 4, sym=1 : Real_o expected -1, got 1 at time 2446000
+# [FAIL] Gapped-random cycle 4, sym=1 : Imag_o expected 1, got -1 at time 2446000
+# [FAIL] Gap cycle 8: o_valid should be 0
+# [FAIL] Gapped-random cycle 9, sym=3 : Real_o expected 1, got -1 at time 2496000
+# [FAIL] Gap cycle 10: o_valid should be 0
+# [FAIL] Gapped-random cycle 11, sym=1 : Real_o expected 1, got -1 at time 2516000
+# [FAIL] Gapped-random cycle 11, sym=1 : Imag_o expected 1, got -1 at time 2516000
+# [FAIL] Gapped-random cycle 12, sym=0 : Imag_o expected 1, got -1 at time 2526000
+# [FAIL] Gapped-random cycle 13, sym=2 : Real_o expected 1, got -1 at time 2536000
+# [FAIL] Gapped-random cycle 17, sym=0 : Real_o expected 1, got -1 at time 2576000
+# [FAIL] Gapped-random cycle 17, sym=0 : Imag_o expected 1, got -1 at time 2576000
+# [FAIL] Gapped-random cycle 18, sym=1 : Real_o expected 1, got -1 at time 2586000
+# [FAIL] Gapped-random cycle 18, sym=1 : Imag_o expected 1, got -1 at time 2586000
+# [FAIL] Gapped-random cycle 19, sym=1 : Imag_o expected -1, got 1 at time 2596000
+# [FAIL] Gapped-random cycle 20, sym=1 : Imag_o expected 1, got -1 at time 2606000
+# [FAIL] Gap cycle 21: o_valid should be 0
+# [FAIL] Gapped-random cycle 23, sym=2 : Real_o expected -1, got 1 at time 2636000
+# [FAIL] Gapped-random cycle 23, sym=2 : Imag_o expected 1, got -1 at time 2636000
+# [FAIL] Gapped-random cycle 24, sym=3 : Real_o expected -1, got 1 at time 2646000
+# [FAIL] Gapped-random cycle 28, sym=2 : Real_o expected -1, got 1 at time 2686000
+# [FAIL] Gapped-random cycle 29, sym=2 : Real_o expected 1, got -1 at time 2696000
+# [FAIL] Gap cycle 30: o_valid should be 0
+# [FAIL] Gapped-random cycle 31, sym=2 : Real_o expected -1, got 1 at time 2716000
+# [FAIL] Gap cycle 33: o_valid should be 0
+# [FAIL] Gapped-random cycle 34, sym=1 : Real_o expected 1, got -1 at time 2746000
+# [FAIL] Gap cycle 35: o_valid should be 0
+# [FAIL] Gap cycle 36: o_valid should be 0
+# [FAIL] Gapped-random cycle 37, sym=1 : Real_o expected -1, got 1 at time 2776000
+# [FAIL] Gap cycle 38: o_valid should be 0
+# [FAIL] Gapped-random cycle 39, sym=1 : Imag_o expected 1, got -1 at time 2796000
+# [FAIL] Gap cycle 40: o_valid should be 0
+# [FAIL] Gapped-random cycle 41, sym=3 : Imag_o expected 1, got -1 at time 2816000
+# [FAIL] Gapped-random cycle 42, sym=0 : Real_o expected 1, got -1 at time 2826000
+# [FAIL] Gapped-random cycle 43, sym=1 : Real_o expected 1, got -1 at time 2836000
+# [FAIL] Gapped-random cycle 46, sym=0 : Imag_o expected 1, got -1 at time 2866000
+# [FAIL] Gapped-random cycle 47, sym=2 : Real_o expected 1, got -1 at time 2876000
+# [FAIL] Gap cycle 48: o_valid should be 0
+# [FAIL] Gapped-random cycle 49, sym=3 : Real_o expected 1, got -1 at time 2896000
+# [FAIL] Gapped-random cycle 49, sym=3 : Imag_o expected -1, got 1 at time 2896000
+# [FAIL] Gapped-random cycle 50, sym=3 : Real_o expected -1, got 1 at time 2906000
+# [FAIL] Gapped-random cycle 50, sym=3 : Imag_o expected 1, got -1 at time 2906000
+# [FAIL] Gap cycle 51: o_valid should be 0
+# [FAIL] Gapped-random cycle 53, sym=0 : Imag_o expected 1, got -1 at time 2936000
+# [FAIL] Gapped-random cycle 54, sym=0 : Real_o expected 1, got -1 at time 2946000
+# [FAIL] Gapped-random cycle 54, sym=0 : Imag_o expected -1, got 1 at time 2946000
+# [FAIL] Gap cycle 56: o_valid should be 0
+# [FAIL] Gapped-random cycle 57, sym=1 : Real_o expected 1, got -1 at time 2976000
+# [FAIL] Gapped-random cycle 58, sym=1 : Imag_o expected -1, got 1 at time 2986000
+# [FAIL] Gapped-random cycle 59, sym=3 : Real_o expected -1, got 1 at time 2996000
+# [FAIL] Gapped-random cycle 59, sym=3 : Imag_o expected -1, got 1 at time 2996000
+# [FAIL] Gapped-random cycle 60, sym=3 : Real_o expected 1, got -1 at time 3006000
+# [FAIL] Gapped-random cycle 60, sym=3 : Imag_o expected 1, got -1 at time 3006000
+# [FAIL] Gapped-random cycle 61, sym=0 : Real_o expected 1, got -1 at time 3016000
+# [FAIL] Gapped-random cycle 63, sym=2 : Real_o expected 1, got -1 at time 3036000
+# [FAIL] Gapped-random cycle 63, sym=2 : Imag_o expected -1, got 1 at time 3036000
+# [FAIL] Gapped-random cycle 64, sym=0 : Imag_o expected 1, got -1 at time 3046000
+# [FAIL] Gapped-random cycle 65, sym=1 : Real_o expected -1, got 1 at time 3056000
+# [FAIL] Gap cycle 66: o_valid should be 0
+# [FAIL] Gapped-random cycle 67, sym=3 : Imag_o expected 1, got -1 at time 3076000
+# [FAIL] Gapped-random cycle 68, sym=0 : Imag_o expected -1, got 1 at time 3086000
+# [FAIL] Gap cycle 69: o_valid should be 0
+# [FAIL] Gapped-random cycle 70, sym=3 : Imag_o expected -1, got 1 at time 3106000
+# [FAIL] Gapped-random cycle 72, sym=1 : Real_o expected 1, got -1 at time 3126000
+# [FAIL] Gapped-random cycle 72, sym=1 : Imag_o expected -1, got 1 at time 3126000
+# [FAIL] Gapped-random cycle 74, sym=3 : Real_o expected -1, got 1 at time 3146000
+# [FAIL] Gapped-random cycle 75, sym=2 : Real_o expected -1, got 1 at time 3156000
+# [FAIL] Gapped-random cycle 76, sym=1 : Imag_o expected 1, got -1 at time 3166000
+# [FAIL] Gapped-random cycle 77, sym=3 : Real_o expected 1, got -1 at time 3176000
+# [FAIL] Gapped-random cycle 77, sym=3 : Imag_o expected -1, got 1 at time 3176000
+# [FAIL] Gap cycle 78: o_valid should be 0
+# [FAIL] Gap cycle 79: o_valid should be 0
+# [FAIL] Gapped-random cycle 80, sym=0 : Imag_o expected -1, got 1 at time 3206000
+# [FAIL] Gapped-random cycle 82, sym=2 : Real_o expected -1, got 1 at time 3226000
+# [FAIL] Gapped-random cycle 82, sym=2 : Imag_o expected -1, got 1 at time 3226000
+# [FAIL] Gapped-random cycle 83, sym=2 : Imag_o expected 1, got -1 at time 3236000
+# [FAIL] Gapped-random cycle 84, sym=1 : Imag_o expected 1, got -1 at time 3246000
+# [FAIL] Gap cycle 85: o_valid should be 0
+# [FAIL] Gap cycle 86: o_valid should be 0
+# [FAIL] Gapped-random cycle 87, sym=0 : Imag_o expected 1, got -1 at time 3276000
+# [FAIL] Gap cycle 88: o_valid should be 0
+# [FAIL] Gapped-random cycle 89, sym=1 : Real_o expected 1, got -1 at time 3296000
+# [FAIL] Gapped-random cycle 89, sym=1 : Imag_o expected 1, got -1 at time 3296000
+# [FAIL] Gap cycle 90: o_valid should be 0
+# [FAIL] Gapped-random cycle 92, sym=2 : Imag_o expected 1, got -1 at time 3326000
+# [FAIL] Gapped-random cycle 93, sym=1 : Real_o expected 1, got -1 at time 3336000
+# [FAIL] Gapped-random cycle 94, sym=3 : Real_o expected 1, got -1 at time 3346000
+# [FAIL] Gap cycle 95: o_valid should be 0
+# [FAIL] Gapped-random cycle 96, sym=2 : Real_o expected 1, got -1 at time 3366000
+# [FAIL] Gapped-random cycle 96, sym=2 : Imag_o expected 1, got -1 at time 3366000
+# [FAIL] Gapped-random cycle 97, sym=3 : Real_o expected 1, got -1 at time 3376000
+# [FAIL] Gapped-random cycle 97, sym=3 : Imag_o expected 1, got -1 at time 3376000
+# [FAIL] Gapped-random cycle 99, sym=3 : Real_o expected -1, got 1 at time 3396000
+# 
+# =========================================================
+#  334 OF 339 CHECKS FAILED. See log above.
+# =========================================================
+# ** Note: $finish    : ../TB/DQPSK_TB.SV(224)
+#    Time: 3396 ns  Iteration: 0  Instance: /DQPSK_TB
+# 1
+# Break in Module DQPSK_TB at ../TB/DQPSK_TB.SV line 224
+do ../Script/run.do
+# End time: 00:23:36 on Sep 03,2026, Elapsed time: 0:30:01
+# Errors: 0, Warnings: 0
+# 
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 00:23:36 on Sep 03,2026
+# vlog -reportprogress 300 -sv ../RTL/DQPSK.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK
+# 
+# Top level modules:
+# 	DQPSK
+# End time: 00:23:36 on Sep 03,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 00:23:36 on Sep 03,2026
+# vlog -reportprogress 300 -sv ../TB/DQPSK_TB.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tb_DQPSK
+# ** Error: (vlog-13069) ../TB/DQPSK_TB.sv(115): near "me": syntax error, unexpected IDENTIFIER, expecting ';'.
+# End time: 00:23:36 on Sep 03,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera_lite/25.1std/questa_fse/win64/vlog failed.
+# Error in macro ./../Script/run.do line 14
+# C:/altera_lite/25.1std/questa_fse/win64/vlog failed.
+#     while executing
+# "vlog -sv ../TB/DQPSK_TB.sv"
+do ../Script/run.do
+# 
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 00:24:58 on Sep 03,2026
+# vlog -reportprogress 300 -sv ../RTL/DQPSK.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK
+# 
+# Top level modules:
+# 	DQPSK
+# End time: 00:24:58 on Sep 03,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 00:24:58 on Sep 03,2026
+# vlog -reportprogress 300 -sv ../TB/DQPSK_TB.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tb_DQPSK
+# 
+# Top level modules:
+# 	tb_DQPSK
+# End time: 00:24:58 on Sep 03,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.tb_DQPSK 
+# Start time: 00:24:59 on Sep 03,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_DQPSK(fast)
+# Loading work.DQPSK(fast)
+# 
+# --- TEST 1: Reset Sequence ---
+# 
+# --- TEST 2: Isolated Symbols (+1, +j, -1, -j) ---
+# [PASS  @ 60000ps] Symbol #1 | Output: ( 1,  1)
+# [PASS  @ 100000ps] Symbol #2 | Output: (-1,  1)
+# [PASS  @ 140000ps] Symbol #3 | Output: (-1, -1)
+# [PASS  @ 180000ps] Symbol #4 | Output: ( 1, -1)
+# 
+# --- TEST 3: Continuous Symbol Stream (12 Symbols) ---
+# [PASS  @ 230000ps] Symbol #5 | Output: ( 1,  1)
+# [PASS  @ 240000ps] Symbol #6 | Output: (-1, -1)
+# [PASS  @ 250000ps] Symbol #7 | Output: ( 1,  1)
+# [PASS  @ 260000ps] Symbol #8 | Output: (-1, -1)
+# [PASS  @ 270000ps] Symbol #9 | Output: ( 1,  1)
+# [PASS  @ 280000ps] Symbol #10 | Output: (-1, -1)
+# [PASS  @ 290000ps] Symbol #11 | Output: (-1,  1)
+# [PASS  @ 300000ps] Symbol #12 | Output: ( 1,  1)
+# [PASS  @ 310000ps] Symbol #13 | Output: ( 1, -1)
+# [PASS  @ 320000ps] Symbol #14 | Output: ( 1,  1)
+# [PASS  @ 330000ps] Symbol #15 | Output: (-1, -1)
+# [PASS  @ 340000ps] Symbol #16 | Output: ( 1,  1)
+# 
+# --- TEST 4: Intermittent Stream (Pause/Resume State Hold) ---
+# [PASS  @ 400000ps] Symbol #17 | Output: ( 1, -1)
+# [PASS  @ 410000ps] Symbol #18 | Output: ( 1, -1)
+# [PASS  @ 440000ps] Symbol #19 | Output: ( 1,  1)
+# [PASS  @ 460000ps] Symbol #20 | Output: (-1,  1)
+# 
+# ==================================================
+#                SIMULATION RESULTS                 
+# ==================================================
+#  Total Symbols Checked : 20
+#  Passed Checks         : 20
+#  Failed Checks         : 0
+# ==================================================
+#  STATUS: TEST PASSED SUCCESSFULLY!
+# ** Note: $finish    : ../TB/DQPSK_TB.sv(191)
+#    Time: 485 ns  Iteration: 1  Instance: /tb_DQPSK
+# 1
+# Break in Module tb_DQPSK at ../TB/DQPSK_TB.sv line 191
+# 0 ps
+# 509250 ps
+quit
+# End time: 00:27:45 on Sep 03,2026, Elapsed time: 0:02:46
+# Errors: 0, Warnings: 1
