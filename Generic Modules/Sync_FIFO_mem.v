@@ -10,8 +10,7 @@ module FIFO_mem #(
     parameter  FIFO_DEPTH = 512,
     localparam ADDR_SIZE  = $clog2(FIFO_DEPTH)
 ) (
-    input  wire                   clk_in,  // clock for input port 
-    input  wire                   clk_out, // clock for output port 
+    input  wire                   clk,  
     input  wire                   rst,     // synch active-high
     input  wire                   wr_en,   // active-high enable writing din in FIFO if it is not full
     input  wire                   rd_en,   // active-high enable reading data from FIFO if it is not empty 
@@ -29,28 +28,23 @@ module FIFO_mem #(
     assign empty_flag = (wr_in_addr == rd_from_addr)? 1:0;
 
     // Write port logic
-    always @(posedge clk_in) begin
+    always @(posedge clk) begin
         if (rst) begin
             wr_in_addr   <= 0;
+            dout <= 0;
+            rd_from_addr <= 0;
         end
-        else 
+        else begin
             if (wr_en && (!full_flag) ) begin
                 mem[wr_in_addr[ADDR_SIZE-1:0]] <= din;
                 wr_in_addr <= wr_in_addr +1;
             end 
-    end
 
-    // Read port logic
-    always @(posedge clk_out) begin
-        if (rst) begin
-            dout <= 0;
-            rd_from_addr <= 0;
-        end
-        else 
             if (rd_en && (!empty_flag)) begin
                 dout <= mem[rd_from_addr[ADDR_SIZE-1:0]];
                 rd_from_addr <= rd_from_addr +1;
                 mem[rd_from_addr[ADDR_SIZE-1:0]] <= 8'h00;
             end
+        end
     end
 endmodule
