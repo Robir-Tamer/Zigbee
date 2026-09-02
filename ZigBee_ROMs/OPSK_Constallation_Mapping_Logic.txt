@@ -1,0 +1,9 @@
+
+QPSK LUT :
+input : {I_form_PPDU = 1, Q_form_PPDU = 1} |output : X =  1 + j*( 0) --> {I_from_QPSK =  1, Q_form_QPSK =  0} 
+input : {I_form_PPDU = 1, Q_form_PPDU = 0} |output : X =  0 + j*(-1) --> {I_from_QPSK =  0, Q_form_QPSK = -1}
+input : {I_form_PPDU = 0, Q_form_PPDU = 1} |output : X =  0 + j*( 1) --> {I_from_QPSK =  1, Q_form_QPSK =  1}
+input : {I_form_PPDU = 0, Q_form_PPDU = 0} |output : X = -1 + j*( 0) --> {I_from_QPSK = -1, Q_form_QPSK =  0}
+
+Remember :
+X = ((I+Q) - j*(I-Q))/2 ---> Where I and Q Values are pibolar values (1, -1)
