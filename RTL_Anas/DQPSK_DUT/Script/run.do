@@ -46,7 +46,7 @@ add wave -color "Magenta" -radix decimal -label "Imag_FF [3:0]" /tb_DQPSK/dut/Im
 
 # --- SECTION 4: Output Signals ---
 add wave -divider -height 25 "Outputs (DQPSK)"
-add wave -color "Lime Green"                     -label "Output Valid" /tb_DQPSK/o_valid
+add wave -color "Lime Green"                     -label "Output Valid" /tb_DQPSK/valid
 add wave -color "Green"       -radix decimal -label "Real Out"    /tb_DQPSK/Real_o
 add wave -color "Green"       -radix decimal -label "Imag Out"    /tb_DQPSK/Imag_o
 

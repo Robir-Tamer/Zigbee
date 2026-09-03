@@ -8,7 +8,7 @@ module tb_DQPSK;
     reg              i_valid;
     reg  signed [1:0] Real, Imag;
 
-    wire             o_valid;
+    wire             valid;
     wire signed [1:0] Real_o, Imag_o;
 
     // Statistics & Verification Counters
@@ -23,6 +23,10 @@ module tb_DQPSK;
     reg signed [1:0] exp_I_q;
     reg              exp_valid_q;
 
+    // Pipeline Registers to hold mathematical operands for transcript display
+    reg signed [1:0] op_a, op_b; // Input symbol (a + j*b)
+    reg signed [1:0] op_c, op_d; // Reference carrier state (c + j*d)
+
     // QPSK Symbol Constants
     localparam signed [1:0] P_ONE  = 2'sb01; //  1
     localparam signed [1:0] N_ONE  = 2'sb11; // -1
@@ -35,7 +39,7 @@ module tb_DQPSK;
         .i_valid(i_valid),
         .Real(Real),
         .Imag(Imag),
-        .o_valid(o_valid),
+        .valid(valid),
         .Real_o(Real_o),
         .Imag_o(Imag_o)
     );
@@ -53,9 +57,19 @@ module tb_DQPSK;
             exp_R_q     <= 2'sb00;
             exp_I_q     <= 2'sb00;
             exp_valid_q <= 1'b0;
+            op_a        <= 2'sb00;
+            op_b        <= 2'sb00;
+            op_c        <= 2'sb00;
+            op_d        <= 2'sb00;
         end else begin
             exp_valid_q <= i_valid;
             if (i_valid) begin
+                // Capture operands for transcript display
+                op_a <= Real;
+                op_b <= Imag;
+                op_c <= ref_R[3];
+                op_d <= ref_I[3];
+
                 // Predict registered output
                 exp_R_q <= (Real * ref_R[3]) - (Imag * ref_I[3]);
                 exp_I_q <= (Real * ref_I[3]) + (Imag * ref_R[3]);
@@ -68,25 +82,26 @@ module tb_DQPSK;
     end
 
     // =========================================================================
-    // AUTOMATED CHECKER (Evaluated on falling clock edge to prevent race condition)
+    // AUTOMATED CHECKER (Evaluated on falling clock edge)
     // =========================================================================
     always @(negedge clk) begin
         if (rst_n) begin
             // Check valid flag alignment
-            if (o_valid !== exp_valid_q) begin
-                $display("[ERROR @ %0tps] Valid Flag Mismatch! Expected: %b, Got: %b", $time, exp_valid_q, o_valid);
+            if (valid !== exp_valid_q) begin
+                $display("[ERROR @ %0tps] Valid Flag Mismatch! Expected: %b, Got: %b", $time, exp_valid_q, valid);
                 fail_count = fail_count + 1;
             end
 
             // Check math output when data is valid
-            if (o_valid) begin
+            if (valid) begin
                 symbol_counter = symbol_counter + 1;
                 if ((Real_o === exp_R_q) && (Imag_o === exp_I_q)) begin
-                    $display("[PASS  @ %0tps] Symbol #%0d | Output: (%2d, %2d)", $time, symbol_counter, Real_o, Imag_o);
+                    $display("[PASS  @ %0tps] Symbol #%0d | (%0d + j*%0d) * (%0d + j*%0d) = (%0d + j*%0d)", 
+                             $time, symbol_counter, op_a, op_b, op_c, op_d, Real_o, Imag_o);
                     pass_count = pass_count + 1;
                 end else begin
-                    $display("[FAIL  @ %0tps] Symbol #%0d | Expected: (%2d, %2d), Got: (%2d, %2d)", 
-                              $time, symbol_counter, exp_R_q, exp_I_q, Real_o, Imag_o);
+                    $display("[FAIL  @ %0tps] Symbol #%0d | Math: (%0d + j*%0d) * (%0d + j*%0d) | Expected: (%0d + j*%0d), Got: (%0d + j*%0d)", 
+                             $time, symbol_counter, op_a, op_b, op_c, op_d, exp_R_q, exp_I_q, Real_o, Imag_o);
                     fail_count = fail_count + 1;
                 end
             end
@@ -137,7 +152,7 @@ module tb_DQPSK;
         rst_n = 1'b1;
         send_idle(2);
 
-        // --- TEST 2: Single Isolated Symbols (Gapped Stream) ---
+        // --- TEST 2: Single Isolated Symbols ---
         $display("\n--- TEST 2: Isolated Symbols (+1, +j, -1, -j) ---");
         send_symbol(P_ONE, ZERO);  // +1
         send_idle(3);
@@ -148,7 +163,7 @@ module tb_DQPSK;
         send_symbol(ZERO,  N_ONE); // -j
         send_idle(4);
 
-        // --- TEST 3: Continuous Stream (Full Differential Buffer Circulation) ---
+        // --- TEST 3: Continuous Stream ---
         $display("\n--- TEST 3: Continuous Symbol Stream (12 Symbols) ---");
         send_symbol(P_ONE, ZERO);  // +1
         send_symbol(ZERO,  P_ONE); // +j
@@ -164,7 +179,7 @@ module tb_DQPSK;
         send_symbol(P_ONE, ZERO);  // +1
         send_idle(5);
 
-        // --- TEST 4: Intermittent Stalled Stream (Random Valid Gating) ---
+        // --- TEST 4: Intermittent Stalled Stream ---
         $display("\n--- TEST 4: Intermittent Stream (Pause/Resume State Hold) ---");
         send_symbol(P_ONE, ZERO);
         send_symbol(ZERO,  N_ONE);
@@ -176,7 +191,7 @@ module tb_DQPSK;
 
         // --- FINAL SUMMARY ---
         $display("\n==================================================");
-        $display("               SIMULATION RESULTS                 ");
+        $display("                 SIMULATION RESULTS               ");
         $display("==================================================");
         $display(" Total Symbols Checked : %0d", symbol_counter);
         $display(" Passed Checks         : %0d", pass_count);
@@ -188,7 +203,7 @@ module tb_DQPSK;
         else
             $display(" STATUS: TEST FAILED WITH ERRORS!");
 
-        $finish;
+        $stop;
     end
 
 endmodule
