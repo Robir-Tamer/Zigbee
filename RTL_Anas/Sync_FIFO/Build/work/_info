@@ -1,0 +1,81 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/anasm/Desktop/ZigBee_Project/Zigbee/RTL_Anas/Sync_FIFO/Build
+T_opt
+!i145 1
+!i144 0
+!s110 1788603064
+VCmm:jSCAhF?[69d8]N6h13
+04 11 4 work FIFO_mem_TB fast 0
+=1-a08069afa401-6a9beab7-19f-5704
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U2 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+OL;O;2025.2;82
+vFIFO_mem
+2../RTL/FIFO_mem.v
+Z2 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z3 !s110 1788603062
+!i10b 1
+!s100 c_2KAm5::a^^0jbAZ:NcV1
+IBG@ilP0jz_<]iYPYi77b21
+S1
+R1
+w1788602280
+8../RTL/FIFO_mem.v
+F../RTL/FIFO_mem.v
+!i122 0
+L0 8 42
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z6 !s108 1788603062.000000
+!s107 ../RTL/FIFO_mem.v|
+!s90 -reportprogress|300|-sv|../RTL/FIFO_mem.v|
+!i113 0
+Z7 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0 defaultOptions 1085333592
+n@f@i@f@o_mem
+vFIFO_mem_TB
+2../TB/FIFO_mem_TB.sv
+R2
+R3
+!i10b 1
+!s100 Ul3UO:JH@N`W]QQ7:bRS_3
+IMV81eJ6h0nVTiPnViVRLj1
+S1
+R1
+w1788602662
+8../TB/FIFO_mem_TB.sv
+F../TB/FIFO_mem_TB.sv
+!i122 1
+L0 3 245
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../TB/FIFO_mem_TB.sv|
+!s90 -reportprogress|300|-sv|../TB/FIFO_mem_TB.sv|
+!i113 0
+R7
+R8
+n@f@i@f@o_mem_@t@b

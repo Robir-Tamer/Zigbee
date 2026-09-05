@@ -1,0 +1,135 @@
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do ../Script/run.do
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 13:09:50 on Sep 05,2026
+# vlog -reportprogress 300 -sv ../RTL/FIFO_mem.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# ** Error: (vlog-7) Failed to open design unit file "../RTL/FIFO_mem.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 13:09:50 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera_lite/25.1std/questa_fse/win64/vlog failed.
+# Error in macro ./../Script/run.do line 14
+# C:/altera_lite/25.1std/questa_fse/win64/vlog failed.
+#     while executing
+# "vlog -sv ../RTL/FIFO_mem.sv"
+do ../Script/run.do
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 13:11:02 on Sep 05,2026
+# vlog -reportprogress 300 -sv ../RTL/FIFO_mem.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module FIFO_mem
+# 
+# Top level modules:
+# 	FIFO_mem
+# End time: 13:11:02 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 13:11:02 on Sep 05,2026
+# vlog -reportprogress 300 -sv ../TB/FIFO_mem_TB.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module FIFO_mem_TB
+# 
+# Top level modules:
+# 	FIFO_mem_TB
+# End time: 13:11:02 on Sep 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.FIFO_mem_TB 
+# Start time: 13:11:02 on Sep 05,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.FIFO_mem_TB(fast)
+# Loading work.FIFO_mem(fast)
+# 
+# ==================================================================
+# [TEST 1] Synchronous Active-Low Reset Test
+# ==================================================================
+#  [PASS] Time=16000 | Reset Asserted | Flags OK [Full=0, Empty=1]
+#  [PASS] Time=16000 | dout correctly cleared to 0x00
+# 
+# ==================================================================
+# [TEST 2] Single Write and Read Operation
+# ==================================================================
+#  [PASS] Time=46000 | After 1 Write Operation | Flags OK [Full=0, Empty=0]
+#  [PASS] Time=66000 | Data matched: 0xa5
+#  [PASS] Time=66000 | After Read Operation (FIFO Empty) | Flags OK [Full=0, Empty=1]
+# 
+# ==================================================================
+# [TEST 3] Filling FIFO to Capacity (8 Elements)
+# ==================================================================
+#  [PASS] Time=156000 | FIFO Filled to Depth | Flags OK [Full=1, Empty=0]
+# 
+# ==================================================================
+# [TEST 4] Overflow Guard Test (Write when FULL)
+# ==================================================================
+#  [PASS] Time=176000 | gs preserved after illegal write attempt | Flags OK [Full=1, Empty=0]
+# 
+# ==================================================================
+# [TEST 5] Draining FIFO & Validating Sequential Order
+# ==================================================================
+#  [PASS] Time=196000 | Read Slot 0: 0x10
+#  [PASS] Time=216000 | Read Slot 1: 0x11
+#  [PASS] Time=236000 | Read Slot 2: 0x12
+#  [PASS] Time=256000 | Read Slot 3: 0x13
+#  [PASS] Time=276000 | Read Slot 4: 0x14
+#  [PASS] Time=296000 | Read Slot 5: 0x15
+#  [PASS] Time=316000 | Read Slot 6: 0x16
+#  [PASS] Time=336000 | Read Slot 7: 0x17
+#  [PASS] Time=337000 | FIFO Fully Drained | Flags OK [Full=0, Empty=1]
+# 
+# ==================================================================
+# [TEST 6] Underflow Guard Test (Read when EMPTY)
+# ==================================================================
+#  [PASS] Time=356000 | ags preserved after illegal read attempt | Flags OK [Full=0, Empty=1]
+# 
+# ==================================================================
+# [TEST 7] Simultaneous Read & Write
+# ==================================================================
+#  [PASS] Simultaneous Read succeeded: 0x33                 396
+#  [PASS] Read of concurrent write succeeded: 0x44                 416
+# 
+# ==================================================================
+# [TEST 8] Pointer Rollover & Address Boundary Test
+# ==================================================================
+#  [PASS] Time=1056000 | Successfully wrapped around memory boundary 16 times
+# 
+# ==================================================================
+#                     VERIFICATION SUMMARY REPORT                   
+# ==================================================================
+#   RESULT  : PASSED
+#   DETAILS : All tests passed with 0 failures.
+# ==================================================================
+# 
+# ** Note: $stop    : ../TB/FIFO_mem_TB.sv(244)
+#    Time: 1056 ns  Iteration: 0  Instance: /FIFO_mem_TB
+# Break in Module FIFO_mem_TB at ../TB/FIFO_mem_TB.sv line 244
+# 0 ps
+# 1108800 ps
+quit
+# End time: 13:13:08 on Sep 05,2026, Elapsed time: 0:02:06
+# Errors: 0, Warnings: 1

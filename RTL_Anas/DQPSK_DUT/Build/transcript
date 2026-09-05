@@ -21,32 +21,29 @@
 # ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
 # Modifying modelsim.ini
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 16:37:10 on Sep 03,2026
+# Start time: 17:01:56 on Sep 03,2026
 # vlog -reportprogress 300 -sv ../RTL/DQPSK.v 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module DQPSK
 # 
 # Top level modules:
 # 	DQPSK
-# End time: 16:37:10 on Sep 03,2026, Elapsed time: 0:00:00
+# End time: 17:01:56 on Sep 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 16:37:11 on Sep 03,2026
+# Start time: 17:01:56 on Sep 03,2026
 # vlog -reportprogress 300 -sv ../TB/DQPSK_TB.sv 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module tb_DQPSK
 # 
 # Top level modules:
 # 	tb_DQPSK
-# End time: 16:37:11 on Sep 03,2026, Elapsed time: 0:00:00
+# End time: 17:01:56 on Sep 03,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
 # vsim -voptargs="+acc" work.tb_DQPSK 
-# Start time: 16:37:12 on Sep 03,2026
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
-# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Start time: 17:01:56 on Sep 03,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
 # Loading sv_std.std
 # Loading work.tb_DQPSK(fast)
 # Loading work.DQPSK(fast)
@@ -92,6 +89,24 @@
 # Break in Module tb_DQPSK at ../TB/DQPSK_TB.sv line 206
 # 0 ps
 # 509250 ps
+vsim -debugDB tb_DQPSK
+# End time: 17:02:34 on Sep 03,2026, Elapsed time: 0:00:38
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -debugDB tb_DQPSK 
+# Start time: 17:02:34 on Sep 03,2026
+# ** Warning: (vsim-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading sv_std.std
+# Loading work.tb_DQPSK(fast)
+# Loading work.DQPSK(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# Cannot find pinBus /tb_DQPSK/dut/#ALWAYS#11/__18 Real_FF[0]
+# Cannot find pinBus /tb_DQPSK/dut/#ALWAYS#11/__20 Imag_FF[0]
 quit
-# End time: 16:37:57 on Sep 03,2026, Elapsed time: 0:00:45
-# Errors: 0, Warnings: 1
+# End time: 17:04:03 on Sep 03,2026, Elapsed time: 0:01:29
+# Errors: 0, Warnings: 2
