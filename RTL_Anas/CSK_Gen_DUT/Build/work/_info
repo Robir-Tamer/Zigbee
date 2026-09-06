@@ -1,0 +1,96 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/anasm/Desktop/ZigBee_Project/Zigbee/RTL_Anas/CSK_Gen_DUT/Build
+T_opt
+!i145 1
+!i144 0
+!s110 1788724104
+VahPlTKfk=?j03eSRS;NOL2
+04 10 4 work CSK_GEN_TB fast 0
+=1-a08069afa401-6a9dc388-3f-1f88
+R0
+Z2 !s12f OEM100
+Z3 !s12b OEM100
+!s124 OEM10U2 
+Z4 !s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+Z6 OL;O;2025.2;82
+R1
+T_opt1
+!i145 1
+!i144 0
+!s110 1788724125
+V86XBj7abe_UVjL:WT88IU3
+04 7 4 work CSK_GEN fast 0
+=1-a08069afa401-6a9dc39c-2a7-3cd4
+R0
+R2
+R3
+!s124 OEM10U1 
+R4
+o-quiet -auto_acc_if_foreign -work work -debugdb
+R5
+n@_opt1
+R6
+vCSK_GEN
+2../RTL/CSK_GEN.V
+Z7 !s110 1788724103
+!i10b 1
+!s100 0GI:Bkz;dVRhi7jK7AYgG0
+I?@R5J=MU2BD[LZJQFHfg13
+R1
+w1788722767
+8../RTL/CSK_GEN.V
+F../RTL/CSK_GEN.V
+!i122 0
+L0 1 347
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z10 !s108 1788724103.000000
+!s107 ../RTL/CSK_GEN.V|
+!s90 -reportprogress|300|../RTL/CSK_GEN.V|
+!i113 0
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 tCvgOpt 0 defaultOptions 1085333592
+n@c@s@k_@g@e@n
+vCSK_GEN_TB
+2../TB/CSK_GEN_TB.V
+R7
+!i10b 1
+!s100 `KLl3I54O:LEZK<W7_k`C2
+I@L<FDD5V>GSfX1ViE0<3`0
+R1
+w1788723974
+8../TB/CSK_GEN_TB.V
+F../TB/CSK_GEN_TB.V
+!i122 1
+L0 3 46
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 ../TB/CSK_GEN_TB.V|
+!s90 -reportprogress|300|../TB/CSK_GEN_TB.V|
+!i113 0
+R11
+R12
+n@c@s@k_@g@e@n_@t@b

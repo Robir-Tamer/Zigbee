@@ -1,0 +1,1 @@
+C:/altera_lite/25.1std/questa_fse/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 934320 work.CSK_GEN_TB -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt -id 1-a08069afa401-6a9dc388-3f-1f88 +__betafsm
