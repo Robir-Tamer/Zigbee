@@ -1,0 +1,218 @@
+# //  Questa Sim-64
+# //  Version 2021.1 win64 Jan 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim -voptargs="+acc" work.tv_e_o_demux 
+# Start time: 14:18:52 on Sep 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-13130) Failed to find design unit tv_e_o_demux.
+#         Searched libraries:
+#             work
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 14:18:54 on Sep 09,2026, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 0
+vsim -voptargs=+acc work.tb_e_o_demux
+# vsim -voptargs="+acc" work.tb_e_o_demux 
+# Start time: 14:19:51 on Sep 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.tb_e_o_demux(fast)
+# Loading work.e_o_demux(fast)
+add wave -position insertpoint  \
+sim:/tb_e_o_demux/clk \
+sim:/tb_e_o_demux/rst_n \
+sim:/tb_e_o_demux/mode \
+sim:/tb_e_o_demux/data_i \
+sim:/tb_e_o_demux/valid_i \
+sim:/tb_e_o_demux/e_bits \
+sim:/tb_e_o_demux/o_bits \
+sim:/tb_e_o_demux/valid
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ROBO  Hostname: ROBO-ASUS  ProcessID: 7428
+#           Attempting to use alternate WLF file "./wlftfhxyf2".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfhxyf2
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.tb_e_o_demux(fast)
+# Loading work.e_o_demux(fast)
+run -all
+# --- Starting Test Case 1: Mode = 0 ---
+# --- Starting Test Case 2: Mode = 1 ---
+# --- Simulation Finished ---
+# ** Note: $stop    : ../test_bench/demux.v(87)
+#    Time: 360 ns  Iteration: 0  Instance: /tb_e_o_demux
+# Break in Module tb_e_o_demux at ../test_bench/demux.v line 87
+add wave -position insertpoint  \
+sim:/tb_e_o_demux/uut/e_bits_reg \
+sim:/tb_e_o_demux/uut/o_bits_reg
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.tb_e_o_demux(fast)
+# Loading work.e_o_demux(fast)
+run -all
+# --- Starting Test Case 1: Mode = 0 ---
+# --- Starting Test Case 2: Mode = 1 ---
+# --- Simulation Finished ---
+# ** Note: $stop    : ../test_bench/demux.v(87)
+#    Time: 360 ns  Iteration: 0  Instance: /tb_e_o_demux
+# Break in Module tb_e_o_demux at ../test_bench/demux.v line 87
+add wave -position insertpoint  \
+sim:/tb_e_o_demux/uut/e_counter \
+sim:/tb_e_o_demux/uut/o_counter
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.tb_e_o_demux(fast)
+# Loading work.e_o_demux(fast)
+run -all
+# --- Starting Test Case 1: Mode = 0 ---
+# --- Starting Test Case 2: Mode = 1 ---
+# --- Simulation Finished ---
+# ** Note: $stop    : ../test_bench/demux.v(87)
+#    Time: 360 ns  Iteration: 0  Instance: /tb_e_o_demux
+# Break in Module tb_e_o_demux at ../test_bench/demux.v line 87
+vlog ../*/*.v
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 14:40:33 on Sep 09,2026
+# vlog -reportprogress 300 ../rtl/DF_SYNC.v ../rtl/Sync_FIFO_mem.v ../rtl/e_o_demux.v ../rtl/payload_counter.v ../rtl/posedge_detector.v ../rtl/rst_sync.v ../rtl/zeropadding.v ../rtl/zigbee.v ../test_bench/demux.v ../test_bench/zeropadding.v 
+# -- Compiling module DF_SYNC
+# -- Compiling module FIFO_mem
+# -- Compiling module e_o_demux
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module rst_sync
+# -- Compiling module zeropadding
+# -- Compiling module zigbee
+# -- Compiling module tb_e_o_demux
+# ** Warning: ../test_bench/demux.v(72): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module tb_zeropadding
+# 
+# Top level modules:
+# 	posedge_detector
+# 	zigbee
+# 	tb_e_o_demux
+# 	tb_zeropadding
+# End time: 14:40:33 on Sep 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_e_o_demux(fast)
+# Loading work.e_o_demux(fast)
+run -all
+# --- Starting Test Case 1: Mode = 0 ---
+# --- Starting Test Case 2: Mode = 1 ---
+# --- Simulation Finished ---
+# ** Note: $stop    : ../test_bench/demux.v(87)
+#    Time: 360 ns  Iteration: 0  Instance: /tb_e_o_demux
+# Break in Module tb_e_o_demux at ../test_bench/demux.v line 87
+vlog ../*/*.v
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 14:45:28 on Sep 09,2026
+# vlog -reportprogress 300 ../rtl/DF_SYNC.v ../rtl/Sync_FIFO_mem.v ../rtl/e_o_demux.v ../rtl/payload_counter.v ../rtl/posedge_detector.v ../rtl/rst_sync.v ../rtl/zeropadding.v ../rtl/zigbee.v ../test_bench/demux.v ../test_bench/zeropadding.v 
+# -- Compiling module DF_SYNC
+# -- Compiling module FIFO_mem
+# -- Compiling module e_o_demux
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module rst_sync
+# -- Compiling module zeropadding
+# -- Compiling module zigbee
+# -- Compiling module tb_e_o_demux
+# -- Compiling module tb_zeropadding
+# 
+# Top level modules:
+# 	posedge_detector
+# 	zigbee
+# 	tb_e_o_demux
+# 	tb_zeropadding
+# End time: 14:45:28 on Sep 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_e_o_demux(fast)
+# Loading work.e_o_demux(fast)
+run -all
+# --- Starting Test Case 1: Mode = 0 ---
+# --- Starting Test Case 2: Mode = 1 ---
+# --- Simulation Finished ---
+# ** Note: $stop    : ../test_bench/demux.v(87)
+#    Time: 360 ns  Iteration: 0  Instance: /tb_e_o_demux
+# Break in Module tb_e_o_demux at ../test_bench/demux.v line 87
+vlog ../*/*.v
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 14:47:08 on Sep 09,2026
+# vlog -reportprogress 300 ../rtl/DF_SYNC.v ../rtl/Sync_FIFO_mem.v ../rtl/e_o_demux.v ../rtl/payload_counter.v ../rtl/posedge_detector.v ../rtl/rst_sync.v ../rtl/zeropadding.v ../rtl/zigbee.v ../test_bench/demux.v ../test_bench/zeropadding.v 
+# -- Compiling module DF_SYNC
+# -- Compiling module FIFO_mem
+# -- Compiling module e_o_demux
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module rst_sync
+# -- Compiling module zeropadding
+# -- Compiling module zigbee
+# -- Compiling module tb_e_o_demux
+# -- Compiling module tb_zeropadding
+# 
+# Top level modules:
+# 	posedge_detector
+# 	zigbee
+# 	tb_e_o_demux
+# 	tb_zeropadding
+# End time: 14:47:08 on Sep 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_e_o_demux(fast)
+# Loading work.e_o_demux(fast)
+run -all
+# --- Starting Test Case 1: Mode = 0 ---
+# --- Starting Test Case 2: Mode = 1 ---
+# --- Simulation Finished ---
+# ** Note: $stop    : ../test_bench/demux.v(87)
+#    Time: 360 ns  Iteration: 0  Instance: /tb_e_o_demux
+# Break in Module tb_e_o_demux at ../test_bench/demux.v line 87
+vlog ../*/*.v
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 14:48:21 on Sep 09,2026
+# vlog -reportprogress 300 ../rtl/DF_SYNC.v ../rtl/Sync_FIFO_mem.v ../rtl/e_o_demux.v ../rtl/payload_counter.v ../rtl/posedge_detector.v ../rtl/rst_sync.v ../rtl/zeropadding.v ../rtl/zigbee.v ../test_bench/demux.v ../test_bench/zeropadding.v 
+# -- Compiling module DF_SYNC
+# -- Compiling module FIFO_mem
+# -- Compiling module e_o_demux
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module rst_sync
+# -- Compiling module zeropadding
+# -- Compiling module zigbee
+# -- Compiling module tb_e_o_demux
+# -- Compiling module tb_zeropadding
+# 
+# Top level modules:
+# 	posedge_detector
+# 	zigbee
+# 	tb_e_o_demux
+# 	tb_zeropadding
+# End time: 14:48:21 on Sep 09,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_e_o_demux(fast)
+# Loading work.e_o_demux(fast)
+run -all
+# --- Starting Test Case 1: Mode = 0 ---
+# --- Starting Test Case 2: Mode = 1 ---
+# --- Simulation Finished ---
+# ** Note: $stop    : ../test_bench/demux.v(87)
+#    Time: 360 ns  Iteration: 0  Instance: /tb_e_o_demux
+# Break in Module tb_e_o_demux at ../test_bench/demux.v line 87
