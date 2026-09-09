@@ -1,9 +1,15 @@
-
 QPSK LUT :
-input : {I_form_PPDU = 1, Q_form_PPDU = 1} |output : X =  1 + j*( 0) --> {I_from_QPSK =  1, Q_form_QPSK =  0} 
-input : {I_form_PPDU = 1, Q_form_PPDU = 0} |output : X =  0 + j*(-1) --> {I_from_QPSK =  0, Q_form_QPSK = -1}
-input : {I_form_PPDU = 0, Q_form_PPDU = 1} |output : X =  0 + j*( 1) --> {I_from_QPSK =  1, Q_form_QPSK =  1}
-input : {I_form_PPDU = 0, Q_form_PPDU = 0} |output : X = -1 + j*( 0) --> {I_from_QPSK = -1, Q_form_QPSK =  0}
+
+Input from PPDU  |  Output from QPSK Mapper     | Output form
+-----------------|------------------------------|----------------
+i= 1, q= 1       |  real=  1,   imaginary=  0   | X =  1 + j*( 0)   
+i= 1, q= 0       |  real=  0,   imaginary= -1   | X =  0 + j*(-1)
+i= 0, q= 1       |  real=  0,   imaginary=  1   | X =  0 + j*( 1)
+i= 0, q= 0       |  real= -1,   imaginary=  0   | X = -1 + j*( 0)
+
 
 Remember :
 X = ((I+Q) - j*(I-Q))/2 ---> Where I and Q Values are pibolar values (1, -1)
+
+
+
