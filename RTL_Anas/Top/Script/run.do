@@ -28,9 +28,12 @@ vsim -voptargs=+acc work.Top_TB
 # ==============================================================================
 # 5. DEFINE FIXED-POINT RADICES
 # ==============================================================================
-# Q1.5: 6-bit Signed (1 Sign bit + 5 Fractional bits, Range: [-1.0, 0.96875])
-catch {radix delete q1_5}
-radix define q1_5 -fixed -signed -fraction 5
+# Q1.4: 6-bit Signed (1 Sign bit + 1 Integer bit + 4 Fractional bits, Range: [-2.0, 1.9375])
+# This matches the CSK/chirp ROM's actual verified format -- NOT Q1.5. Using
+# -fraction 5 here would silently divide every value by 32 instead of 16,
+# showing exactly half the true magnitude (this was the bug being fixed).
+catch {radix delete q1_4}
+radix define q1_4 -fixed -signed -fraction 4
 
 # Q3.4: 8-bit Signed (1 Sign bit + 3 Integer bits + 4 Fractional bits, Range: [-8.0, 7.9375])
 catch {radix delete q3_4}
@@ -74,17 +77,17 @@ add wave -color Pink           -radix decimal  /Top_TB/Top_DUT/Imag_Sync_FIFO/do
 add wave -color Grey           -radix binary   /Top_TB/Top_DUT/empty_flag_real
 add wave -color Grey           -radix binary   /Top_TB/Top_DUT/full_flag_real
 
-# --- GROUP 5: CSK OUT (FIXED POINT Q1.5) ---
-add wave -divider "CSK Output (Fixed Point Q1.5)"
+# --- GROUP 5: CSK OUT (FIXED POINT Q1.4) ---
+add wave -divider "CSK Output (Fixed Point Q1.4)"
 add wave -color Khaki          -radix binary   /Top_TB/Top_DUT/csk_running
 add wave -color Khaki          -radix binary   /Top_TB/Top_DUT/next_item
-add wave -color Lime           -radix q1_5     /Top_TB/Top_DUT/CSK_GEN_DUT/csk_out_r
-add wave -color Coral          -radix q1_5     /Top_TB/Top_DUT/CSK_GEN_DUT/csk_out_i
+add wave -color Lime           -radix q1_4     /Top_TB/Top_DUT/CSK_GEN_DUT/csk_out_r
+add wave -color Coral          -radix q1_4     /Top_TB/Top_DUT/CSK_GEN_DUT/csk_out_i
 
 # --- GROUP 6: CSK OUT (ANALOG WAVEFORM VIEW) ---
 add wave -divider "CSK Output (Analog Wave View)"
-add wave -color Lime   -radix q1_5 -format Analog-Step -height 55 -max 1.0 -min -1.0 /Top_TB/Top_DUT/CSK_GEN_DUT/csk_out_r
-add wave -color Coral  -radix q1_5 -format Analog-Step -height 55 -max 1.0 -min -1.0 /Top_TB/Top_DUT/CSK_GEN_DUT/csk_out_i
+add wave -color Lime   -radix q1_4 -format Analog-Step -height 55 -max 1.0 -min -1.0 /Top_TB/Top_DUT/CSK_GEN_DUT/csk_out_r
+add wave -color Coral  -radix q1_4 -format Analog-Step -height 55 -max 1.0 -min -1.0 /Top_TB/Top_DUT/CSK_GEN_DUT/csk_out_i
 
 # --- GROUP 7: TX DATA OUTPUT (FIXED POINT Q3.4 DISPLAY) ---
 add wave -divider "Tx Data Output (Fixed Point Q3.4)"
