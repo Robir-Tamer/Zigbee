@@ -13,57 +13,77 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 # do ../Script/run.do
+# 0
 # Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
 # vmap work work 
-# ** Note: (vmap-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
-# Copying C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
 # Modifying modelsim.ini
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 22:48:23 on Sep 06,2026
-# vlog -reportprogress 300 ../RTL/CSK_GEN.V 
+# Start time: 19:00:59 on Sep 09,2026
+# vlog -reportprogress 300 -work work ../RTL/CSK_GEN.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module CSK_GEN
 # 
 # Top level modules:
 # 	CSK_GEN
-# End time: 22:48:23 on Sep 06,2026, Elapsed time: 0:00:00
+# End time: 19:00:59 on Sep 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 22:48:23 on Sep 06,2026
-# vlog -reportprogress 300 ../TB/CSK_GEN_TB.V 
+# Start time: 19:00:59 on Sep 09,2026
+# vlog -reportprogress 300 -work work ../TB/CSK_GEN_TB.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
-# -- Compiling module CSK_GEN_TB
+# -- Compiling module CSK_GEN_tb
 # 
 # Top level modules:
-# 	CSK_GEN_TB
-# End time: 22:48:23 on Sep 06,2026, Elapsed time: 0:00:00
+# 	CSK_GEN_tb
+# End time: 19:00:59 on Sep 09,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
-# vsim -voptargs="+acc" CSK_GEN_TB 
-# Start time: 22:48:23 on Sep 06,2026
+# vsim -voptargs="+acc" work.CSK_GEN_tb 
+# Start time: 19:00:59 on Sep 09,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.CSK_GEN_TB(fast)
+# Loading work.CSK_GEN_tb(fast)
 # Loading work.CSK_GEN(fast)
-# ** Note: $stop    : ../TB/CSK_GEN_TB.V(45)
-#    Time: 3115 ns  Iteration: 1  Instance: /CSK_GEN_TB
-# Break in Module CSK_GEN_TB at ../TB/CSK_GEN_TB.V line 45
-vsim -debugDB CSK_GEN
-# End time: 22:48:44 on Sep 06,2026, Elapsed time: 0:00:21
-# Errors: 0, Warnings: 1
-# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
-# vsim -debugDB CSK_GEN 
-# Start time: 22:48:44 on Sep 06,2026
-# ** Warning: (vsim-4308) Enabling visibility using +acc is recommended with debug flow.
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vsim-8611) Generating debug db.
-# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
-# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
-# Loading work.CSK_GEN(fast)
-# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# 0
+# q1_5
+# ==================================================
+#   CSK_GEN_tb : RESET FIX + REALISTIC EN-DROP TEST  
+#   (updated for 'running' output port)              
+# ==================================================
+# [MONITOR] Time 5000: running 0 -> x (addr_ptr=x, samble_cnt=x, en=0)
+# [MONITOR] Time 15000: running x -> 0 (addr_ptr=0, samble_cnt=0, en=0)
+# [PASS] Post-reset state clean: running=0, addr_ptr=0, samble_cnt=0 (no X).
+# [PASS] Time 76000: Startup pre-load pulse correctly asserted.
+# [MONITOR] Time 85000: running 0 -> 1 (addr_ptr=0, samble_cnt=0, en=1)
+# 
+# --- Frame 1: baseline, en stays high ---
+# [PASS] Frame 1 Active Stage: 152 samples.
+# [PASS] Frame 1 Gap Stage: 10 cycles (Even Gap), correct.
+# 
+# --- Frame 2: en drops exactly as active block ends (addr_ptr 151->152) ---
+# [STIMULUS] Time 3230000: en deasserted at addr_ptr=152
+# [INFO] Entering  Odd Gap (70 cycles expected) with en=0 throughout.
+# [PASS] Trailing gap ran the FULL correct duration (70 cycles) despite en=0.
+# [MONITOR] Time 3935000: running 1 -> 0 (addr_ptr=0, samble_cnt=0, en=0)
+# [PASS] running correctly dropped to 0 at the post-gap frame boundary.
+# [PASS] Time 3945000: No glitch after running dropped.
+# [PASS] Module remained idle for 5 cycles after stopping.
+# 
+# ==================================================
+#                SIMULATION SUMMARY                  
+# ==================================================
+# running_drop observed          : YES
+# Total next_item pulses         : 9
+# >> RESULT: ALL CHECKS PASSED. <<
+# ==================================================
+# ** Note: $stop    : ../TB/CSK_GEN_TB.V(240)
+#    Time: 4035 ns  Iteration: 0  Instance: /CSK_GEN_tb
+# Break in Module CSK_GEN_tb at ../TB/CSK_GEN_TB.V line 240
+# 0 ps
+# 4236750 ps
 quit
-# End time: 22:49:59 on Sep 06,2026, Elapsed time: 0:01:15
-# Errors: 0, Warnings: 2
+# End time: 19:01:46 on Sep 09,2026, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 1

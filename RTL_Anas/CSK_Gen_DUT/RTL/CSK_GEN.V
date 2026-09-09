@@ -1,37 +1,112 @@
-module CSK_GEN #(parameter WL = 6) // WL = 6 --> || Sign_bit || Integer_bit || (float_bit4)|(float_bit3)|(float_bit2)|(float_bit1) ||
-(
-    // Inputs to CSK GEN
-    input wire clk, en,
-    input wire [7:0] addr_ptr,
-    // Outputs of CSK GEN
-    output reg next_item,
-    output reg signed [WL-1:0] csk_out_r,
-    output reg signed [WL-1:0] csk_out_i
+module CSK_GEN #(
+    parameter WL = 6
+)(
+    input  wire                   clk,
+    input  wire                   rst_n,
+    input  wire                   en,
+    output wire                   next_item,
+    output reg  signed [WL-1:0]   csk_out_r,
+    output reg  signed [WL-1:0]   csk_out_i,
+    output reg                    running
 );
 
-// Real and Imaginary Chirp signal Values
-reg signed [WL-1:0] chrip_sample_r [0:151];
-reg signed [WL-1:0] chrip_sample_i [0:151];
+    reg signed [WL-1:0] chrip_sample_r [0:151];
+    reg signed [WL-1:0] chrip_sample_i [0:151];
 
-always @(posedge clk) begin
-    if(en) begin
-        if(addr_ptr <= 8'd151) begin
-            csk_out_r <= chrip_sample_r[addr_ptr];
-            csk_out_i <= chrip_sample_i[addr_ptr];
+    reg [7:0] addr_ptr;
+    reg [6:0] samble_cnt;
+    reg       which_gab;    // 0: Even Gap (10 cycles), 1: Odd Gap (70 cycles)
+    reg       first_fetch;
+    reg       boundary_d;
+    wire      stop_now;
+
+
+    assign stop_now = running && !en && (addr_ptr == 8'd0) && (samble_cnt == 7'd0);
+    assign next_item = running && (first_fetch || boundary_d);
+
+    always @(posedge clk) begin
+        if(!rst_n) begin
+            running     <= 1'b0;
+            addr_ptr    <= 8'd0;
+            samble_cnt  <= 7'd0;
+            which_gab   <= 1'b0;
+            first_fetch <= 1'b1;
+            boundary_d  <= 1'b0;
+            csk_out_r   <= {WL{1'b0}};
+            csk_out_i   <= {WL{1'b0}};
         end
         else begin
-            next_item <= 1'b1;
+            if (!running && en)      
+                running <= 1'b1;
+            else if (stop_now)       
+                running <= 1'b0;
+
+            if (!running || stop_now) begin
+                addr_ptr    <= 8'd0;
+                samble_cnt  <= 7'd0;
+                which_gab   <= 1'b0;
+                first_fetch <= 1'b1;
+                boundary_d  <= 1'b0;
+                csk_out_r   <= {WL{1'b0}};
+                csk_out_i   <= {WL{1'b0}};
+            end 
+            else begin
+                // Clear startup flag after first clock cycle
+                if (first_fetch) begin
+                    first_fetch <= 1'b0;
+                end
+
+                // Register the boundary condition -- this is what delays
+                // next_item by exactly the same 1 cycle the ROM read is
+                // delayed, keeping the two aligned.
+                boundary_d <= (addr_ptr <= 8'd151) && (samble_cnt == 7'd37);
+
+                if (addr_ptr <= 8'd151) begin
+                    csk_out_r <= chrip_sample_r[addr_ptr];
+                    csk_out_i <= chrip_sample_i[addr_ptr];
+                
+                    addr_ptr <= addr_ptr + 1'b1;
+
+                    if (samble_cnt < 7'd37) begin
+                        samble_cnt <= samble_cnt + 1'b1;
+                    end 
+                    else begin
+                        samble_cnt <= 7'd0;
+                    end
+                end 
+                else begin
+                    // Gap Period: Zero out outputs
+                    csk_out_r <= {WL{1'b0}};
+                    csk_out_i <= {WL{1'b0}};
+
+                    if (!which_gab) begin
+                        // Even Gap (10 cycles)
+                        if (samble_cnt < 7'd9) begin
+                            samble_cnt <= samble_cnt + 1'b1;
+                        end 
+                        else begin
+                            samble_cnt <= 7'd0;
+                            addr_ptr   <= 8'd0;
+                            which_gab  <= 1'b1;
+                        end
+                    end 
+                    else begin
+                        // Odd Gap (70 cycles)
+                        if (samble_cnt < 7'd69) begin
+                            samble_cnt <= samble_cnt + 1'b1;
+                        end 
+                        else begin
+                            samble_cnt <= 7'd0;
+                            addr_ptr   <= 8'd0;
+                            which_gab  <= 1'b0;
+                        end
+                    end
+                end
+            end
         end
     end
-    else begin
-        csk_out_r <= 0;
-        csk_out_i <= 0;
-        next_item <= 0;
-    end
-end
 
-
-//Filling Real and Imag ROMS Values 
+    //Filling Real and Imag ROMS Values 
 //Manual Filling to avoid probelms with File reading during ASIC FLow with Synopsys tools
 // 1 - Filling the real part ROM
 initial begin
