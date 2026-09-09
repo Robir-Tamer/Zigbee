@@ -13,53 +13,56 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 # do ../Script/run.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is anasm@ABULILAH.
 # 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
 # Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
 # vmap work work 
 # ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
 # Modifying modelsim.ini
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 01:01:02 on Sep 10,2026
+# Start time: 01:31:02 on Sep 10,2026
 # vlog -reportprogress 300 -work work ../RTL/CSK_GEN.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module CSK_GEN
 # 
 # Top level modules:
 # 	CSK_GEN
-# End time: 01:01:02 on Sep 10,2026, Elapsed time: 0:00:00
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 01:01:02 on Sep 10,2026
+# Start time: 01:31:02 on Sep 10,2026
 # vlog -reportprogress 300 -work work ../RTL/DQPSK.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module DQPSK
 # 
 # Top level modules:
 # 	DQPSK
-# End time: 01:01:02 on Sep 10,2026, Elapsed time: 0:00:00
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 01:01:02 on Sep 10,2026
+# Start time: 01:31:02 on Sep 10,2026
 # vlog -reportprogress 300 -work work ../RTL/FIFO_mem.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module FIFO_mem
 # 
 # Top level modules:
 # 	FIFO_mem
-# End time: 01:01:02 on Sep 10,2026, Elapsed time: 0:00:00
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 01:01:02 on Sep 10,2026
+# Start time: 01:31:02 on Sep 10,2026
 # vlog -reportprogress 300 -work work ../RTL/posedge_detector.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module posedge_detector
 # 
 # Top level modules:
 # 	posedge_detector
-# End time: 01:01:02 on Sep 10,2026, Elapsed time: 0:00:00
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 01:01:03 on Sep 10,2026
+# Start time: 01:31:02 on Sep 10,2026
 # vlog -reportprogress 300 -work work ../RTL/Top.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module CSK_GEN
@@ -70,21 +73,21 @@
 # 
 # Top level modules:
 # 	Top
-# End time: 01:01:03 on Sep 10,2026, Elapsed time: 0:00:00
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 01:01:03 on Sep 10,2026
+# Start time: 01:31:02 on Sep 10,2026
 # vlog -reportprogress 300 -sv -work work ../TB/Top_TB.sv 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module Top_TB
 # 
 # Top level modules:
 # 	Top_TB
-# End time: 01:01:03 on Sep 10,2026, Elapsed time: 0:00:00
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
 # vsim -voptargs="+acc" work.Top_TB 
-# Start time: 01:01:04 on Sep 10,2026
+# Start time: 01:31:03 on Sep 10,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
@@ -97,9 +100,14 @@
 # Loading work.CSK_GEN(fast)
 # Loading work.posedge_detector(fast)
 # 0
-# q1_5
+# q1_4
 # 0
 # q3_4
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: anasm  Hostname: ABULILAH  ProcessID: 30340
+#           Attempting to use alternate WLF file "./wlft2xqje4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2xqje4
 # ========================================================================================================================
 #                                   STARTING COMPLETE TOP MODULE VERIFICATION PIPELINE                                    
 # ========================================================================================================================
@@ -439,3 +447,6 @@
 # Break in Module Top_TB at ../TB/Top_TB.sv line 167
 # 0 ps
 # 25774219 ps
+quit
+# End time: 01:31:51 on Sep 10,2026, Elapsed time: 0:00:48
+# Errors: 0, Warnings: 3
