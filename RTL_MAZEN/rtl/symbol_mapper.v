@@ -1,5 +1,11 @@
+/*
+********************************** Documentaion *********************************
+*Author	:Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
+*File	:symbol_mapper  															    *
+*********************************************************************************
+*/
 module symbol_mapper #(
-    parameter rate_mode = 0;// 0 --> 250 Kbps , 1 --> 1 Mbps
+    parameter rate_mode = 0; // 0 --> 250 Kbps , 1 --> 1 Mbps
 )(
     input                                     clk, rst, i_valid,
     input      [((rate_mode == 1) ? 5 : 2):0] i_data, 
