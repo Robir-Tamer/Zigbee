@@ -5,8 +5,8 @@
 *********************************************************************************
 */
 module sync_fifo #(
-    parameter  FIFO_WIDTH = 32,
-    parameter  FIFO_DEPTH = 4, // only need 2*32 to form the 64 bits to interleaver
+    parameter  FIFO_WIDTH = 32, //32 for 250 Kbps , 4 for 1 Mbps
+    parameter  FIFO_DEPTH = 1024, // 1024 for 250 Kbps (12*64 = 768) , 64 for 1 Mbps (12*4 = 48)
     localparam ADDR_SIZE  = $clog2(FIFO_DEPTH)
 ) (
     input  wire                   clk, rst, wr_en, rd_en,
