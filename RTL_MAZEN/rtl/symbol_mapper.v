@@ -1,7 +1,7 @@
 /*
 ********************************** Documentaion *********************************
 *Author	:Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File	:symbol_mapper  															    *
+*File	:symbol_mapper  													    *
 *********************************************************************************
 */
 module symbol_mapper #(

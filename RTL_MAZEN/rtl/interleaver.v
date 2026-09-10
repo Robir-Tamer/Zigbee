@@ -1,7 +1,7 @@
 /*
 ********************************** Documentaion *********************************
 *Author	:Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File	:interleaver  															    *
+*File	:interleaver  															*
 *********************************************************************************
 */
 module interleaver (
@@ -59,9 +59,7 @@ begin
             end
         end 
         else 
-        begin
             o_valid <= 1'b0;
-        end
     end
 end
 
