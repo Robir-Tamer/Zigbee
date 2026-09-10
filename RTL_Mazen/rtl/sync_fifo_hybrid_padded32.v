@@ -1,7 +1,7 @@
 /*
 ********************************** Documentation *********************************
 *Author : Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File   : sync_fifo                                                             *
+*File   : sync_fifo_hybrid_padded32                                                             *
 *********************************************************************************
 */
 

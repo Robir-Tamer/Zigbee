@@ -1,7 +1,7 @@
 /*
 ********************************** Documentation *********************************
 *Author : Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File   : interleaver (LSB-first bit serialization with bit_count)              *
+*File   : interleaver                                                            *
 *********************************************************************************
 */
 

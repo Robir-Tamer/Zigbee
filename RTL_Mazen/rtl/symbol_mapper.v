@@ -1,7 +1,7 @@
 /*
 ********************************** Documentation *********************************
 *Author	: Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File	: symbol_mapper (Adapted to e_o_demux structure)                        *
+*File	: symbol_mapper                                                          *
 *********************************************************************************
 */
 
