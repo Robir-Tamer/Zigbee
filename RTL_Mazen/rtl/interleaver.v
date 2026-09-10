@@ -143,6 +143,11 @@ generate
                     begin
                         busy      <= 1'b0;
                         o_valid   <= 1'b0;
+                        if (i_valid) 
+                        begin
+                            shift_reg[31:0] <= i_data;
+                            cycle_flag      <= 1'b1;
+                        end
                     end
                 end
             end
@@ -258,6 +263,11 @@ generate
                         begin
                             busy    <= 1'b0;
                             o_valid <= 1'b0;
+                            if (i_valid) 
+                            begin
+                                shift_reg[31:0] <= i_data;
+                                cycle_flag      <= 1'b1;
+                            end
                         end
                     end
                 end
