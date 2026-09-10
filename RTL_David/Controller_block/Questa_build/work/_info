@@ -1,0 +1,112 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/ITI_FPGA_Summer_Intern_2026/zigbee_project/block_Control_Unit/Questa_build
+T_opt
+!s110 1789006504
+VUFV`D`Ja5GPDkUB7EZYC33
+04 22 4 work controller_hyb_rate_tb fast 0
+=1-e4a8dfb8e2aa-6aa212a8-98-682c
+Z2 !s124 OEM100
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1789006827
+VAcZ5:U7AmX60z90hR9;W03
+04 25 4 work controller_single_rate_tb fast 0
+=1-e4a8dfb8e2aa-6aa213ea-33b-e00
+R2
+R3
+R4
+n@_opt1
+R5
+vcontroller
+!s110 1789006824
+!i10b 1
+!s100 ndZf_Hjf;FX]KJF8Vi?8=2
+ID9^da@n3HzVzie5^NZ<NH1
+R1
+w1789006477
+8../RTL_design_code/controller.v
+F../RTL_design_code/controller.v
+!i122 44
+L0 14 68
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z8 !s108 1789006824.000000
+!s107 ../RTL_design_code/controller.v|
+!s90 -reportprogress|300|../RTL_design_code/controller.v|
+!i113 0
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+vcontroller_hyb_rate_tb
+Z10 !s110 1789006825
+!i10b 1
+!s100 3hcmM;=^^>Cc>7MR`ac7M0
+In6`<@fFaNHbJ3S]XbOzaC1
+R1
+w1789000831
+8../TB_code/controller_hyb_rate_tb.v
+F../TB_code/controller_hyb_rate_tb.v
+!i122 45
+L0 1 115
+R6
+R7
+r1
+!s85 0
+31
+R8
+Z11 !s107 ../TB_code/controller_single_rate_tb.v|../TB_code/controller_hyb_rate_tb.v|
+Z12 !s90 -reportprogress|300|../TB_code/controller_hyb_rate_tb.v|../TB_code/controller_single_rate_tb.v|
+!i113 0
+R9
+R4
+vcontroller_single_rate_tb
+R10
+!i10b 1
+!s100 OB`?Shm7fh^bSGRl6[?Ml3
+I5:FQDbR=]187a];1Vfcb71
+R1
+w1788998022
+8../TB_code/controller_single_rate_tb.v
+F../TB_code/controller_single_rate_tb.v
+!i122 45
+L0 1 104
+R6
+R7
+r1
+!s85 0
+31
+R8
+R11
+R12
+!i113 0
+R9
+R4

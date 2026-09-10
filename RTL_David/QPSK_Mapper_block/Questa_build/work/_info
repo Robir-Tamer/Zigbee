@@ -1,0 +1,69 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/ITI_FPGA_Summer_Intern_2026/zigbee_project/block_QPSK/Questa_build
+T_opt
+!s110 1788979382
+VLc[j192SbVHN;l4AQc3ZX2
+04 14 4 work QPSK_mapper_tb fast 0
+=1-e4a8dfb8e2aa-6aa1a8b5-311-6c18
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vQPSK_mapper
+Z3 !s110 1788979379
+!i10b 1
+!s100 A29TeOI61SWb_mCeillQ?2
+IZjQb:fDMR9PYgg^2WPa1c0
+R1
+w1788979357
+8../RTL_design_code/QPSK_mapper.v
+F../RTL_design_code/QPSK_mapper.v
+!i122 2
+L0 15 34
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z6 !s108 1788979379.000000
+!s107 ../RTL_design_code/QPSK_mapper.v|
+!s90 -reportprogress|300|../RTL_design_code/QPSK_mapper.v|
+!i113 0
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@q@p@s@k_mapper
+vQPSK_mapper_tb
+R3
+!i10b 1
+!s100 coF3<Y^eM[iA72Z>LeFI31
+IoMUTJ4TA3YiRaVc5D=cHH0
+R1
+w1788979129
+8../TB_code/QPSK_mapper_tb.v
+F../TB_code/QPSK_mapper_tb.v
+!i122 3
+L0 1 163
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../TB_code/QPSK_mapper_tb.v|
+!s90 -reportprogress|300|../TB_code/QPSK_mapper_tb.v|
+!i113 0
+R7
+R2
+n@q@p@s@k_mapper_tb
