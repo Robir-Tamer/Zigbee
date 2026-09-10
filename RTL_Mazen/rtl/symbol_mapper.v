@@ -1,7 +1,7 @@
 /*
 ********************************** Documentation *********************************
-*Author	: Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File	: symbol_mapper                                                          *
+*Author : Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
+*File   : symbol_mapper                                                          *
 *********************************************************************************
 */
 
@@ -10,21 +10,21 @@ module symbol_mapper #(
     parameter rate_mode = "H"
 )(
 /************************************ Inputs ***********************************/
-    input                                     clk,
-    input                                     rst_n,
-    input                                     mode,
-    input      [(rate_mode == "F"? 2 : 5):0]  i_data,
-    input                                     i_valid,
+    input                                       clk,
+    input                                       rst, 
+    input                                       mode,
+    input      [(rate_mode == "F"? 2 : 5):0]    i_data,
+    input                                       i_valid,
 /*********************************** Outputs ***********************************/
-    output reg [(rate_mode == "F"? 3 : 31):0] o_data,
-    output reg                                o_valid
+    output reg [(rate_mode == "F"? 3 : 31):0]   o_data,
+    output reg                                  o_valid
 );
 
 generate
     if (rate_mode == "F") begin : gen_mapper_1mbps
-        always @(posedge clk or negedge rst_n) 
+        always @(posedge clk or posedge rst) 
         begin
-            if (!rst_n) 
+            if (rst) 
             begin
                 o_data  <= 4'b0;
                 o_valid <= 1'b0;
@@ -44,8 +44,8 @@ generate
         end
     end 
     else if (rate_mode == "S") begin : gen_mapper_250kbps
-        always @(posedge clk or negedge rst_n) begin
-            if (!rst_n) 
+        always @(posedge clk or posedge rst) begin
+            if (rst) 
             begin
                 o_data  <= 32'b0;
                 o_valid <= 1'b0;
@@ -79,8 +79,8 @@ generate
         end
     end
     else if (rate_mode == "H") begin : gen_mapper_hybrid
-        always @(posedge clk or negedge rst_n) begin
-            if (!rst_n) 
+        always @(posedge clk or posedge rst) begin
+            if (rst) 
             begin
                 o_data  <= 32'b0;
                 o_valid <= 1'b0;

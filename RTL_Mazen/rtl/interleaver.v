@@ -11,7 +11,7 @@ module interleaver #(
 )(
 /************************************ Inputs ***********************************/
     input                                       clk, 
-    input                                       rst_n, 
+    input                                       rst,  
     input                                       mode,
     input                                       i_valid, 
     input      [(rate_mode == "F"? 3 : 31):0]   i_data, 
@@ -26,9 +26,9 @@ generate
         reg [1:0]  bit_count;
         reg        busy;
 
-        always @(posedge clk or negedge rst_n) 
+        always @(posedge clk or posedge rst) 
         begin
-            if (!rst_n) 
+            if (rst) 
             begin
                 o_data    <= 1'b0;
                 o_valid   <= 1'b0;
@@ -81,9 +81,9 @@ generate
         reg [5:0]  bit_count;
         reg        busy;
 
-        always @(posedge clk or negedge rst_n) 
+        always @(posedge clk or posedge rst) 
         begin
-            if (!rst_n) begin
+            if (rst) begin
                 cycle_flag  <= 1'b0;
                 shift_reg   <= 64'b0;
                 bit_count   <= 6'd0;
@@ -141,8 +141,8 @@ generate
                     end 
                     else 
                     begin
-                        busy      <= 1'b0;
-                        o_valid   <= 1'b0;
+                        busy    <= 1'b0;
+                        o_valid <= 1'b0;
                         if (i_valid) 
                         begin
                             shift_reg[31:0] <= i_data;
@@ -159,9 +159,9 @@ generate
         reg [5:0]  bit_count;
         reg        busy;
 
-        always @(posedge clk or negedge rst_n) 
+        always @(posedge clk or posedge rst) 
         begin
-            if (!rst_n) 
+            if (rst) 
             begin
                 cycle_flag  <= 1'b0;
                 shift_reg   <= 64'b0;
