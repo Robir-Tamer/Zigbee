@@ -14,11 +14,11 @@ module FIFO_mem #(
     input  wire                   rst_n,     // synch active-low
     input  wire                   wr_en,   // active-high  enable writing din in FIFO if it is not full
     input  wire                   rd_en,   // active-high enable reading data from FIFO if it is not empty 
-    input  wire [FIFO_WIDTH-1: 0] din,
-    output reg  [FIFO_WIDTH-1: 0] dout,
+    input  wire signed [FIFO_WIDTH-1: 0] din,
+    output reg  signed [FIFO_WIDTH-1: 0] dout,
     output wire                   full_flag, empty_flag
 );  
-    reg [FIFO_WIDTH-1: 0] mem [0 : FIFO_DEPTH-1]; 
+    reg signed [FIFO_WIDTH-1: 0] mem [0 : FIFO_DEPTH-1]; 
     reg [ADDR_SIZE: 0] wr_in_addr, rd_from_addr;
 
     assign full_flag =  (   (wr_in_addr[ADDR_SIZE] != rd_from_addr[ADDR_SIZE]) &&

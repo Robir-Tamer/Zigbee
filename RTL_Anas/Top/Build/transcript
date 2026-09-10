@@ -1,0 +1,452 @@
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do ../Script/run.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is anasm@ABULILAH.
+# 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:31:02 on Sep 10,2026
+# vlog -reportprogress 300 -work work ../RTL/CSK_GEN.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module CSK_GEN
+# 
+# Top level modules:
+# 	CSK_GEN
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:31:02 on Sep 10,2026
+# vlog -reportprogress 300 -work work ../RTL/DQPSK.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module DQPSK
+# 
+# Top level modules:
+# 	DQPSK
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:31:02 on Sep 10,2026
+# vlog -reportprogress 300 -work work ../RTL/FIFO_mem.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module FIFO_mem
+# 
+# Top level modules:
+# 	FIFO_mem
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:31:02 on Sep 10,2026
+# vlog -reportprogress 300 -work work ../RTL/posedge_detector.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module posedge_detector
+# 
+# Top level modules:
+# 	posedge_detector
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:31:02 on Sep 10,2026
+# vlog -reportprogress 300 -work work ../RTL/Top.V 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module CSK_GEN
+# -- Compiling module FIFO_mem
+# -- Compiling module DQPSK
+# -- Compiling module posedge_detector
+# -- Compiling module Top
+# 
+# Top level modules:
+# 	Top
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:31:02 on Sep 10,2026
+# vlog -reportprogress 300 -sv -work work ../TB/Top_TB.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module Top_TB
+# 
+# Top level modules:
+# 	Top_TB
+# End time: 01:31:02 on Sep 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.Top_TB 
+# Start time: 01:31:03 on Sep 10,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Top_TB(fast)
+# Loading work.Top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+# 0
+# q1_4
+# 0
+# q3_4
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: anasm  Hostname: ABULILAH  ProcessID: 30340
+#           Attempting to use alternate WLF file "./wlft2xqje4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2xqje4
+# ========================================================================================================================
+#                                   STARTING COMPLETE TOP MODULE VERIFICATION PIPELINE                                    
+# ========================================================================================================================
+# [TIME 0 ps] [SYSTEM] Asserting Hardware Reset (rst_n = 0)...
+# [TIME 78000 ps] [SYSTEM] De-asserting Reset (rst_n = 1). System Active.
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 125000 ps] [STIMULUS] Driving Symbol #0 into Top Module:
+#     > Input Data Vector       : ( 1 + j 0)
+#     > DQPSK Shift Register[3] : ( 1 + j 1)
+#     > DQPSK Math Equation     : ( 1 + j 0) * ( 1 + j 1)
+#                               = [(( 1 *  1) - ( 0 *  1)) + j(( 1 *  1) + ( 0 *  1))]
+#                               = ( 1 + j 1)
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 156000 ps] [STIMULUS] Driving Symbol #0 into Top Module:
+#     > Input Data Vector       : (-1 + j 0)
+#     > DQPSK Shift Register[3] : ( 1 + j 1)
+#     > DQPSK Math Equation     : (-1 + j 0) * ( 1 + j 1)
+#                               = [((-1 *  1) - ( 0 *  1)) + j((-1 *  1) + ( 0 *  1))]
+#                               = (-1 + j-1)
+# [TIME 172000 ps] [DQPSK MATCH] Symbol #0 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j 1)
+#     > Golden Expected  : ( 1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 188000 ps] [STIMULUS] Driving Symbol #1 into Top Module:
+#     > Input Data Vector       : ( 0 + j 1)
+#     > DQPSK Shift Register[3] : ( 1 + j 1)
+#     > DQPSK Math Equation     : ( 0 + j 1) * ( 1 + j 1)
+#                               = [(( 0 *  1) - ( 1 *  1)) + j(( 0 *  1) + ( 1 *  1))]
+#                               = (-1 + j 1)
+# [TIME 203000 ps] [DQPSK MATCH] Symbol #1 successfully encoded and written to FIFO:
+#     > HW Output Vector : (-1 + j-1)
+#     > Golden Expected  : (-1 + j-1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 219000 ps] [STIMULUS] Driving Symbol #2 into Top Module:
+#     > Input Data Vector       : ( 0 + j-1)
+#     > DQPSK Shift Register[3] : ( 1 + j 1)
+#     > DQPSK Math Equation     : ( 0 + j-1) * ( 1 + j 1)
+#                               = [(( 0 *  1) - (-1 *  1)) + j(( 0 *  1) + (-1 *  1))]
+#                               = ( 1 + j-1)
+# [TIME 234000 ps] [DQPSK MATCH] Symbol #2 successfully encoded and written to FIFO:
+#     > HW Output Vector : (-1 + j 1)
+#     > Golden Expected  : (-1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# [TIME 250000 ps] [STIMULUS] De-asserting i_valid. Inserting Inter-frame Gap...
+# [TIME 266000 ps] [DQPSK MATCH] Symbol #3 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j-1)
+#     > Golden Expected  : ( 1 + j-1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# [TIME 266000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #0:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 0 + j 0)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  0 + j  0) | Math Float = (0.0000 + j0.0000)
+#     > Complex Operation                 : ( 0 + j 0) * (0.0000 + j0.0000)
+#     > Math Expansion                    : [(( 0 * 0.0000) - ( 0 * 0.0000)) + j(( 0 * 0.0000) + ( 0 * 0.0000))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (   0 + j   0) | Math Float = ( 0.0000 + j 0.0000)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 313000 ps] [STIMULUS] Driving Symbol #4 into Top Module:
+#     > Input Data Vector       : ( 1 + j 0)
+#     > DQPSK Shift Register[3] : ( 1 + j 1)
+#     > DQPSK Math Equation     : ( 1 + j 0) * ( 1 + j 1)
+#                               = [(( 1 *  1) - ( 0 *  1)) + j(( 1 *  1) + ( 0 *  1))]
+#                               = ( 1 + j 1)
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 344000 ps] [STIMULUS] Driving Symbol #4 into Top Module:
+#     > Input Data Vector       : (-1 + j 0)
+#     > DQPSK Shift Register[3] : (-1 + j-1)
+#     > DQPSK Math Equation     : (-1 + j 0) * (-1 + j-1)
+#                               = [((-1 * -1) - ( 0 * -1)) + j((-1 * -1) + ( 0 * -1))]
+#                               = ( 1 + j 1)
+# [TIME 359000 ps] [DQPSK MATCH] Symbol #4 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j 1)
+#     > Golden Expected  : ( 1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 375000 ps] [STIMULUS] Driving Symbol #5 into Top Module:
+#     > Input Data Vector       : ( 0 + j 1)
+#     > DQPSK Shift Register[3] : (-1 + j 1)
+#     > DQPSK Math Equation     : ( 0 + j 1) * (-1 + j 1)
+#                               = [(( 0 * -1) - ( 1 *  1)) + j(( 0 *  1) + ( 1 * -1))]
+#                               = (-1 + j-1)
+# [TIME 391000 ps] [DQPSK MATCH] Symbol #5 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j 1)
+#     > Golden Expected  : ( 1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 406000 ps] [STIMULUS] Driving Symbol #6 into Top Module:
+#     > Input Data Vector       : ( 0 + j-1)
+#     > DQPSK Shift Register[3] : ( 1 + j-1)
+#     > DQPSK Math Equation     : ( 0 + j-1) * ( 1 + j-1)
+#                               = [(( 0 *  1) - (-1 * -1)) + j(( 0 * -1) + (-1 *  1))]
+#                               = (-1 + j-1)
+# [TIME 422000 ps] [DQPSK MATCH] Symbol #6 successfully encoded and written to FIFO:
+#     > HW Output Vector : (-1 + j-1)
+#     > Golden Expected  : (-1 + j-1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# [TIME 438000 ps] [STIMULUS] De-asserting i_valid. Inserting Inter-frame Gap...
+# [TIME 453000 ps] [DQPSK MATCH] Symbol #7 successfully encoded and written to FIFO:
+#     > HW Output Vector : (-1 + j-1)
+#     > Golden Expected  : (-1 + j-1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 500000 ps] [STIMULUS] Driving Symbol #8 into Top Module:
+#     > Input Data Vector       : ( 1 + j 0)
+#     > DQPSK Shift Register[3] : ( 1 + j 1)
+#     > DQPSK Math Equation     : ( 1 + j 0) * ( 1 + j 1)
+#                               = [(( 1 *  1) - ( 0 *  1)) + j(( 1 *  1) + ( 0 *  1))]
+#                               = ( 1 + j 1)
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 531000 ps] [STIMULUS] Driving Symbol #8 into Top Module:
+#     > Input Data Vector       : (-1 + j 0)
+#     > DQPSK Shift Register[3] : ( 1 + j 1)
+#     > DQPSK Math Equation     : (-1 + j 0) * ( 1 + j 1)
+#                               = [((-1 *  1) - ( 0 *  1)) + j((-1 *  1) + ( 0 *  1))]
+#                               = (-1 + j-1)
+# [TIME 547000 ps] [DQPSK MATCH] Symbol #8 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j 1)
+#     > Golden Expected  : ( 1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 563000 ps] [STIMULUS] Driving Symbol #9 into Top Module:
+#     > Input Data Vector       : ( 0 + j 1)
+#     > DQPSK Shift Register[3] : (-1 + j-1)
+#     > DQPSK Math Equation     : ( 0 + j 1) * (-1 + j-1)
+#                               = [(( 0 * -1) - ( 1 * -1)) + j(( 0 * -1) + ( 1 * -1))]
+#                               = ( 1 + j-1)
+# [TIME 578000 ps] [DQPSK MATCH] Symbol #9 successfully encoded and written to FIFO:
+#     > HW Output Vector : (-1 + j-1)
+#     > Golden Expected  : (-1 + j-1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 594000 ps] [STIMULUS] Driving Symbol #10 into Top Module:
+#     > Input Data Vector       : ( 0 + j-1)
+#     > DQPSK Shift Register[3] : (-1 + j-1)
+#     > DQPSK Math Equation     : ( 0 + j-1) * (-1 + j-1)
+#                               = [(( 0 * -1) - (-1 * -1)) + j(( 0 * -1) + (-1 * -1))]
+#                               = (-1 + j 1)
+# [TIME 609000 ps] [DQPSK MATCH] Symbol #10 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j-1)
+#     > Golden Expected  : ( 1 + j-1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# [TIME 625000 ps] [STIMULUS] De-asserting i_valid. Inserting Inter-frame Gap...
+# [TIME 641000 ps] [DQPSK MATCH] Symbol #11 successfully encoded and written to FIFO:
+#     > HW Output Vector : (-1 + j 1)
+#     > Golden Expected  : (-1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 688000 ps] [STIMULUS] Driving Symbol #12 into Top Module:
+#     > Input Data Vector       : ( 1 + j 0)
+#     > DQPSK Shift Register[3] : ( 1 + j 1)
+#     > DQPSK Math Equation     : ( 1 + j 0) * ( 1 + j 1)
+#                               = [(( 1 *  1) - ( 0 *  1)) + j(( 1 *  1) + ( 0 *  1))]
+#                               = ( 1 + j 1)
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 719000 ps] [STIMULUS] Driving Symbol #12 into Top Module:
+#     > Input Data Vector       : (-1 + j 0)
+#     > DQPSK Shift Register[3] : (-1 + j-1)
+#     > DQPSK Math Equation     : (-1 + j 0) * (-1 + j-1)
+#                               = [((-1 * -1) - ( 0 * -1)) + j((-1 * -1) + ( 0 * -1))]
+#                               = ( 1 + j 1)
+# [TIME 734000 ps] [DQPSK MATCH] Symbol #12 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j 1)
+#     > Golden Expected  : ( 1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 750000 ps] [STIMULUS] Driving Symbol #13 into Top Module:
+#     > Input Data Vector       : ( 0 + j 1)
+#     > DQPSK Shift Register[3] : ( 1 + j-1)
+#     > DQPSK Math Equation     : ( 0 + j 1) * ( 1 + j-1)
+#                               = [(( 0 *  1) - ( 1 * -1)) + j(( 0 * -1) + ( 1 *  1))]
+#                               = ( 1 + j 1)
+# [TIME 766000 ps] [DQPSK MATCH] Symbol #13 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j 1)
+#     > Golden Expected  : ( 1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 781000 ps] [STIMULUS] Driving Symbol #14 into Top Module:
+#     > Input Data Vector       : ( 0 + j-1)
+#     > DQPSK Shift Register[3] : (-1 + j 1)
+#     > DQPSK Math Equation     : ( 0 + j-1) * (-1 + j 1)
+#                               = [(( 0 * -1) - (-1 *  1)) + j(( 0 *  1) + (-1 * -1))]
+#                               = ( 1 + j 1)
+# [TIME 797000 ps] [DQPSK MATCH] Symbol #14 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j 1)
+#     > Golden Expected  : ( 1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# [TIME 813000 ps] [STIMULUS] De-asserting i_valid. Inserting Inter-frame Gap...
+# [TIME 828000 ps] [DQPSK MATCH] Symbol #15 successfully encoded and written to FIFO:
+#     > HW Output Vector : ( 1 + j 1)
+#     > Golden Expected  : ( 1 + j 1)
+#     > Verification     : MATCH SUCCESSFUL [PASSED]
+# ========================================================================================================================
+# [TIME 859000 ps] [STIMULUS] All 16 Input Symbols Pushed. Waiting for Tx Complete Signal (tx_done)...
+# ========================================================================================================================
+# [TIME 1453000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #1:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = ( -1 + j  0) | Math Float = (-0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j 1) * (-0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * -0.0312) - ( 1 * 0.0000)) + j(( 1 * 0.0000) + ( 1 * -0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j  -1) | Math Float = (-0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 2641000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #2:
+#     > Read Symbol Vector (S_R + j S_I)  : (-1 + j-1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  1 + j  0) | Math Float = (0.0312 + j0.0000)
+#     > Complex Operation                 : (-1 + j-1) * (0.0312 + j0.0000)
+#     > Math Expansion                    : [((-1 * 0.0312) - (-1 * 0.0000)) + j((-1 * 0.0000) + (-1 * 0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j  -1) | Math Float = (-0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 3828000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #3:
+#     > Read Symbol Vector (S_R + j S_I)  : (-1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = ( -1 + j  0) | Math Float = (-0.0312 + j0.0000)
+#     > Complex Operation                 : (-1 + j 1) * (-0.0312 + j0.0000)
+#     > Math Expansion                    : [((-1 * -0.0312) - ( 1 * 0.0000)) + j((-1 * 0.0000) + ( 1 * -0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (   1 + j  -1) | Math Float = ( 0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 5016000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #4:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j-1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  1 + j  0) | Math Float = (0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j-1) * (0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * 0.0312) - (-1 * 0.0000)) + j(( 1 * 0.0000) + (-1 * 0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (   1 + j  -1) | Math Float = ( 0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 6516000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #5:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = ( -1 + j  0) | Math Float = (-0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j 1) * (-0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * -0.0312) - ( 1 * 0.0000)) + j(( 1 * 0.0000) + ( 1 * -0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j  -1) | Math Float = (-0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 7703000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #6:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  1 + j  0) | Math Float = (0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j 1) * (0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * 0.0312) - ( 1 * 0.0000)) + j(( 1 * 0.0000) + ( 1 * 0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (   1 + j   1) | Math Float = ( 0.0625 + j 0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 8891000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #7:
+#     > Read Symbol Vector (S_R + j S_I)  : (-1 + j-1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = ( -1 + j  0) | Math Float = (-0.0312 + j0.0000)
+#     > Complex Operation                 : (-1 + j-1) * (-0.0312 + j0.0000)
+#     > Math Expansion                    : [((-1 * -0.0312) - (-1 * 0.0000)) + j((-1 * 0.0000) + (-1 * -0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (   1 + j   1) | Math Float = ( 0.0625 + j 0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 10078000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #8:
+#     > Read Symbol Vector (S_R + j S_I)  : (-1 + j-1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  1 + j  0) | Math Float = (0.0312 + j0.0000)
+#     > Complex Operation                 : (-1 + j-1) * (0.0312 + j0.0000)
+#     > Math Expansion                    : [((-1 * 0.0312) - (-1 * 0.0000)) + j((-1 * 0.0000) + (-1 * 0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j  -1) | Math Float = (-0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 13453000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #9:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = ( -1 + j  0) | Math Float = (-0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j 1) * (-0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * -0.0312) - ( 1 * 0.0000)) + j(( 1 * 0.0000) + ( 1 * -0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j  -1) | Math Float = (-0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 14641000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #10:
+#     > Read Symbol Vector (S_R + j S_I)  : (-1 + j-1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  1 + j  0) | Math Float = (0.0312 + j0.0000)
+#     > Complex Operation                 : (-1 + j-1) * (0.0312 + j0.0000)
+#     > Math Expansion                    : [((-1 * 0.0312) - (-1 * 0.0000)) + j((-1 * 0.0000) + (-1 * 0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j  -1) | Math Float = (-0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 15828000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #11:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j-1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = ( -1 + j  0) | Math Float = (-0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j-1) * (-0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * -0.0312) - (-1 * 0.0000)) + j(( 1 * 0.0000) + (-1 * -0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j   1) | Math Float = (-0.0625 + j 0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 17016000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #12:
+#     > Read Symbol Vector (S_R + j S_I)  : (-1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  1 + j  0) | Math Float = (0.0312 + j0.0000)
+#     > Complex Operation                 : (-1 + j 1) * (0.0312 + j0.0000)
+#     > Math Expansion                    : [((-1 * 0.0312) - ( 1 * 0.0000)) + j((-1 * 0.0000) + ( 1 * 0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j   1) | Math Float = (-0.0625 + j 0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 18516000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #13:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = ( -1 + j  0) | Math Float = (-0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j 1) * (-0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * -0.0312) - ( 1 * 0.0000)) + j(( 1 * 0.0000) + ( 1 * -0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j  -1) | Math Float = (-0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 19703000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #14:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  1 + j  0) | Math Float = (0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j 1) * (0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * 0.0312) - ( 1 * 0.0000)) + j(( 1 * 0.0000) + ( 1 * 0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (   1 + j   1) | Math Float = ( 0.0625 + j 0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 20891000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #15:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = ( -1 + j  0) | Math Float = (-0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j 1) * (-0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * -0.0312) - ( 1 * 0.0000)) + j(( 1 * 0.0000) + ( 1 * -0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (  -1 + j  -1) | Math Float = (-0.0625 + j-0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 22078000 ps] [TX MODULATOR] Complex Chirp Multiplication Sample #16:
+#     > Read Symbol Vector (S_R + j S_I)  : ( 1 + j 1)
+#     > ROM Wave Vector (csk_out_r, _i)    : Raw Fixed-Point Q1.5 = (  1 + j  0) | Math Float = (0.0312 + j0.0000)
+#     > Complex Operation                 : ( 1 + j 1) * (0.0312 + j0.0000)
+#     > Math Expansion                    : [(( 1 * 0.0312) - ( 1 * 0.0000)) + j(( 1 * 0.0000) + ( 1 * 0.0312))]
+#     > Hardware Output (tx_real + j tx_imag): Raw Q3.4 Integer = (   1 + j   1) | Math Float = ( 0.0625 + j 0.0625)
+#     > Modulator Verification            : MATCH SUCCESSFUL [PASSED]
+# ------------------------------------------------------------------------------------------------------------------------
+# [TIME 24234000 ps] [SYSTEM] 'tx_done' Flag Detected HIGH!
+# ========================================================================================================================
+#                                               FINAL VERIFICATION REPORT                                                 
+# ========================================================================================================================
+#   > TOTAL CHECKS PASSED           : 33
+#   > TOTAL CHECKS FAILED           : 0
+#   > TOTAL DQPSK SYMBOLS PROCESSED : 16
+#   > TOTAL MODULATION SAMPLES CHEKD: 17
+#   > FINAL STATUS                  : TESTBENCH PASSED SUCCESSFULLY!
+# ========================================================================================================================
+# ** Note: $stop    : ../TB/Top_TB.sv(167)
+#    Time: 24546875 ps  Iteration: 1  Instance: /Top_TB
+# Break in Module Top_TB at ../TB/Top_TB.sv line 167
+# 0 ps
+# 25774219 ps
+quit
+# End time: 01:31:51 on Sep 10,2026, Elapsed time: 0:00:48
+# Errors: 0, Warnings: 3
