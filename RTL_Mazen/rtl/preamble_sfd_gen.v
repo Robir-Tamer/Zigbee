@@ -34,7 +34,7 @@ module preamble_sfd_gen #(
                 end 
                 else 
                 begin
-                    preamble_sfd <= {{32{1'b1}}, sfd_word};
+                    preamble_sfd <= {sfd_word, {32{1'b1}}}; 
                     o_valid      <= 1'b1;
                 end
             end
@@ -55,7 +55,7 @@ module preamble_sfd_gen #(
                 end 
                 else 
                 begin
-                    preamble_sfd <= {{80{1'b1}}, sfd_word};
+                    preamble_sfd <= {sfd_word, {80{1'b1}}}; 
                     o_valid      <= 1'b1;
                 end
             end
@@ -66,7 +66,7 @@ module preamble_sfd_gen #(
             wire [15:0] sfd_word;
             // SFD mirrored because its [0:15] in reference
             assign sfd_word = (mode == 1) ? 16'b00111001_00101110 : 16'b11000100_01011110;      
-                  
+
             always @(posedge clk or posedge rst) 
             begin
                 if (rst) 
@@ -77,9 +77,9 @@ module preamble_sfd_gen #(
                 else 
                 begin
                     if (mode)
-                        preamble_sfd <= {{32{1'b1}}, sfd_word}; 
+                        preamble_sfd <= {sfd_word, {32{1'b1}}}; 
                     else
-                        preamble_sfd <= {{80{1'b1}}, sfd_word}; 
+                        preamble_sfd <= {sfd_word, {80{1'b1}}}; 
                     
                     o_valid      <= 1'b1;
                 end
