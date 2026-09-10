@@ -1,9 +1,10 @@
 module symbol_mapper #(
     parameter rate_mode = 0;// 0 --> 250 Kbps , 1 --> 1 Mbps
 )(
-    input                                 clk, rst, i_valid,
-    input  [((rate_mode == 1) ? 5 : 2):0] i_data, 
-    output [((rate_mode == 1) ? 31: 3):0] o_valid
+    input                                     clk, rst, i_valid,
+    input      [((rate_mode == 1) ? 5 : 2):0] i_data, 
+    output reg [((rate_mode == 1) ? 31: 3):0] o_data,
+    output reg                                o_valid
 );
 
 generate
