@@ -15,7 +15,8 @@ module preamble_sfd_gen #(
 );
 
 wire [15:0] sfd_word;
-assign sfd_word = (rate_mode == 1) ? 16'b00111001_00101110 : 16'b11000100_01011110;
+                                     //SFD mirrored because its [0:15] in refrence
+assign sfd_word = (rate_mode == 1) ? 16'b00111001_00101110 : 16'b11000100_01011110; 
 
 always @(posedge clk) 
     if (rate_mode == 1) 
