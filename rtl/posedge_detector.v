@@ -7,7 +7,7 @@ module posedge_detector (
 );
 
 reg delayed_in;
-always @(posedge clk or negedge rst_n)
+always @(posedge clk)
     begin
         if (!rst_n)
             begin

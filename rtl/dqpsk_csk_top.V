@@ -95,7 +95,7 @@ module dqpsk_csk_top #(
     // 'ever_run' arms the check only after a real transmission has
     // started, so reset (running=0, en=0) can't false-trigger it.
     reg ever_run;
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if (!rst_n)
             ever_run <= 1'b0;
         else if (csk_running)
@@ -114,7 +114,7 @@ module dqpsk_csk_top #(
     );
 
 // Modulation hardware Implementation (Complex Multiplier)
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) begin
         tx_imag <= 'd0;
         tx_real <= 'd0;

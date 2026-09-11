@@ -24,7 +24,7 @@ module CSK_GEN #(
     assign stop_now = running && !en && (addr_ptr == 8'd0) && (samble_cnt == 7'd0);
     assign next_item = running && (first_fetch || boundary_d);
 
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if(!rst_n) begin
             running     <= 1'b0;
             addr_ptr    <= 8'd0;

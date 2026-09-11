@@ -28,7 +28,7 @@ module FIFO_mem #(
     assign empty_flag = (wr_in_addr == rd_from_addr)? 1:0;
 
     // Write port logic
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if (!rst_n) begin
             wr_in_addr   <= 0;
             dout <= 0;

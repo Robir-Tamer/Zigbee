@@ -27,7 +27,7 @@ module form_ppdu #(
     reg [6:0]  bit_count;
     reg        sending_shr;
 
-    always @(posedge clk or negedge rst_n) 
+    always @(posedge clk) 
     begin
         if (!rst_n) 
         begin

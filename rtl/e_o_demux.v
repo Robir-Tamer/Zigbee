@@ -30,7 +30,7 @@ reg     [(rate_mode == "F"? 1:2) : 0]   o_counter;
 generate
     if (rate_mode =="F")
         begin
-            always @(posedge clk or negedge rst_n)
+            always @(posedge clk)
                 begin
                     if (!rst_n)
                         begin
@@ -89,7 +89,7 @@ generate
         end
     else if (rate_mode =="S")
         begin
-            always @(posedge clk or negedge rst_n)
+            always @(posedge clk)
                 begin
                     if (!rst_n)
                         begin
@@ -147,7 +147,7 @@ generate
         end
     else if (rate_mode == "H")
         begin
-            always @(posedge clk or negedge rst_n)
+            always @(posedge clk)
                 begin
                     if (!rst_n)
                         begin

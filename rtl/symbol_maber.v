@@ -22,7 +22,7 @@ module symbol_mapper #(
 
 generate
     if (rate_mode == "F") begin : gen_mapper_1mbps
-        always @(posedge clk or negedge rst_n) 
+        always @(posedge clk) 
         begin
             if (!rst_n) 
             begin
@@ -44,7 +44,7 @@ generate
         end
     end 
     else if (rate_mode == "S") begin : gen_mapper_250kbps
-        always @(posedge clk or negedge rst_n) begin
+        always @(posedge clk) begin
             if (!rst_n) 
             begin
                 o_data  <= 32'b0;
@@ -79,7 +79,7 @@ generate
         end
     end
     else if (rate_mode == "H") begin : gen_mapper_hybrid
-        always @(posedge clk or negedge rst_n) begin
+        always @(posedge clk) begin
             if (!rst_n) 
             begin
                 o_data  <= 32'b0;

@@ -25,7 +25,7 @@ module QPSK_mapper (
     output reg signed [1:0] out_imag  // imaginary component of the mapped QPSK symbol; values: {-1, 0, +1}
 );
     
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if (!rst_n) begin
             valid <= 0;
             out_real  <= 0;

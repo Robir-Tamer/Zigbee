@@ -35,7 +35,6 @@ wire    [payload_w-1 : 0]               counter_wrdata;
 wire    [payload_w-1 : 0]               payload_fifo_out;
 wire                                    payload_fifo_full;
 wire                                    payload_fifo_empty;
-wire                                    rst_n_sync;
 wire                                    zeropadding_en;
 wire                                    mode;
 wire                                    zeropadding_valid;
@@ -55,16 +54,9 @@ wire                                    ppdu_valid;
 
 assign interleaver_valid = interleaver_valid_e || interleaver_valid_o;
 /******************************** Instantiation ********************************/
-rst_sync #(.Stages ('d2)) RDC (
-    .clk                (clk),
-    .rst_n              (rst_n),
-
-    .rst_n_sync         (rst_n_sync)
-);
-
 FIFO_mem #(.FIFO_WIDTH (payload_w), .FIFO_DEPTH (max_payload_length+1)) payload_ram (
     .clk                (clk),
-    .rst_n              (rst_n_sync),
+    .rst_n              (rst_n),
     .wr_en              (counter_wren),
     .rd_en              (zeropadding_nextitem),
     .din                (counter_wrdata),
@@ -76,7 +68,7 @@ FIFO_mem #(.FIFO_WIDTH (payload_w), .FIFO_DEPTH (max_payload_length+1)) payload_
 
 payload_counter #(.payload_w (payload_w), .max_payload_length (max_payload_length)) PayLoad_Counter(
     .clk                (clk),
-    .rst_n              (rst_n_sync),
+    .rst_n              (rst_n),
     .fifo_full          (payload_fifo_full),
     .start_tx           (start_tx),
     .tx_done            (tx_done),
@@ -89,7 +81,7 @@ payload_counter #(.payload_w (payload_w), .max_payload_length (max_payload_lengt
 
 zeropadding #(.payload_w (payload_w), .rate_mode (rate_mode), .max_payload_length (max_payload_length), .header_length (header_length)) ZeroPadding (
     .clk                (clk),
-    .rst_n              (rst_n_sync),
+    .rst_n              (rst_n),
     .data_i             (payload_fifo_out),
     .payload_length     (payload_length),
     .empty              (payload_fifo_empty),
@@ -104,7 +96,7 @@ zeropadding #(.payload_w (payload_w), .rate_mode (rate_mode), .max_payload_lengt
 
 e_o_demux #(.rate_mode (rate_mode)) DEMUX (
     .clk                (clk),
-    .rst_n              (rst_n_sync),
+    .rst_n              (rst_n),
     .mode               (mode),
     .data_i             (zeropadding_out),
     .valid_i            (zeropadding_valid),
@@ -118,7 +110,7 @@ controller #(
     .rate_mode          (rate_mode)
 ) my_controller (
     .clk                (clk),
-    .rst_n              (rst_n_sync),
+    .rst_n              (rst_n),
     .start_tx           (start_tx),
     .tx_end             (tx_done),
     .payload_length     (payload_length),
@@ -132,7 +124,7 @@ controller #(
 
 top_sym_to_ppdu #(.rate_mode (rate_mode)) symbol_mapper_to_ppdu (
     .clk                (clk),
-    .rst_n              (rst_n_sync),
+    .rst_n              (rst_n),
     .mode               (mode),
     .i_valid            (demux_valid),
     .i_data_even        (e_demux_branch),
@@ -145,7 +137,7 @@ top_sym_to_ppdu #(.rate_mode (rate_mode)) symbol_mapper_to_ppdu (
 
 QPSK_mapper QPSK (
     .CLK                (clk),
-    .rst_n              (rst_n_sync),
+    .rst_n              (rst_n),
     .i                  (ppdu_i),
     .q                  (ppdu_q),
     .i_valid            (ppdu_valid),
@@ -156,7 +148,7 @@ QPSK_mapper QPSK (
 );
 dqpsk_csk_top #(.FIFO_DEPTH (dqpsk_fifo_depth), .FIFO_WIDTH (dqpsk_fifo_w), .WL (wl)) DQPSK_CSK (
     .clk                (clk),
-    .rst_n              (rst_n_sync),
+    .rst_n              (rst_n),
 
     .Real               (qpsk_real_o),
     .Imag               (qpsk_imag_o),

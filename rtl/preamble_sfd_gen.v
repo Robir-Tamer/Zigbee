@@ -26,7 +26,7 @@ module preamble_sfd_gen #(
             // SFD mirrored because its [0:15] in reference
             assign sfd_word = 16'b00111001_00101110;
             
-            always @(posedge clk or negedge rst_n) 
+            always @(posedge clk) 
             begin
                 if (!rst_n) 
                 begin
@@ -45,7 +45,7 @@ module preamble_sfd_gen #(
             // SFD mirrored because its [0:15] in reference
             assign sfd_word = 16'b11000100_01011110;
             
-            always @(posedge clk or negedge rst_n) 
+            always @(posedge clk) 
             begin
                 if (!rst_n) 
                 begin
@@ -64,7 +64,7 @@ module preamble_sfd_gen #(
             // SFD mirrored because its [0:15] in reference
             assign sfd_word = (mode == 1) ? 16'b00111001_00101110 : 16'b11000100_01011110;      
 
-            always @(posedge clk or negedge rst_n) 
+            always @(posedge clk) 
             begin
                 if (!rst_n) 
                 begin

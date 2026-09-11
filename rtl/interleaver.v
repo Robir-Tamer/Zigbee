@@ -26,7 +26,7 @@ generate
         reg [1:0]  bit_count;
         reg        busy;
 
-        always @(posedge clk or negedge rst_n) 
+        always @(posedge clk) 
         begin
             if (!rst_n) 
             begin
@@ -81,7 +81,7 @@ generate
         reg [5:0]  bit_count;
         reg        busy;
 
-        always @(posedge clk or negedge rst_n) 
+        always @(posedge clk) 
         begin
             if (!rst_n) begin
                 cycle_flag  <= 1'b0;
@@ -159,7 +159,7 @@ generate
         reg [5:0]  bit_count;
         reg        busy;
 
-        always @(posedge clk or negedge rst_n) 
+        always @(posedge clk) 
         begin
             if (!rst_n) 
             begin

@@ -34,7 +34,7 @@ module controller #(
         if (rate_mode == "S") begin      : slow_rate_250Kbps
             assign mode = 0;                
 
-            always @(posedge clk or negedge rst_n) begin
+            always @(posedge clk) begin
                 if      (!rst_n)   begin idle_flage <= 1'b1; end 
                 else if (tx_end)   begin idle_flage <= 1'b1; end 
                 else if (start_tx) begin idle_flage <= 1'b0; end
@@ -45,7 +45,7 @@ module controller #(
         else if (rate_mode == "F") begin  : fast_rate_1Mbps
             assign mode = 1;                
 
-            always @(posedge clk or negedge rst_n) begin
+            always @(posedge clk) begin
                 if      (!rst_n)   begin idle_flage <= 1'b1; end 
                 else if (tx_end)   begin idle_flage <= 1'b1; end 
                 else if (start_tx) begin idle_flage <= 1'b0; end
@@ -56,7 +56,7 @@ module controller #(
         else begin  : hybrid_mode
             reg [1:0] counter_for_mode_detection; // 1--> 1 Mbps (mode = 1),  2--> 250 Kbps (mode = 0)
 
-            always @(posedge clk or negedge rst_n) begin
+            always @(posedge clk) begin
                 if (!rst_n) begin
                     counter_for_mode_detection <= 0;
                     idle_flage <= 1;

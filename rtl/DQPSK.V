@@ -8,7 +8,7 @@ module DQPSK (
 reg signed [1:0] Real_FF [0:3];
 reg signed [1:0] Imag_FF [0:3]; 
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk ) begin
     if (!rst_n) begin
         Real_FF[0] <= 2'sb01; Real_FF[1] <= 2'sb01; Real_FF[2] <= 2'sb01; Real_FF[3] <= 2'sb01;
         Imag_FF[0] <= 2'sb01; Imag_FF[1] <= 2'sb01; Imag_FF[2] <= 2'sb01; Imag_FF[3] <= 2'sb01;

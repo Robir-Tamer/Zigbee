@@ -43,7 +43,6 @@ wire    [payload_w-1 : 0]               counter_wrdata;
 wire    [payload_w-1 : 0]               payload_fifo_out;
 wire                                    payload_fifo_full;
 wire                                    payload_fifo_empty;
-wire                                    rst_n_sync;
 wire                                    zeropadding_en;
 wire                                    mode;
 wire                                    zeropadding_valid;
@@ -63,12 +62,6 @@ wire                                    ppdu_valid;
 
 assign interleaver_valid = interleaver_valid_e || interleaver_valid_o;
 /******************************** Instantiation ********************************/
-rst_sync #(.Stages ('d2)) RDC (
-    .clk                (clk),
-    .rst_n              (fun_rst_n),
-
-    .rst_n_sync         (rst_n_sync)
-);
 
 //clock Mux
 mux2X1 clk_mux (
@@ -81,7 +74,7 @@ mux2X1 clk_mux (
 
 //reset Mux
 mux2X1 rst_mux (
-    .IN_0               (rst_n_sync),
+    .IN_0               (fun_rst_n),
     .IN_1               (scan_rst_n),
     .SEL                (test_mode),
 

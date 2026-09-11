@@ -23,7 +23,7 @@ reg     [Stages-1 : 0]   ffs    [Width-1 : 0]; // ffs[bit][stage]
 integer i;
 /******************************* Seq Always Blocks *****************************/
 //flipflops behaviour
-always @(posedge CLK or negedge RST)
+always @(posedge CLK)
     begin
         if(!RST)
             begin
