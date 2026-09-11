@@ -136,7 +136,7 @@ top_sym_to_ppdu #(.rate_mode (rate_mode)) symbol_mapper_to_ppdu (
 );
 
 QPSK_mapper QPSK (
-    .CLK                (clk),
+    .clk                (clk),
     .rst_n              (rst_n),
     .i                  (ppdu_i),
     .q                  (ppdu_q),
