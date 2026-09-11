@@ -11,7 +11,7 @@ module symbol_mapper #(
 )(
 /************************************ Inputs ***********************************/
     input                                       clk,
-    input                                       rst, 
+    input                                       rst_n, 
     input                                       mode,
     input      [(rate_mode == "F"? 2 : 5):0]    i_data,
     input                                       i_valid,
@@ -22,9 +22,9 @@ module symbol_mapper #(
 
 generate
     if (rate_mode == "F") begin : gen_mapper_1mbps
-        always @(posedge clk or posedge rst) 
+        always @(posedge clk) 
         begin
-            if (rst) 
+            if (!rst_n) 
             begin
                 o_data  <= 4'b0;
                 o_valid <= 1'b0;
@@ -44,8 +44,8 @@ generate
         end
     end 
     else if (rate_mode == "S") begin : gen_mapper_250kbps
-        always @(posedge clk or posedge rst) begin
-            if (rst) 
+        always @(posedge clk) begin
+            if (!rst_n) 
             begin
                 o_data  <= 32'b0;
                 o_valid <= 1'b0;
@@ -79,8 +79,8 @@ generate
         end
     end
     else if (rate_mode == "H") begin : gen_mapper_hybrid
-        always @(posedge clk or posedge rst) begin
-            if (rst) 
+        always @(posedge clk) begin
+            if (!rst_n) 
             begin
                 o_data  <= 32'b0;
                 o_valid <= 1'b0;

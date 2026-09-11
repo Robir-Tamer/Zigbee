@@ -13,7 +13,7 @@ module preamble_sfd_gen #(
 )(
 /************************************ Inputs ***********************************/
     input  wire                       clk,
-    input  wire                       rst,
+    input  wire                       rst_n,
     input  wire                       mode,
 /*********************************** Outputs ***********************************/
     output reg  [total_bits-1:0]      preamble_sfd
@@ -26,9 +26,9 @@ module preamble_sfd_gen #(
             // SFD mirrored because its [0:15] in reference
             assign sfd_word = 16'b00111001_00101110;
             
-            always @(posedge clk or posedge rst) 
+            always @(posedge clk) 
             begin
-                if (rst) 
+                if (!rst_n) 
                 begin
                     preamble_sfd <= 'b0;
                 end 
@@ -45,9 +45,9 @@ module preamble_sfd_gen #(
             // SFD mirrored because its [0:15] in reference
             assign sfd_word = 16'b11000100_01011110;
             
-            always @(posedge clk or posedge rst) 
+            always @(posedge clk) 
             begin
-                if (rst) 
+                if (!rst_n) 
                 begin
                     preamble_sfd <= 'b0;
                 end 
@@ -64,16 +64,16 @@ module preamble_sfd_gen #(
             // SFD mirrored because its [0:15] in reference
             assign sfd_word = (mode == 1) ? 16'b00111001_00101110 : 16'b11000100_01011110;      
 
-            always @(posedge clk or posedge rst) 
+            always @(posedge clk) 
             begin
-                if (rst) 
+                if (!rst_n) 
                 begin
                     preamble_sfd <= 'b0;
                 end 
                 else 
                 begin
                     if (mode)
-                        preamble_sfd <= {sfd_word, {32{1'b1}}}; 
+                        preamble_sfd <= {48'b0, sfd_word, {32{1'b1}}}; 
                     else
                         preamble_sfd <= {sfd_word, {80{1'b1}}}; 
                 end

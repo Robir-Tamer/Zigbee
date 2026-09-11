@@ -1,7 +1,7 @@
 /*
 ********************************** Documentation *********************************
 *Author : Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File   : top_sym_to_ppdu                                                                    *
+*File   : top_sym_to_ppdu                                                        *
 *********************************************************************************
 */
 
@@ -11,7 +11,7 @@ module top_sym_to_ppdu #(
 )(
 /************************************ Inputs ***********************************/
     input  wire                                 clk,
-    input  wire                                 rst,
+    input  wire                                 rst_n,
     input  wire                                 mode,
     input  wire                                 i_valid,
     input  wire [(rate_mode == "F" ? 2 : 5):0]  i_data_even,
@@ -19,7 +19,9 @@ module top_sym_to_ppdu #(
 /*********************************** Outputs ***********************************/
     output wire                                 o_i,
     output wire                                 o_q,
-    output wire                                 o_valid
+    output wire                                 o_valid,
+    output wire                                 interleaver_even_valid,
+    output wire                                 interleaver_odd_valid
 );
 
     localparam DATA_WIDTH    = (rate_mode == "F") ? 4 : 32;
@@ -33,7 +35,6 @@ module top_sym_to_ppdu #(
     wire                  fifo_even_full;
     wire                  fifo_even_empty;
     wire                  interleaver_even_data;
-    wire                  interleaver_even_valid;
 
     // Internal wires for odd path
     wire [DATA_WIDTH-1:0] mapper_odd_data;
@@ -42,7 +43,6 @@ module top_sym_to_ppdu #(
     wire                  fifo_odd_full;
     wire                  fifo_odd_empty;
     wire                  interleaver_odd_data;
-    wire                  interleaver_odd_valid;
 
     // Internal wire for preamble and SFD generator output
     wire [TOTAL_BITS-1:0] preamble_sfd_wire;
@@ -52,12 +52,12 @@ module top_sym_to_ppdu #(
     // =========================================================================
 
     preamble_sfd_gen #(
-        .rate_mode(rate_mode)
+        .rate_mode          (rate_mode)
     ) u_preamble_sfd_gen (
-        .clk(clk),
-        .rst(rst),
-        .mode(mode),
-        .preamble_sfd(preamble_sfd_wire)
+        .clk                (clk),
+        .rst_n              (rst_n),
+        .mode               (mode),
+        .preamble_sfd       (preamble_sfd_wire)
     );
 
     // =========================================================================
@@ -65,40 +65,41 @@ module top_sym_to_ppdu #(
     // =========================================================================
     
     symbol_mapper #(
-        .rate_mode(rate_mode)
+        .rate_mode          (rate_mode)
     ) u_symbol_mapper_even (
-        .clk(clk),
-        .rst(rst),
-        .mode(mode),
-        .i_data(i_data_even),
-        .i_valid(i_valid),
-        .o_data(mapper_even_data),
-        .o_valid(mapper_even_valid)
+        .clk                (clk),
+        .rst_n              (rst_n),
+        .mode               (mode),
+        .i_data             (i_data_even),
+        .i_valid            (i_valid),
+        .o_data             (mapper_even_data),
+        .o_valid            (mapper_even_valid)
     );
 
-    sync_fifo_hybrid #(
-        .rate_mode(rate_mode)
+    Sync_FIFO_mem #(
+        .FIFO_WIDTH         ((rate_mode == "F") ? 4 : 32),
+        .FIFO_DEPTH         ((rate_mode == "F") ? 64 : 1024)
     ) u_sync_fifo_even (
-        .clk(clk),
-        .rst(rst),
-        .wr_en(mapper_even_valid),
-        .rd_en(1'b1), //Always enabled
-        .din(mapper_even_data),
-        .dout(fifo_even_dout),
-        .full_flag(), //Not needed
-        .empty_flag(fifo_even_empty) //Inverted & TO interleaver i_valid
+        .clk                (clk),
+        .rst_n              (rst_n),
+        .wr_en              (mapper_even_valid),
+        .rd_en              (1'b1),
+        .din                (mapper_even_data),
+        .dout               (fifo_even_dout),
+        .full_flag          (), 
+        .empty_flag         (fifo_even_empty) 
     );
 
     interleaver #(
-        .rate_mode(rate_mode)
+        .rate_mode          (rate_mode)
     ) u_interleaver_even (
-        .clk(clk),
-        .rst(rst),
-        .mode(mode),
-        .i_valid(!fifo_even_empty),
-        .i_data(fifo_even_dout),
-        .o_data(interleaver_even_data),
-        .o_valid(interleaver_even_valid)
+        .clk                (clk),
+        .rst_n              (rst_n),
+        .mode               (mode),
+        .i_valid            (!fifo_even_empty),
+        .i_data             (fifo_even_dout),
+        .o_data             (interleaver_even_data),
+        .o_valid            (interleaver_even_valid)
     );
 
     // =========================================================================
@@ -106,40 +107,41 @@ module top_sym_to_ppdu #(
     // =========================================================================
 
     symbol_mapper #(
-        .rate_mode(rate_mode)
+        .rate_mode          (rate_mode)
     ) u_symbol_mapper_odd (
-        .clk(clk),
-        .rst(rst),
-        .mode(mode),
-        .i_data(i_data_odd),
-        .i_valid(i_valid),
-        .o_data(mapper_odd_data),
-        .o_valid(mapper_odd_valid)
+        .clk                (clk),
+        .rst_n              (rst_n),
+        .mode               (mode),
+        .i_data             (i_data_odd),
+        .i_valid            (i_valid),
+        .o_data             (mapper_odd_data),
+        .o_valid            (mapper_odd_valid)
     );
 
-    sync_fifo_hybrid #(
-        .rate_mode(rate_mode)
+    Sync_FIFO_mem #(
+        .FIFO_WIDTH         ((rate_mode == "F") ? 4 : 32),
+        .FIFO_DEPTH         ((rate_mode == "F") ? 64 : 1024)
     ) u_sync_fifo_odd (
-        .clk(clk),
-        .rst(rst),
-        .wr_en(mapper_odd_valid),
-        .rd_en(1'b1), //Always enabled
-        .din(mapper_odd_data),
-        .dout(fifo_odd_dout),
-        .full_flag(), //Not needed
-        .empty_flag(fifo_odd_empty) //Inverted & TO interleaver i_valid
+        .clk                (clk),
+        .rst_n              (rst_n),
+        .wr_en              (mapper_odd_valid),
+        .rd_en              (1'b1),
+        .din                (mapper_odd_data),
+        .dout               (fifo_odd_dout),
+        .full_flag          (), 
+        .empty_flag         (fifo_odd_empty) 
     );
 
     interleaver #(
-        .rate_mode(rate_mode)
+        .rate_mode          (rate_mode)
     ) u_interleaver_odd (
-        .clk(clk),
-        .rst(rst),
-        .mode(mode),
-        .i_valid(!fifo_odd_empty),
-        .i_data(fifo_odd_dout),
-        .o_data(interleaver_odd_data),
-        .o_valid(interleaver_odd_valid)
+        .clk                (clk),
+        .rst_n              (rst_n),
+        .mode               (mode),
+        .i_valid            (!fifo_odd_empty),
+        .i_data             (fifo_odd_dout),
+        .o_data             (interleaver_odd_data),
+        .o_valid            (interleaver_odd_valid)
     );
 
     // =========================================================================
@@ -147,18 +149,18 @@ module top_sym_to_ppdu #(
     // =========================================================================
 
     form_ppdu #(
-        .rate_mode(rate_mode)
+        .rate_mode          (rate_mode)
     ) u_form_ppdu (
-        .clk(clk),
-        .rst(rst),
-        .mode(mode),
-        .i_valid(interleaver_even_valid || interleaver_odd_valid),
-        .i_e(interleaver_even_data),
-        .i_o(interleaver_odd_data),
-        .i_preamble_SFD(preamble_sfd_wire),
-        .o_i(o_i),
-        .o_q(o_q),
-        .o_valid(o_valid)
+        .clk                (clk),
+        .rst_n              (rst_n),
+        .mode               (mode),
+        .i_valid            (interleaver_even_valid || interleaver_odd_valid),
+        .i_e                (interleaver_even_data),
+        .i_o                (interleaver_odd_data),
+        .i_preamble_SFD     (preamble_sfd_wire),
+        .o_i                (o_i),
+        .o_q                (o_q),
+        .o_valid            (o_valid)
     );
 
 endmodule
