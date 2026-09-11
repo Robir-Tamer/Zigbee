@@ -13,7 +13,7 @@ Discription : The controlle block: trigers the enable signals for different bloc
 
 module controller #(
     parameter rate_mode = "F", // S --> 250 Kbps, F --> 1 Mbps, H --> Hybrid
-    parameter max_payload_length =127,
+    parameter max_payload_length =127
 ) (
     input clk,
     input rst_n,    // synchronous Active-low reset.
