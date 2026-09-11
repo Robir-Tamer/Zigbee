@@ -9,7 +9,7 @@ module zigbee_asic #(
 /********************************** Parameters *********************************/
     parameter rate_mode = "H", //H >>>>> Hybrid, F >>>>> 1mbps, S >>>>> 250kbps
     parameter wl = 6,
-    parameter fl = 3,
+    parameter fl = 4,
     parameter payload_w =8,
     parameter max_payload_length =127,
     parameter header_length = 12,
