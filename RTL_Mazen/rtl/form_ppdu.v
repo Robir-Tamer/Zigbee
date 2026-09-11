@@ -6,11 +6,21 @@
 */
 
 module form_ppdu #(
+/********************************** Parameters *********************************/
     parameter rate_mode = "H"
 )(
-    input  wire        clk, rst, mode, i_valid, i_e, i_o,
+/************************************ Inputs ***********************************/
+    input  wire        clk, 
+    input  wire        rst, 
+    input  wire        mode, 
+    input  wire        i_valid, 
+    input  wire        i_e, 
+    input  wire        i_o,
     input  wire [95:0] i_preamble_SFD,
-    output reg         o_i, o_q, o_valid
+/*********************************** Outputs ***********************************/
+    output reg         o_i, 
+    output reg         o_q, 
+    output reg         o_valid
 );
 
     reg [95:0] shift_reg;

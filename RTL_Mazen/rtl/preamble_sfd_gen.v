@@ -1,7 +1,7 @@
 /*
 ********************************** Documentation *********************************
-*Author :Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File   :preamble_sfd_gen                                                        *
+*Author : Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
+*File   : preamble_sfd_gen                                                       *
 *********************************************************************************
 */
 
@@ -12,10 +12,11 @@ module preamble_sfd_gen #(
     parameter total_bits    = preamble_bits + 16
 )(
 /************************************ Inputs ***********************************/
-    input                             clk, rst, mode,
+    input  wire                       clk,
+    input  wire                       rst,
+    input  wire                       mode,
 /*********************************** Outputs ***********************************/
-    output reg [total_bits-1:0]       preamble_sfd,
-    output reg                        o_valid
+    output reg  [total_bits-1:0]      preamble_sfd
 );
 
     generate
@@ -30,12 +31,10 @@ module preamble_sfd_gen #(
                 if (rst) 
                 begin
                     preamble_sfd <= 'b0;
-                    o_valid      <= 1'b0;
                 end 
                 else 
                 begin
                     preamble_sfd <= {sfd_word, {32{1'b1}}}; 
-                    o_valid      <= 1'b1;
                 end
             end
         end 
@@ -51,12 +50,10 @@ module preamble_sfd_gen #(
                 if (rst) 
                 begin
                     preamble_sfd <= 'b0;
-                    o_valid      <= 1'b0;
                 end 
                 else 
                 begin
                     preamble_sfd <= {sfd_word, {80{1'b1}}}; 
-                    o_valid      <= 1'b1;
                 end
             end
         end 
@@ -72,7 +69,6 @@ module preamble_sfd_gen #(
                 if (rst) 
                 begin
                     preamble_sfd <= 'b0;
-                    o_valid      <= 1'b0;
                 end 
                 else 
                 begin
@@ -80,8 +76,6 @@ module preamble_sfd_gen #(
                         preamble_sfd <= {sfd_word, {32{1'b1}}}; 
                     else
                         preamble_sfd <= {sfd_word, {80{1'b1}}}; 
-                    
-                    o_valid      <= 1'b1;
                 end
             end
         end

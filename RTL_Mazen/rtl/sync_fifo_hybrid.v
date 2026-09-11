@@ -6,13 +6,19 @@
 */
 
 module sync_fifo_hybrid #(
+/********************************** Parameters *********************************/
     parameter        rate_mode  = "H", 
-    parameter        FIFO_WIDTH = (rate_mode == "F") ? 4 : 32, // 4 for 1 Mbps, 32 for 250 Kbps
-    parameter        FIFO_DEPTH = (rate_mode == "F") ? 64 : 1024, // 64 for 1 Mbps, 1024 for 250 Kbps
+    parameter        FIFO_WIDTH = (rate_mode == "F") ? 4 : 32, // 4 for 1 Mbps, 32 for 250 Kbps[cite: 5]
+    parameter        FIFO_DEPTH = (rate_mode == "F") ? 64 : 1024, // 64 for 1 Mbps, 1024 for 250 Kbps[cite: 5]
     localparam       ADDR_SIZE  = $clog2(FIFO_DEPTH)
 ) (
-    input  wire                   clk, rst, wr_en, rd_en, 
+/************************************ Inputs ***********************************/
+    input  wire                   clk, 
+    input  wire                   rst, 
+    input  wire                   wr_en, 
+    input  wire                   rd_en, 
     input  wire  [FIFO_WIDTH-1:0] din,
+/*********************************** Outputs ***********************************/
     output reg   [FIFO_WIDTH-1:0] dout,
     output wire                   full_flag, 
     output wire                   empty_flag
