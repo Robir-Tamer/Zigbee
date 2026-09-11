@@ -107,6 +107,8 @@ for (test_case = 0; test_case < 3; test_case = test_case + 1) begin
     
 
     rst_n = 1'b1;
+   
+    repeat (2) @(negedge clk); //determined cycles for RDC
 
     $display ("rst deasserted, starting test case %0d", test_case);
     $display("Rate Mode       = %s", rate_mode);
