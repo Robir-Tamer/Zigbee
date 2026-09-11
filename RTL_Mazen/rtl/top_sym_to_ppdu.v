@@ -14,7 +14,8 @@ module top_sym_to_ppdu #(
     input  wire                                 rst,
     input  wire                                 mode,
     input  wire                                 i_valid,
-    input  wire [(rate_mode == "F" ? 2 : 5):0]  i_data,
+    input  wire [(rate_mode == "F" ? 2 : 5):0]  i_data_even,
+    input  wire [(rate_mode == "F" ? 2 : 5):0]  i_data_odd,
 /*********************************** Outputs ***********************************/
     output wire                                 o_i,
     output wire                                 o_q,
@@ -69,7 +70,7 @@ module top_sym_to_ppdu #(
         .clk(clk),
         .rst(rst),
         .mode(mode),
-        .i_data(i_data),
+        .i_data(i_data_even),
         .i_valid(i_valid),
         .o_data(mapper_even_data),
         .o_valid(mapper_even_valid)
@@ -110,7 +111,7 @@ module top_sym_to_ppdu #(
         .clk(clk),
         .rst(rst),
         .mode(mode),
-        .i_data(i_data),
+        .i_data(i_data_odd),
         .i_valid(i_valid),
         .o_data(mapper_odd_data),
         .o_valid(mapper_odd_valid)
