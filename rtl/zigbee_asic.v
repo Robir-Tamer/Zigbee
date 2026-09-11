@@ -5,7 +5,7 @@
 *********************************************************************************
 */
 
-module zigbee #(
+module zigbee_asic #(
 /********************************** Parameters *********************************/
     parameter rate_mode = "H", //H >>>>> Hybrid, F >>>>> 1mbps, S >>>>> 250kbps
     parameter wl = 6,
@@ -35,8 +35,8 @@ module zigbee #(
     output  wire                                        tx_done    
 );
 /*********************************** Signals ***********************************/
-wire                                    clk,
-wire                                    rst_n,
+wire                                    clk;
+wire                                    rst_n;
 wire                                    counter_wren;
 wire                                    zeropadding_nextitem;
 wire    [payload_w-1 : 0]               counter_wrdata;
