@@ -19,7 +19,9 @@ module top_sym_to_ppdu #(
 /*********************************** Outputs ***********************************/
     output wire                                 o_i,
     output wire                                 o_q,
-    output wire                                 o_valid
+    output wire                                 o_valid,
+    output wire                                 interleaver_even_valid,
+    output wire                                 interleaver_odd_valid
 );
 
     localparam DATA_WIDTH    = (rate_mode == "F") ? 4 : 32;
@@ -33,7 +35,6 @@ module top_sym_to_ppdu #(
     wire                  fifo_even_full;
     wire                  fifo_even_empty;
     wire                  interleaver_even_data;
-    wire                  interleaver_even_valid;
 
     // Internal wires for odd path
     wire [DATA_WIDTH-1:0] mapper_odd_data;
@@ -42,7 +43,6 @@ module top_sym_to_ppdu #(
     wire                  fifo_odd_full;
     wire                  fifo_odd_empty;
     wire                  interleaver_odd_data;
-    wire                  interleaver_odd_valid;
 
     // Internal wire for preamble and SFD generator output
     wire [TOTAL_BITS-1:0] preamble_sfd_wire;

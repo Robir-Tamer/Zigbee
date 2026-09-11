@@ -12,13 +12,14 @@ Discription : The controlle block: trigers the enable signals for different bloc
 */
 
 module controller #(
-    parameter rate_mode = "F" // S --> 250 Kbps, F --> 1 Mbps, H --> Hybrid
+    parameter rate_mode = "F", // S --> 250 Kbps, F --> 1 Mbps, H --> Hybrid
+    parameter max_payload_length =127,
 ) (
     input clk,
     input rst_n,    // synchronous Active-low reset.
     input start_tx, // indecates the start of sending operation.
     input tx_end,   // indecates the end of sending operation, system goes to idle state
-    input payload_length,
+    input   wire    [$clog2(max_payload_length)-1 : 0]  payload_length,
     input fifo_empty,
     input demux_valid,
     input interleaver_valid,
@@ -68,7 +69,7 @@ module controller #(
                 end
 
                 else if (start_tx) begin 
-                    counter_for_mode_detection = counter_for_mode_detection +1;
+                    counter_for_mode_detection <= counter_for_mode_detection +1;
                     idle_flage <= 0;
                 end
             end

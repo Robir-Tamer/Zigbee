@@ -134,7 +134,8 @@ e_o_demux #(.rate_mode (rate_mode)) DEMUX (
 );
 
 controller #(
-    .rate_mode          (rate_mode)
+    .rate_mode          (rate_mode),
+    .max_payload_length (max_payload_length)
 ) my_controller (
     .clk                (clk),
     .rst_n              (rst_n),
@@ -150,16 +151,18 @@ controller #(
 );
 
 top_sym_to_ppdu #(.rate_mode (rate_mode)) symbol_mapper_to_ppdu (
-    .clk                (clk),
-    .rst_n              (rst_n),
-    .mode               (mode),
-    .i_valid            (demux_valid),
-    .i_data_even        (e_demux_branch),
-    .i_data_odd         (o_demux_branch),
+    .clk                    (clk),
+    .rst_n                  (rst_n),
+    .mode                   (mode),
+    .i_valid                (demux_valid),
+    .i_data_even            (e_demux_branch),
+    .i_data_odd             (o_demux_branch),
 
-    .o_i                (ppdu_i),
-    .o_q                (ppdu_q),
-    .o_valid            (ppdu_valid)
+    .o_i                    (ppdu_i),
+    .o_q                    (ppdu_q),
+    .o_valid                (ppdu_valid),
+    .interleaver_even_valid (interleaver_valid_e),
+    .interleaver_odd_valid  (interleaver_valid_o)
 );
 
 QPSK_mapper QPSK (
