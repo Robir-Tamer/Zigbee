@@ -92,10 +92,10 @@ initial begin
   
 for (test_case = 0; test_case < 3; test_case = test_case + 1) begin
     
-    rst_n          = 1'b0;
-    payload        = '0;
-    payload_length = '0;
-    start_tx       = 1'b0;
+  rst_n          = 0;
+    payload        = 0;
+    payload_length = 0;
+    start_tx       = 0;
 
     // final RTL reset timing is not confirmed.
     repeat (3) @(negedge clk); //not determined cycles
