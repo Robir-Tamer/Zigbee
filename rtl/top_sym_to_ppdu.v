@@ -1,7 +1,7 @@
 /*
 ********************************** Documentation *********************************
 *Author : Robir Tamer, Anas Abo-Lila, Sherief Ahmad, Mazen Mahmoud, David Sameeh *
-*File   : top_sym_to_ppdu                                                                    *
+*File   : top_sym_to_ppdu                                                        *
 *********************************************************************************
 */
 
@@ -83,11 +83,11 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .wr_en              (mapper_even_valid),
-        .rd_en              (1'b1), //Always enabled
+        .rd_en              (1'b1),
         .din                (mapper_even_data),
         .dout               (fifo_even_dout),
-        .full_flag          (), //Not needed
-        .empty_flag         (fifo_even_empty) //Inverted & TO interleaver i_valid
+        .full_flag          (), 
+        .empty_flag         (fifo_even_empty) 
     );
 
     interleaver #(
@@ -125,11 +125,11 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .wr_en              (mapper_odd_valid),
-        .rd_en              (1'b1), //Always enabled
+        .rd_en              (1'b1),
         .din                (mapper_odd_data),
         .dout               (fifo_odd_dout),
-        .full_flag          (), //Not needed
-        .empty_flag         (fifo_odd_empty) //Inverted & TO interleaver i_valid
+        .full_flag          (), 
+        .empty_flag         (fifo_odd_empty) 
     );
 
     interleaver #(
