@@ -76,7 +76,7 @@ module top_sym_to_ppdu #(
         .o_valid            (mapper_even_valid)
     );
 
-    Sync_FIFO_mem #(
+    FIFO_mem #(
         .FIFO_WIDTH         ((rate_mode == "F") ? 4 : 32),
         .FIFO_DEPTH         ((rate_mode == "F") ? 64 : 1024)
     ) u_sync_fifo_even (
@@ -118,7 +118,7 @@ module top_sym_to_ppdu #(
         .o_valid            (mapper_odd_valid)
     );
 
-    Sync_FIFO_mem #(
+    FIFO_mem #(
         .FIFO_WIDTH         ((rate_mode == "F") ? 4 : 32),
         .FIFO_DEPTH         ((rate_mode == "F") ? 64 : 1024)
     ) u_sync_fifo_odd (
