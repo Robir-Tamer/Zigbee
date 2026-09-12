@@ -99,24 +99,41 @@ module Top #(
     // 'ever_run' arms the check only after a real transmission has
     // started, so reset (running=0, en=0) can't false-trigger it.
     reg ever_run;
+    wire tx_done_raw;   // was: tx_done -- renamed, now an INTERNAL signal only
+
     always @(posedge clk) begin
         if (!rst_n)
             ever_run <= 1'b0;
         else if (csk_running)
             ever_run <= 1'b1;
-        else if (tx_done)
+        else if (tx_done_raw)
             ever_run <= 1'b0;   // re-arm for the next packet
     end
 
     assign tx_done_level = ever_run && !csk_running;
-    assign tx_end = tx_done;
 
     posedge_detector posedge_detector_DUT (
         .clk(clk),
         .rst_n(rst_n), 
         .in(tx_done_level), 
-        .out(tx_done)
+        .out(tx_done_raw)
     );
+
+    // NEW: 1-cycle delay so the module-facing tx_done/tx_end asserts
+    // strictly AFTER the last transmitted sample, not concurrent with it
+    // (see earlier discussion -- avoids ambiguous timing for any
+    // downstream consumer that reacts to "done" by assuming nothing
+    // further is being driven on tx_real/tx_imag that same cycle).
+    reg tx_done_d;
+    always @(posedge clk) begin
+        if (!rst_n)
+            tx_done_d <= 1'b0;
+        else
+            tx_done_d <= tx_done_raw;
+    end
+
+    assign tx_done = tx_done_d;
+    assign tx_end  = tx_done_d;
 
 // Modulation hardware Implementation (Complex Multiplier)
 always @(posedge clk) begin
