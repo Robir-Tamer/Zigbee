@@ -130,16 +130,16 @@ else if (test_case == 2) begin
     $readmemb("matlab_tx_imag_F_127.txt", matlab_tx_imag);
 end
 
-  
-    // Start transmission
-    start_tx = 1'b1;
-    @(negedge clk);
-    start_tx = 1'b0;
-      // Load current payload
+       // Load current payload
     for (i = 0; i < test_payload_length[test_case]; i = i + 1) begin
         payload = payload_mem[i];
         @(negedge clk);
     end
+    // Start transmission
+    start_tx = 1'b1;
+    @(negedge clk);
+    start_tx = 1'b0;
+ 
 
 
     sample_count = 0;

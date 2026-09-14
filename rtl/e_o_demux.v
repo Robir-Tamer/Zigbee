@@ -60,7 +60,7 @@ generate
                                         begin
                                             e_bits_reg  <= {data_i,e_bits_reg[2 : 1]};
                                             if(e_counter == 'b11)
-                                                e_counter <= 'b0;
+                                                e_counter <= 'b1;
                                             else
                                                 e_counter   <= e_counter + 'b1;
                                             even        <= !even;
@@ -119,7 +119,7 @@ generate
                                         begin
                                             e_bits_reg  <= {data_i,e_bits_reg[5 : 1]};
                                             if(e_counter == 'b110)
-                                                e_counter <= 'b0;
+                                                e_counter <= 'b1;
                                             else
                                                 e_counter   <= e_counter + 'b1;
                                             even        <= !even;
@@ -177,7 +177,7 @@ generate
                                         begin
                                             e_bits_reg  <= {data_i,e_bits_reg[5 : 1]};
                                             if(e_counter == 'b110)
-                                                e_counter <= 'b0;
+                                                e_counter <= 'b1;
                                             else
                                                 e_counter   <= e_counter + 'b1;
                                             even        <= !even;
@@ -220,7 +220,7 @@ generate
                                         begin
                                             e_bits_reg[2:0]  <= {data_i,e_bits_reg[2 : 1]};
                                             if(e_counter == 'b11)
-                                                e_counter <= 'b0;
+                                                e_counter <= 'b1;
                                             else
                                                 e_counter   <= e_counter + 'b1;
                                             even        <= !even;
