@@ -19,28 +19,28 @@
 # ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
 # Modifying modelsim.ini
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:00:59 on Sep 09,2026
+# Start time: 00:32:41 on Sep 15,2026
 # vlog -reportprogress 300 -work work ../RTL/CSK_GEN.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module CSK_GEN
 # 
 # Top level modules:
 # 	CSK_GEN
-# End time: 19:00:59 on Sep 09,2026, Elapsed time: 0:00:00
+# End time: 00:32:41 on Sep 15,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 19:00:59 on Sep 09,2026
+# Start time: 00:32:41 on Sep 15,2026
 # vlog -reportprogress 300 -work work ../TB/CSK_GEN_TB.V 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module CSK_GEN_tb
 # 
 # Top level modules:
 # 	CSK_GEN_tb
-# End time: 19:00:59 on Sep 09,2026, Elapsed time: 0:00:00
+# End time: 00:32:41 on Sep 15,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
 # vsim -voptargs="+acc" work.CSK_GEN_tb 
-# Start time: 19:00:59 on Sep 09,2026
+# Start time: 00:32:42 on Sep 15,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
@@ -66,10 +66,10 @@
 # --- Frame 2: en drops exactly as active block ends (addr_ptr 151->152) ---
 # [STIMULUS] Time 3230000: en deasserted at addr_ptr=152
 # [INFO] Entering  Odd Gap (70 cycles expected) with en=0 throughout.
+# [MONITOR] Time 3925000: running 1 -> 0 (addr_ptr=0, samble_cnt=0, en=0)
 # [PASS] Trailing gap ran the FULL correct duration (70 cycles) despite en=0.
-# [MONITOR] Time 3935000: running 1 -> 0 (addr_ptr=0, samble_cnt=0, en=0)
+# [PASS] Time 3935000: No glitch after running dropped.
 # [PASS] running correctly dropped to 0 at the post-gap frame boundary.
-# [PASS] Time 3945000: No glitch after running dropped.
 # [PASS] Module remained idle for 5 cycles after stopping.
 # 
 # ==================================================
@@ -85,5 +85,5 @@
 # 0 ps
 # 4236750 ps
 quit
-# End time: 19:01:46 on Sep 09,2026, Elapsed time: 0:00:47
+# End time: 00:33:06 on Sep 15,2026, Elapsed time: 0:00:24
 # Errors: 0, Warnings: 1

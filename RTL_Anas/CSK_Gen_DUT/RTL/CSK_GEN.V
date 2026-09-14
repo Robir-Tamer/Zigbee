@@ -21,7 +21,12 @@ module CSK_GEN #(
     wire      stop_now;
 
 
-    assign stop_now = running && !en && (addr_ptr == 8'd0) && (samble_cnt == 7'd0);
+    // FIX: detect trailing-gap-complete one cycle earlier (from the gap
+    // counter itself) instead of the post-wrap state, to remove one
+    // redundant extra zero-output cycle at end of transmission.
+    assign stop_now = running && !en && (addr_ptr > 8'd151) &&
+                       ( (!which_gab && samble_cnt == 7'd9)  ||
+                         ( which_gab && samble_cnt == 7'd69) );
     assign next_item = running && (first_fetch || boundary_d);
 
     always @(posedge clk) begin
