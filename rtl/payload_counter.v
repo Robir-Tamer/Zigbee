@@ -58,11 +58,16 @@ always @(posedge clk)
         else if (start_tx == 1'b1)
             begin
                 running <= 1'b1;
+                wr_en <= 'b0;
             end
         else if (tx_done == 1'b1)
             begin
                 running <= 1'b0;
                 counter <= 'b0;
+            end
+        else
+            begin
+                wr_en   <= 'b0;
             end
     end
 endmodule

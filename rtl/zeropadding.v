@@ -28,12 +28,24 @@ module zeropadding #(
 );
 /*********************************** Signals ***********************************/
 reg     [header_length-1 : 0]       header_reg;
-wire    [header_length-1 : 0]       header;
 reg     [(rate_mode == "F"? 3:4) : 0]    counter;        //Padding Counter
 reg                                 header_done;
 reg     [2:0]                       byte_counter;   //Readed Payload Counter
 reg     [payload_w-1 : 0]           data_i_reg;
+reg                                 done_bytes;
+reg                                 empty_delayed;
 
+always @(posedge clk)
+    begin
+        if (!rst_n)
+            begin
+                empty_delayed   <= 'b0;
+            end
+        else
+            begin
+                empty_delayed   <= empty;
+            end
+    end
 generate
     if (rate_mode == "F")
         begin
@@ -48,11 +60,14 @@ generate
                             header_done <= 1'b0;
                             header_reg  <= 'b0;
                             byte_counter<= 3'b0;
+                            done_bytes  <= 'b0;
+                            data_i_reg  <= 'b0;
                         end
                     else if (en)
                         begin
-                            if (!header_done && !empty)
+                            if (!header_done && !empty_delayed)
                                 begin
+                                    done_bytes          <= 'b0;
                                     valid               <= 1'b1;
                                     if (counter == 0)
                                         begin
@@ -76,13 +91,11 @@ generate
                                                     if (counter == 'd10)
                                                         next_item   <= 1'b1;
                                                 end
-                                            
-                                            
                                         end
                                 end
                             else if (header_done)
                                 begin
-                                    if (!empty)
+                                    if (!empty_delayed)
                                         begin
                                             valid               <= 1'b1;
                                             byte_counter        <= byte_counter + 1;
@@ -116,27 +129,37 @@ generate
                                         end
                                     else
                                         begin
-                                            if (counter == 4'd5)
+                                            if (counter == 'd5)
                                                 begin
                                                     counter     <= 'b0;
                                                 end
-                                            if (counter == 'b0 && byte_counter == 4'd0)
+                                            else
+                                                begin
+                                                    counter     <= counter + 1'b1;
+                                                end
+                                            if (byte_counter == 'd7)
+                                                done_bytes  <= 1;
+                                            if (done_bytes == 0)
+                                                begin
+                                                    if (byte_counter ==0)
+                                                        begin
+                                                            data_i_reg  <= data_i >> 1;
+                                                            data_o      <= data_i[0];
+                                                        end
+                                                    else
+                                                        begin
+                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                        end
+                                                    byte_counter <= byte_counter+1;
+                                                end
+                                            else if (counter == 'b0 && byte_counter == 4'd0)
                                                 begin
                                                     data_o      <= 1'b0;
-                                                    counter     <= counter + 1'b1;
                                                     byte_counter<= 'd1;
                                                 end
                                             else if(counter != 'b0)
                                                 begin
                                                     data_o      <= 1'b0;
-                                                    if (counter == 'd23)
-                                                        begin
-                                                            counter     <= 'b0;
-                                                        end
-                                                    else
-                                                        begin
-                                                            counter     <= counter + 1'b1;
-                                                        end
                                                     valid       <= 1'b1;
                                                     byte_counter<= 'd1;
                                                 end
@@ -163,11 +186,14 @@ generate
                             header_done <= 1'b0;
                             header_reg  <= 'b0;
                             byte_counter<= 3'b0;
+                            done_bytes  <= 'b0;
+                            data_i_reg  <= 'b0;
                         end
                     else if (en)
                         begin
-                            if (!header_done && !empty)
+                            if (!header_done && !empty_delayed)
                                 begin
+                                    done_bytes          <= 'b0;
                                     valid               <= 1'b1;
                                     counter             <= counter + 1'b1;
                                     if (counter == 'b0)
@@ -191,7 +217,7 @@ generate
                                 end
                             else if (header_done)
                                 begin
-                                    if (!empty)
+                                    if (!empty_delayed)
                                         begin
                                             valid               <= 1'b1;
                                             byte_counter        <= byte_counter + 1;
@@ -229,24 +255,34 @@ generate
                                                 begin
                                                     counter     <= 'b0;
                                                 end
-
-                                            if (counter == 'b0 && byte_counter == 4'd0)
+                                            else
+                                                begin
+                                                    counter     <= counter + 1'b1;
+                                                end
+                                            if (byte_counter == 'd7)
+                                                done_bytes  <= 1;
+                                            if (done_bytes == 0)
+                                                begin
+                                                    if (byte_counter ==0)
+                                                        begin
+                                                            data_i_reg  <= data_i >> 1;
+                                                            data_o      <= data_i[0];
+                                                        end
+                                                    else
+                                                        begin
+                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                        end
+                                                    byte_counter <= byte_counter+1;
+                                                end
+                                            else if (counter == 'b0 && byte_counter == 4'd0)
                                                 begin
                                                     data_o      <= 1'b0;
-                                                    counter     <= counter + 1'b1;
                                                     byte_counter<= 'd1;
+                                                    done_bytes  <= 'b1;
                                                 end
                                             else if(counter != 'b0)
                                                 begin
                                                     data_o      <= 1'b0;
-                                                    if (counter == 'd23)
-                                                        begin
-                                                            counter     <= 'b0;
-                                                        end
-                                                    else
-                                                        begin
-                                                            counter     <= counter + 1'b1;
-                                                        end
                                                     valid       <= 1'b1;
                                                     byte_counter<= 'd1;
                                                 end
@@ -273,14 +309,17 @@ generate
                             header_done <= 1'b0;
                             header_reg  <= 'b0;
                             byte_counter<= 3'b0;
+                            done_bytes  <= 'b0;
+                            data_i_reg  <= 'b0;
                         end
                     else if (en)
                         begin
                             
                             if (!mode)
                                 begin
-                                    if (!header_done && !empty)
+                                    if (!header_done && !empty_delayed)
                                         begin
+                                            done_bytes          <= 'b0;
                                             valid               <= 1'b1;
                                             counter             <= counter + 1'b1;
                                             if (counter == 'b0)
@@ -304,7 +343,7 @@ generate
                                         end
                                     else if (header_done)
                                         begin
-                                            if (!empty)
+                                            if (!empty_delayed)
                                                 begin
                                                     valid               <= 1'b1;
                                                     byte_counter        <= byte_counter + 1;
@@ -338,23 +377,38 @@ generate
                                                 end
                                             else
                                                 begin
-                                                    if (counter == 'b0 && byte_counter == 4'd0)
+                                                    if (counter == 'd23)
+                                                        begin
+                                                            counter     <= 'b0;
+                                                        end
+                                                    else
+                                                        begin
+                                                            counter     <= counter + 1'b1;
+                                                        end
+                                                    if (byte_counter == 'd7)
+                                                        done_bytes  <= 1;
+                                                    if (done_bytes == 0)
+                                                        begin
+                                                            if (byte_counter ==0)
+                                                                begin
+                                                                    data_i_reg  <= data_i >> 1;
+                                                                    data_o      <= data_i[0];
+                                                                end
+                                                            else
+                                                                begin
+                                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                                end
+                                                            byte_counter <= byte_counter+1;
+                                                        end
+                                                    else if (counter == 'b0 && byte_counter == 4'd0)
                                                         begin
                                                             data_o      <= 1'b0;
-                                                            counter     <= counter + 1'b1;
                                                             byte_counter<= 'd1;
+                                                            done_bytes  <= 'b1;
                                                         end
                                                     else if(counter != 'b0)
                                                         begin
                                                             data_o      <= 1'b0;
-                                                            if (counter == 'd23)
-                                                                begin
-                                                                    counter     <= 'b0;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    counter     <= counter + 1'b1;
-                                                                end
                                                             valid       <= 1'b1;
                                                             byte_counter<= 'd1;
                                                         end
@@ -368,8 +422,9 @@ generate
                                 end
                             else if (mode)
                                 begin
-                                    if (!header_done && !empty)
+                                    if (!header_done && !empty_delayed)
                                         begin
+                                            done_bytes          <= 'b0;
                                             valid               <= 1'b1;
                                             if (counter == 0)
                                                 begin
@@ -398,7 +453,7 @@ generate
                                         end
                                     else if (header_done)
                                         begin
-                                            if (!empty)
+                                            if (!empty_delayed)
                                                 begin
                                                     valid               <= 1'b1;
                                                     byte_counter        <= byte_counter + 1;
@@ -432,24 +487,38 @@ generate
                                                 end
                                             else
                                                 begin
-                                                    
-                                                    if (counter == 'b0 && byte_counter == 4'd0)
+                                                    if (counter == 'd5)
+                                                        begin
+                                                            counter     <= 'b0;
+                                                        end
+                                                    else
+                                                        begin
+                                                            counter     <= counter + 1'b1;
+                                                        end
+                                                    if (byte_counter == 'd7)
+                                                        done_bytes  <= 1;
+                                                    if (done_bytes == 0)
+                                                        begin
+                                                            if (byte_counter ==0)
+                                                                begin
+                                                                    data_i_reg  <= data_i >> 1;
+                                                                    data_o      <= data_i[0];
+                                                                end
+                                                            else
+                                                                begin
+                                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                                end
+                                                            byte_counter <= byte_counter+1;
+                                                        end
+                                                    else if (counter == 'b0 && byte_counter == 4'd0)
                                                         begin
                                                             data_o      <= 1'b0;
-                                                            counter     <= counter + 1'b1;
                                                             byte_counter<= 'd1;
+                                                            done_bytes  <= 'b1;
                                                         end
                                                     else if(counter != 'b0)
                                                         begin
                                                             data_o      <= 1'b0;
-                                                            if (counter == 'd5)
-                                                                begin
-                                                                    counter     <= 'b0;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    counter     <= counter + 1'b1;
-                                                                end
                                                             valid       <= 1'b1;
                                                             byte_counter<= 'd1;
                                                         end
