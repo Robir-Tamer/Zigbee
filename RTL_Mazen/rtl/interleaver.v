@@ -22,7 +22,7 @@ module interleaver #(
 
 generate
     if (rate_mode == "F") begin : gen_interleaver_1mbps
-        reg [3:0]  shift_reg;
+        reg [2:0]  shift_reg;
         reg [1:0]  bit_count;
         reg        busy;
 
@@ -32,49 +32,43 @@ generate
             begin
                 o_data    <= 1'b0;
                 o_valid   <= 1'b0;
-                shift_reg <= 4'b0;
-                bit_count <= 2'd0;
+                shift_reg <= 3'b0;
+                bit_count <= 2'b0;
                 busy      <= 1'b0;
             end 
-            else 
+            else if (!busy && i_valid)
             begin
-                if (!busy) 
+                shift_reg <= i_data[3:1];
+                busy      <= 1'b1;
+                bit_count <= 2'b0; 
+                o_data    <= i_data[0];
+                o_valid   <= 1'b1;
+            end
+            else if (busy)
+            begin
+                if (bit_count < 2'd2) 
                 begin
-                    o_valid <= 1'b0;
-                    if (i_valid) 
-                    begin
-                        shift_reg <= i_data[3:0];
-                        busy      <= 1'b1;
-                        bit_count <= 2'd0; 
-                        o_data    <= i_data[0];
-                        o_valid   <= 1'b1;
-                    end
+                    o_data    <= shift_reg[0];
+                    shift_reg <= shift_reg >> 1;
+                    bit_count <= bit_count + 1'b1;   
+                    o_valid   <= 1'b1;
                 end 
                 else 
                 begin
-                    if (bit_count < 2'd3) 
-                    begin
-                        bit_count <= bit_count + 1'b1;
-                        o_data    <= shift_reg[bit_count + 1'b1];
-                        o_valid   <= 1'b1;
-                    end 
-                    else 
-                    begin
-                        busy      <= 1'b0;
-                        o_valid   <= 1'b0;
-                        if (i_valid) 
-                        begin
-                            shift_reg <= i_data[3:0];
-                            busy      <= 1'b1;
-                            bit_count <= 2'd0;
-                            o_data    <= i_data[0];
-                            o_valid   <= 1'b1;
-                        end
-                    end
+                    o_data    <= shift_reg[0];
+                    busy      <= 1'b0;
+                    o_valid   <= 1'b1; 
                 end
+            end 
+            else
+            begin
+                o_data    <= 1'b0;
+                o_valid   <= 1'b0;
+                busy      <= 1'b0;
             end
         end
     end
+
     else if (rate_mode == "S") begin : gen_interleaver_250kbps
         reg        cycle_flag;
         reg [63:0] shift_reg;
@@ -153,6 +147,7 @@ generate
             end
         end
     end
+
     else if (rate_mode == "H") begin : gen_interleaver_hybrid
         reg        cycle_flag;
         reg [63:0] shift_reg;
@@ -174,45 +169,42 @@ generate
             begin
                 if (mode) 
                 begin
-                    // 1 Mbps Mode
-                    cycle_flag <= 1'b0;
-                    if (!busy) 
+                    // 1 Mbps Mode (Hybrid Fast) - Using lower 4 bits of i_data [3:0]
+                    if (!busy && i_valid)
                     begin
-                        o_valid <= 1'b0;
-                        if (i_valid) 
-                        begin
-                            shift_reg[3:0] <= i_data[3:0];
-                            busy           <= 1'b1;
-                            bit_count      <= 6'd0;
-                            o_data         <= i_data[0];
-                            o_valid        <= 1'b1;
-                        end
-                    end 
-                    else 
+                        shift_reg[2:0] <= i_data[3:1];
+                        busy      <= 1'b1;
+                        bit_count <= 6'd0; 
+                        o_data    <= i_data[0];
+                        o_valid   <= 1'b1;
+                    end
+                    else if (busy)
                     begin
-                        if (bit_count < 6'd3) 
+                        if (bit_count < 6'd2) 
                         begin
-                            bit_count <= bit_count + 1'b1;
-                            o_data    <= shift_reg[bit_count + 1'b1];
+                            o_data    <= shift_reg[0];
+                            shift_reg <= shift_reg >> 1;
+                            bit_count <= bit_count + 1'b1;   
                             o_valid   <= 1'b1;
                         end 
                         else 
                         begin
-                            busy    <= 1'b0;
-                            o_valid <= 1'b0;
-                            if (i_valid) 
-                            begin
-                                shift_reg[3:0] <= i_data[3:0];
-                                busy           <= 1'b1;
-                                bit_count      <= 6'd0;
-                                o_data         <= i_data[0];
-                                o_valid        <= 1'b1;
-                            end
+                            o_data    <= shift_reg[0];
+                            busy      <= 1'b0;
+                            bit_count <= 6'd0;
+                            o_valid   <= 1'b1;
                         end
+                    end 
+                    else
+                    begin
+                        o_data    <= 1'b0;
+                        o_valid   <= 1'b0;
+                        busy      <= 1'b0;
                     end
-                end 
-                else begin
-                    // 250 Kbps Mode
+                end
+                else 
+                begin
+                    // 250 Kbps Mode (Hybrid Slow)
                     if (!busy) 
                     begin
                         o_valid <= 1'b0;

@@ -7,16 +7,15 @@
 
 module preamble_sfd_gen #(
 /********************************** Parameters *********************************/
-    parameter rate_mode     = "H",
-    parameter preamble_bits = (rate_mode == "F") ? 32 : 80,
-    parameter total_bits    = preamble_bits + 16
+    parameter  rate_mode     = "H",
+    localparam shr_bits      = (rate_mode == "F") ? 48 : 96
 )(
 /************************************ Inputs ***********************************/
     input  wire                       clk,
     input  wire                       rst_n,
     input  wire                       mode,
 /*********************************** Outputs ***********************************/
-    output reg  [total_bits-1:0]      preamble_sfd
+    output reg  [shr_bits-1:0]        preamble_sfd
 );
 
     generate
@@ -27,16 +26,12 @@ module preamble_sfd_gen #(
             assign sfd_word = 16'b00111001_00101110;
             
             always @(posedge clk) 
-            begin
                 if (!rst_n) 
-                begin
-                    preamble_sfd <= 'b0;
-                end 
-                else 
-                begin
+                    preamble_sfd <= 'b0;              
+                else
                     preamble_sfd <= {sfd_word, {32{1'b1}}}; 
-                end
-            end
+                
+            
         end 
         
         else if (rate_mode == "S") begin : gen_slow_mode
@@ -46,16 +41,11 @@ module preamble_sfd_gen #(
             assign sfd_word = 16'b11000100_01011110;
             
             always @(posedge clk) 
-            begin
-                if (!rst_n) 
-                begin
+                if (!rst_n)   
                     preamble_sfd <= 'b0;
-                end 
                 else 
-                begin
                     preamble_sfd <= {sfd_word, {80{1'b1}}}; 
-                end
-            end
+                
         end 
 
         else begin : gen_hybrid_mode 
@@ -65,19 +55,14 @@ module preamble_sfd_gen #(
             assign sfd_word = (mode == 1) ? 16'b00111001_00101110 : 16'b11000100_01011110;      
 
             always @(posedge clk) 
-            begin
                 if (!rst_n) 
-                begin
                     preamble_sfd <= 'b0;
-                end 
+                 
                 else 
-                begin
                     if (mode)
                         preamble_sfd <= {48'b0, sfd_word, {32{1'b1}}}; 
                     else
-                        preamble_sfd <= {sfd_word, {80{1'b1}}}; 
-                end
-            end
+                        preamble_sfd <= {sfd_word, {80{1'b1}}};                    
         end
     endgenerate
 
