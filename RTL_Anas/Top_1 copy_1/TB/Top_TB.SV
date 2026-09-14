@@ -34,6 +34,19 @@
 //   3. Frame completion : tx_done is awaited explicitly after all symbols
 //      from the file have been pushed, confirming the full frame
 //      (including its mandatory trailing gap) actually completes.
+//
+// GOLDEN-VECTOR CAPTURE, POST CSK_GEN stop_now FIX:
+//   Earlier revisions of this TB needed either a post-run "trim the last
+//   line" step or an in-TB one-cycle hold buffer to drop a single
+//   spurious trailing zero sample that CSK_GEN used to emit one cycle
+//   after the true end of the trailing gap (stop_now was evaluated on
+//   the POST-wrap addr_ptr==0/samble_cnt==0 state, one cycle late).
+//   CSK_GEN's stop_now has since been fixed to detect gap-complete
+//   directly from the gap counter, one cycle earlier -- so 'running'
+//   now drops in sync with the true last golden sample, and this TB
+//   goes back to a plain, unbuffered, untrimmed direct write. If the
+//   fix is correct, tx_real_sim_output.txt / tx_imag_sim_output.txt
+//   should now diff clean against the golden vectors with NO trimming.
 // ============================================================================
 
 module Top_TB #(
@@ -116,9 +129,7 @@ module Top_TB #(
     // no leading/trailing padding) -- so capturing tx_real gated on
     // 'running' delayed by exactly 2 cycles reproduces that same count,
     // correctly aligned, with no extra startup-latency or post-tx_done
-    // zero lines polluting the file. (Verified by cycle-accurate model:
-    // running's own span and tx_real's valid-data span are the same
-    // length, offset by exactly 2 cycles.)
+    // zero lines polluting the file.
     // ========================================================================
     integer fd_real, fd_imag;
     reg     running_d1, running_d2;
@@ -142,38 +153,14 @@ module Top_TB #(
         end
     end
 
-    // ------------------------------------------------------------------------
-    // WHY A ONE-CYCLE HOLD BUFFER, NOT A DIRECT WRITE:
-    // 'running' stays asserted for one extra cycle beyond the last real
-    // gap sample before it finally drops (the cycle where stop_now's
-    // condition is being checked is itself still a 'running=1' cycle).
-    // That extra cycle flows through running_d2 as one spurious captured
-    // sample with no counterpart in the MATLAB golden vector -- confirmed
-    // by diff: sim output was exactly 1 line longer than golden, and
-    // every other line matched bit-for-bit.
-    //
-    // Fix: hold each sample for one extra cycle before writing it. Only
-    // flush the HELD sample once we're back in this block with
-    // running_d2 still high (proving the held sample wasn't the final,
-    // spurious one). When running_d2 finally drops, the currently-held
-    // sample is silently discarded instead of written.
-    // ------------------------------------------------------------------------
-    reg              have_pending;
-    reg signed [7:0] pending_real, pending_imag;
-
+    // Plain, unbuffered, untrimmed direct write -- restored now that the
+    // CSK_GEN stop_now fix removes the spurious trailing cycle at the
+    // source. If this produces a clean diff (no trimming needed), the
+    // fix is confirmed.
     always @(posedge clk) begin
-        if (!rst_n) begin
-            have_pending <= 1'b0;
-        end else if (running_d2) begin
-            if (have_pending) begin
-                $fdisplay(fd_real, "%08b", pending_real);
-                $fdisplay(fd_imag, "%08b", pending_imag);
-            end
-            pending_real <= tx_real;
-            pending_imag <= tx_imag;
-            have_pending <= 1'b1;
-        end else begin
-            have_pending <= 1'b0;   // drop whatever was pending -- spurious tail cycle
+        if (rst_n && running_d2) begin
+            $fdisplay(fd_real, "%08b", tx_real);
+            $fdisplay(fd_imag, "%08b", tx_imag);
         end
     end
 
