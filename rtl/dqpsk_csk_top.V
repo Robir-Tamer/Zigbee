@@ -25,7 +25,7 @@ module dqpsk_csk_top #(
 
     // CSK & FSM Interconnects
     wire              en;
-    wire       next_item;
+    wire              next_item;
     wire signed [WL-1:0] csk_out_r, csk_out_i;
     wire              csk_running;
 
@@ -40,8 +40,6 @@ module dqpsk_csk_top #(
         .Real_o(Real_o),
         .Imag_o(Imag_o)
     );
-    // Posedge Detector Circuit Signals
-    wire tx_done_level;
 
     // Real Synchronous FIFO
     assign FIFO_valid_real = valid && !full_flag_real;
@@ -60,7 +58,7 @@ module dqpsk_csk_top #(
         .full_flag(full_flag_real) 
     );
 
-    // Imaginary Synchronous FIFO (Fixed Parameter Typo & Syntax Semicolon)
+    // Imaginary Synchronous FIFO
     assign FIFO_valid_imag = valid && !full_flag_imag;
 
     FIFO_mem #(
@@ -90,13 +88,13 @@ module dqpsk_csk_top #(
         .running(csk_running)
     );
 
-
-    // Transmission Done Detection — fires exactly when CSK_GEN has
-    // finished its trailing gap (running drops) after data ran out.
-    // 'ever_run' arms the check only after a real transmission has
-    // started, so reset (running=0, en=0) can't false-trigger it.
-    reg ever_run;
-    wire tx_done_raw;   // was: tx_done -- renamed, now an INTERNAL signal only
+    // -------------------------------------------------------------
+    // Transmission-Done Detection
+    // -------------------------------------------------------------
+    reg  ever_run;
+    wire tx_done_level;
+    wire tx_done_raw;
+    reg  tx_done_dly1, tx_done_dly2;
 
     always @(posedge clk) begin
         if (!rst_n)
@@ -104,41 +102,40 @@ module dqpsk_csk_top #(
         else if (csk_running)
             ever_run <= 1'b1;
         else if (tx_done_raw)
-            ever_run <= 1'b0;   // re-arm for the next packet
+            ever_run <= 1'b0;
     end
 
     assign tx_done_level = ever_run && !csk_running;
 
     posedge_detector posedge_detector_DUT (
         .clk(clk),
-        .rst_n(rst_n), 
-        .in(tx_done_level), 
+        .rst_n(rst_n),
+        .in(tx_done_level),
         .out(tx_done_raw)
     );
-    // NEW: 1-cycle delay so the module-facing tx_done/tx_end asserts
-    // strictly AFTER the last transmitted sample, not concurrent with it
-    // (see earlier discussion -- avoids ambiguous timing for any
-    // downstream consumer that reacts to "done" by assuming nothing
-    // further is being driven on tx_real/tx_imag that same cycle).
-    reg tx_done_d;
-    always @(posedge clk) begin
-        if (!rst_n)
-            tx_done_d <= 1'b0;
-        else
-            tx_done_d <= tx_done_raw;
-    end
-    assign tx_done = tx_done_d;
 
-// Modulation hardware Implementation (Complex Multiplier)
-always @(posedge clk) begin
-    if(!rst_n) begin
-        tx_imag <= 'd0;
-        tx_real <= 'd0;
+    always @(posedge clk) begin
+        if (!rst_n) begin
+            tx_done_dly1 <= 1'b0;
+            tx_done_dly2 <= 1'b0;
+        end else begin
+            tx_done_dly1 <= tx_done_raw;
+            tx_done_dly2 <= tx_done_dly1;
+        end
     end
-    else begin
-        tx_real <= (S_R * csk_out_r) - (S_I * csk_out_i);
-        tx_imag <= (S_R * csk_out_i) + (S_I * csk_out_r);
+
+    assign tx_done = tx_done_dly2;
+
+    // Modulation hardware Implementation (Complex Multiplier)
+    always @(posedge clk) begin
+        if(!rst_n) begin
+            tx_imag <= 'd0;
+            tx_real <= 'd0;
+        end
+        else begin
+            tx_real <= (S_R * csk_out_r) - (S_I * csk_out_i);
+            tx_imag <= (S_R * csk_out_i) + (S_I * csk_out_r);
+        end
     end
-end
 
 endmodule
