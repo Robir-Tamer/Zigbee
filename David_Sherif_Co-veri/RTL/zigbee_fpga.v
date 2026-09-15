@@ -135,7 +135,8 @@ top_sym_to_ppdu #(.rate_mode (rate_mode)) symbol_mapper_to_ppdu (
     .o_q                    (ppdu_q),
     .o_valid                (ppdu_valid),
     .interleaver_even_valid (interleaver_valid_e),
-    .interleaver_odd_valid  (interleaver_valid_o)
+    .interleaver_odd_valid  (interleaver_valid_o),
+    .tx_done                (tx_done)
 );
 
 QPSK_mapper QPSK (

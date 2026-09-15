@@ -13,12 +13,23 @@ module interleaver #(
     input                                       clk, 
     input                                       rst_n,  
     input                                       mode,
-    input                                       i_valid, 
-    input      [(rate_mode == "F"? 3 : 31):0]   i_data, 
+    input                                       i_valid_c, 
+    input      [(rate_mode == "F"? 3 : 31):0]   i_data,
+    input                                       tx_done,
 /*********************************** Outputs ***********************************/
     output reg                                  o_data,
-    output reg                                  o_valid
+    output reg                                  o_valid,
+    output reg                                  next_item
 );
+
+reg i_valid;
+always @(posedge clk)
+    begin
+        if(!rst_n)
+            i_valid <= 'b0;
+        else
+            i_valid <= i_valid_c;
+    end
 
 generate
     if (rate_mode == "F") begin : gen_interleaver_1mbps
@@ -26,6 +37,10 @@ generate
         reg [1:0]  bit_count;
         reg        busy;
 
+        always @(posedge clk) 
+        begin
+            next_item   <= 'b1;
+        end
         always @(posedge clk) 
         begin
             if (!rst_n) 
@@ -74,6 +89,8 @@ generate
         reg [63:0] shift_reg;
         reg [5:0]  bit_count;
         reg        busy;
+        reg        first_done;
+        reg        data_ready;
 
         always @(posedge clk) 
         begin
@@ -84,21 +101,36 @@ generate
                 busy        <= 1'b0;
                 o_data      <= 1'b0;
                 o_valid     <= 1'b0;
+                next_item   <= 'b0;
+                first_done  <= 'b0;
+                data_ready  <= 'b0;
             end 
             else 
             begin
-                if (!busy) // busy = 0
+                if (!busy) 
                 begin
-                    o_valid <= 1'b0;
                     if (i_valid) 
                     begin
-                        if (!cycle_flag) 
+                        if (!first_done)
+                            begin
+                                next_item           <= 1'b1;
+                                first_done          <= 1'b1;
+                                o_valid             <= 1'b0;
+                            end
+                        else if (next_item && !data_ready)
+                            begin
+                                data_ready          <= 'b1;
+                                next_item           <= 'b1;
+                                o_valid             <= 1'b0;
+                            end
+                        if (!cycle_flag && data_ready) 
                         begin
                             shift_reg[31:0] <= i_data; 
                             cycle_flag      <= 1'b1;
                         end 
-                        else 
+                        else if (data_ready)
                         begin
+                            next_item  <= 1'b0;
                             cycle_flag <= 1'b0;
                             busy       <= 1'b1;
                             bit_count  <= 6'd0;
@@ -122,25 +154,38 @@ generate
                             };
                             o_data     <= shift_reg[0];
                             o_valid    <= 1'b1;
+                            data_ready <= 'b0;
                         end
                     end
+                    else if (tx_done)
+                    begin
+                        first_done     <= 'b0;
+                        data_ready     <= 'b0;
+                    end
                 end 
-                else // busy = 1
+                else 
                 begin
                     if (bit_count < 6'd63) 
                     begin
                         bit_count <= bit_count + 1'b1;
-                        o_data    <= shift_reg[bit_count + 1'b1];
+                        o_data    <= shift_reg [1];
+                        shift_reg <= shift_reg >> 1;
                         o_valid   <= 1'b1;
+                        if ((bit_count == 6'd61 || bit_count == 6'd62) && i_valid)
+                            begin
+                                next_item   <= 1'b1;
+                            end
                     end 
                     else 
                     begin
-                        busy    <= 1'b0;
-                        o_valid <= 1'b0;
-                        if (i_valid) 
+                        busy        <= 1'b0;
+                        o_valid     <= 1'b0;
+                        next_item   <= 1'b0;
+                        if (i_valid)
                         begin
                             shift_reg[31:0] <= i_data;
                             cycle_flag      <= 1'b1;
+                            data_ready      <= 1'b1;
                         end
                     end
                 end
