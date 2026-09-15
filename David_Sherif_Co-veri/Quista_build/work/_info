@@ -1,9 +1,7 @@
 m255
 K4
 z2
-!s12c _opt2
 Z0 !s99 nomlopt
-!s11f MIXED_VERSIONS
 R0
 R0
 R0
@@ -25,6 +23,8 @@ R0
 R0
 R0
 R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
 13
 !s112 1.1
 !i10d 8192
@@ -46,7 +46,7 @@ R1
 T_opt1
 !s110 1789416851
 Vk>oi:mXSMRHIQWO<Al0Eg3
-Z6 04 9 4 work zigbee_tb fast 0
+04 9 4 work zigbee_tb fast 0
 =1-e4a8dfb8e2aa-6aa85593-1c1-5a34
 R2
 R3
@@ -55,485 +55,481 @@ n@_opt1
 R5
 R1
 T_opt2
-!i145 1
-!i144 0
-!s110 1789422350
-VLb<_oMSGXk6zzBo`UjlXV3
-R6
-=1-a08069afa401-6aa86b0e-112-998
-R0
-!s12f OEM100
-!s12b OEM100
-!s124 OEM10U23 
-!s135 nogc
+!s110 1789427939
+V4PgY19bz:nh]`TLYMPkb;0
+04 11 4 work zigbee_S_tb fast 0
+=1-e4a8dfb8e2aa-6aa880e3-20e-7e0
+R2
 R3
-tCvgOpt 0 defaultOptions 1107585188
+R4
 n@_opt2
-OL;O;2025.2;82
-R1
+R5
 vcontroller
-Z7 2../RTL/CSK_GEN.v|../RTL/DF_SYNC.v|../RTL/DQPSK.v|../RTL/FIFO_mem.v|../RTL/controller.v|../RTL/dqpsk_csk_top.v|../RTL/e_o_demux.v|../RTL/form_ppdu.v|../RTL/interleaver.v|../RTL/mux2X1.v|../RTL/payload_counter.v|../RTL/posedge_detector.v|../RTL/preamble_sfd_gen.v|../RTL/qpsk_mapper.v|../RTL/symbol_mapper.v|../RTL/top_sym_to_ppdu.v|../RTL/zeropadding.v|../RTL/zigbee_asic.v|../RTL/zigbee_fpga.v
-Z8 !s110 1789422910
+Z6 !s110 1789427937
 !i10b 1
 !s100 c:Xc>eg@=Ehb@7Zle18UV2
-I4YlCbER[>;^1YMef=kkAG1
-Z9 dC:/Users/anasm/Desktop/ZigBee_Project/Zigbee/David_Sherif_Co-veri/Quista_build
-Z10 w1789422296
+Id2nn1eVo:6M0PUoXH3F:f1
+R1
+Z7 w1789325767
 8../RTL/controller.v
 F../RTL/controller.v
-!i122 57
+!i122 59
 L0 14 69
-Z11 VDg1SIo80bB@j0V0VzS_@n1
-Z12 OL;L;2025.2;82
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z13 !s108 1789422910.000000
-Z14 !s107 ../RTL/zigbee_fpga.v|../RTL/zigbee_asic.v|../RTL/zeropadding.v|../RTL/top_sym_to_ppdu.v|../RTL/symbol_mapper.v|../RTL/qpsk_mapper.v|../RTL/preamble_sfd_gen.v|../RTL/posedge_detector.v|../RTL/payload_counter.v|../RTL/mux2X1.v|../RTL/interleaver.v|../RTL/form_ppdu.v|../RTL/e_o_demux.v|../RTL/dqpsk_csk_top.v|../RTL/controller.v|../RTL/FIFO_mem.v|../RTL/DQPSK.v|../RTL/DF_SYNC.v|../RTL/CSK_GEN.v|
-Z15 !s90 -reportprogress|300|../RTL/CSK_GEN.v|../RTL/DF_SYNC.v|../RTL/DQPSK.v|../RTL/FIFO_mem.v|../RTL/controller.v|../RTL/dqpsk_csk_top.v|../RTL/e_o_demux.v|../RTL/form_ppdu.v|../RTL/interleaver.v|../RTL/mux2X1.v|../RTL/payload_counter.v|../RTL/posedge_detector.v|../RTL/preamble_sfd_gen.v|../RTL/qpsk_mapper.v|../RTL/symbol_mapper.v|../RTL/top_sym_to_ppdu.v|../RTL/zeropadding.v|../RTL/zigbee_asic.v|../RTL/zigbee_fpga.v|
+Z10 !s108 1789427937.000000
+Z11 !s107 ../RTL/zigbee_fpga.v|../RTL/zigbee_asic.v|../RTL/zeropadding.v|../RTL/top_sym_to_ppdu.v|../RTL/symbol_mapper.v|../RTL/qpsk_mapper.v|../RTL/preamble_sfd_gen.v|../RTL/posedge_detector.v|../RTL/payload_counter.v|../RTL/mux2X1.v|../RTL/interleaver.v|../RTL/form_ppdu.v|../RTL/e_o_demux.v|../RTL/dqpsk_csk_top.v|../RTL/controller.v|../RTL/FIFO_mem.v|../RTL/DQPSK.v|../RTL/DF_SYNC.v|../RTL/CSK_GEN.v|
+Z12 !s90 -reportprogress|300|../RTL/CSK_GEN.v|../RTL/DF_SYNC.v|../RTL/DQPSK.v|../RTL/FIFO_mem.v|../RTL/controller.v|../RTL/dqpsk_csk_top.v|../RTL/e_o_demux.v|../RTL/form_ppdu.v|../RTL/interleaver.v|../RTL/mux2X1.v|../RTL/payload_counter.v|../RTL/posedge_detector.v|../RTL/preamble_sfd_gen.v|../RTL/qpsk_mapper.v|../RTL/symbol_mapper.v|../RTL/top_sym_to_ppdu.v|../RTL/zeropadding.v|../RTL/zigbee_asic.v|../RTL/zigbee_fpga.v|
 !i113 0
-Z16 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z17 tCvgOpt 0 defaultOptions 1085333592
+Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
 vCSK_GEN
-R7
-R8
+R6
 !i10b 1
 !s100 g74JDg[JVcaZK[fzIH[P41
-IQP<OEHOdKWOIlCF@I>4]C2
-R9
-R10
+Iz7VCDXQJOWW>`3m<:zfiC0
+R1
+Z14 w1789410118
 8../RTL/CSK_GEN.v
 F../RTL/CSK_GEN.v
-!i122 57
+!i122 59
 L0 1 427
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 n@c@s@k_@g@e@n
 vDF_SYNC
-R7
-R8
+R6
 !i10b 1
 !s100 4Kn3`W<0iX1k5`JA6ALD63
-IEb>:Zd2ZIn82m3XckZ7@A1
-R9
-R10
+I35>UAbYO3cGISjd9BYgMl2
+R1
+R7
 8../RTL/DF_SYNC.v
 F../RTL/DF_SYNC.v
-!i122 57
+!i122 59
 L0 7 45
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 n@d@f_@s@y@n@c
 vDQPSK
-R7
-R8
+R6
 !i10b 1
 !s100 Qg>H3^3]cWNeVTOSHBUz60
-IR<WhMi35:;eg8oN8MQVlX1
-R9
-R10
+If@eXd@c;CTUO;P`i@d?6=0
+R1
+R7
 8../RTL/DQPSK.v
 F../RTL/DQPSK.v
-!i122 57
+!i122 59
 L0 1 33
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 n@d@q@p@s@k
 vdqpsk_csk_top
-R7
-R8
+R6
 !i10b 1
 !s100 3RFg9a]]6RTzecFKdOb_S3
-IZjGmAhbehD[_IP;fTKTci1
-R9
-R10
+I12D4_YnnbUeF57gSH`G8@2
+R1
+R14
 8../RTL/dqpsk_csk_top.v
 F../RTL/dqpsk_csk_top.v
-!i122 57
+!i122 59
 L0 2 140
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 ve_o_demux
-R7
-R8
+R6
 !i10b 1
 !s100 77mJaZIcB`6nc:^<h@B2Y0
-Ib1GJ3FAgQ;JfEDNn?V<o61
-R9
-R10
+I8T7Sml5@2Hfg]TWChz9UJ3
+R1
+w1789416835
 8../RTL/e_o_demux.v
 F../RTL/e_o_demux.v
-!i122 57
+!i122 59
 L0 8 245
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vFIFO_mem
-R7
-R8
+R6
 !i10b 1
 !s100 ]f;^nLUB7AYM2?iPM?^aV0
-Io7icMIRD?;6T;Hknio:j93
-R9
-R10
+Ia2j^KTbGf?_]8_dY1mO001
+R1
+w1789421867
 8../RTL/FIFO_mem.v
 F../RTL/FIFO_mem.v
-!i122 57
+!i122 59
 L0 8 43
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 n@f@i@f@o_mem
 vform_ppdu
-R7
-R8
+R6
 !i10b 1
 !s100 ?n5QSU59X@?XGJEQnX7322
-Ih492IBehfUAV;Yf;^Okc43
-R9
-R10
+I16LTi0EhOa9888Z61Jcz83
+R1
+R7
 8../RTL/form_ppdu.v
 F../RTL/form_ppdu.v
-!i122 57
+!i122 59
 L0 8 318
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vinterleaver
-R7
-R8
+R6
 !i10b 1
 !s100 ?LDM>j23FZjA8n?Eaa:Cg1
-IDa;O3f@`JEceiXelRJdcT2
-R9
-R10
+I9HRz8NLjkc6h]67>YB1jc0
+R1
+R7
 8../RTL/interleaver.v
 F../RTL/interleaver.v
-!i122 57
+!i122 59
 L0 8 264
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vmux2X1
-R7
-R8
+R6
 !i10b 1
 !s100 N@`^kP8^_0YCMZ5SLd]XO0
-ISD7ao[HZ[VY6NERGj1:bF2
-R9
-R10
+Ik??`CI?5]iXf6gaM_cPa;0
+R1
+R7
 8../RTL/mux2X1.v
 F../RTL/mux2X1.v
-!i122 57
+!i122 59
 L0 2 14
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 nmux2@x1
 vpayload_counter
-R7
-R8
+R6
 !i10b 1
 !s100 ;3a@U0kNEUbOOmb<WLJ_83
-IJ[e<emd_GS:_]BmR@Dg`41
-R9
-R10
+I=eOmFP9P@9XCRXXn;ZnJ:0
+R1
+R14
 8../RTL/payload_counter.v
 F../RTL/payload_counter.v
-!i122 57
+!i122 59
 L0 8 66
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vposedge_detector
-R7
-R8
+R6
 !i10b 1
 !s100 [:GcY_:;DkQVAX8LMc6Z^0
-ImDjoFA7RgKMW0m=P9>n213
-R9
-R10
+IQ]eojd2VW0[2Ra^:Xc4Bk3
+R1
+R7
 8../RTL/posedge_detector.v
 F../RTL/posedge_detector.v
-!i122 57
+!i122 59
 L0 1 23
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
-!i113 0
-R16
-R17
-vpreamble_sfd_gen
-R7
-R8
-!i10b 1
-!s100 JXUWZiXHK<4SP`@SjR31F1
-IPd2CCm=8NTc5FY=6[53VQ1
-R9
 R10
+R11
+R12
+!i113 0
+R13
+R4
+vpreamble_sfd_gen
+R6
+!i10b 1
+!s100 `382^E@Zca4glD@GmNJL51
+IDK2QiWWmjHO2;jZdl`fYL2
+R1
+R7
 8../RTL/preamble_sfd_gen.v
 F../RTL/preamble_sfd_gen.v
-!i122 57
+!i122 59
 L0 8 62
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vQPSK_mapper
-R7
-R8
+R6
 !i10b 1
 !s100 oLXzHOUMSR>;IC@=`8E<K3
-IJQTHjC51V^7UeSQo87Pil2
-R9
-R10
+Ik8VMY3V]DR5cRNNPM?h;]3
+R1
+R7
 8../RTL/qpsk_mapper.v
 F../RTL/qpsk_mapper.v
-!i122 57
+!i122 59
 L0 16 34
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 n@q@p@s@k_mapper
 vsymbol_mapper
-R7
-R8
+R6
 !i10b 1
-!s100 gAMa[bE<^6m8S7[EP0maJ0
-IUZDgc:V]D6O6T@99cT]U^2
-R9
-R10
+!s100 fU[W9j3d[zmXIOD6I<S6D0
+IAan6WVU>WzUL>e`O;]kFH1
+R1
+w1789427932
 8../RTL/symbol_mapper.v
 F../RTL/symbol_mapper.v
-!i122 57
-L0 8 127
-R11
-R12
+!i122 59
+L0 8 174
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vtop_sym_to_ppdu
-R7
-R8
+R6
 !i10b 1
 !s100 LW`6UHn@YMLXdLE1OSKzR0
-I1:c7;3Ib9a?n:cSYoYCYa3
-R9
-R10
+IJe@k]fbheBmolhSSZEe7A0
+R1
+R7
 8../RTL/top_sym_to_ppdu.v
 F../RTL/top_sym_to_ppdu.v
-!i122 57
+!i122 59
 L0 8 175
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vzeropadding
-R7
-R8
+R6
 !i10b 1
 !s100 d_6i;OY_lUO6bkHOgYF@a2
-I^X<@FNbj8k:aViE6[Vo=:2
-R9
-R10
+Io?kb=6:j[;=I;PzhGl5:d3
+R1
+R14
 8../RTL/zeropadding.v
 F../RTL/zeropadding.v
-!i122 57
+!i122 59
 L0 8 530
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vzigbee_asic
-R7
-R8
+R6
 !i10b 1
 !s100 cP_N4kZJJFYN;nZjm_=KT3
-Idb[ZJhJCo`ZB875S0Bh=d1
-R9
-R10
+Iz4>kSZ^ERiW@3HhC72l3<3
+R1
+R7
 8../RTL/zigbee_asic.v
 F../RTL/zigbee_asic.v
-!i122 57
+!i122 59
 L0 8 184
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
+R13
+R4
 vzigbee_fpga
-R7
-R8
+R6
 !i10b 1
 !s100 ]^T>?1X2WJn3zTDhR[:UM2
-Ic?8_@jDZ3Gd294Z:fQQMB0
-R9
-R10
+IH]gDIl]e`jg?YXa<9lI?h0
+R1
+R7
 8../RTL/zigbee_fpga.v
 F../RTL/zigbee_fpga.v
-!i122 57
+!i122 59
 L0 8 157
-R11
-R12
+R8
+R9
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+R11
+R12
 !i113 0
-R16
-R17
-vzigbee_tb
-2../TB/PHY_F_tb.v
+R13
+R4
+vzigbee_S_tb
+R6
+!i10b 1
+!s100 XZN6P;P03RPzXlTV;Ol>M3
+Il]:X92:Kj_kRe=T4i1?g]1
+R1
+w1789426317
+8../TB/PHY_S_tb.v
+F../TB/PHY_S_tb.v
+!i122 60
+Z15 L0 3 207
 R8
+R9
+r1
+!s85 0
+31
+R10
+Z16 !s107 ../TB/PHY_S_tb.v|../TB/PHY_F_tb.v|
+Z17 !s90 -reportprogress|300|../TB/PHY_F_tb.v|../TB/PHY_S_tb.v|
+!i113 0
+R13
+R4
+nzigbee_@s_tb
+vzigbee_tb
+R6
 !i10b 1
 !s100 :k[QLL[0PIjaD1L]G0DN32
-I;AZZh97GG3[5W?@IiQVLG1
-R9
-R10
+IekO>WO:ZNL1mo=KH5WQ701
+R1
+w1789416547
 8../TB/PHY_F_tb.v
 F../TB/PHY_F_tb.v
-!i122 58
-L0 3 207
-R11
-R12
+!i122 60
+R15
+R8
+R9
 r1
 !s85 0
 31
-R13
-!s107 ../TB/PHY_F_tb.v|
-!s90 -reportprogress|300|../TB/PHY_F_tb.v|
-!i113 0
+R10
 R16
 R17
+!i113 0
+R13
+R4

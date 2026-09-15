@@ -4,9 +4,9 @@ vlog ../RTL/*.v
 vlog ../TB/*.v 
 
 
-vsim -voptargs=+acc work.zigbee_tb
+vsim -voptargs=+acc work.zigbee_S_tb
 
-do ../Scripts/wave.do
+do ../Scripts/wave_S.do
 
 run -all
 #quit -sim

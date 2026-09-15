@@ -87,7 +87,7 @@ generate
             end 
             else 
             begin
-                if (!busy) 
+                if (!busy) // busy = 0
                 begin
                     o_valid <= 1'b0;
                     if (i_valid) 
@@ -125,7 +125,7 @@ generate
                         end
                     end
                 end 
-                else 
+                else // busy = 1
                 begin
                     if (bit_count < 6'd63) 
                     begin
