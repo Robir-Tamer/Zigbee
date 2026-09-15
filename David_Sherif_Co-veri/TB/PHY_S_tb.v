@@ -93,7 +93,7 @@ reg [7:0]   matlab_tx_imag [0:max_output_samples-1];*/
 
 initial begin
   
-  test_case=10;  
+  test_case=1;  
     rst_n          = 0;
     payload        = 0;
     payload_length = 0;
