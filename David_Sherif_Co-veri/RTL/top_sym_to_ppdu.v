@@ -161,6 +161,7 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .mode               (mode),
+        .tx_done            (tx_done),
         .i_valid            (interleaver_even_valid || interleaver_odd_valid),
         .i_e                (interleaver_even_data),
         .i_o                (interleaver_odd_data),
