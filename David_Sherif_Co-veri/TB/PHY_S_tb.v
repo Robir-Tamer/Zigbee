@@ -93,7 +93,7 @@ reg [7:0]   matlab_tx_imag [0:max_output_samples-1];*/
 
 initial begin
   
-  test_case=1;  
+  test_case=10;  
     rst_n          = 0;
     payload        = 0;
     payload_length = 0;
@@ -118,7 +118,7 @@ initial begin
     $display("========================================");
 
     // Set current payload length
-    payload_length = 1; // test_payload_length[test_case];
+    payload_length = 10; // test_payload_length[test_case];
     // Read MATLAB golden output for current test
     /*
 //if (test_case == 0) begin
