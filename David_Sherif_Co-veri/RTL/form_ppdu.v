@@ -17,6 +17,7 @@ module form_ppdu #(
     input  wire        i_valid, 
     input  wire        i_e, 
     input  wire        i_o,
+    input  reg         tx_done,
     input  wire [shr_bits-1:0] i_preamble_SFD,
 /*********************************** Outputs ***********************************/
     output reg         o_i, 
@@ -30,11 +31,16 @@ generate
         reg [shr_bits-1:0] reg_data_i; 
         reg [shr_bits-1:0] reg_data_q; 
         reg [shr_bits-1:0] reg_data_valid;
+        reg [shr_bits:0]   done_reg;
         reg [5:0]          bit_count;
         reg                sending_shr;
-
+        reg                done;
+        
         always @(posedge clk) 
         begin
+            if (tx_done)    
+                done = 1'b1;       
+
             if (!rst_n) 
             begin
                 o_i            <= 1'b0;
@@ -43,14 +49,21 @@ generate
                 reg_data_i     <=  'b0;
                 reg_data_q     <=  'b0;
                 reg_data_valid <=  'b0;
+                done_reg       <=  'b0;
                 reg_shr        <=  'b0;
                 bit_count      <= 6'b0;
                 sending_shr    <= 1'b0;
+                tx_done        <= 1'b0;
+                done           <= 1'b1;
+                start          <= 1'b0;
             end 
             else 
             begin
-                if (i_valid && !sending_shr && !o_valid) // [1] starting transmitting SHR when i_valid is asserted
+                if (i_valid && !sending_shr && done && !start) 
                 begin
+                    done  <= 1'b0;
+                    start <= 1'b1;
+
                     reg_shr       <= i_preamble_SFD[shr_bits-1:1];
 
                     o_i           <= i_preamble_SFD[0];
@@ -59,12 +72,33 @@ generate
                     reg_data_i[0]     <= i_e;
                     reg_data_q[0]     <= i_o;
                     reg_data_valid[0] <= i_valid;
+                    done_reg[0]       <= done;
+            
+                    bit_count     <= 6'd48; // 48 bits for Mode F
+                    sending_shr   <= 1'b1;
+                    o_valid       <= 1'b1;
+                end 
+                else if (reg_data_valid[shr_bits-1] && !sending_shr && done && start)
+                begin
+                    done <= 1'b0;
+
+                    reg_shr       <= i_preamble_SFD[shr_bits-1:1];
+
+                    o_i           <= i_preamble_SFD[0];
+                    o_q           <= i_preamble_SFD[0]; 
+
+                    reg_data_i[0]     <= i_e;
+                    reg_data_q[0]     <= i_o;
+                    reg_data_valid[0] <= i_valid;
+                    done_reg[0]       <= done;
+
                     
                     bit_count     <= 6'd48; // 48 bits for Mode F
                     sending_shr   <= 1'b1;
                     o_valid       <= 1'b1;
                 end 
-                else if (sending_shr) // [2] Transmitting SHR
+
+                else if (sending_shr)
                 begin
                     o_i       <= reg_shr[0];
                     o_q       <= reg_shr[0];
@@ -73,13 +107,15 @@ generate
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
                     reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    done_reg       <= {done_reg[shr_bits-2:0], done};
+
 
                     if (bit_count == 6'd2) 
                         sending_shr <= 1'b0;
                     else 
                         bit_count <= bit_count - 1'b1;
                 end 
-                else if (reg_data_valid[shr_bits-1]) // [3] Transmitting stored data after SHR then New ones 
+                else if (reg_data_valid[shr_bits-1] && !(done_reg[shr_bits]))
                 begin
                     o_i     <= reg_data_i[shr_bits-1];
                     o_q     <= reg_data_q[shr_bits-1];
@@ -124,7 +160,7 @@ generate
             end 
             else 
             begin
-                if (i_valid && !sending_shr && !o_valid) // [1] starting transmitting SHR when i_valid is asserted
+                if (i_valid && !sending_shr) // [1] starting transmitting SHR when i_valid is asserted
                 begin
                     reg_shr       <= i_preamble_SFD[shr_bits-1:1];
 
@@ -201,7 +237,7 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
             end 
             else 
             begin
-                if (i_valid && !sending_shr && !o_valid) 
+                if (i_valid && !sending_shr) 
                 begin
                     reg_shr       <= i_preamble_SFD[shr_bits-1:1];
 
@@ -268,7 +304,7 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
             end 
             else 
             begin
-                if (i_valid && !sending_shr && !o_valid) 
+                if (i_valid && !sending_shr) 
                 begin
                     reg_shr       <= i_preamble_SFD[shr_bits-1:1];
 
