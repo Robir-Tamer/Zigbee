@@ -30,7 +30,7 @@ generate
         reg [shr_bits-2:0] reg_shr;
         reg [shr_bits-1:0] reg_data_i; 
         reg [shr_bits-1:0] reg_data_q; 
-        reg [shr_bits-1:0] reg_data_valid;
+        reg [shr_bits-1:0] reg_i_valid;
         reg [shr_bits:0]   done_reg;
         reg [5:0]          bit_count;
         reg                sending_shr;
@@ -48,7 +48,7 @@ generate
                 o_valid        <= 1'b0;
                 reg_data_i     <=  'b0;
                 reg_data_q     <=  'b0;
-                reg_data_valid <=  'b0;
+                reg_i_valid <=  'b0;
                 done_reg       <=  'b0;
                 reg_shr        <=  'b0;
                 bit_count      <= 6'b0;
@@ -70,14 +70,14 @@ generate
 
                     reg_data_i[0]     <= i_e;
                     reg_data_q[0]     <= i_o;
-                    reg_data_valid[0] <= i_valid;
+                    reg_i_valid[0] <= i_valid;
                     done_reg[0]       <= done;
             
                     bit_count     <= 6'd48; // 48 bits for Mode F
                     sending_shr   <= 1'b1;
                     o_valid       <= 1'b1;
                 end 
-                else if (reg_data_valid[shr_bits-1] && !sending_shr && done && start)
+                else if (reg_i_valid[shr_bits-1] && !sending_shr && done && start)
                 begin
                     done <= 1'b0;
 
@@ -88,7 +88,7 @@ generate
 
                     reg_data_i[0]     <= i_e;
                     reg_data_q[0]     <= i_o;
-                    reg_data_valid[0] <= i_valid;
+                    reg_i_valid[0] <= i_valid;
                     done_reg[0]       <= done;
 
                     
@@ -104,7 +104,7 @@ generate
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
                     done_reg       <= {done_reg[shr_bits-2:0], done};
 
 
@@ -113,7 +113,7 @@ generate
                     else 
                         bit_count <= bit_count - 1'b1;
                 end 
-                else if (reg_data_valid[shr_bits-1] && !(done_reg[shr_bits]))
+                else if (reg_i_valid[shr_bits-1] && !(done_reg[shr_bits]))
                 begin
                     o_i     <= reg_data_i[shr_bits-1];
                     o_q     <= reg_data_q[shr_bits-1];
@@ -121,7 +121,7 @@ generate
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
                     done_reg       <= {done_reg[shr_bits-2:0], done};
     
                 end 
@@ -133,7 +133,7 @@ generate
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
                     done_reg       <= {done_reg[shr_bits-2:0], done};
                 end
             end
@@ -144,7 +144,7 @@ generate
         reg [shr_bits-2:0] reg_shr;
         reg [shr_bits-1:0] reg_data_i; 
         reg [shr_bits-1:0] reg_data_q; 
-        reg [shr_bits-1:0] reg_data_valid;
+        reg [shr_bits-1:0] reg_i_valid;
         reg [shr_bits:0]   done_reg;
         reg [6:0]          bit_count;
         reg                sending_shr;
@@ -162,7 +162,7 @@ generate
                 o_valid        <= 1'b0;
                 reg_data_i     <=  'b0;
                 reg_data_q     <=  'b0;
-                reg_data_valid <=  'b0;
+                reg_i_valid <=  'b0;
                 done_reg       <=  'b0;
                 reg_shr        <=  'b0;
                 bit_count      <= 7'b0;
@@ -184,14 +184,14 @@ generate
 
                     reg_data_i[0]     <= i_e;
                     reg_data_q[0]     <= i_o;
-                    reg_data_valid[0] <= i_valid;
+                    reg_i_valid[0] <= i_valid;
                     done_reg[0]       <= done;
             
                     bit_count     <= 7'd96; // 96 bits for Mode F
                     sending_shr   <= 1'b1;
                     o_valid       <= 1'b1;
                 end 
-                else if (reg_data_valid[shr_bits-1] && !sending_shr && done && start)
+                else if (reg_i_valid[shr_bits-1] && !sending_shr && done && start)
                 begin
                     done <= 1'b0;
 
@@ -202,7 +202,7 @@ generate
 
                     reg_data_i[0]     <= i_e;
                     reg_data_q[0]     <= i_o;
-                    reg_data_valid[0] <= i_valid;
+                    reg_i_valid[0] <= i_valid;
                     done_reg[0]       <= done;
 
                     
@@ -218,7 +218,7 @@ generate
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
                     done_reg       <= {done_reg[shr_bits-2:0], done};
 
 
@@ -227,7 +227,7 @@ generate
                     else 
                         bit_count <= bit_count - 1'b1;
                 end 
-                else if (reg_data_valid[shr_bits-1] && !(done_reg[shr_bits]))
+                else if (reg_i_valid[shr_bits-1] && !(done_reg[shr_bits]))
                 begin
                     o_i     <= reg_data_i[shr_bits-1];
                     o_q     <= reg_data_q[shr_bits-1];
@@ -235,7 +235,7 @@ generate
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
                     done_reg       <= {done_reg[shr_bits-2:0], done};
     
                 end 
@@ -247,7 +247,7 @@ generate
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
                     done_reg       <= {done_reg[shr_bits-2:0], done};
                 end
             end
@@ -258,7 +258,7 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
     reg [shr_bits-2:0] reg_shr;
     reg [shr_bits-1:0] reg_data_i; 
     reg [shr_bits-1:0] reg_data_q; 
-    reg [shr_bits-1:0] reg_data_valid;
+    reg [shr_bits-1:0] reg_i_valid;
     reg [6:0]          bit_count;
     reg                sending_shr;
 
@@ -273,7 +273,7 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
                 o_valid        <= 1'b0;
                 reg_data_i     <=  'b0;
                 reg_data_q     <=  'b0;
-                reg_data_valid <=  'b0;
+                reg_i_valid <=  'b0;
                 reg_shr        <=  'b0;
                 bit_count      <= 7'b0;
                 sending_shr    <= 1'b0;
@@ -289,7 +289,7 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
 
                     reg_data_i[0]     <= i_e;
                     reg_data_q[0]     <= i_o;
-                    reg_data_valid[0] <= i_valid;
+                    reg_i_valid[0] <= i_valid;
                     
                     // 48 bits if mode is high (1 Mbps), 96 bits otherwise
                     bit_count     <= mode ? 7'd48 : 7'd96;
@@ -304,21 +304,21 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
 
                     if (bit_count == 7'd2) 
                         sending_shr <= 1'b0;
                     else 
                         bit_count <= bit_count - 1'b1;
                 end 
-                else if (reg_data_valid[47]) 
+                else if (reg_i_valid[47]) 
                 begin
                     o_i     <= reg_data_i[47];
                     o_q     <= reg_data_q[47];
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
                     
                     o_valid <= 1'b1;
                 end 
@@ -340,7 +340,7 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
                 o_valid        <= 1'b0;
                 reg_data_i     <=  'b0;
                 reg_data_q     <=  'b0;
-                reg_data_valid <=  'b0;
+                reg_i_valid <=  'b0;
                 reg_shr        <=  'b0;
                 bit_count      <= 7'b0;
                 sending_shr    <= 1'b0;
@@ -356,7 +356,7 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
 
                     reg_data_i[0]     <= i_e;
                     reg_data_q[0]     <= i_o;
-                    reg_data_valid[0] <= i_valid;
+                    reg_i_valid[0] <= i_valid;
                     
                     // 48 bits if mode is high (1 Mbps), 96 bits otherwise
                     bit_count     <= mode ? 7'd48 : 7'd96;
@@ -371,21 +371,21 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
 
                     if (bit_count == 7'd2) 
                         sending_shr <= 1'b0;
                     else 
                         bit_count <= bit_count - 1'b1;
                 end 
-                else if (reg_data_valid[shr_bits-1]) 
+                else if (reg_i_valid[shr_bits-1]) 
                 begin
                     o_i     <= reg_data_i[shr_bits-1];
                     o_q     <= reg_data_q[shr_bits-1];
 
                     reg_data_i     <= {reg_data_i[shr_bits-2:0], i_e};
                     reg_data_q     <= {reg_data_q[shr_bits-2:0], i_o};
-                    reg_data_valid <= {reg_data_valid[shr_bits-2:0], i_valid};
+                    reg_i_valid <= {reg_i_valid[shr_bits-2:0], i_valid};
                     
                     o_valid <= 1'b1;
                 end 
