@@ -12,7 +12,7 @@ module FIFO_mem
     localparam ADDR_SIZE  = $clog2(FIFO_DEPTH)
 ) (
     input  wire                   clk,  
-    input  wire                   rst_n,   // Asynch active-low
+    input  wire                   rst_n,   // synch active-low
     input  wire                   wr_en,   // active-high  enable writing din in FIFO if it is not full
     input  wire                   rd_en,   // active-high enable reading data from FIFO if it is not empty 
     input  wire [FIFO_WIDTH-1: 0] din,
