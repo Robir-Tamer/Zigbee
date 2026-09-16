@@ -217,7 +217,7 @@ proc trim_mem_file {filepath} {
     puts $fh ""
     close $fh
 
-    # puts "Trimmed $filepath -> [llength $lines] lines remaining"
+    puts "Trimmed $filepath -> [llength $lines] lines remaining"
 }
 
 trim_mem_file $real_output_file
