@@ -63,7 +63,7 @@ integer i;
 integer test_case;
 //input stimulus
     initial begin
-        $readmemb("../Scripts/payload.txt", payload_mem);
+        $readmemb("../Scripts/payload_ai.txt", payload_mem);
     end
  //capture the output samples in large buffer
 parameter max_output_samples = 100000;
@@ -118,7 +118,7 @@ initial begin
     $display("========================================");
 
     // Set current payload length
-    payload_length = 10; // test_payload_length[test_case];
+    payload_length = 32; // test_payload_length[test_case];
     // Read MATLAB golden output for current test
     /*
 //if (test_case == 0) begin
