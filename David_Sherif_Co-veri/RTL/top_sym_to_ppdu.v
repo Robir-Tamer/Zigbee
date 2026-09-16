@@ -50,22 +50,6 @@ module top_sym_to_ppdu #(
     // Internal wire for preamble and SFD generator output
     wire [TOTAL_BITS-1:0] preamble_sfd_wire;
     
-
-    //syncronizing i_valid of interleavers with i_data
-    reg fifo_odd_rd_en_reg, fifo_even_rd_en_reg;
-
-    always @(posedge clk) 
-        if (!rst_n) 
-            fifo_odd_rd_en_reg <= 1'b0;
-        else 
-            fifo_odd_rd_en_reg <= fifo_odd_empty;
-
-/*     always @(posedge clk) 
-        if (!rst_n) 
-            fifo_even_rd_en_reg <= 1'b0;
-        else 
-            fifo_even_rd_en_reg <= fifo_even_empty; */
-
     // =========================================================================
     // 0. Preamble and SFD Generator
     // =========================================================================
@@ -177,6 +161,7 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .mode               (mode),
+        .tx_done            (tx_done),
         .i_valid            (interleaver_even_valid || interleaver_odd_valid),
         .i_e                (interleaver_even_data),
         .i_o                (interleaver_odd_data),

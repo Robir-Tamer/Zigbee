@@ -10,3 +10,5 @@ do ../Scripts/wave_S.do
 
 run -all
 #quit -sim
+
+do ../Scripts/save_Tx_out.tcl "SlowSingleMode"

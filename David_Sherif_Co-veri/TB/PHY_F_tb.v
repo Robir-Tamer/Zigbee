@@ -1,41 +1,33 @@
 //done by sherif ahmed
+//done by sherif ahmed
 
 module zigbee_tb();
 
+    //-- DUT --------------------------------------------------------
     // DUT parameters
-    parameter rate_mode          = "F";
-    parameter wl                 = 6;
-    parameter fl                 = 4;
-    parameter payload_w          = 8;
-    parameter max_payload_length = 127;
-    parameter header_length      = 12;
-    parameter dqpsk_fifo_w = 2;
-    parameter dqpsk_fifo_depth = 4096;
-
-    // Test parameters
- // Payload length test cases
-integer test_payload_length [0:2];
-
-initial begin
-    test_payload_length[0] = 0;
-    test_payload_length[1] = 1;
-    test_payload_length[2] = 127;
-end
-
+    parameter  rate_mode          = "F";
+    parameter  wl                 = 6;
+    parameter  fl                 = 4;
+    parameter  payload_w          = 8;
+    parameter  max_payload_length = 127;
+    parameter  header_length      = 12;
+    parameter  dqpsk_fifo_w       = 2;
+    parameter  dqpsk_fifo_depth   = 4096;
+    localparam pay_size           = $clog2(max_payload_length);
 
     // DUT inputs
-    reg                         clk;
-    reg                         rst_n;
-    reg  [payload_w-1:0]        payload;
-    reg  [$clog2(max_payload_length)-1:0] payload_length;
-    reg                         start_tx;
+    reg                  clk;
+    reg                  rst_n;
+    reg  [payload_w-1:0] payload;
+    reg  [pay_size-1:0]  payload_length;
+    reg                  start_tx;
 
-  // DUT outputs
-    wire [7:0]               tx_real;
-    wire [7:0]               tx_imag;
-    wire                     tx_done;
+    // DUT outputs
+    wire [7:0]           tx_real;
+    wire [7:0]           tx_imag;
+    wire                 tx_done;
 
-    // DUT instantiation
+    // DUT instantiation 
     zigbee_fpga #(
         .rate_mode          (rate_mode),
         .wl                 (wl),
@@ -57,153 +49,159 @@ end
         .tx_done        (tx_done)
     );
 
-        reg [payload_w-1:0] payload_mem [0:max_payload_length-1];
+    //-- clk gen --------------------------------------------------
+    initial begin  
+        clk=0;  
+        forever   
+            #0.5 clk=~clk;  
+    end 
    
-integer i;
-integer test_case;
-//input stimulus
+    //-- input stimulus -------------------------------------------
+    reg [payload_w-1:0] payload_mem [0:max_payload_length-1];
     initial begin
-        $readmemb("../Scripts/payload.txt", payload_mem);
+        $readmemb("../Scripts/payload_ai.txt", payload_mem);
     end
- //capture the output samples in large buffer
-parameter max_output_samples = 100000;
-
-reg [7:0]   rtl_tx_real [0:max_output_samples-1];
-reg [7:0]   rtl_tx_imag [0:max_output_samples-1];
-
-integer sample_count;
-//for comparing the output with MATLAB golden output
-integer real_errors ;
-integer imag_errors;
-
-initial begin  
-    clk=0;  
-    forever   
-        #1 clk=~clk;  
-end 
-
-// MATLAB golden output
-
-/*
-reg [7:0]   matlab_tx_real [0:max_output_samples-1];
-reg [7:0]   matlab_tx_imag [0:max_output_samples-1];*/
-
-//////////////////////////////////////////////////
 
 
-initial begin
-  
-  test_case=1;  
-    rst_n          = 0;
-    payload        = 0;
-    payload_length = 0;
-    start_tx       = 0;
+    //-- Test parameters -------------------------------------------
+    parameter max_output_samples = 100000;  //capture the output samples in large buffer
+    reg [7:0]   rtl_tx_real [0:max_output_samples-1];
+    reg [7:0]   rtl_tx_imag [0:max_output_samples-1];
 
-    // final RTL reset timing is not confirmed.
-    repeat (2) @(negedge clk); //not determined cycles
+    integer test_payload_length [0:2];      // Payload length test cases
+    initial begin
+        test_payload_length[0] = 0;
+        test_payload_length[1] = 1;
+        test_payload_length[2] = 127;
+    end
 
-    //check reset behavior
-    //if(tx_done !==0 || tx_real !== 0 || tx_imag !== 0) begin
-      //  $display("Error: DUT outputs are not reset to zero after reset.");
-        //$stop;
-    //end
-    
+    // for comparing the output with MATLAB golden output
+    integer sample_count;
+    integer real_errors ;
+    integer imag_errors;
 
-      rst_n = 1'b1;
-    repeat (2) @(negedge clk); //determined cycles for RDC
+    integer i;
+    integer test_case;
 
-    $display ("rst deasserted, starting test case %0d", test_case);
-    $display("Rate Mode       = %s", rate_mode);
-    $display("Payload Length  = %0d", test_payload_length[test_case]);
-    $display("========================================");
-
-    // Set current payload length
-    payload_length = 1; // test_payload_length[test_case];
-    // Read MATLAB golden output for current test
     /*
-//if (test_case == 0) begin
-    $readmemb("matlab_tx_real_F_0.txt", matlab_tx_real);
-    $readmemb("matlab_tx_imag_F_0.txt", matlab_tx_imag);
-end
-else if (test_case == 1) begin
-    $readmemb("matlab_tx_real_F_1.txt", matlab_tx_real);
-    $readmemb("matlab_tx_imag_F_1.txt", matlab_tx_imag);
-end
-else if (test_case == 2) begin
-    $readmemb("matlab_tx_real_F_127.txt", matlab_tx_real);
-    $readmemb("matlab_tx_imag_F_127.txt", matlab_tx_imag);
-end
-*/
-    // fix in github
-    for (i = 0; i < payload_length; i = i + 1) begin
-        payload = payload_mem[i];
-        @(negedge clk);
-    end
-
-    // Start transmission
-    start_tx = 1'b1;
-    @(negedge clk);
-    start_tx = 1'b0;
-    
-
-    sample_count = 0;
-    real_errors  = 0;
-    imag_errors  = 0;
-
-    // Capture TX output samples
-    while (tx_done !== 1'b1) begin
-        @(negedge clk);
-
-        rtl_tx_real[sample_count] = tx_real;
-        rtl_tx_imag[sample_count] = tx_imag;
-
-        sample_count = sample_count + 1;
-    end
-$display ($time, " ns: tx_done asserted.");
-    $display("TX completed. Captured %0d samples.", sample_count);
-    //wait will break if tx done =1 so now we will compare
-    // Compare with MATLAB
-    
-    /*
-    //if(tx_done==1)begin
-
-    for (i = 0; i < sample_count; i = i + 1) begin
-
-        if (rtl_tx_real[i] !== matlab_tx_real[i]) begin
-            real_errors = real_errors + 1;
-
-            $display("REAL MISMATCH at sample %0d: RTL=%b MATLAB=%b",
-                     i, rtl_tx_real[i], matlab_tx_real[i]);
-        end
-
-        if (rtl_tx_imag[i] !== matlab_tx_imag[i]) begin
-            imag_errors = imag_errors + 1;
-
-            $display("IMAG MISMATCH at sample %0d: RTL=%b MATLAB=%b",
-                     i, rtl_tx_imag[i], matlab_tx_imag[i]);
-        end
-
-    end
-    end
+    //-- MATLAB golden output --------------------------------------
+    reg [7:0]   matlab_tx_real [0:max_output_samples-1];
+    reg [7:0]   matlab_tx_imag [0:max_output_samples-1];
     */
 
-/*
-    $display("----------------------------------------");
-    $display("Test Case %0d Results", test_case);
-    $display("Payload Length = %0d", test_payload_length[test_case]);
-    $display("REAL errors = %0d", real_errors);
-    $display("IMAG errors = %0d", imag_errors);
-    $display("Total captured samples = %0d", sample_count);
-    $display("----------------------------------------");
-    
+    ////////////////////////////////////////////////////////////////
+    //-- Start Simulation ------------------------------------------
+    initial begin
+        test_case=1;  
+        rst_n          = 0;
+        payload        = 0;
+        payload_length = 0;
+        start_tx       = 0;
 
-    if ((real_errors == 0) && (imag_errors == 0))
-        $display("******** TEST CASE PASSED ********");
-    else
-        $display("******** TEST CASE FAILED ********");
-        */
-  $display("All test cases completed.");
-  $stop;
-end
-  
+        // final RTL reset timing is not confirmed.
+        repeat (2) @(negedge clk); //not determined cycles
+
+        //check reset behavior
+        //if(tx_done !==0 || tx_real !== 0 || tx_imag !== 0) begin
+        //  $display("Error: DUT outputs are not reset to zero after reset.");
+            //$stop;
+        //end
+        
+
+        rst_n = 1'b1;
+        repeat (2) @(negedge clk); //determined cycles for RDC
+
+        $display ("rst deasserted, starting test case %0d", test_case);
+        $display("Rate Mode       = %s", rate_mode);
+        $display("Payload Length  = %0d", test_payload_length[test_case]);
+        $display("========================================");
+
+        // Set current payload length
+        payload_length = 1; // test_payload_length[test_case];
+        // Read MATLAB golden output for current test
+    /*
+        //if (test_case == 0) begin
+            $readmemb("matlab_tx_real_F_0.txt", matlab_tx_real);
+            $readmemb("matlab_tx_imag_F_0.txt", matlab_tx_imag);
+        end
+        else if (test_case == 1) begin
+            $readmemb("matlab_tx_real_F_1.txt", matlab_tx_real);
+            $readmemb("matlab_tx_imag_F_1.txt", matlab_tx_imag);
+        end
+        else if (test_case == 2) begin
+            $readmemb("matlab_tx_real_F_127.txt", matlab_tx_real);
+            $readmemb("matlab_tx_imag_F_127.txt", matlab_tx_imag);
+        end
+    */
+
+        for (i = 0; i < payload_length; i = i + 1) begin
+            payload = payload_mem[i];
+            @(negedge clk);
+        end
+
+        // Start transmission
+        start_tx = 1'b1;
+        @(negedge clk);
+        start_tx = 1'b0;
+        
+        sample_count = 0;
+        real_errors  = 0;
+        imag_errors  = 0;
+
+        // Capture TX output samples
+        while (tx_done !== 1'b1) begin
+            @(negedge clk);
+
+            rtl_tx_real[sample_count] = tx_real;
+            rtl_tx_imag[sample_count] = tx_imag;
+
+            sample_count = sample_count + 1;
+        end
+        $display ($time, " ns: tx_done asserted.");
+        $display("TX completed. Captured %0d samples.", sample_count);
+        //wait will break if tx done =1 so now we will compare
+        // Compare with MATLAB
+        
+    /*
+        //if(tx_done==1)begin
+
+        for (i = 0; i < sample_count; i = i + 1) begin
+
+            if (rtl_tx_real[i] !== matlab_tx_real[i]) begin
+                real_errors = real_errors + 1;
+
+                $display("REAL MISMATCH at sample %0d: RTL=%b MATLAB=%b",
+                        i, rtl_tx_real[i], matlab_tx_real[i]);
+            end
+
+            if (rtl_tx_imag[i] !== matlab_tx_imag[i]) begin
+                imag_errors = imag_errors + 1;
+
+                $display("IMAG MISMATCH at sample %0d: RTL=%b MATLAB=%b",
+                        i, rtl_tx_imag[i], matlab_tx_imag[i]);
+            end
+
+        end
+        end
+    */
+
+    /*
+        $display("----------------------------------------");
+        $display("Test Case %0d Results", test_case);
+        $display("Payload Length = %0d", test_payload_length[test_case]);
+        $display("REAL errors = %0d", real_errors);
+        $display("IMAG errors = %0d", imag_errors);
+        $display("Total captured samples = %0d", sample_count);
+        $display("----------------------------------------");
+        
+
+        if ((real_errors == 0) && (imag_errors == 0))
+            $display("******** TEST CASE PASSED ********");
+        else
+            $display("******** TEST CASE FAILED ********");
+    */
+    $display("All test cases completed.");
+    $stop;
+    end
+    
 endmodule
