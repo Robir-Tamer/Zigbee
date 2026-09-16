@@ -38,8 +38,7 @@ generate
         
         always @(posedge clk) 
         begin
-            if (tx_done)    
-                done = 1'b1;       
+                  
 
             if (!rst_n) 
             begin
@@ -55,7 +54,9 @@ generate
                 sending_shr    <= 1'b0;
                 done           <= 1'b1;
                 start          <= 1'b0;
-            end 
+            end
+            else if (tx_done)    
+                done <= 1'b1;  
             else 
             begin
                 if (i_valid && !sending_shr && done && !start) 
@@ -152,9 +153,6 @@ generate
 
         always @(posedge clk) 
         begin
-            if (tx_done)    
-                done = 1'b1; 
-
             if (!rst_n) 
             begin
                 o_i            <= 1'b0;
@@ -170,6 +168,8 @@ generate
                 done           <= 1'b1;
                 start          <= 1'b0;
             end 
+            else if (tx_done)    
+                done <= 1'b1; 
             else 
             begin
                 if (i_valid && !sending_shr && done && !start) 
@@ -266,9 +266,6 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
 
         always @(posedge clk) 
         begin
-            if (tx_done)    
-                done = 1'b1; 
-
             if (!rst_n) 
             begin
                 o_i            <= 1'b0;
@@ -284,6 +281,8 @@ else if (rate_mode == "H") begin : gen_form_ppdu_hybrid
                 done           <= 1'b1;
                 start          <= 1'b0;
             end 
+            else if (tx_done)    
+                done <= 1'b1; 
             else
             begin 
                 if (mode)

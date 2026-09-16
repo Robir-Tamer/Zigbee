@@ -65,7 +65,7 @@ generate
                         end
                     else if (en)
                         begin
-                            if (!header_done && !empty_delayed)
+                            if ((!header_done && !empty_delayed) || payload_length == 'b0)
                                 begin
                                     done_bytes          <= 'b0;
                                     valid               <= 1'b1;
@@ -191,7 +191,7 @@ generate
                         end
                     else if (en)
                         begin
-                            if (!header_done && !empty_delayed)
+                            if ((!header_done && !empty_delayed) || payload_length == 'b0)
                                 begin
                                     done_bytes          <= 'b0;
                                     valid               <= 1'b1;
@@ -317,7 +317,7 @@ generate
                             
                             if (!mode)
                                 begin
-                                    if (!header_done && !empty_delayed)
+                                    if ((!header_done && !empty_delayed) || payload_length == 'b0)
                                         begin
                                             done_bytes          <= 'b0;
                                             valid               <= 1'b1;
@@ -422,7 +422,7 @@ generate
                                 end
                             else if (mode)
                                 begin
-                                    if (!header_done && !empty_delayed)
+                                    if ((!header_done && !empty_delayed) || payload_length == 'b0)
                                         begin
                                             done_bytes          <= 'b0;
                                             valid               <= 1'b1;
