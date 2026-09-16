@@ -62,20 +62,10 @@ module zigbee_S_tb();
     end
 
 
-<<<<<<< HEAD
-initial begin
-  
-  test_case= 10;  
-    rst_n          = 0;
-    payload        = 0;
-    payload_length = 0;
-    start_tx       = 0;
-=======
     //-- Test parameters -------------------------------------------
     parameter max_output_samples = 100000;  //capture the output samples in large buffer
     reg [7:0]   rtl_tx_real [0:max_output_samples-1];
     reg [7:0]   rtl_tx_imag [0:max_output_samples-1];
->>>>>>> 0d774e420342a82b9741d8193feb1ce8921c11be
 
     integer test_payload_length [0:2];      // Payload length test cases
     initial begin
