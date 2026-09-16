@@ -16,7 +16,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 00:55:10 on Sep 15,2026
+# Start time: 02:31:49 on Sep 16,2026
 # vlog -reportprogress 300 ../RTL/CSK_GEN.v ../RTL/DF_SYNC.v ../RTL/DQPSK.v ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.v ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
 # ** Note: (vlog-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
 # -- Compiling module CSK_GEN
@@ -43,23 +43,25 @@
 # 	DF_SYNC
 # 	zigbee_asic
 # 	zigbee_fpga
-# End time: 00:55:10 on Sep 15,2026, Elapsed time: 0:00:00
+# End time: 02:31:50 on Sep 16,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 00:55:10 on Sep 15,2026
-# vlog -reportprogress 300 ../TB/PHY_F_tb.v 
+# Start time: 02:31:50 on Sep 16,2026
+# vlog -reportprogress 300 ../TB/PHY_F_tb.v ../TB/PHY_S_tb.v 
 # ** Note: (vlog-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
 # -- Compiling module zigbee_tb
+# -- Compiling module zigbee_S_tb
 # 
 # Top level modules:
 # 	zigbee_tb
-# End time: 00:55:10 on Sep 15,2026, Elapsed time: 0:00:00
+# 	zigbee_S_tb
+# End time: 02:31:50 on Sep 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
-# vsim -voptargs="+acc" work.zigbee_tb 
-# Start time: 00:55:10 on Sep 15,2026
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading work.zigbee_tb(fast)
+# vsim -voptargs="+acc" work.zigbee_S_tb 
+# Start time: 02:31:50 on Sep 16,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.zigbee_S_tb(fast)
 # Loading work.zigbee_fpga(fast)
 # Loading work.FIFO_mem(fast)
 # Loading work.payload_counter(fast)
@@ -78,24 +80,16 @@
 # Loading work.FIFO_mem(fast__2)
 # Loading work.CSK_GEN(fast)
 # Loading work.posedge_detector(fast)
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: DAVID SAMEEH  Hostname: DAVIDSAMEEH-DES  ProcessID: 14076
-#           Attempting to use alternate WLF file "./wlft0z8d5h".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft0z8d5h
-# rst deasserted, starting test case 1
-# Rate Mode       = F
-# Payload Length  = 1
+# rst deasserted, starting test case 10
+# Rate Mode       = S
+# Payload Length  = x
 # ========================================
-#                 4952 ns: tx_done asserted.
-# TX completed. Captured 2470 samples.
+#                27752 ns: tx_done asserted.
+# TX completed. Captured 13861 samples.
 # All test cases completed.
-# ** Note: $stop    : ../TB/PHY_F_tb.v(206)
-#    Time: 4952 ns  Iteration: 1  Instance: /zigbee_tb
-# Break in Module zigbee_tb at ../TB/PHY_F_tb.v line 206
-# Causality operation skipped due to absence of debug database file
-69GA
-# invalid command name "69GA"
+# ** Note: $stop    : ../TB/PHY_S_tb.v(206)
+#    Time: 27752 ns  Iteration: 1  Instance: /zigbee_S_tb
+# Break in Module zigbee_S_tb at ../TB/PHY_S_tb.v line 206
 quit
-# End time: 01:10:21 on Sep 15,2026, Elapsed time: 0:15:11
-# Errors: 0, Warnings: 2
+# End time: 02:33:01 on Sep 16,2026, Elapsed time: 0:01:11
+# Errors: 0, Warnings: 0
