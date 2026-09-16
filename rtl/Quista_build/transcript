@@ -1,0 +1,341 @@
+# //  Questa Sim-64
+# //  Version 2021.1 win64 Jan 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do ../Scripts/run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 05:37:48 on Sep 14,2026
+# vlog -reportprogress 300 ../RTL/CSK_GEN.v ../RTL/DF_SYNC.v ../RTL/DQPSK.v ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.v ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
+# -- Compiling module CSK_GEN
+# -- Compiling module DF_SYNC
+# -- Compiling module DQPSK
+# -- Compiling module FIFO_mem
+# -- Compiling module controller
+# -- Compiling module dqpsk_csk_top
+# -- Compiling module e_o_demux
+# -- Compiling module form_ppdu
+# -- Compiling module interleaver
+# -- Compiling module mux2X1
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module preamble_sfd_gen
+# -- Compiling module QPSK_mapper
+# -- Compiling module symbol_mapper
+# -- Compiling module top_sym_to_ppdu
+# -- Compiling module zeropadding
+# -- Compiling module zigbee_asic
+# -- Compiling module zigbee_fpga
+# 
+# Top level modules:
+# 	DF_SYNC
+# 	zigbee_asic
+# 	zigbee_fpga
+# End time: 05:37:48 on Sep 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 05:37:48 on Sep 14,2026
+# vlog -reportprogress 300 ../TB/PHY_F_tb.v 
+# -- Compiling module zigbee_tb
+# 
+# Top level modules:
+# 	zigbee_tb
+# End time: 05:37:48 on Sep 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.zigbee_tb 
+# Start time: 05:37:48 on Sep 14,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.zigbee_tb(fast)
+# Loading work.zigbee_fpga(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.payload_counter(fast)
+# Loading work.zeropadding(fast)
+# Loading work.e_o_demux(fast)
+# Loading work.controller(fast)
+# Loading work.top_sym_to_ppdu(fast)
+# Loading work.preamble_sfd_gen(fast)
+# Loading work.symbol_mapper(fast)
+# Loading work.FIFO_mem(fast__1)
+# Loading work.interleaver(fast)
+# Loading work.form_ppdu(fast)
+# Loading work.QPSK_mapper(fast)
+# Loading work.dqpsk_csk_top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast__2)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+# rst deasserted, starting test case 1
+# Rate Mode       = F
+# Payload Length  = 1
+# ========================================
+#                 4952 ns: tx_done asserted.
+# TX completed. Captured 2470 samples.
+# All test cases completed.
+# ** Note: $stop    : ../TB/PHY_F_tb.v(209)
+#    Time: 4952 ns  Iteration: 1  Instance: /zigbee_tb
+# Break in Module zigbee_tb at ../TB/PHY_F_tb.v line 209
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.zigbee_tb(fast)
+# Loading work.zigbee_fpga(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.payload_counter(fast)
+# Loading work.zeropadding(fast)
+# Loading work.e_o_demux(fast)
+# Loading work.controller(fast)
+# Loading work.top_sym_to_ppdu(fast)
+# Loading work.preamble_sfd_gen(fast)
+# Loading work.symbol_mapper(fast)
+# Loading work.FIFO_mem(fast__1)
+# Loading work.interleaver(fast)
+# Loading work.form_ppdu(fast)
+# Loading work.QPSK_mapper(fast)
+# Loading work.dqpsk_csk_top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast__2)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+vlog ../RTL/*.*v
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 05:43:39 on Sep 14,2026
+# vlog -reportprogress 300 ../RTL/CSK_GEN.v ../RTL/DF_SYNC.v ../RTL/DQPSK.v ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.v ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
+# -- Compiling module CSK_GEN
+# -- Compiling module DF_SYNC
+# -- Compiling module DQPSK
+# -- Compiling module FIFO_mem
+# -- Compiling module controller
+# -- Compiling module dqpsk_csk_top
+# -- Compiling module e_o_demux
+# -- Compiling module form_ppdu
+# -- Compiling module interleaver
+# -- Compiling module mux2X1
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module preamble_sfd_gen
+# -- Compiling module QPSK_mapper
+# -- Compiling module symbol_mapper
+# -- Compiling module top_sym_to_ppdu
+# -- Compiling module zeropadding
+# -- Compiling module zigbee_asic
+# -- Compiling module zigbee_fpga
+# 
+# Top level modules:
+# 	DF_SYNC
+# 	zigbee_asic
+# 	zigbee_fpga
+# End time: 05:43:39 on Sep 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.zigbee_tb(fast)
+# Loading work.zigbee_fpga(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.payload_counter(fast)
+# Loading work.zeropadding(fast)
+# Loading work.e_o_demux(fast)
+# Loading work.controller(fast)
+# Loading work.top_sym_to_ppdu(fast)
+# Loading work.preamble_sfd_gen(fast)
+# Loading work.symbol_mapper(fast)
+# Loading work.FIFO_mem(fast__1)
+# Loading work.interleaver(fast)
+# Loading work.form_ppdu(fast)
+# Loading work.QPSK_mapper(fast)
+# Loading work.dqpsk_csk_top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast__2)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+run -all
+# rst deasserted, starting test case 1
+# Rate Mode       = F
+# Payload Length  = 1
+# ========================================
+#                 4952 ns: tx_done asserted.
+# TX completed. Captured 2470 samples.
+# All test cases completed.
+# ** Note: $stop    : ../TB/PHY_F_tb.v(209)
+#    Time: 4952 ns  Iteration: 1  Instance: /zigbee_tb
+# Break in Module zigbee_tb at ../TB/PHY_F_tb.v line 209
+add wave -position insertpoint  \
+sim:/zigbee_tb/dut/ZeroPadding/en
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.zigbee_tb(fast)
+# Loading work.zigbee_fpga(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.payload_counter(fast)
+# Loading work.zeropadding(fast)
+# Loading work.e_o_demux(fast)
+# Loading work.controller(fast)
+# Loading work.top_sym_to_ppdu(fast)
+# Loading work.preamble_sfd_gen(fast)
+# Loading work.symbol_mapper(fast)
+# Loading work.FIFO_mem(fast__1)
+# Loading work.interleaver(fast)
+# Loading work.form_ppdu(fast)
+# Loading work.QPSK_mapper(fast)
+# Loading work.dqpsk_csk_top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast__2)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+run -all
+# rst deasserted, starting test case 1
+# Rate Mode       = F
+# Payload Length  = 1
+# ========================================
+#                 4952 ns: tx_done asserted.
+# TX completed. Captured 2470 samples.
+# All test cases completed.
+# ** Note: $stop    : ../TB/PHY_F_tb.v(209)
+#    Time: 4952 ns  Iteration: 1  Instance: /zigbee_tb
+# Break in Module zigbee_tb at ../TB/PHY_F_tb.v line 209
+vlog ../RTL/*.*v
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 06:02:18 on Sep 14,2026
+# vlog -reportprogress 300 ../RTL/CSK_GEN.v ../RTL/DF_SYNC.v ../RTL/DQPSK.v ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.v ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
+# -- Compiling module CSK_GEN
+# -- Compiling module DF_SYNC
+# -- Compiling module DQPSK
+# -- Compiling module FIFO_mem
+# -- Compiling module controller
+# -- Compiling module dqpsk_csk_top
+# -- Compiling module e_o_demux
+# -- Compiling module form_ppdu
+# -- Compiling module interleaver
+# -- Compiling module mux2X1
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module preamble_sfd_gen
+# -- Compiling module QPSK_mapper
+# -- Compiling module symbol_mapper
+# -- Compiling module top_sym_to_ppdu
+# -- Compiling module zeropadding
+# -- Compiling module zigbee_asic
+# -- Compiling module zigbee_fpga
+# 
+# Top level modules:
+# 	DF_SYNC
+# 	zigbee_asic
+# 	zigbee_fpga
+# End time: 06:02:18 on Sep 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.zigbee_tb(fast)
+# Loading work.zigbee_fpga(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.payload_counter(fast)
+# Loading work.zeropadding(fast)
+# Loading work.e_o_demux(fast)
+# Loading work.controller(fast)
+# Loading work.top_sym_to_ppdu(fast)
+# Loading work.preamble_sfd_gen(fast)
+# Loading work.symbol_mapper(fast)
+# Loading work.FIFO_mem(fast__1)
+# Loading work.interleaver(fast)
+# Loading work.form_ppdu(fast)
+# Loading work.QPSK_mapper(fast)
+# Loading work.dqpsk_csk_top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast__2)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+run -all
+# rst deasserted, starting test case 1
+# Rate Mode       = F
+# Payload Length  = 1
+# ========================================
+#                 4952 ns: tx_done asserted.
+# TX completed. Captured 2470 samples.
+# All test cases completed.
+# ** Note: $stop    : ../TB/PHY_F_tb.v(209)
+#    Time: 4952 ns  Iteration: 1  Instance: /zigbee_tb
+# Break in Module zigbee_tb at ../TB/PHY_F_tb.v line 209
+vlog ../RTL/*.*v
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 06:03:15 on Sep 14,2026
+# vlog -reportprogress 300 ../RTL/CSK_GEN.v ../RTL/DF_SYNC.v ../RTL/DQPSK.v ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.v ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
+# -- Compiling module CSK_GEN
+# -- Compiling module DF_SYNC
+# -- Compiling module DQPSK
+# -- Compiling module FIFO_mem
+# -- Compiling module controller
+# -- Compiling module dqpsk_csk_top
+# -- Compiling module e_o_demux
+# -- Compiling module form_ppdu
+# -- Compiling module interleaver
+# -- Compiling module mux2X1
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module preamble_sfd_gen
+# -- Compiling module QPSK_mapper
+# -- Compiling module symbol_mapper
+# -- Compiling module top_sym_to_ppdu
+# -- Compiling module zeropadding
+# ** Error: ../RTL/zeropadding.v(274): A begin/end block was found with an empty body.  This is permitted in SystemVerilog, but not permitted in Verilog.  Please look for any stray semicolons.
+# -- Compiling module zigbee_asic
+# -- Compiling module zigbee_fpga
+# End time: 06:03:15 on Sep 14,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/ROBO/Programs/Mentor_Graphics_QuestaSim_2021.1x64/win64/vlog failed.
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.zigbee_tb(fast)
+# Loading work.zigbee_fpga(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.payload_counter(fast)
+# Loading work.zeropadding(fast)
+# Loading work.e_o_demux(fast)
+# Loading work.controller(fast)
+# Loading work.top_sym_to_ppdu(fast)
+# Loading work.preamble_sfd_gen(fast)
+# Loading work.symbol_mapper(fast)
+# Loading work.FIFO_mem(fast__1)
+# Loading work.interleaver(fast)
+# Loading work.form_ppdu(fast)
+# Loading work.QPSK_mapper(fast)
+# Loading work.dqpsk_csk_top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast__2)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+vlog ../RTL/*.*v
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 06:03:21 on Sep 14,2026
+# vlog -reportprogress 300 ../RTL/CSK_GEN.v ../RTL/DF_SYNC.v ../RTL/DQPSK.v ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.v ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
+# -- Compiling module CSK_GEN
+# -- Compiling module DF_SYNC
+# -- Compiling module DQPSK
+# -- Compiling module FIFO_mem
+# -- Compiling module controller
+# -- Compiling module dqpsk_csk_top
+# -- Compiling module e_o_demux
+# -- Compiling module form_ppdu
+# -- Compiling module interleaver
+# -- Compiling module mux2X1
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module preamble_sfd_gen
+# -- Compiling module QPSK_mapper
+# -- Compiling module symbol_mapper
+# -- Compiling module top_sym_to_ppdu
+# -- Compiling module zeropadding
+# ** Error: ../RTL/zeropadding.v(274): A begin/end block was found with an empty body.  This is permitted in SystemVerilog, but not permitted in Verilog.  Please look for any stray semicolons.
+# -- Compiling module zigbee_asic
+# -- Compiling module zigbee_fpga
+# End time: 06:03:21 on Sep 14,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/ROBO/Programs/Mentor_Graphics_QuestaSim_2021.1x64/win64/vlog failed.
