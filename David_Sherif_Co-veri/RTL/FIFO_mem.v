@@ -9,7 +9,7 @@ module FIFO_mem
  #(
     parameter  FIFO_WIDTH = 2,
     parameter  FIFO_DEPTH = 4096,
-    localparam ADDR_SIZE  = $clog2(FIFO_DEPTH)
+    parameter ADDR_SIZE  = $clog2(FIFO_DEPTH)
 ) (
     input  wire                   clk,  
     input  wire                   rst_n,   // synch active-low

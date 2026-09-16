@@ -8,7 +8,7 @@
 module form_ppdu #(
 /********************************** Parameters *********************************/
     parameter  rate_mode     = "H",
-    localparam shr_bits      = (rate_mode == "F") ? 48 : 96
+    parameter shr_bits      = (rate_mode == "F") ? 48 : 96
 )(
 /************************************ Inputs ***********************************/
     input  wire        clk, 
@@ -17,7 +17,7 @@ module form_ppdu #(
     input  wire        i_valid, 
     input  wire        i_e, 
     input  wire        i_o,
-    input  reg         tx_done,
+    input  wire        tx_done,
     input  wire [shr_bits-1:0] i_preamble_SFD,
 /*********************************** Outputs ***********************************/
     output reg         o_i, 

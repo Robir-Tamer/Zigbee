@@ -8,7 +8,7 @@
 module preamble_sfd_gen #(
 /********************************** Parameters *********************************/
     parameter  rate_mode     = "H",
-    localparam shr_bits      = (rate_mode == "F") ? 48 : 96
+    parameter shr_bits      = (rate_mode == "F") ? 48 : 96
 )(
 /************************************ Inputs ***********************************/
     input  wire                       clk,

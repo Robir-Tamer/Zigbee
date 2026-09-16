@@ -7,7 +7,7 @@
 
 
 
-module zigbee_fpga #(
+module zigbee #(
 /********************************** Parameters *********************************/
     parameter rate_mode = "H", //H >>>>> Hybrid, F >>>>> 1mbps, S >>>>> 250kbps
     parameter wl = 6,
