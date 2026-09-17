@@ -65,7 +65,7 @@ generate
                         end
                     else if (en)
                         begin
-                            if (!header_done && (!empty_delayed|| payload_length == 'b0))
+                            if (!header_done && (!empty_delayed || payload_length == 'b0))
                                 begin
                                     done_bytes          <= 'b0;
                                     valid               <= 1'b1;
@@ -83,7 +83,8 @@ generate
                                                     counter     <= 'b0;
                                                     header_done <= 1'b1;
                                                     next_item   <= 1'b0;
-                                                    
+                                                    if (payload_length == 'b0)
+                                                        done_bytes  <= 1;
                                                 end
                                             else
                                                 begin
@@ -127,7 +128,7 @@ generate
                                                     counter     <= counter + 1'b1;
                                                 end
                                         end
-                                    else
+                                    else if (valid == 'b1)
                                         begin
                                             if (counter == 'd5)
                                                 begin
@@ -166,10 +167,16 @@ generate
                                             else
                                                 begin
                                                     valid       <= 1'b0;
-                                                    header_done <= 1'b0;
+                                                    if (payload_length != 'b0)
+                                                        header_done <= 1'b0;
                                                 end
                                         end
                                 end
+                        end
+                    else
+                        begin
+                            valid       <= 'b0;
+                            header_done <= 'b0;
                         end
                 end
         end
@@ -208,6 +215,8 @@ generate
                                                 begin
                                                     header_done <= 1'b1;
                                                     next_item   <= 1'b0;
+                                                    if (payload_length == 'b0)
+                                                        done_bytes  <= 1;
                                                 end
                                             else if (counter == 'd10)
                                                 begin
@@ -249,7 +258,7 @@ generate
                                                     counter     <= counter + 1'b1;
                                                 end
                                         end
-                                    else
+                                    else if (valid == 'b1)
                                         begin
                                             if (counter == 'd23)
                                                 begin
@@ -289,10 +298,16 @@ generate
                                             else
                                                 begin
                                                     valid       <= 1'b0;
-                                                    header_done <= 1'b0;
+                                                    if (payload_length != 'b0)
+                                                        header_done <= 1'b0;
                                                 end
                                         end
                                 end
+                        end
+                    else
+                        begin
+                            valid       <= 'b0;
+                            header_done <= 'b0;
                         end
                 end
         end
@@ -334,6 +349,8 @@ generate
                                                         begin
                                                             header_done <= 1'b1;
                                                             next_item   <= 1'b0;
+                                                            if (payload_length == 'b0)
+                                                                done_bytes  <= 1;
                                                         end
                                                     else if (counter == 'd10)
                                                         begin
@@ -415,7 +432,8 @@ generate
                                                     else
                                                         begin
                                                             valid       <= 1'b0;
-                                                            header_done <= 1'b0;
+                                                            if (payload_length != 'b0)
+                                                                header_done <= 1'b0;
                                                         end
                                                 end
                                         end
@@ -440,6 +458,8 @@ generate
                                                             counter     <= 'b0;
                                                             header_done <= 1'b1;
                                                             next_item   <= 1'b0;
+                                                            if (payload_length == 'b0)
+                                                                done_bytes  <= 1;
                                                         end
                                                     else
                                                         begin
@@ -530,6 +550,11 @@ generate
                                                 end
                                         end
                                 end     
+                        end
+                    else
+                        begin
+                            valid       <= 'b0;
+                            header_done <= 'b0;
                         end     
                 end
         end     
