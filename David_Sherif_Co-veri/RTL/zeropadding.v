@@ -110,12 +110,12 @@ generate
 
                                             if (byte_counter == 0)
                                                 begin
-                                                    data_i_reg  <= data_i >>1;
-                                                    data_o      <= data_i[0];
+                                                    data_i_reg  <= data_i <<1;
+                                                    data_o      <= data_i[7];
                                                 end
                                             else
                                                 begin
-                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                    {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                 end
                                             
                                             if (counter == 'd5)
@@ -143,12 +143,12 @@ generate
                                                 begin
                                                     if (byte_counter ==0)
                                                         begin
-                                                            data_i_reg  <= data_i >> 1;
-                                                            data_o      <= data_i[0];
+                                                            data_i_reg  <= data_i << 1;
+                                                            data_o      <= data_i[7];
                                                         end
                                                     else
                                                         begin
-                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                            {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                         end
                                                     byte_counter <= byte_counter+1;
                                                 end
@@ -232,12 +232,12 @@ generate
 
                                             if (byte_counter == 0)
                                                 begin
-                                                    data_i_reg  <= data_i >>1;
-                                                    data_o      <= data_i[0];
+                                                    data_i_reg  <= data_i <<1;
+                                                    data_o      <= data_i[7];
                                                 end
                                             else
                                                 begin
-                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                    {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                 end
                                             
                                             if (counter == 'd23)
@@ -265,12 +265,12 @@ generate
                                                 begin
                                                     if (byte_counter ==0)
                                                         begin
-                                                            data_i_reg  <= data_i >> 1;
-                                                            data_o      <= data_i[0];
+                                                            data_i_reg  <= data_i << 1;
+                                                            data_o      <= data_i[7];
                                                         end
                                                     else
                                                         begin
-                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                            {data_o,data_i_reg} <= {data_i_reg,data_o};
                                                         end
                                                     byte_counter <= byte_counter+1;
                                                 end
@@ -358,12 +358,12 @@ generate
 
                                                     if (byte_counter == 0)
                                                         begin
-                                                            data_i_reg  <= data_i >>1;
-                                                            data_o      <= data_i[0];
+                                                            data_i_reg  <= data_i <<1;
+                                                            data_o      <= data_i[7];
                                                         end
                                                     else
                                                         begin
-                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                            {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                         end
 
                                                     if (counter == 'd23)
@@ -391,12 +391,12 @@ generate
                                                         begin
                                                             if (byte_counter ==0)
                                                                 begin
-                                                                    data_i_reg  <= data_i >> 1;
-                                                                    data_o      <= data_i[0];
+                                                                    data_i_reg  <= data_i << 1;
+                                                                    data_o      <= data_i[7];
                                                                 end
                                                             else
                                                                 begin
-                                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                                    {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                                 end
                                                             byte_counter <= byte_counter+1;
                                                         end
@@ -468,12 +468,12 @@ generate
 
                                                     if (byte_counter == 0)
                                                         begin
-                                                            data_i_reg  <= data_i >>1;
-                                                            data_o      <= data_i[0];
+                                                            data_i_reg  <= data_i << 1;
+                                                            data_o      <= data_i[7];
                                                         end
                                                     else
                                                         begin
-                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                            {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                         end
 
                                                     if (counter == 'd5)
@@ -501,12 +501,12 @@ generate
                                                         begin
                                                             if (byte_counter ==0)
                                                                 begin
-                                                                    data_i_reg  <= data_i >> 1;
-                                                                    data_o      <= data_i[0];
+                                                                    data_i_reg  <= data_i << 1;
+                                                                    data_o      <= data_i[7];
                                                                 end
                                                             else
                                                                 begin
-                                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                                    {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                                 end
                                                             byte_counter <= byte_counter+1;
                                                         end

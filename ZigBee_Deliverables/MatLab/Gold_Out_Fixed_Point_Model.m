@@ -64,7 +64,7 @@ end
 fprintf('--- Stimulus loaded from payload.txt ---\n');
 fprintf('  Payload length : %d bytes (%d bits)\n\n', numPayloadBytes, numPayloadBytes*8);
 
-figure('Name','STAGE 0 - Input Payload Bitstream','Color','w','Position',[50 50 1200 300]);
+%figure('Name','STAGE 0 - Input Payload Bitstream','Color','w','Position',[50 50 1200 300]);
 stem(incomingStream, 'filled', 'MarkerSize', 3);
 ylim([-0.3 1.3]); grid on;
 title(sprintf('STAGE 0: Raw payload bits from payload.txt (%d bytes, %d bits) -- shared by both data rates', ...
@@ -74,7 +74,7 @@ xlabel('Bit index'); ylabel('Bit value');
 %% ========================================================================
 %  MAIN LOOP: BOTH DATA RATES
 %  ========================================================================
-rateLabels = {'1 Mb/s', '250 kb/s'};
+rateLabels = {'1Mbps', '250Kbps'};
 TxFloatAll = cell(1,2);
 TxOutAll   = cell(1,2);
 mseAll     = zeros(1,2);
@@ -109,7 +109,7 @@ for dataRate = 0:1
     fprintf('  SFD length      : %d chips\n', SFDlength);
     fprintf('  Combined length : %d chips (applied identically to I and Q)\n\n', length(preamble_SFD));
 
-    fnamePreSFD = sprintf('preamble_SFD_%s.txt', rateTag);
+    fnamePreSFD = sprintf('./Golden_out/preamble_SFD_%s.txt', rateTag);
     fidPS = fopen(fnamePreSFD, 'wt');
     fprintf(fidPS, '// Preamble + SFD, bipolar +-1, data rate %s\n', rateName);
     fprintf(fidPS, '// First %d entries = preamble (all +1), last %d entries = SFD\n', ...
@@ -121,7 +121,7 @@ for dataRate = 0:1
     fclose(fidPS);
     fprintf('  Exported : %s  (%d entries)\n\n', fnamePreSFD, length(preamble_SFD));
 
-    figure('Name',sprintf('STAGE 0c - Preamble+SFD [%s]',rateName),'Color','w','Position',[50 50 1100 350]);
+   % figure('Name',sprintf('STAGE 0c - Preamble+SFD [%s]',rateName),'Color','w','Position',[50 50 1100 350]);
     stem(preamble_SFD, 'filled', 'MarkerSize',4);
     hold on;
     line([preambleLength+0.5 preambleLength+0.5], [-1.5 1.5], 'Color','r','LineStyle','--','LineWidth',1.5);
@@ -147,7 +147,7 @@ for dataRate = 0:1
     fprintf('  Chirp sequence size : %d x %d subchirps\n', size(chirpSequence_float,1), size(chirpSequence_float,2));
     fprintf('  ROM-only MSE (Q1.4) : %.8f\n\n', romMSE);
 
-    figure('Name',sprintf('STAGE 1 - CSK ROM: float vs Q1.4 [%s]',rateName),'Color','w','Position',[50 50 1100 700]);
+   % figure('Name',sprintf('STAGE 1 - CSK ROM: float vs Q1.4 [%s]',rateName),'Color','w','Position',[50 50 1100 700]);
     subplot(2,1,1);
     p1=plot(real(chirpSequence_float(:,1)),'b-','LineWidth',1.6); hold on;
     p2=plot(real(double(chirpSequence_q14(:,1))),'r.-','LineWidth',1,'MarkerSize',10); hold off;
@@ -183,7 +183,7 @@ for dataRate = 0:1
         size(I_path_mapped_biOrthogonal,1), size(I_path_mapped_biOrthogonal,2), ...
         size(Q_path_mapped_biOrthogonal,1), size(Q_path_mapped_biOrthogonal,2));
 
-    figure('Name',sprintf('STAGE 3 - Symbol Mapper%s [%s]',ilTag,rateName),'Color','w','Position',[50 50 1000 600]);
+   % figure('Name',sprintf('STAGE 3 - Symbol Mapper%s [%s]',ilTag,rateName),'Color','w','Position',[50 50 1000 600]);
     subplot(2,1,1); imagesc(I_path_mapped_biOrthogonal); colormap(gray); colorbar;
     title(sprintf('STAGE 3a [%s]: I path chips -- bright=+1, dark=-1',rateName));
     xlabel('Chip index'); ylabel('Symbol index');
@@ -197,7 +197,7 @@ for dataRate = 0:1
     fprintf('--- STAGE 4: QPSK Mapper output [%s] ---\n', rateName);
     fprintf('  X_n length : %d complex symbols\n\n', length(DQPSK_input));
 
-    figure('Name',sprintf('STAGE 4 - QPSK Mapper [%s]',rateName),'Color','w','Position',[50 50 900 450]);
+    %figure('Name',sprintf('STAGE 4 - QPSK Mapper [%s]',rateName),'Color','w','Position',[50 50 900 450]);
     plot(real(DQPSK_input),imag(DQPSK_input),'bo','MarkerFaceColor','b','MarkerSize',6);
     grid on; axis equal; xlim([-1.5 1.5]); ylim([-1.5 1.5]);
     title(sprintf('STAGE 4 [%s]: QPSK constellation (X_n)',rateName));
@@ -218,7 +218,7 @@ for dataRate = 0:1
     fprintf('--- STAGE 5: DQPSK differential coding [%s] ---\n', rateName);
     fprintf('  S_n length : %d | Max |S_n| : %.4f\n\n', length(Sn), max(abs(Sn)));
 
-    figure('Name',sprintf('STAGE 5 - DQPSK: Xn vs Sn [%s]',rateName),'Color','w','Position',[50 50 900 450]);
+  %  figure('Name',sprintf('STAGE 5 - DQPSK: Xn vs Sn [%s]',rateName),'Color','w','Position',[50 50 900 450]);
     subplot(1,2,1); plot(real(Xn),imag(Xn),'bo','MarkerFaceColor','b'); grid on; axis equal;
     xlim([-3 3]); ylim([-3 3]); title(sprintf('BEFORE: X_n [%s]',rateName)); xlabel('I'); ylabel('Q');
     subplot(1,2,2); plot(real(Sn),imag(Sn),'ro','MarkerFaceColor','r'); grid on; axis equal;
@@ -232,7 +232,7 @@ for dataRate = 0:1
     fprintf('--- STAGE 6: Final CSS signal, floating point [%s] ---\n', rateName);
     fprintf('  Full signal length : %d samples\n\n', length(TxchirpSequences_float));
 
-    figure('Name',sprintf('STAGE 6 - Final CSS Signal (float) [%s]',rateName),'Color','w','Position',[50 50 1100 750]);
+   % figure('Name',sprintf('STAGE 6 - Final CSS Signal (float) [%s]',rateName),'Color','w','Position',[50 50 1100 750]);
     subplot(3,1,1);
     plot(tf,real(TxchirpSequences_float(tf)),'b-'); hold on;
     plot(tf,imag(TxchirpSequences_float(tf)),'r-'); hold off; grid on;
@@ -267,7 +267,7 @@ for dataRate = 0:1
 
     nShow = min(600, length(TxchirpSequences_float));
     tAx = 1:nShow;
-    figure('Name',sprintf('STAGE 7 - Float vs Q3.4 output [%s]',rateName),'Color','w','Position',[50 50 1100 800]);
+  %  figure('Name',sprintf('STAGE 7 - Float vs Q3.4 output [%s]',rateName),'Color','w','Position',[50 50 1100 800]);
     subplot(2,1,1);
     p3=plot(tAx,real(TxchirpSequences_float(tAx)),'b-','LineWidth',1.3); hold on;
     p4=plot(tAx,real(double(TxchirpSequences_q34(tAx))),'r--','LineWidth',1); hold off; grid on;
@@ -284,8 +284,8 @@ for dataRate = 0:1
     %% -------------------------------------------------------------
     %  STAGE 8 : EXPORT tx_real / tx_imag TO FILE (Q3.4 binary, WL=8)
     %  -------------------------------------------------------------
-    fnameR = sprintf('tx_real_Q3p4_%s.txt', rateTag);
-    fnameI = sprintf('tx_imag_Q3p4_%s.txt', rateTag);
+    fnameR = sprintf('./Golden_out/%s/00_tx_real_%s.txt', rateTag, rateTag);
+    fnameI = sprintf('./Golden_out/%s/00_tx_imag_%s.txt', rateTag, rateTag);
 
     txR = real(TxchirpSequences_q34);
     txI = imag(TxchirpSequences_q34);
@@ -327,7 +327,7 @@ for r = 1:2
     fprintf('%-12s | %-12.8f | %-14.8f | %-10s\n', rateLabels{r}, romMSEAll(r), mseAll(r), rStr);
 end
 
-figure('Name','FINAL COMPARISON - Both Data Rates','Color','w','Position',[50 50 1100 900]);
+%figure('Name','FINAL COMPARISON - Both Data Rates','Color','w','Position',[50 50 1100 900]);
 n1 = min(800, length(TxFloatAll{1})); n2 = min(800, length(TxFloatAll{2}));
 
 subplot(4,1,1);

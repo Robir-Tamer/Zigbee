@@ -21,7 +21,7 @@ module e_o_demux #(
     output  reg                                     valid
 );
 /*********************************** Signals ***********************************/
-reg                                     even;
+reg                                     odd;
 reg     [(rate_mode == "F"? 2:5) : 0]   e_bits_reg;
 reg     [(rate_mode == "F"? 2:5) : 0]   o_bits_reg;
 reg     [(rate_mode == "F"? 1:2) : 0]   e_counter;
@@ -37,7 +37,7 @@ generate
                             e_bits      <= 'b0;
                             o_bits      <= 'b0;
                             valid       <= 'b0;
-                            even        <= 'b0;
+                            odd         <= 'b0;
                             e_bits_reg  <= 'b0;
                             o_bits_reg  <= 'b0;
                             e_counter   <= 'b0;
@@ -47,29 +47,30 @@ generate
                         begin
                             if (valid_i)
                                 begin
-                                    if (!even)
+                                    if (odd)
                                         begin
-                                            o_bits_reg  <= {data_i,o_bits_reg[2 : 1]};
+                                            o_bits_reg  <= {o_bits_reg[1 : 0],data_i};
                                             if (o_counter == 'b11)
                                                 o_counter <= 'b1;
                                             else
                                                 o_counter   <= o_counter + 'b1;
-                                            even        <= !even;
+                                            odd        <= !odd;
                                         end
                                     else 
                                         begin
-                                            e_bits_reg  <= {data_i,e_bits_reg[2 : 1]};
+                                            e_bits_reg  <= {e_bits_reg[1 : 0],data_i};
                                             if(e_counter == 'b11)
                                                 e_counter <= 'b1;
                                             else
                                                 e_counter   <= e_counter + 'b1;
-                                            even        <= !even;
+                                            odd        <= !odd;
                                         end
                                 end
                             else 
                                 begin
                                     o_counter           <= 'b0;
                                     e_counter           <= 'b0;
+                                    odd                 <= 'b0;
                                 end
 
                             if ((e_counter == 'b11) && (o_counter == 'b11))
@@ -96,7 +97,7 @@ generate
                             e_bits      <= 'b0;
                             o_bits      <= 'b0;
                             valid       <= 'b0;
-                            even        <= 'b0;
+                            odd         <= 'b0;
                             e_bits_reg  <= 'b0;
                             o_bits_reg  <= 'b0;
                             e_counter   <= 'b0;
@@ -106,29 +107,30 @@ generate
                         begin
                             if (valid_i)
                                 begin
-                                    if (!even)
+                                    if (odd)
                                         begin
-                                            o_bits_reg  <= {data_i,o_bits_reg[5 : 1]};
+                                            o_bits_reg  <= {o_bits_reg[4 : 0],data_i};
                                             if (o_counter == 'b110)
                                                 o_counter <= 'b1;
                                             else
                                                 o_counter   <= o_counter + 'b1;
-                                            even        <= !even;
+                                            odd        <= !odd;
                                         end
                                     else 
                                         begin
-                                            e_bits_reg  <= {data_i,e_bits_reg[5 : 1]};
+                                            e_bits_reg  <= {e_bits_reg[4 : 0],data_i};
                                             if(e_counter == 'b110)
                                                 e_counter <= 'b1;
                                             else
                                                 e_counter   <= e_counter + 'b1;
-                                            even        <= !even;
+                                            odd        <= !odd;
                                         end
                                 end
                             else 
                                 begin
                                     o_counter           <= 'b0;
                                     e_counter           <= 'b0;
+                                    odd                 <= 'b0;
                                 end
                             if ((e_counter == 'b110) && (o_counter == 'b110))
                                 begin
@@ -154,7 +156,7 @@ generate
                             e_bits      <= 'b0;
                             o_bits      <= 'b0;
                             valid       <= 'b0;
-                            even        <= 'b0;
+                            odd         <= 'b0;
                             e_bits_reg  <= 'b0;
                             o_bits_reg  <= 'b0;
                             e_counter   <= 'b0;
@@ -164,29 +166,30 @@ generate
                         begin
                             if (valid_i)
                                 begin
-                                    if (!even)
+                                    if (odd)
                                         begin
-                                            o_bits_reg  <= {data_i,o_bits_reg[5 : 1]};
+                                            o_bits_reg  <= {o_bits_reg[4 : 0],data_i};
                                             if (o_counter == 'b110)
                                                 o_counter <= 'b1;
                                             else
                                                 o_counter   <= o_counter + 'b1;
-                                            even        <= !even;
+                                            odd        <= !odd;
                                         end
                                     else 
                                         begin
-                                            e_bits_reg  <= {data_i,e_bits_reg[5 : 1]};
+                                            e_bits_reg  <= {e_bits_reg[4 : 0],data_i};
                                             if(e_counter == 'b110)
                                                 e_counter <= 'b1;
                                             else
                                                 e_counter   <= e_counter + 'b1;
-                                            even        <= !even;
+                                            odd        <= !odd;
                                         end
                                 end
                             else 
                                 begin
                                     o_counter           <= 'b0;
                                     e_counter           <= 'b0;
+                                    odd                 <= 'b0;
                                 end
                             if ((e_counter == 'b110) && (o_counter == 'b110))
                                 begin
@@ -207,29 +210,30 @@ generate
                                 begin
                                     o_bits_reg [5:3] <= 'b0;
                                     e_bits_reg [5:3] <= 'b0;
-                                    if (!even)
+                                    if (odd)
                                         begin
-                                            o_bits_reg[2:0]  <= {data_i,o_bits_reg[2 : 1]};
+                                            o_bits_reg[2:0]  <= {o_bits_reg[1 : 0],data_i};
                                             if (o_counter == 'b11)
                                                 o_counter <= 'b1;
                                             else
                                                 o_counter   <= o_counter + 'b1;
-                                            even        <= !even;
+                                            odd        <= !odd;
                                         end
                                     else 
                                         begin
-                                            e_bits_reg[2:0]  <= {data_i,e_bits_reg[2 : 1]};
+                                            e_bits_reg[2:0]  <= {e_bits_reg[1 : 0],data_i};
                                             if(e_counter == 'b11)
                                                 e_counter <= 'b1;
                                             else
                                                 e_counter   <= e_counter + 'b1;
-                                            even        <= !even;
+                                            odd        <= !odd;
                                         end
                                 end
                             else 
                                 begin
                                     o_counter           <= 'b0;
                                     e_counter           <= 'b0;
+                                    odd                 <= 'b0;
                                 end
                             
                             if ((e_counter == 'b11) && (o_counter == 'b11))

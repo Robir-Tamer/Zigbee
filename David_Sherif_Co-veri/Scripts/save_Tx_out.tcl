@@ -67,8 +67,8 @@ quietly set max_addr   100000
 quietly set output_dir     "../Tx_output"
 quietly set output_prefix  "Questa_Sim_result"
 
-quietly set real_output_file "$output_dir/${output_prefix}_${discription}_tx_real.txt"
-quietly set imag_output_file "$output_dir/${output_prefix}_${discription}_tx_imag.txt"
+quietly set real_output_file "$output_dir/tx_real_${output_prefix}_${discription}.txt"
+quietly set imag_output_file "$output_dir/tx_imag_${output_prefix}_${discription}.txt"
 
 
 #-------------------------------------------------------------------------------------#
@@ -228,11 +228,11 @@ trim_mem_file $imag_output_file
 #-- Report result --------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
 
-quietly set word_count [expr {$last_addr - $start_addr + 1}]
+#quietly set word_count [expr {$last_addr - $start_addr + 1}]
 
 puts "----------------------------------------------"
 puts "Memory export completed"
 puts "Output files   : $real_output_file, \n\t\t  \
                        $imag_output_file"
-puts "Bytes written  : $word_count"
+#puts "Bytes written  : $word_count"
 puts "=============================================="

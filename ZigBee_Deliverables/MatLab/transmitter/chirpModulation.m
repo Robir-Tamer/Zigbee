@@ -59,7 +59,8 @@ for QPSKgroupCounter=0:numQPSKsymbols/4-1
 %-***********************************************************************-%
 %-***********************************************************************-%
 end
+
+% Trim pre-allocated array to actual written length (removes trailing zeroes on odd N blocks)
+chirpSymbols = chirpSymbols(1:startIndex);
+
 end
-
-
-

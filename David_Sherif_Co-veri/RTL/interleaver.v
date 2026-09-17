@@ -53,24 +53,24 @@ generate
             end 
             else if (!busy && i_valid)
             begin
-                shift_reg <= i_data[3:1];
+                shift_reg <= i_data[2:0];
                 busy      <= 1'b1;
-                bit_count <= 2'b0; 
-                o_data    <= i_data[0];
+                bit_count <= 2'b0;
+                o_data    <= i_data[3];
                 o_valid   <= 1'b1;
             end
             else if (busy)
             begin
                 if (bit_count < 2'd2) 
                 begin
-                    o_data    <= shift_reg[0];
-                    shift_reg <= shift_reg >> 1;
+                    o_data    <= shift_reg[2];
+                    shift_reg <= shift_reg << 1;
                     bit_count <= bit_count + 1'b1;   
                     o_valid   <= 1'b1;
                 end 
                 else 
                 begin
-                    o_data    <= shift_reg[0];
+                    o_data    <= shift_reg[2];
                     busy      <= 1'b0;
                     o_valid   <= 1'b1; 
                 end
@@ -91,6 +91,23 @@ generate
         reg        busy;
         reg        first_done;
         reg        data_ready;
+        wire [3:0] g0,g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12;
+        assign g0   = shift_reg [31:28];
+        assign g1   = shift_reg [27:24];
+        assign g2   = shift_reg [23:20];
+        assign g3   = shift_reg [19:16];
+        assign g4   = shift_reg [15:12];
+        assign g5   = shift_reg [11:8];
+        assign g6   = shift_reg [7:4];
+        assign g7   = shift_reg [3:0];
+        assign g8   = i_data[31:28];
+        assign g9   = i_data[27:24];
+        assign g10  = i_data[23:20];
+        assign g11  = i_data[19:16];
+        assign g12  = i_data[15:12];
+        assign g13  = i_data[11:8];
+        assign g14  = i_data[7:4];
+        assign g15  = i_data[3:0];
 
         always @(posedge clk) 
         begin
@@ -134,24 +151,7 @@ generate
                             cycle_flag <= 1'b0;
                             busy       <= 1'b1;
                             bit_count  <= 6'd0;
-                            shift_reg  <= {
-                                shift_reg[15:12], // G3
-                                i_data[27:24],    // G14
-                                shift_reg[7:4],   // G1
-                                i_data[19:16],    // G12
-                                shift_reg[31:28], // G7
-                                i_data[11:8],     // G10
-                                shift_reg[23:20], // G5
-                                i_data[3:0],      // G8
-                                i_data[15:12],    // G11
-                                shift_reg[27:24], // G6
-                                i_data[7:4],      // G9
-                                shift_reg[19:16], // G4
-                                i_data[31:28],    // G15
-                                shift_reg[11:8],  // G2
-                                i_data[23:20],    // G13
-                                shift_reg[3:0]    // G0
-                            };
+                            shift_reg  <= {g0,g13,g2,g15,g4,g9,g6,g11,g8,g5,g10,g7,g12,g1,g14,g3};
                             o_data     <= shift_reg[0];
                             o_valid    <= 1'b1;
                             data_ready <= 'b0;
@@ -200,7 +200,23 @@ generate
         reg        busy;
         reg        first_done;
         reg        data_ready;
-
+        wire [3:0] g0,g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12;
+        assign g0   = shift_reg [31:28];
+        assign g1   = shift_reg [27:24];
+        assign g2   = shift_reg [23:20];
+        assign g3   = shift_reg [19:16];
+        assign g4   = shift_reg [15:12];
+        assign g5   = shift_reg [11:8];
+        assign g6   = shift_reg [7:4];
+        assign g7   = shift_reg [3:0];
+        assign g8   = i_data[31:28];
+        assign g9   = i_data[27:24];
+        assign g10  = i_data[23:20];
+        assign g11  = i_data[19:16];
+        assign g12  = i_data[15:12];
+        assign g13  = i_data[11:8];
+        assign g14  = i_data[7:4];
+        assign g15  = i_data[3:0];
         always @(posedge clk) 
         begin
             if (!rst_n) 
@@ -223,24 +239,24 @@ generate
                     // 1 Mbps Mode (Hybrid Fast) - Using lower 4 bits of i_data [3:0]
                     if (!busy && i_valid)
                     begin
-                        shift_reg[2:0] <= i_data[3:1];
+                        shift_reg[2:0] <= i_data[2:0];
                         busy      <= 1'b1;
                         bit_count <= 6'd0; 
-                        o_data    <= i_data[0];
+                        o_data    <= i_data[3];
                         o_valid   <= 1'b1;
                     end
                     else if (busy)
                     begin
                         if (bit_count < 6'd2) 
                         begin
-                            o_data    <= shift_reg[0];
-                            shift_reg <= shift_reg >> 1;
+                            o_data    <= shift_reg[2];
+                            shift_reg <= shift_reg << 1;
                             bit_count <= bit_count + 1'b1;   
                             o_valid   <= 1'b1;
                         end 
                         else 
                         begin
-                            o_data    <= shift_reg[0];
+                            o_data    <= shift_reg[2];
                             busy      <= 1'b0;
                             bit_count <= 6'd0;
                             o_valid   <= 1'b1;
@@ -283,24 +299,7 @@ generate
                                 cycle_flag <= 1'b0;
                                 busy       <= 1'b1;
                                 bit_count  <= 6'd0;
-                                shift_reg  <= {
-                                    shift_reg[15:12], // G3
-                                    i_data[27:24],    // G14
-                                    shift_reg[7:4],   // G1
-                                    i_data[19:16],    // G12
-                                    shift_reg[31:28], // G7
-                                    i_data[11:8],     // G10
-                                    shift_reg[23:20], // G5
-                                    i_data[3:0],      // G8
-                                    i_data[15:12],    // G11
-                                    shift_reg[27:24], // G6
-                                    i_data[7:4],      // G9
-                                    shift_reg[19:16], // G4
-                                    i_data[31:28],    // G15
-                                    shift_reg[11:8],  // G2
-                                    i_data[23:20],    // G13
-                                    shift_reg[3:0]    // G0
-                                };
+                                shift_reg  <= {g0,g13,g2,g15,g4,g9,g6,g11,g8,g5,g10,g7,g12,g1,g14,g3};
                                 o_data     <= shift_reg[0];
                                 o_valid    <= 1'b1;
                                 data_ready <= 'b0;
