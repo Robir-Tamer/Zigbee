@@ -156,13 +156,13 @@ integer dqpsk_correct;
     //-- Start Simulation ------------------------------------------
     initial begin
         // start log file
-        log_file_TX            = $fopen("../S_log/00_TX_transcript.log"           , "w");
-        log_file_QPSK          = $fopen("../S_log/06_QPSK_transcript.log"         , "w");
-        log_file_interleaver   = $fopen("../S_log/04_interleaver_transcript.log"  , "w");
-        log_file_symbol_mapper = $fopen("../S_log/03_symbol_mapper_transcript.log", "w");
-        log_file_demux         = $fopen("../S_log/02_demux_transcript.log"        , "w");
-        log_file_zero_padding  = $fopen("../S_log/01_zero_padding_transcript.log" , "w");
-        log_file_dqpsk         = $fopen("../S_log/07_dqpsk_transcript.log"        , "w");
+        log_file_TX            = $fopen("../log_S/00_TX_transcript.log"           , "w");
+        log_file_QPSK          = $fopen("../log_S/06_QPSK_transcript.log"         , "w");
+        log_file_interleaver   = $fopen("../log_S/04_interleaver_transcript.log"  , "w");
+        log_file_symbol_mapper = $fopen("../log_S/03_symbol_mapper_transcript.log", "w");
+        log_file_demux         = $fopen("../log_S/02_demux_transcript.log"        , "w");
+        log_file_zero_padding  = $fopen("../log_S/01_zero_padding_transcript.log" , "w");
+        log_file_dqpsk         = $fopen("../log_S/07_dqpsk_transcript.log"        , "w");
 
         $fdisplay(log_file_TX, "========================================");
         $fdisplay(log_file_TX, "Zigbee TB Started");

@@ -156,13 +156,13 @@ integer dqpsk_correct;
     //-- Start Simulation ------------------------------------------
     initial begin
         // start log file
-        log_file_TX            = $fopen("../F_log/00_TX_transcript.log"           , "w");
-        log_file_QPSK          = $fopen("../F_log/06_QPSK_transcript.log"         , "w");
-        log_file_interleaver   = $fopen("../F_log/04_interleaver_transcript.log"  , "w");
-        log_file_symbol_mapper = $fopen("../F_log/03_symbol_mapper_transcript.log", "w");
-        log_file_demux         = $fopen("../F_log/02_demux_transcript.log"        , "w");
-        log_file_zero_padding  = $fopen("../F_log/01_zero_padding_transcript.log" , "w");
-        log_file_dqpsk         = $fopen("../F_log/07_dqpsk_transcript.log"        , "w");
+        log_file_TX            = $fopen("../log_F/00_TX_transcript.log"           , "w");
+        log_file_QPSK          = $fopen("../log_F/06_QPSK_transcript.log"         , "w");
+        log_file_interleaver   = $fopen("../log_F/04_interleaver_transcript.log"  , "w");
+        log_file_symbol_mapper = $fopen("../log_F/03_symbol_mapper_transcript.log", "w");
+        log_file_demux         = $fopen("../log_F/02_demux_transcript.log"        , "w");
+        log_file_zero_padding  = $fopen("../log_F/01_zero_padding_transcript.log" , "w");
+        log_file_dqpsk         = $fopen("../log_F/07_dqpsk_transcript.log"        , "w");
 
         $fdisplay(log_file_TX, "========================================");
         $fdisplay(log_file_TX, "Zigbee TB Started");
@@ -227,7 +227,7 @@ integer dqpsk_correct;
 
 
     //david will provide the matlab output for 1Mbps  and we will compare with that
-        if (test_case == 0) begin //0 byte
+        if (test_case == 0) begin // fast mode, 0 byte
             $readmemb("../Tx_output/AI_0_Payload/1Mbps/00_tx_real_1Mbps.txt", matlab_tx_real);
             $readmemb("../Tx_output/AI_0_Payload/1Mbps/00_tx_imag_1Mbps.txt", matlab_tx_imag);
             $readmemb("../Tx_output/AI_0_Payload/1Mbps/06_QPSK_OUT_1M.txt", matlab_QPSK);
@@ -237,7 +237,7 @@ integer dqpsk_correct;
             $readmemb("../Tx_output/AI_0_Payload/1Mbps/01_zeropadding_output_1M.txt", matlab_zero_padding);
             $readmemb("../Tx_output/AI_0_Payload/1Mbps/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
         end
-         else if (test_case == 1) begin //1 byte
+         else if (test_case == 1) begin // fast mode, 1 byte
             $readmemb("../Tx_output/AI_1_Payload/1Mbps/00_tx_real_1Mbps.txt", matlab_tx_real);
             $readmemb("../Tx_output/AI_1_Payload/1Mbps/00_tx_imag_1Mbps.txt", matlab_tx_imag);
             $readmemb("../Tx_output/AI_1_Payload/1Mbps/06_QPSK_OUT_1M.txt", matlab_QPSK);
@@ -248,7 +248,7 @@ integer dqpsk_correct;
             $readmemb("../Tx_output/AI_1_Payload/1Mbps/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
 
         end
-        else if (test_case == 2) begin //28byte
+        else if (test_case == 2) begin // fast mode, 28 byte
             $readmemb("../Tx_output/AI_28_Payload/1Mbps/00_tx_real_1Mbps.txt", matlab_tx_real);
             $readmemb("../Tx_output/AI_28_Payload/1Mbps/00_tx_imag_1Mbps.txt", matlab_tx_imag);
             $readmemb("../Tx_output/AI_28_Payload/1Mbps/06_QPSK_OUT_1M.txt", matlab_QPSK);
@@ -259,7 +259,7 @@ integer dqpsk_correct;
             $readmemb("../Tx_output/AI_28_Payload/1Mbps/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
             //to be written by david
         end
-        else if (test_case == 3) begin //127byte
+        else if (test_case == 3) begin // fast mode, 127 byte
             $readmemb("../Tx_output/AI_127_Payload/1Mbps/00_tx_real_1Mbps.txt", matlab_tx_real);
             $readmemb("../Tx_output/AI_127_Payload/1Mbps/00_tx_imag_1Mbps.txt", matlab_tx_imag);
             $readmemb("../Tx_output/AI_127_Payload/1Mbps/06_QPSK_OUT_1M.txt", matlab_QPSK);
