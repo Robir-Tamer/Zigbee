@@ -144,6 +144,7 @@ generate
                         begin
                             shift_reg[31:0] <= i_data; 
                             cycle_flag      <= 1'b1;
+                            next_item       <= 1'b0;
                         end 
                         else if (data_ready)
                         begin
@@ -152,7 +153,9 @@ generate
                             busy       <= 1'b1;
                             bit_count  <= 6'd0;
                             shift_reg  <= {g0,g13,g2,g15,g4,g9,g6,g11,g8,g5,g10,g7,g12,g1,g14,g3};
-                            o_data     <= shift_reg[0];
+                            // o_data     <= shift_reg[0];  // 5arban
+                            //o_data    <= shift_reg[31];  // 5arban
+                            o_data    <= shift_reg[16];
                             o_valid    <= 1'b1;
                             data_ready <= 'b0;
                         end
@@ -168,8 +171,13 @@ generate
                     if (bit_count < 6'd63) 
                     begin
                         bit_count <= bit_count + 1'b1;
+                        /*
                         o_data    <= shift_reg [1];
                         shift_reg <= shift_reg >> 1;
+                        */
+                        o_data      <= shift_reg[62];
+                        shift_reg   <= shift_reg << 1;
+
                         o_valid   <= 1'b1;
                         if ((bit_count == 6'd61 || bit_count == 6'd62) && i_valid)
                             begin

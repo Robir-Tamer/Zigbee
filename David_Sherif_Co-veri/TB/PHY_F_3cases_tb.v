@@ -1,7 +1,7 @@
 //done by sherif ahmed
 //done by sherif ahmed
 
-module zigbee_sfvjsfbvsv_tb();
+module zigbee_tb();
 
     //-- DUT --------------------------------------------------------
     // DUT parameters
@@ -79,9 +79,10 @@ module zigbee_sfvjsfbvsv_tb();
 
   integer test_payload_length [0:10];      // Payload length test cases
     initial begin
-         test_payload_length[0] = 1;
-        test_payload_length[1] = 28;
-         test_payload_length[2] = 127;
+         test_payload_length[0] = 0;
+         test_payload_length[1] = 1;
+         test_payload_length[2] = 28;
+         test_payload_length[3] = 127;
     end
 
 
@@ -194,7 +195,7 @@ integer dqpsk_correct;
         
 
       //  test_case      = 1;  
-      for (test_case = 0; test_case < 3; test_case = test_case + 1) begin
+      for (test_case = 0; test_case < 4; test_case = test_case + 1) begin
         rst_n          = 0;
         payload        = 0;
         payload_length = 0;
@@ -226,37 +227,47 @@ integer dqpsk_correct;
 
 
     //david will provide the matlab output for 1Mbps  and we will compare with that
-        if (test_case == 0) begin //1byte
-            $readmemb("../Tx_output/AI_1_Payload/00_tx_real_1Mbps.txt", matlab_tx_real);
-            $readmemb("../Tx_output/AI_1_Payload/00_tx_imag_1Mbps.txt", matlab_tx_imag);
-            $readmemb("../Tx_output/AI_1_Payload/06_QPSK_OUT_1M.txt", matlab_QPSK);
-            $readmemb("../Tx_output/AI_1_Payload/04_interleaver_output_1M.txt", matlab_interleaver);
-            $readmemb("../Tx_output/AI_1_Payload/03_symbolmapper_output_1M.txt", matlab_symbol_mapper);
-            $readmemb("../Tx_output/AI_1_Payload/02_demux_output_1M.txt", matlab_demux);
-            $readmemb("../Tx_output/AI_1_Payload/01_zeropadding_output_1M.txt", matlab_zero_padding);
-            $readmemb("../Tx_output/AI_1_Payload/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
+        if (test_case == 0) begin //0 byte
+            $readmemb("../Tx_output/AI_0_Payload/1Mbps/00_tx_real_1Mbps.txt", matlab_tx_real);
+            $readmemb("../Tx_output/AI_0_Payload/1Mbps/00_tx_imag_1Mbps.txt", matlab_tx_imag);
+            $readmemb("../Tx_output/AI_0_Payload/1Mbps/06_QPSK_OUT_1M.txt", matlab_QPSK);
+            $readmemb("../Tx_output/AI_0_Payload/1Mbps/04_interleaver_output_1M.txt", matlab_interleaver);
+            $readmemb("../Tx_output/AI_0_Payload/1Mbps/03_symbolmapper_output_1M.txt", matlab_symbol_mapper);
+            $readmemb("../Tx_output/AI_0_Payload/1Mbps/02_demux_output_1M.txt", matlab_demux);
+            $readmemb("../Tx_output/AI_0_Payload/1Mbps/01_zeropadding_output_1M.txt", matlab_zero_padding);
+            $readmemb("../Tx_output/AI_0_Payload/1Mbps/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
+        end
+         else if (test_case == 1) begin //1 byte
+            $readmemb("../Tx_output/AI_1_Payload/1Mbps/00_tx_real_1Mbps.txt", matlab_tx_real);
+            $readmemb("../Tx_output/AI_1_Payload/1Mbps/00_tx_imag_1Mbps.txt", matlab_tx_imag);
+            $readmemb("../Tx_output/AI_1_Payload/1Mbps/06_QPSK_OUT_1M.txt", matlab_QPSK);
+            $readmemb("../Tx_output/AI_1_Payload/1Mbps/04_interleaver_output_1M.txt", matlab_interleaver);
+            $readmemb("../Tx_output/AI_1_Payload/1Mbps/03_symbolmapper_output_1M.txt", matlab_symbol_mapper);
+            $readmemb("../Tx_output/AI_1_Payload/1Mbps/02_demux_output_1M.txt", matlab_demux);
+            $readmemb("../Tx_output/AI_1_Payload/1Mbps/01_zeropadding_output_1M.txt", matlab_zero_padding);
+            $readmemb("../Tx_output/AI_1_Payload/1Mbps/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
 
         end
-        else if (test_case == 1) begin //28byte
-            $readmemb("../Tx_output/provided_28_Payload/00_tx_real_1Mbps.txt", matlab_tx_real);
-            $readmemb("../Tx_output/provided_28_Payload/00_tx_imag_1Mbps.txt", matlab_tx_imag);
-            $readmemb("../Tx_output/provided_28_Payload/06_QPSK_OUT_1M.txt", matlab_QPSK);
-            $readmemb("../Tx_output/provided_28_Payload/04_interleaver_output_1M.txt", matlab_interleaver);
-            $readmemb("../Tx_output/provided_28_Payload/03_symbolmapper_output_1M.txt", matlab_symbol_mapper);
-            $readmemb("../Tx_output/provided_28_Payload/02_demux_output_1M.txt", matlab_demux);
-            $readmemb("../Tx_output/provided_28_Payload/01_zeropadding_output_1M.txt", matlab_zero_padding);
-            $readmemb("../Tx_output/provided_28_Payload/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
+        else if (test_case == 2) begin //28byte
+            $readmemb("../Tx_output/AI_28_Payload/1Mbps/00_tx_real_1Mbps.txt", matlab_tx_real);
+            $readmemb("../Tx_output/AI_28_Payload/1Mbps/00_tx_imag_1Mbps.txt", matlab_tx_imag);
+            $readmemb("../Tx_output/AI_28_Payload/1Mbps/06_QPSK_OUT_1M.txt", matlab_QPSK);
+            $readmemb("../Tx_output/AI_28_Payload/1Mbps/04_interleaver_output_1M.txt", matlab_interleaver);
+            $readmemb("../Tx_output/AI_28_Payload/1Mbps/03_symbolmapper_output_1M.txt", matlab_symbol_mapper);
+            $readmemb("../Tx_output/AI_28_Payload/1Mbps/02_demux_output_1M.txt", matlab_demux);
+            $readmemb("../Tx_output/AI_28_Payload/1Mbps/01_zeropadding_output_1M.txt", matlab_zero_padding);
+            $readmemb("../Tx_output/AI_28_Payload/1Mbps/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
             //to be written by david
         end
-        else if (test_case == 2) begin //127byte
-            $readmemb("../Tx_output/AI_127_Payload/00_tx_real_1Mbps.txt", matlab_tx_real);
-            $readmemb("../Tx_output/AI_127_Payload/00_tx_imag_1Mbps.txt", matlab_tx_imag);
-            $readmemb("../Tx_output/AI_127_Payload/06_QPSK_OUT_1M.txt", matlab_QPSK);
-            $readmemb("../Tx_output/AI_127_Payload/04_interleaver_output_1M.txt", matlab_interleaver);
-            $readmemb("../Tx_output/AI_127_Payload/03_symbolmapper_output_1M.txt", matlab_symbol_mapper);
-            $readmemb("../Tx_output/AI_127_Payload/02_demux_output_1M.txt", matlab_demux);
-            $readmemb("../Tx_output/AI_127_Payload/01_zeropadding_output_1M.txt", matlab_zero_padding);
-            $readmemb("../Tx_output/AI_127_Payload/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
+        else if (test_case == 3) begin //127byte
+            $readmemb("../Tx_output/AI_127_Payload/1Mbps/00_tx_real_1Mbps.txt", matlab_tx_real);
+            $readmemb("../Tx_output/AI_127_Payload/1Mbps/00_tx_imag_1Mbps.txt", matlab_tx_imag);
+            $readmemb("../Tx_output/AI_127_Payload/1Mbps/06_QPSK_OUT_1M.txt", matlab_QPSK);
+            $readmemb("../Tx_output/AI_127_Payload/1Mbps/04_interleaver_output_1M.txt", matlab_interleaver);
+            $readmemb("../Tx_output/AI_127_Payload/1Mbps/03_symbolmapper_output_1M.txt", matlab_symbol_mapper);
+            $readmemb("../Tx_output/AI_127_Payload/1Mbps/02_demux_output_1M.txt", matlab_demux);
+            $readmemb("../Tx_output/AI_127_Payload/1Mbps/01_zeropadding_output_1M.txt", matlab_zero_padding);
+            $readmemb("../Tx_output/AI_127_Payload/1Mbps/07_DQPSK_OUT_1M.txt", matlab_dqpsk);
         end
     
 

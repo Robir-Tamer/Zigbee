@@ -1,7 +1,7 @@
 vlib work
 
-vlog ../RTL/*.v 
-vlog ../TB/*.v 
+vlog ../RTL/*.*v
+vlog ../TB/*.*v 
 
 
 vsim -voptargs=+acc work.zigbee_tb

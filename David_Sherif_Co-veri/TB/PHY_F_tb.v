@@ -1,7 +1,7 @@
 //done by sherif ahmed
 //done by sherif ahmed
 
-module zigbee_tb();
+module zigbee_hbio_tb();
 
     //-- DUT --------------------------------------------------------
     // DUT parameters
@@ -121,9 +121,9 @@ module zigbee_tb();
     integer zero_padding_errors;
     integer zero_padding_correct;
 
-integer dqpsk_count;
-integer dqpsk_errors;
-integer dqpsk_correct;
+    integer dqpsk_count;
+    integer dqpsk_errors;
+    integer dqpsk_correct;
 
 
     integer i;

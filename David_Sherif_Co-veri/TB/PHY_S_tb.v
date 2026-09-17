@@ -83,7 +83,7 @@ module zigbee_S_tb();
     integer test_payload_length [0:10];      // Payload length test cases
     initial begin
         // test_payload_length[0] = 32;
-        test_payload_length[1] = 32;
+        test_payload_length[1] = 1;
         // test_payload_length[2] = 127;
     end
 
@@ -451,7 +451,7 @@ if (dut.symbol_mapper_to_ppdu.mapper_even_valid) begin
         $display("Test Case %0d Results", test_case);
         $display("Payload Length = %0d", test_payload_length[test_case]);
 
-        display("QPSK errors = %0d", QPSK_errors);
+        $display("QPSK errors = %0d", QPSK_errors);
         $display("QPSK Correct = %0d", QPSK_correct);
 
         $display("Interleaver errors = %0d", inter_errors);
