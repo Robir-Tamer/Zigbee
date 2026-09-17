@@ -12,7 +12,7 @@ module zigbee_hbio_tb();
     parameter  max_payload_length = 127;
     parameter  header_length      = 12;
     parameter  dqpsk_fifo_w       = 2;
-    parameter  dqpsk_fifo_depth   = 4096;
+    parameter  dqpsk_fifo_depth   = 1024;
     localparam pay_size           = $clog2(max_payload_length);
 
     // DUT inputs

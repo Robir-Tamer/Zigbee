@@ -1,5 +1,5 @@
 %% ========================================================================
-%  Demux_Stage_Output.m
+%  Demux_Stage_Output.m  (FIXED: zero-length payload case)
 %  Generates the Demux stage output -- the raw bit groups AFTER
 %  Zero Padding + Demux + Serial-to-Parallel, BEFORE the Symbol Mapper
 %  lookup. One row per symbol-group, each row concatenating the I-path
@@ -8,9 +8,13 @@
 %     1 Mb/s   : 6 bits/row  = 3 (I group) + 3 (Q group)
 %     250 kb/s : 12 bits/row = 6 (I group) + 6 (Q group)
 %
+%  FIX: removed the incorrect "if paddingBy==N, paddingBy=0" special case
+%  (same root cause and fix as the Zero Padding script -- see its header
+%  comment for the full explanation).
+%
 %  Outputs:
-%     demux_output_1Mbps.txt
-%     demux_output_250kbps.txt
+%     ./Golden_out/1Mbps/02_demux_output_1M.txt
+%     ./Golden_out/250Kbps/02_demux_output_250K.txt
 %
 %  Stimulus: payload.txt
 % =========================================================================
@@ -77,22 +81,14 @@ for dataRate = 0:1
     % NOTE: N is NOT the same multiplier for both data rates.
     %   1 Mb/s   : N = 2(I,Q) * numBitsPerCodeWord                          = 6
     %   250 kb/s : N = 2(I,Q) * 2(consecutive codewords) * numBitsPerCodeWord = 24
-    % The interleaver for 250 kb/s spans TWO consecutive codewords, which is
-    % where the extra factor of 2 comes from (see 6.5a.2.1 /
-    % ChirpSpreadSpectrum_Tx.m, where paddingBy is hardcoded per rate as 6
-    % and 24 respectively). Using "numBitsPerCodeWord * 2" for both rates
-    % silently halves N for 250 kb/s -- this is what dropped the last
-    % 12-bit (6+6) row for the 32-byte payload case.
     if dataRate == 0
         N = numBitsPerCodeWord * 2;        % 6 for 1 Mb/s
     else
         N = numBitsPerCodeWord * 2 * 2;    % 24 for 250 kb/s
     end
 
+    % FIXED: no special-case override -- always add N - mod(x,N) bits.
     paddingBy = N - mod(length(binaryData), N);
-    if paddingBy == N
-        paddingBy = 0;   % already aligned -- avoid adding a full spurious block
-    end
     binaryData = [binaryData, zeros(1,paddingBy)];
 
     %% ---- Demux ----

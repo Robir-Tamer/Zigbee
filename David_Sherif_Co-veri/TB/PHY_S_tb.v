@@ -1,7 +1,7 @@
 //done by sherif ahmed
 //done by sherif ahmed
 
-module zigbee_S_tb();
+module zigbee_S_sffb_tb();
 
     //-- DUT --------------------------------------------------------
     // DUT parameters
@@ -72,7 +72,6 @@ module zigbee_S_tb();
     reg        [63:0]  rtl_symbol_mapper [0:max_output_samples-1];
     reg        [11:0]  rtl_demux [0:max_output_samples-1];
     reg                rtl_zero_padding [0:max_output_samples-1];
-
     reg signed [7:0] rtl_dqpsk_real_then_imag [0:max_output_samples-1];
 
 
@@ -160,13 +159,13 @@ module zigbee_S_tb();
     //-- Start Simulation ------------------------------------------
     initial begin
         // start log file
-        log_file_TX            = $fopen("../S_log/00_S_TX_transcript.log"           , "w");
-        log_file_QPSK          = $fopen("../S_log/06_S_QPSK_transcript.log"         , "w");
-        log_file_interleaver   = $fopen("../S_log/04_S_interleaver_transcript.log"  , "w");
-        log_file_symbol_mapper = $fopen("../S_log/03_S_symbol_mapper_transcript.log", "w");
-        log_file_demux         = $fopen("../S_log/02_S_demux_transcript.log"        , "w");
-        log_file_zero_padding  = $fopen("../S_log/01_S_zero_padding_transcript.log" , "w");
-        log_file_dqpsk         = $fopen("../S_log/07_S_dqpsk_transcript.log"         , "w");
+        log_file_TX            = $fopen("../S_log/00_TX_transcript.log"           , "w");
+        log_file_QPSK          = $fopen("../S_log/06_QPSK_transcript.log"         , "w");
+        log_file_interleaver   = $fopen("../S_log/04_interleaver_transcript.log"  , "w");
+        log_file_symbol_mapper = $fopen("../S_log/03_symbol_mapper_transcript.log", "w");
+        log_file_demux         = $fopen("../S_log/02_demux_transcript.log"        , "w");
+        log_file_zero_padding  = $fopen("../S_log/01_zero_padding_transcript.log" , "w");
+        log_file_dqpsk         = $fopen("../S_log/07_dqpsk_transcript.log"         , "w");
         $fdisplay(log_file_TX, "========================================");
         $fdisplay(log_file_TX, "Zigbee TB Started");
         $fdisplay(log_file_TX, "========================================");
@@ -478,10 +477,10 @@ if (dut.symbol_mapper_to_ppdu.mapper_even_valid) begin
    
         if ((real_errors == 0)         && 
             (imag_errors == 0)         && 
-            (QPSK_errors)              &&
+            (QPSK_errors == 0)         &&
             (inter_errors == 0)        && 
             (symbol_errors == 0)       && 
-            (demux_errors)             &&
+            (demux_errors == 0)        &&
             (zero_padding_errors == 0) && 
             (dqpsk_errors == 0) )
             $displary("******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********");

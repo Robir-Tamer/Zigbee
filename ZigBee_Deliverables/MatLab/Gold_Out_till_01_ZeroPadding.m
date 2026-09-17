@@ -1,13 +1,21 @@
 %% ========================================================================
-%  ZeroPadding_Stage_Output.m
+%  ZeroPadding_Stage_Output.m  (FIXED: zero-length payload case)
 %  Generates the Zero Padding stage output -- PHR + PSDU concatenated,
 %  then padded with trailing zero bits to a multiple of N (N=6 for
 %  1 Mb/s, N=24 for 250 kb/s), per 6.5a.2.1/ChirpSpreadSpectrum_Tx.m.
 %  This is the raw serial bit stream immediately BEFORE the Demux stage.
 %
+%  FIX: removed the incorrect "if paddingBy==N, paddingBy=0" special case.
+%  ChirpSpreadSpectrum_Tx.m NEVER skips padding, even when the pre-pad
+%  length is already a multiple of N -- it always adds a full spurious
+%  block in that case (paddingBy = N - mod(x,N) = N, never optimized to
+%  0). The previous version of this script silently dropped that block,
+%  which only became visible at payload length = 0 (PHR alone = 12 bits,
+%  already a multiple of 6, so the bug's condition triggered).
+%
 %  Output: one bit per line (serial), for each data rate.
-%     zeropadding_output_1Mbps.txt
-%     zeropadding_output_250kbps.txt
+%     ./Golden_out/1Mbps/01_zeropadding_output_1M.txt
+%     ./Golden_out/250Kbps/01_zeropadding_output_250K.txt
 %
 %  Stimulus: payload.txt
 % =========================================================================
@@ -74,23 +82,16 @@ for dataRate = 0:1
     % NOTE: N is NOT the same multiplier for both data rates.
     %   1 Mb/s   : N = 2(I,Q) * numBitsPerCodeWord                     = 6
     %   250 kb/s : N = 2(I,Q) * 2(consecutive codewords) * numBitsPerCodeWord = 24
-    % The interleaver for 250 kb/s spans TWO consecutive codewords, which
-    % is where the extra factor of 2 comes from (see 6.5a.2.1 /
-    % ChirpSpreadSpectrum_Tx.m, where paddingBy is hardcoded per rate as
-    % 6 and 24 respectively). Using the same "numBitsPerCodeWord * 2" for
-    % both rates silently halves N for 250 kb/s and produces a stream
-    % that is NOT a multiple of 24, which is what caused the RTL/MATLAB
-    % mismatch after the PHR+PSDU boundary.
     if dataRate == 0
         N = numBitsPerCodeWord * 2;        % 6 for 1 Mb/s
     else
         N = numBitsPerCodeWord * 2 * 2;    % 24 for 250 kb/s
     end
 
+    % FIXED: no special-case override. This exactly matches
+    % ChirpSpreadSpectrum_Tx.m's formula, which ALWAYS adds N - mod(x,N)
+    % padding bits, even a full block of N when x is already aligned.
     paddingBy = N - mod(prePadLength, N);
-    if paddingBy == N
-        paddingBy = 0;   % already aligned -- avoid adding a full spurious block
-    end
     binaryData = [binaryData, zeros(1,paddingBy)];
 
     fprintf('--- %s ---\n', rateLabels{dataRate+1});

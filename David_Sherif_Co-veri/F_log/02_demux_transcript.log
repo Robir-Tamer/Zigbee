@@ -3,7 +3,7 @@ Zigbee TB Started
 ========================================
 DEMUX    MATCH at time: 26: count 0: RTL=000000 MATLAB=000000 
 DEMUX    MATCH at time: 38: count 1: RTL=000000 MATLAB=000000 
-DEMUX MISMATCH at time: 50: count 2: RTL=000000 MATLAB=xxxxxx 
+DEMUX    MATCH at time: 50: count 2: RTL=000000 MATLAB=000000 
 DEMUX    MATCH at time: 5778: count 0: RTL=100000 MATLAB=100000 
 DEMUX    MATCH at time: 5790: count 1: RTL=000000 MATLAB=000000 
 DEMUX    MATCH at time: 5802: count 2: RTL=010011 MATLAB=010011 
