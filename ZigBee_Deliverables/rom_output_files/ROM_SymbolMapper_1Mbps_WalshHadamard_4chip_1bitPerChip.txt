@@ -1,0 +1,12 @@
+// ROM: Symbol Mapper, 1 Mb/s data rate, Walsh-Hadamard bi-orthogonal 4-chip codewords
+// Format: 1 BIT per chip (bit=1 -> bipolar +1, bit=0 -> bipolar -1)
+// Address = 3-bit decimal symbol value (0 to 7)
+// Each line = one address' 4 chip-bits, MSB-first, NO spaces
+000 --> 1111
+001 --> 1010
+010 --> 1100
+011 --> 1001
+100 --> 0000
+101 --> 0101
+110 --> 0011
+111 --> 0110

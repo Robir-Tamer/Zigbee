@@ -1,0 +1,8 @@
+// Truth table: QPSK Mapper, 4-entry lookup (NOT a real multiplier)
+// Address = {I,Q} bipolar chip values. Output = X = XI + j*XQ
+// Every output component is exactly +1, 0, or -1
+// Format: I Q | XI XQ
+{I= 1,Q= 1} | X =  1 + j*( 0)
+{I= 1,Q=-1} | X =  0 + j*(-1)
+{I=-1,Q= 1} | X =  0 + j*( 1)
+{I=-1,Q=-1} | X = -1 + j*( 0)
