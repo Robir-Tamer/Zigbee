@@ -16,7 +16,7 @@ module zigbee #(
     parameter max_payload_length =127,
     parameter header_length = 12,
     parameter dqpsk_fifo_w = 2,
-    parameter dqpsk_fifo_depth = 4096
+    parameter dqpsk_fifo_depth = (rate_mode == "F") ? 1024 : 4096
 )(
 /************************************ Inputs ***********************************/
     input   wire                                        clk,
