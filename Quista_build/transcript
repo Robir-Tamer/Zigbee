@@ -12,13 +12,21 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# do ../Scripts/run.do
+# do ../Scripts/run_H.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is DAVID SAMEEH@DAVIDSAMEEH-DES.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is DAVID SAMEEH@DAVIDSAMEEH-DES.
+# 0
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# Copying C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 02:31:49 on Sep 16,2026
-# vlog -reportprogress 300 ../RTL/CSK_GEN.v ../RTL/DF_SYNC.v ../RTL/DQPSK.v ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.v ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
-# ** Note: (vlog-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# Start time: 12:02:46 on Sep 18,2026
+# vlog -reportprogress 300 -work work ../RTL/CSK_GEN.sv ../RTL/DF_SYNC.v ../RTL/DQPSK.V ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.V ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module CSK_GEN
 # -- Compiling module DF_SYNC
 # -- Compiling module DQPSK
@@ -36,31 +44,618 @@
 # -- Compiling module symbol_mapper
 # -- Compiling module top_sym_to_ppdu
 # -- Compiling module zeropadding
-# -- Compiling module zigbee_asic
+# -- Compiling module zigbee
+# -- Compiling module zigbee_dft
 # -- Compiling module zigbee_fpga
 # 
 # Top level modules:
 # 	DF_SYNC
-# 	zigbee_asic
+# 	zigbee
+# 	zigbee_dft
 # 	zigbee_fpga
-# End time: 02:31:50 on Sep 16,2026, Elapsed time: 0:00:01
+# End time: 12:02:47 on Sep 18,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 02:31:50 on Sep 16,2026
-# vlog -reportprogress 300 ../TB/PHY_F_tb.v ../TB/PHY_S_tb.v 
-# ** Note: (vlog-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# Start time: 12:02:47 on Sep 18,2026
+# vlog -reportprogress 300 -sv -work work ../TB/PHY_F_3cases_tb.v ../TB/PHY_F_tb.v ../TB/PHY_H_3cases_tb.v ../TB/PHY_S_3cases_tb.v ../TB/PHY_S_tb.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module zigbee_tb
+# -- Compiling module zigbee_hbio_tb
+# -- Compiling module zigbee_H_tb
 # -- Compiling module zigbee_S_tb
+# -- Compiling module zigbee_S_sffb_tb
 # 
 # Top level modules:
 # 	zigbee_tb
+# 	zigbee_hbio_tb
+# 	zigbee_H_tb
 # 	zigbee_S_tb
-# End time: 02:31:50 on Sep 16,2026, Elapsed time: 0:00:00
+# 	zigbee_S_sffb_tb
+# End time: 12:02:47 on Sep 18,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.zigbee_H_tb 
+# Start time: 12:02:47 on Sep 18,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vopt-143) Recognized 1 FSM in module "form_ppdu(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.zigbee_H_tb(fast)
+# Loading work.zigbee_fpga(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.payload_counter(fast)
+# Loading work.zeropadding(fast)
+# Loading work.e_o_demux(fast)
+# Loading work.controller(fast)
+# Loading work.top_sym_to_ppdu(fast)
+# Loading work.preamble_sfd_gen(fast)
+# Loading work.symbol_mapper(fast)
+# Loading work.FIFO_mem(fast__1)
+# Loading work.interleaver(fast)
+# Loading work.form_ppdu(fast)
+# Loading work.QPSK_mapper(fast)
+# Loading work.dqpsk_csk_top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast__2)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+# 0
+# q1_4
+# 0
+# q3_4
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: DAVID SAMEEH  Hostname: DAVIDSAMEEH-DES  ProcessID: 24756
+#           Attempting to use alternate WLF file "./wlft0sz300".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft0sz300
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/zigbee_H_tb/dut/symbol_mapper_to_ppdu/u_interleaver_even/gen_interleaver_250kbps/shift_reg'.
+# Executing ONERROR command at macro ./../Scripts/run_H.do line 108
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/zigbee_H_tb/dut/symbol_mapper_to_ppdu/u_interleaver_even/gen_interleaver_250kbps/busy'.
+# Executing ONERROR command at macro ./../Scripts/run_H.do line 109
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/zigbee_H_tb/dut/symbol_mapper_to_ppdu/u_interleaver_even/gen_interleaver_250kbps/cycle_flag'.
+# Executing ONERROR command at macro ./../Scripts/run_H.do line 110
+# Reset is OK.
+# rst deasserted, starting test case 0
+# Rate Mode       = H
+# Payload Length  = 0
+# ========================================
+#                 5748 ns: tx_done asserted.
+# TX completed. Captured 2869 samples.
+# ----------------------------------------
+# Test Case 0 Results
+# Payload Length = 0
+# QPSK errors = 0
+# QPSK Correct = 60
+# Interleaver errors = 0
+# Interleaver Correct = 12
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 3
+# Zero Padding errors = 0
+# Zero Padding Correct = 18
+# Demux errors = 0
+# Demux Correct = 3
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 2869
+# IMAG Correct = 2869
+# DQPSK errors = 0
+# DQPSK Correct = 60
+# Total captured samples = 2869
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 0 completed.
+# Reset is OK.
+# rst deasserted, starting test case 1
+# Rate Mode       = H
+# Payload Length  = 1
+# ========================================
+#                11944 ns: tx_done asserted.
+# TX completed. Captured 3092 samples.
+# ----------------------------------------
+# Test Case 1 Results
+# Payload Length = 1
+# QPSK errors = 0
+# QPSK Correct = 64
+# Interleaver errors = 0
+# Interleaver Correct = 16
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 4
+# Zero Padding errors = 0
+# Zero Padding Correct = 24
+# Demux errors = 0
+# Demux Correct = 4
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 3092
+# IMAG Correct = 3092
+# DQPSK errors = 0
+# DQPSK Correct = 64
+# Total captured samples = 3092
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 1 completed.
+# Reset is OK.
+# rst deasserted, starting test case 2
+# Rate Mode       = H
+# Payload Length  = 28
+# ========================================
+#                32016 ns: tx_done asserted.
+# TX completed. Captured 10003 samples.
+# ----------------------------------------
+# Test Case 2 Results
+# Payload Length = 28
+# QPSK errors = 0
+# QPSK Correct = 208
+# Interleaver errors = 0
+# Interleaver Correct = 160
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 40
+# Zero Padding errors = 0
+# Zero Padding Correct = 240
+# Demux errors = 0
+# Demux Correct = 40
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 10003
+# IMAG Correct = 10003
+# DQPSK errors = 0
+# DQPSK Correct = 208
+# Total captured samples = 10003
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 2 completed.
+# Reset is OK.
+# rst deasserted, starting test case 3
+# Rate Mode       = H
+# Payload Length  = 127
+# ========================================
+#               102974 ns: tx_done asserted.
+# TX completed. Captured 35347 samples.
+# ----------------------------------------
+# Test Case 3 Results
+# Payload Length = 127
+# QPSK errors = 0
+# QPSK Correct = 736
+# Interleaver errors = 0
+# Interleaver Correct = 688
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 172
+# Zero Padding errors = 0
+# Zero Padding Correct = 1032
+# Demux errors = 0
+# Demux Correct = 172
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 35347
+# IMAG Correct = 35347
+# DQPSK errors = 0
+# DQPSK Correct = 736
+# Total captured samples = 35347
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 3 completed.
+# Reset is OK.
+# rst deasserted, starting test case 4
+# Rate Mode       = H
+# Payload Length  = 0
+# ========================================
+#               118418 ns: tx_done asserted.
+# TX completed. Captured 7716 samples.
+# ----------------------------------------
+# Test Case 4 Results
+# Payload Length = 0
+# QPSK errors = 0
+# QPSK Correct = 160
+# Interleaver errors = 0
+# Interleaver Correct = 64
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 2
+# Zero Padding errors = 0
+# Zero Padding Correct = 24
+# Demux errors = 0
+# Demux Correct = 2
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 7716
+# IMAG Correct = 7716
+# DQPSK errors = 0
+# DQPSK Correct = 160
+# Total captured samples = 7716
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 4 completed.
+# Reset is OK.
+# rst deasserted, starting test case 5
+# Rate Mode       = H
+# Payload Length  = 1
+# ========================================
+#               133866 ns: tx_done asserted.
+# TX completed. Captured 7717 samples.
+# ----------------------------------------
+# Test Case 5 Results
+# Payload Length = 1
+# QPSK errors = 0
+# QPSK Correct = 160
+# Interleaver errors = 0
+# Interleaver Correct = 64
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 2
+# Zero Padding errors = 0
+# Zero Padding Correct = 24
+# Demux errors = 0
+# Demux Correct = 2
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 7717
+# IMAG Correct = 7717
+# DQPSK errors = 0
+# DQPSK Correct = 160
+# Total captured samples = 7717
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 5 completed.
+# Reset is OK.
+# rst deasserted, starting test case 6
+# Rate Mode       = H
+# Payload Length  = 28
+# ========================================
+#               204662 ns: tx_done asserted.
+# TX completed. Captured 35364 samples.
+# ----------------------------------------
+# Test Case 6 Results
+# Payload Length = 28
+# QPSK errors = 0
+# QPSK Correct = 736
+# Interleaver errors = 0
+# Interleaver Correct = 640
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 20
+# Zero Padding errors = 0
+# Zero Padding Correct = 240
+# Demux errors = 0
+# Demux Correct = 20
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 35364
+# IMAG Correct = 35364
+# DQPSK errors = 0
+# DQPSK Correct = 736
+# Total captured samples = 35364
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 6 completed.
+# Reset is OK.
+# rst deasserted, starting test case 7
+# Rate Mode       = H
+# Payload Length  = 127
+# ========================================
+#               478408 ns: tx_done asserted.
+# TX completed. Captured 136740 samples.
+# ----------------------------------------
+# Test Case 7 Results
+# Payload Length = 127
+# QPSK errors = 0
+# QPSK Correct = 2848
+# Interleaver errors = 0
+# Interleaver Correct = 2752
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 86
+# Zero Padding errors = 0
+# Zero Padding Correct = 1032
+# Demux errors = 0
+# Demux Correct = 86
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 136740
+# IMAG Correct = 136740
+# DQPSK errors = 0
+# DQPSK Correct = 2848
+# Total captured samples = 136740
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 7 completed.
+# ** Note: $stop    : ../TB/PHY_H_3cases_tb.v(593)
+#    Time: 478408 ns  Iteration: 1  Instance: /zigbee_H_tb
+# Break in Module zigbee_H_tb at ../TB/PHY_H_3cases_tb.v line 593
+# 0 ns
+# 502328 ns
+do ../Scripts/run_F.do
+# End time: 12:03:14 on Sep 18,2026, Elapsed time: 0:00:27
+# Errors: 0, Warnings: 3
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is DAVID SAMEEH@DAVIDSAMEEH-DES.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is DAVID SAMEEH@DAVIDSAMEEH-DES.
+# 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:03:14 on Sep 18,2026
+# vlog -reportprogress 300 -work work ../RTL/CSK_GEN.sv ../RTL/DF_SYNC.v ../RTL/DQPSK.V ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.V ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module CSK_GEN
+# -- Compiling module DF_SYNC
+# -- Compiling module DQPSK
+# -- Compiling module FIFO_mem
+# -- Compiling module controller
+# -- Compiling module dqpsk_csk_top
+# -- Compiling module e_o_demux
+# -- Compiling module form_ppdu
+# -- Compiling module interleaver
+# -- Compiling module mux2X1
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module preamble_sfd_gen
+# -- Compiling module QPSK_mapper
+# -- Compiling module symbol_mapper
+# -- Compiling module top_sym_to_ppdu
+# -- Compiling module zeropadding
+# -- Compiling module zigbee
+# -- Compiling module zigbee_dft
+# -- Compiling module zigbee_fpga
+# 
+# Top level modules:
+# 	DF_SYNC
+# 	zigbee
+# 	zigbee_dft
+# 	zigbee_fpga
+# End time: 12:03:15 on Sep 18,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:03:15 on Sep 18,2026
+# vlog -reportprogress 300 -sv -work work ../TB/PHY_F_3cases_tb.v ../TB/PHY_F_tb.v ../TB/PHY_H_3cases_tb.v ../TB/PHY_S_3cases_tb.v ../TB/PHY_S_tb.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module zigbee_tb
+# -- Compiling module zigbee_hbio_tb
+# -- Compiling module zigbee_H_tb
+# -- Compiling module zigbee_S_tb
+# -- Compiling module zigbee_S_sffb_tb
+# 
+# Top level modules:
+# 	zigbee_tb
+# 	zigbee_hbio_tb
+# 	zigbee_H_tb
+# 	zigbee_S_tb
+# 	zigbee_S_sffb_tb
+# End time: 12:03:15 on Sep 18,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.zigbee_tb 
+# Start time: 12:03:15 on Sep 18,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vopt-143) Recognized 1 FSM in module "form_ppdu(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.zigbee_tb(fast)
+# Loading work.zigbee_fpga(fast)
+# Loading work.FIFO_mem(fast)
+# Loading work.payload_counter(fast)
+# Loading work.zeropadding(fast)
+# Loading work.e_o_demux(fast)
+# Loading work.controller(fast)
+# Loading work.top_sym_to_ppdu(fast)
+# Loading work.preamble_sfd_gen(fast)
+# Loading work.symbol_mapper(fast)
+# Loading work.FIFO_mem(fast__1)
+# Loading work.interleaver(fast)
+# Loading work.form_ppdu(fast)
+# Loading work.QPSK_mapper(fast)
+# Loading work.dqpsk_csk_top(fast)
+# Loading work.DQPSK(fast)
+# Loading work.FIFO_mem(fast__2)
+# Loading work.CSK_GEN(fast)
+# Loading work.posedge_detector(fast)
+# 0
+# q1_4
+# 0
+# q3_4
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: DAVID SAMEEH  Hostname: DAVIDSAMEEH-DES  ProcessID: 24756
+#           Attempting to use alternate WLF file "./wlfti300vh".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfti300vh
+# Reset is OK.
+# rst deasserted, starting test case 0
+# Rate Mode       = F
+# Payload Length  = 0
+# ========================================
+#                 5748 ns: tx_done asserted.
+# TX completed. Captured 2869 samples.
+# ----------------------------------------
+# Test Case 0 Results
+# Payload Length = 0
+# QPSK errors = 0
+# QPSK Correct = 60
+# Interleaver errors = 0
+# Interleaver Correct = 12
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 3
+# Zero Padding errors = 0
+# Zero Padding Correct = 18
+# Demux errors = 0
+# Demux Correct = 3
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 2869
+# IMAG Correct = 2869
+# DQPSK errors = 0
+# DQPSK Correct = 60
+# Total captured samples = 2869
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 0 completed.
+# Reset is OK.
+# rst deasserted, starting test case 1
+# Rate Mode       = F
+# Payload Length  = 1
+# ========================================
+#                11944 ns: tx_done asserted.
+# TX completed. Captured 3092 samples.
+# ----------------------------------------
+# Test Case 1 Results
+# Payload Length = 1
+# QPSK errors = 0
+# QPSK Correct = 64
+# Interleaver errors = 0
+# Interleaver Correct = 16
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 4
+# Zero Padding errors = 0
+# Zero Padding Correct = 24
+# Demux errors = 0
+# Demux Correct = 4
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 3092
+# IMAG Correct = 3092
+# DQPSK errors = 0
+# DQPSK Correct = 64
+# Total captured samples = 3092
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 1 completed.
+# Reset is OK.
+# rst deasserted, starting test case 2
+# Rate Mode       = F
+# Payload Length  = 28
+# ========================================
+#                32016 ns: tx_done asserted.
+# TX completed. Captured 10003 samples.
+# ----------------------------------------
+# Test Case 2 Results
+# Payload Length = 28
+# QPSK errors = 0
+# QPSK Correct = 208
+# Interleaver errors = 0
+# Interleaver Correct = 160
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 40
+# Zero Padding errors = 0
+# Zero Padding Correct = 240
+# Demux errors = 0
+# Demux Correct = 40
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 10003
+# IMAG Correct = 10003
+# DQPSK errors = 0
+# DQPSK Correct = 208
+# Total captured samples = 10003
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 2 completed.
+# Reset is OK.
+# rst deasserted, starting test case 3
+# Rate Mode       = F
+# Payload Length  = 127
+# ========================================
+#               102974 ns: tx_done asserted.
+# TX completed. Captured 35347 samples.
+# ----------------------------------------
+# Test Case 3 Results
+# Payload Length = 127
+# QPSK errors = 0
+# QPSK Correct = 736
+# Interleaver errors = 0
+# Interleaver Correct = 688
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 172
+# Zero Padding errors = 0
+# Zero Padding Correct = 1032
+# Demux errors = 0
+# Demux Correct = 172
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 35347
+# IMAG Correct = 35347
+# DQPSK errors = 0
+# DQPSK Correct = 736
+# Total captured samples = 35347
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 3 completed.
+# ** Note: $stop    : ../TB/PHY_F_3cases_tb.v(522)
+#    Time: 102974 ns  Iteration: 1  Instance: /zigbee_tb
+# Break in Module zigbee_tb at ../TB/PHY_F_3cases_tb.v line 522
+# 0 ns
+# 108123 ns
+do ../Scripts/run_S.do
+# End time: 12:03:31 on Sep 18,2026, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 3
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is DAVID SAMEEH@DAVIDSAMEEH-DES.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is DAVID SAMEEH@DAVIDSAMEEH-DES.
+# 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:03:31 on Sep 18,2026
+# vlog -reportprogress 300 -work work ../RTL/CSK_GEN.sv ../RTL/DF_SYNC.v ../RTL/DQPSK.V ../RTL/FIFO_mem.v ../RTL/controller.v ../RTL/dqpsk_csk_top.V ../RTL/e_o_demux.v ../RTL/form_ppdu.v ../RTL/interleaver.v ../RTL/mux2X1.v ../RTL/payload_counter.v ../RTL/posedge_detector.v ../RTL/preamble_sfd_gen.v ../RTL/qpsk_mapper.v ../RTL/symbol_mapper.v ../RTL/top_sym_to_ppdu.v ../RTL/zeropadding.v ../RTL/zigbee_asic.v ../RTL/zigbee_fpga.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module CSK_GEN
+# -- Compiling module DF_SYNC
+# -- Compiling module DQPSK
+# -- Compiling module FIFO_mem
+# -- Compiling module controller
+# -- Compiling module dqpsk_csk_top
+# -- Compiling module e_o_demux
+# -- Compiling module form_ppdu
+# -- Compiling module interleaver
+# -- Compiling module mux2X1
+# -- Compiling module payload_counter
+# -- Compiling module posedge_detector
+# -- Compiling module preamble_sfd_gen
+# -- Compiling module QPSK_mapper
+# -- Compiling module symbol_mapper
+# -- Compiling module top_sym_to_ppdu
+# -- Compiling module zeropadding
+# -- Compiling module zigbee
+# -- Compiling module zigbee_dft
+# -- Compiling module zigbee_fpga
+# 
+# Top level modules:
+# 	DF_SYNC
+# 	zigbee
+# 	zigbee_dft
+# 	zigbee_fpga
+# End time: 12:03:32 on Sep 18,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:03:32 on Sep 18,2026
+# vlog -reportprogress 300 -sv -work work ../TB/PHY_F_3cases_tb.v ../TB/PHY_F_tb.v ../TB/PHY_H_3cases_tb.v ../TB/PHY_S_3cases_tb.v ../TB/PHY_S_tb.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module zigbee_tb
+# -- Compiling module zigbee_hbio_tb
+# -- Compiling module zigbee_H_tb
+# -- Compiling module zigbee_S_tb
+# -- Compiling module zigbee_S_sffb_tb
+# 
+# Top level modules:
+# 	zigbee_tb
+# 	zigbee_hbio_tb
+# 	zigbee_H_tb
+# 	zigbee_S_tb
+# 	zigbee_S_sffb_tb
+# End time: 12:03:32 on Sep 18,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
 # vsim -voptargs="+acc" work.zigbee_S_tb 
-# Start time: 02:31:50 on Sep 16,2026
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 12:03:32 on Sep 18,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vopt-143) Recognized 1 FSM in module "form_ppdu(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
 # Loading work.zigbee_S_tb(fast)
 # Loading work.zigbee_fpga(fast)
 # Loading work.FIFO_mem(fast)
@@ -80,16 +675,140 @@
 # Loading work.FIFO_mem(fast__2)
 # Loading work.CSK_GEN(fast)
 # Loading work.posedge_detector(fast)
-# rst deasserted, starting test case 10
+# 0
+# q1_4
+# 0
+# q3_4
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: DAVID SAMEEH  Hostname: DAVIDSAMEEH-DES  ProcessID: 24756
+#           Attempting to use alternate WLF file "./wlftxbdr3h".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxbdr3h
+# Reset is OK.
+# rst deasserted, starting test case 0
 # Rate Mode       = S
-# Payload Length  = x
+# Payload Length  = 0
 # ========================================
-#                27752 ns: tx_done asserted.
-# TX completed. Captured 13861 samples.
-# All test cases completed.
-# ** Note: $stop    : ../TB/PHY_S_tb.v(206)
-#    Time: 27752 ns  Iteration: 1  Instance: /zigbee_S_tb
-# Break in Module zigbee_S_tb at ../TB/PHY_S_tb.v line 206
+#                15444 ns: tx_done asserted.
+# TX completed. Captured 7717 samples.
+# ----------------------------------------
+# Test Case 0 Results
+# Payload Length = 0
+# QPSK errors = 0
+# QPSK Correct = 160
+# Interleaver errors = 0
+# Interleaver Correct = 64
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 2
+# Zero Padding errors = 0
+# Zero Padding Correct = 24
+# Demux errors = 0
+# Demux Correct = 2
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 7717
+# IMAG Correct = 7717
+# DQPSK errors = 0
+# DQPSK Correct = 160
+# Total captured samples = 7717
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 0 completed.
+# Reset is OK.
+# rst deasserted, starting test case 1
+# Rate Mode       = S
+# Payload Length  = 1
+# ========================================
+#                30892 ns: tx_done asserted.
+# TX completed. Captured 7718 samples.
+# ----------------------------------------
+# Test Case 1 Results
+# Payload Length = 1
+# QPSK errors = 0
+# QPSK Correct = 160
+# Interleaver errors = 0
+# Interleaver Correct = 64
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 2
+# Zero Padding errors = 0
+# Zero Padding Correct = 24
+# Demux errors = 0
+# Demux Correct = 2
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 7718
+# IMAG Correct = 7718
+# DQPSK errors = 0
+# DQPSK Correct = 160
+# Total captured samples = 7718
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 1 completed.
+# Reset is OK.
+# rst deasserted, starting test case 2
+# Rate Mode       = S
+# Payload Length  = 28
+# ========================================
+#               101688 ns: tx_done asserted.
+# TX completed. Captured 35365 samples.
+# ----------------------------------------
+# Test Case 2 Results
+# Payload Length = 28
+# QPSK errors = 0
+# QPSK Correct = 736
+# Interleaver errors = 0
+# Interleaver Correct = 640
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 20
+# Zero Padding errors = 0
+# Zero Padding Correct = 240
+# Demux errors = 0
+# Demux Correct = 20
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 35365
+# IMAG Correct = 35365
+# DQPSK errors = 0
+# DQPSK Correct = 736
+# Total captured samples = 35365
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 2 completed.
+# Reset is OK.
+# rst deasserted, starting test case 3
+# Rate Mode       = S
+# Payload Length  = 127
+# ========================================
+#               375434 ns: tx_done asserted.
+# TX completed. Captured 136741 samples.
+# ----------------------------------------
+# Test Case 3 Results
+# Payload Length = 127
+# QPSK errors = 0
+# QPSK Correct = 2848
+# Interleaver errors = 0
+# Interleaver Correct = 2752
+# Symbol Mapper errors = 0
+# Symbol Mapper Correct = 86
+# Zero Padding errors = 0
+# Zero Padding Correct = 1032
+# Demux errors = 0
+# Demux Correct = 86
+# REAL errors = 0
+# IMAG errors = 0
+# REAL Correct = 136741
+# IMAG Correct = 136741
+# DQPSK errors = 0
+# DQPSK Correct = 2848
+# Total captured samples = 136741
+# ----------------------------------------
+# ******** TEST CASE PASSED: All blocks behaves exactly like MATLAB model ********
+#  test cases no = 3 completed.
+# ** Note: $stop    : ../TB/PHY_S_3cases_tb.v(522)
+#    Time: 375434 ns  Iteration: 1  Instance: /zigbee_S_tb
+# Break in Module zigbee_S_tb at ../TB/PHY_S_3cases_tb.v line 522
+# 0 ns
+# 394206 ns
 quit
-# End time: 02:33:01 on Sep 16,2026, Elapsed time: 0:01:11
-# Errors: 0, Warnings: 0
+# End time: 12:04:06 on Sep 18,2026, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 3

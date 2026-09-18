@@ -1,0 +1,28 @@
+BEGIN 1:top_sym_to_ppdu:fast:work
+    mapper_odd_data :  1:zigbee_S_tb:fast:work
+    interleaver_odd_valid :  1:zigbee_S_tb:fast:work
+    interleaver_odd_data :  1:zigbee_S_tb:fast:work
+    mapper_even_data :  1:zigbee_S_tb:fast:work
+    interleaver_even_data :  1:zigbee_S_tb:fast:work
+    mapper_even_valid :  1:zigbee_S_tb:fast:work
+    interleaver_even_valid :  1:zigbee_S_tb:fast:work
+END 
+BEGIN 1:e_o_demux:fast:work
+    e_bits :  1:zigbee_S_tb:fast:work
+    valid :  1:zigbee_S_tb:fast:work
+    o_bits :  1:zigbee_S_tb:fast:work
+END 
+BEGIN 1:zeropadding:fast:work
+    data_o :  1:zigbee_S_tb:fast:work
+    valid :  1:zigbee_S_tb:fast:work
+END 
+BEGIN 1:DQPSK:fast:work
+    valid :  1:zigbee_S_tb:fast:work
+    Imag_o :  1:zigbee_S_tb:fast:work
+    Real_o :  1:zigbee_S_tb:fast:work
+END 
+BEGIN 1:QPSK_mapper:fast:work
+    out_imag :  1:zigbee_S_tb:fast:work
+    out_real :  1:zigbee_S_tb:fast:work
+    valid :  1:zigbee_S_tb:fast:work
+END 
