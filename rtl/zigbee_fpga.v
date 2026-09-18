@@ -14,7 +14,7 @@ module zigbee_fpga #(
     parameter max_payload_length =127,
     parameter header_length = 12,
     parameter dqpsk_fifo_w = 2,
-    parameter dqpsk_fifo_depth = 4096
+    parameter dqpsk_fifo_depth = (rate_mode == "F") ? 1024 : 4096
 )(
 /************************************ Inputs ***********************************/
     input   wire                                        clk,
@@ -135,7 +135,8 @@ top_sym_to_ppdu #(.rate_mode (rate_mode)) symbol_mapper_to_ppdu (
     .o_q                    (ppdu_q),
     .o_valid                (ppdu_valid),
     .interleaver_even_valid (interleaver_valid_e),
-    .interleaver_odd_valid  (interleaver_valid_o)
+    .interleaver_odd_valid  (interleaver_valid_o),
+    .tx_done                (tx_done)
 );
 
 QPSK_mapper QPSK (

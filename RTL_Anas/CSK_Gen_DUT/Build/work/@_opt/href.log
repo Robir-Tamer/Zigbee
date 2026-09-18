@@ -1,5 +1,0 @@
-BEGIN 1:CSK_GEN:fast:work
-    addr_ptr :  1:CSK_GEN_tb:fast:work
-    which_gab :  1:CSK_GEN_tb:fast:work
-    samble_cnt :  1:CSK_GEN_tb:fast:work
-END 

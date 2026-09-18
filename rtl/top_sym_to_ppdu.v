@@ -16,6 +16,7 @@ module top_sym_to_ppdu #(
     input  wire                                 i_valid,
     input  wire [(rate_mode == "F" ? 2 : 5):0]  i_data_even,
     input  wire [(rate_mode == "F" ? 2 : 5):0]  i_data_odd,
+    input  wire                                 tx_done,
 /*********************************** Outputs ***********************************/
     output wire                                 o_i,
     output wire                                 o_q,
@@ -43,26 +44,12 @@ module top_sym_to_ppdu #(
     wire                  fifo_odd_full;
     wire                  fifo_odd_empty;
     wire                  interleaver_odd_data;
+    wire                  interleaver_o_ni;
+    wire                  interleaver_e_ni;
 
     // Internal wire for preamble and SFD generator output
     wire [TOTAL_BITS-1:0] preamble_sfd_wire;
     
-
-    //syncronizing i_valid of interleavers with i_data
-    reg fifo_odd_rd_en_reg, fifo_even_rd_en_reg;
-
-    always @(posedge clk) 
-        if (!rst_n) 
-            fifo_odd_rd_en_reg <= 1'b0;
-        else 
-            fifo_odd_rd_en_reg <= fifo_odd_empty;
-
-    always @(posedge clk) 
-        if (!rst_n) 
-            fifo_even_rd_en_reg <= 1'b0;
-        else 
-            fifo_even_rd_en_reg <= fifo_even_empty;
-
     // =========================================================================
     // 0. Preamble and SFD Generator
     // =========================================================================
@@ -99,7 +86,7 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .wr_en              (mapper_even_valid),
-        .rd_en              (1'b1),
+        .rd_en              (interleaver_e_ni),
         .din                (mapper_even_data),
         .dout               (fifo_even_dout),
         .full_flag          (), 
@@ -112,10 +99,12 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .mode               (mode),
-        .i_valid            (!fifo_even_rd_en_reg),
+        .i_valid_c          (!fifo_even_empty),
         .i_data             (fifo_even_dout),
+        .tx_done            (tx_done),
         .o_data             (interleaver_even_data),
-        .o_valid            (interleaver_even_valid)
+        .o_valid            (interleaver_even_valid),
+        .next_item          (interleaver_e_ni)
     );
 
     // =========================================================================
@@ -141,7 +130,7 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .wr_en              (mapper_odd_valid),
-        .rd_en              (1'b1),
+        .rd_en              (interleaver_o_ni),
         .din                (mapper_odd_data),
         .dout               (fifo_odd_dout),
         .full_flag          (), 
@@ -154,10 +143,12 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .mode               (mode),
-        .i_valid            (!fifo_odd_rd_en_reg),
+        .i_valid_c          (!fifo_odd_empty),
         .i_data             (fifo_odd_dout),
+        .tx_done            (tx_done),
         .o_data             (interleaver_odd_data),
-        .o_valid            (interleaver_odd_valid)
+        .o_valid            (interleaver_odd_valid),
+        .next_item          (interleaver_o_ni)
     );
 
     // =========================================================================
@@ -170,6 +161,7 @@ module top_sym_to_ppdu #(
         .clk                (clk),
         .rst_n              (rst_n),
         .mode               (mode),
+        .tx_done            (tx_done),
         .i_valid            (interleaver_even_valid || interleaver_odd_valid),
         .i_e                (interleaver_even_data),
         .i_o                (interleaver_odd_data),

@@ -65,7 +65,7 @@ generate
                         end
                     else if (en)
                         begin
-                            if (!header_done && !empty_delayed)
+                            if (!header_done && (!empty_delayed || payload_length == 'b0))
                                 begin
                                     done_bytes          <= 'b0;
                                     valid               <= 1'b1;
@@ -83,7 +83,8 @@ generate
                                                     counter     <= 'b0;
                                                     header_done <= 1'b1;
                                                     next_item   <= 1'b0;
-                                                    
+                                                    if (payload_length == 'b0)
+                                                        done_bytes  <= 1;
                                                 end
                                             else
                                                 begin
@@ -110,12 +111,12 @@ generate
 
                                             if (byte_counter == 0)
                                                 begin
-                                                    data_i_reg  <= data_i >>1;
-                                                    data_o      <= data_i[0];
+                                                    data_i_reg  <= data_i <<1;
+                                                    data_o      <= data_i[7];
                                                 end
                                             else
                                                 begin
-                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                    {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                 end
                                             
                                             if (counter == 'd5)
@@ -127,7 +128,7 @@ generate
                                                     counter     <= counter + 1'b1;
                                                 end
                                         end
-                                    else
+                                    else if (valid == 'b1)
                                         begin
                                             if (counter == 'd5)
                                                 begin
@@ -143,12 +144,12 @@ generate
                                                 begin
                                                     if (byte_counter ==0)
                                                         begin
-                                                            data_i_reg  <= data_i >> 1;
-                                                            data_o      <= data_i[0];
+                                                            data_i_reg  <= data_i << 1;
+                                                            data_o      <= data_i[7];
                                                         end
                                                     else
                                                         begin
-                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                            {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                         end
                                                     byte_counter <= byte_counter+1;
                                                 end
@@ -166,10 +167,16 @@ generate
                                             else
                                                 begin
                                                     valid       <= 1'b0;
-                                                    header_done <= 1'b0;
+                                                    if (payload_length != 'b0)
+                                                        header_done <= 1'b0;
                                                 end
                                         end
                                 end
+                        end
+                    else
+                        begin
+                            valid       <= 'b0;
+                            header_done <= 'b0;
                         end
                 end
         end
@@ -191,7 +198,7 @@ generate
                         end
                     else if (en)
                         begin
-                            if (!header_done && !empty_delayed)
+                            if (!header_done && (!empty_delayed|| payload_length == 'b0))
                                 begin
                                     done_bytes          <= 'b0;
                                     valid               <= 1'b1;
@@ -208,6 +215,8 @@ generate
                                                 begin
                                                     header_done <= 1'b1;
                                                     next_item   <= 1'b0;
+                                                    if (payload_length == 'b0)
+                                                        done_bytes  <= 1;
                                                 end
                                             else if (counter == 'd10)
                                                 begin
@@ -232,12 +241,12 @@ generate
 
                                             if (byte_counter == 0)
                                                 begin
-                                                    data_i_reg  <= data_i >>1;
-                                                    data_o      <= data_i[0];
+                                                    data_i_reg  <= data_i <<1;
+                                                    data_o      <= data_i[7];
                                                 end
                                             else
                                                 begin
-                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                    {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                 end
                                             
                                             if (counter == 'd23)
@@ -249,7 +258,7 @@ generate
                                                     counter     <= counter + 1'b1;
                                                 end
                                         end
-                                    else
+                                    else if (valid == 'b1)
                                         begin
                                             if (counter == 'd23)
                                                 begin
@@ -265,12 +274,12 @@ generate
                                                 begin
                                                     if (byte_counter ==0)
                                                         begin
-                                                            data_i_reg  <= data_i >> 1;
-                                                            data_o      <= data_i[0];
+                                                            data_i_reg  <= data_i << 1;
+                                                            data_o      <= data_i[7];
                                                         end
                                                     else
                                                         begin
-                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                            {data_o,data_i_reg} <= {data_i_reg,data_o};
                                                         end
                                                     byte_counter <= byte_counter+1;
                                                 end
@@ -289,10 +298,16 @@ generate
                                             else
                                                 begin
                                                     valid       <= 1'b0;
-                                                    header_done <= 1'b0;
+                                                    if (payload_length != 'b0)
+                                                        header_done <= 1'b0;
                                                 end
                                         end
                                 end
+                        end
+                    else
+                        begin
+                            valid       <= 'b0;
+                            header_done <= 'b0;
                         end
                 end
         end
@@ -317,7 +332,7 @@ generate
                             
                             if (!mode)
                                 begin
-                                    if (!header_done && !empty_delayed)
+                                    if (!header_done && (!empty_delayed|| payload_length == 'b0))
                                         begin
                                             done_bytes          <= 'b0;
                                             valid               <= 1'b1;
@@ -334,6 +349,8 @@ generate
                                                         begin
                                                             header_done <= 1'b1;
                                                             next_item   <= 1'b0;
+                                                            if (payload_length == 'b0)
+                                                                done_bytes  <= 1;
                                                         end
                                                     else if (counter == 'd10)
                                                         begin
@@ -358,12 +375,12 @@ generate
 
                                                     if (byte_counter == 0)
                                                         begin
-                                                            data_i_reg  <= data_i >>1;
-                                                            data_o      <= data_i[0];
+                                                            data_i_reg  <= data_i <<1;
+                                                            data_o      <= data_i[7];
                                                         end
                                                     else
                                                         begin
-                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                            {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                         end
 
                                                     if (counter == 'd23)
@@ -375,7 +392,7 @@ generate
                                                             counter     <= counter + 1'b1;
                                                         end
                                                 end
-                                            else
+                                            else if (valid == 'b1)
                                                 begin
                                                     if (counter == 'd23)
                                                         begin
@@ -391,12 +408,12 @@ generate
                                                         begin
                                                             if (byte_counter ==0)
                                                                 begin
-                                                                    data_i_reg  <= data_i >> 1;
-                                                                    data_o      <= data_i[0];
+                                                                    data_i_reg  <= data_i << 1;
+                                                                    data_o      <= data_i[7];
                                                                 end
                                                             else
                                                                 begin
-                                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                                    {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                                 end
                                                             byte_counter <= byte_counter+1;
                                                         end
@@ -415,14 +432,15 @@ generate
                                                     else
                                                         begin
                                                             valid       <= 1'b0;
-                                                            header_done <= 1'b0;
+                                                            if (payload_length != 'b0)
+                                                                header_done <= 1'b0;
                                                         end
                                                 end
                                         end
                                 end
                             else if (mode)
                                 begin
-                                    if (!header_done && !empty_delayed)
+                                    if (!header_done && (!empty_delayed|| payload_length == 'b0))
                                         begin
                                             done_bytes          <= 'b0;
                                             valid               <= 1'b1;
@@ -440,6 +458,8 @@ generate
                                                             counter     <= 'b0;
                                                             header_done <= 1'b1;
                                                             next_item   <= 1'b0;
+                                                            if (payload_length == 'b0)
+                                                                done_bytes  <= 1;
                                                         end
                                                     else
                                                         begin
@@ -468,12 +488,12 @@ generate
 
                                                     if (byte_counter == 0)
                                                         begin
-                                                            data_i_reg  <= data_i >>1;
-                                                            data_o      <= data_i[0];
+                                                            data_i_reg  <= data_i << 1;
+                                                            data_o      <= data_i[7];
                                                         end
                                                     else
                                                         begin
-                                                            {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                            {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                         end
 
                                                     if (counter == 'd5)
@@ -485,7 +505,7 @@ generate
                                                             counter     <= counter + 1'b1;
                                                         end
                                                 end
-                                            else
+                                            else if (valid == 'b1)
                                                 begin
                                                     if (counter == 'd5)
                                                         begin
@@ -501,12 +521,12 @@ generate
                                                         begin
                                                             if (byte_counter ==0)
                                                                 begin
-                                                                    data_i_reg  <= data_i >> 1;
-                                                                    data_o      <= data_i[0];
+                                                                    data_i_reg  <= data_i << 1;
+                                                                    data_o      <= data_i[7];
                                                                 end
                                                             else
                                                                 begin
-                                                                    {data_i_reg,data_o} <= {1'b0,data_i_reg};
+                                                                    {data_o,data_i_reg} <= {data_i_reg,1'b0};
                                                                 end
                                                             byte_counter <= byte_counter+1;
                                                         end
@@ -514,7 +534,6 @@ generate
                                                         begin
                                                             data_o      <= 1'b0;
                                                             byte_counter<= 'd1;
-                                                            done_bytes  <= 'b1;
                                                         end
                                                     else if(counter != 'b0)
                                                         begin
@@ -525,11 +544,17 @@ generate
                                                     else
                                                         begin
                                                             valid       <= 1'b0;
-                                                            header_done <= 1'b0;
+                                                            if (payload_length != 'b0)
+                                                                header_done <= 1'b0;
                                                         end
                                                 end
                                         end
                                 end     
+                        end
+                    else
+                        begin
+                            valid       <= 'b0;
+                            header_done <= 'b0;
                         end     
                 end
         end     
