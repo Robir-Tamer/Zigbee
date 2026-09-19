@@ -1,0 +1,34 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 89f9fe689cfe454cacc65e6a57c3a24b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot zigbee_fpga_behav xil_defaultlib.zigbee_fpga xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=48,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.uart_rx_default
+Compiling module xil_defaultlib.FIFO_mem(FIFO_WIDTH=8,FIFO_DEPTH...
+Compiling module xil_defaultlib.zeropadding_default
+Compiling module xil_defaultlib.e_o_demux_default
+Compiling module xil_defaultlib.controller(rate_mode="H")
+Compiling module xil_defaultlib.preamble_sfd_gen_default
+Compiling module xil_defaultlib.symbol_mapper_default
+Compiling module xil_defaultlib.FIFO_mem(FIFO_WIDTH=32,FIFO_DEPT...
+Compiling module xil_defaultlib.interleaver_default
+Compiling module xil_defaultlib.form_ppdu_default
+Compiling module xil_defaultlib.top_sym_to_ppdu_default
+Compiling module xil_defaultlib.QPSK_mapper
+Compiling module xil_defaultlib.DQPSK
+Compiling module xil_defaultlib.FIFO_mem_default
+Compiling module xil_defaultlib.CSK_GEN
+Compiling module xil_defaultlib.posedge_detector
+Compiling module xil_defaultlib.dqpsk_csk_top
+Compiling module xil_defaultlib.zigbee_fpga
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot zigbee_fpga_behav
