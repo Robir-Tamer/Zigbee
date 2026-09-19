@@ -27,13 +27,17 @@ module FIFO_mem
                         )?  1: 0;
 
     assign empty_flag = (wr_in_addr == rd_from_addr)? 1:0;
-
+    integer i;
     // Write port logic
     always @(posedge clk) begin
         if (!rst_n) begin
             wr_in_addr   <= 0;
             dout <= 0;
             rd_from_addr <= 0;
+            for (i = 'b0; i < FIFO_WIDTH; i = i+1)
+                begin
+                    mem [i] <= 'b0;
+                end
         end
         else begin
             if (wr_en && (!full_flag) ) begin

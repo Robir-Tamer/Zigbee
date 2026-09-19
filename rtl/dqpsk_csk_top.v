@@ -1,6 +1,7 @@
 
 module dqpsk_csk_top #(
-    parameter FIFO_DEPTH = 4096,
+    parameter rate_mode  = "F",
+    parameter FIFO_DEPTH = (rate_mode == "F") ? 1024 : 4096,
     parameter FIFO_WIDTH = 2,
     parameter WL         = 6
 ) (

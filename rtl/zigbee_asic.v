@@ -9,7 +9,7 @@
 
 module zigbee #(
 /********************************** Parameters *********************************/
-    parameter rate_mode = "H", //H >>>>> Hybrid, F >>>>> 1mbps, S >>>>> 250kbps
+    parameter rate_mode = "F", //H >>>>> Hybrid, F >>>>> 1mbps, S >>>>> 250kbps
     parameter wl = 6,
     parameter fl = 4,
     parameter payload_w =8,
@@ -152,7 +152,7 @@ QPSK_mapper QPSK (
     .out_real           (qpsk_real_o),
     .out_imag           (qpsk_imag_o)
 );
-dqpsk_csk_top #(.FIFO_DEPTH (dqpsk_fifo_depth), .FIFO_WIDTH (dqpsk_fifo_w), .WL (wl)) DQPSK_CSK (
+dqpsk_csk_top #(.rate_mode (rate_mode), .FIFO_DEPTH (dqpsk_fifo_depth), .FIFO_WIDTH (dqpsk_fifo_w), .WL (wl)) DQPSK_CSK (
     .clk                (clk),
     .rst_n              (rst_n),
 
