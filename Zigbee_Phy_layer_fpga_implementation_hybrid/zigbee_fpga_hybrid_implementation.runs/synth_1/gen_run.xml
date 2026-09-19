@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1789704375">
+  <File Type="PA-TCL" Name="zigbee_fpga.tcl"/>
+  <File Type="REPORTS-TCL" Name="zigbee_fpga_reports.tcl"/>
+  <File Type="RDS-RDS" Name="zigbee_fpga.vds"/>
+  <File Type="RDS-UTIL" Name="zigbee_fpga_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="zigbee_fpga_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="zigbee_fpga.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/CSK_GEN.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/CSK_GEN.v"/>
+        <Attr Name="ImportTime" Val="1789674563"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/DQPSK.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/DQPSK.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/FIFO_mem.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/controller.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/controller.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/dqpsk_csk_top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/dqpsk_csk_top.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/e_o_demux.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/e_o_demux.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/form_ppdu.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/form_ppdu.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/interleaver.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/interleaver.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/posedge_detector.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/posedge_detector.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/preamble_sfd_gen.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/preamble_sfd_gen.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/qpsk_mapper.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/qpsk_mapper.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/symbol_mapper.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/symbol_mapper.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/top_sym_to_ppdu.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/top_sym_to_ppdu.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_rx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/zeropadding.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/zeropadding.v"/>
+        <Attr Name="ImportTime" Val="1789668694"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/zigbee_fpga.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/zigbee_fpga.v"/>
+        <Attr Name="ImportTime" Val="1789703109"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="zigbee_fpga"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/cons.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+</GenRun>

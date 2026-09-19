@@ -1,0 +1,867 @@
+
+*** Running vivado
+    with args -log zigbee_fpga.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zigbee_fpga.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source zigbee_fpga.tcl -notrace
+Command: synth_design -top zigbee_fpga -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7480 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 445.652 ; gain = 93.688
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zigbee_fpga' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/zigbee_fpga.v:8]
+	Parameter rate_mode bound to: H - type: string 
+	Parameter wl bound to: 6 - type: integer 
+	Parameter fl bound to: 4 - type: integer 
+	Parameter payload_w bound to: 8 - type: integer 
+	Parameter max_payload_length bound to: 127 - type: integer 
+	Parameter header_length bound to: 12 - type: integer 
+	Parameter dqpsk_fifo_w bound to: 2 - type: integer 
+	Parameter dqpsk_fifo_depth bound to: 4096 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.runs/synth_1/.Xil/Vivado-21396-mazen/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.runs/synth_1/.Xil/Vivado-21396-mazen/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/sources_1/new/uart_rx.v:1]
+	Parameter CLK_FREQ bound to: 32000000 - type: integer 
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter CLKS_PER_BIT bound to: 277 - type: integer 
+	Parameter S_IDLE bound to: 2'b00 
+	Parameter S_START bound to: 2'b01 
+	Parameter S_DATA bound to: 2'b10 
+	Parameter S_STOP bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/sources_1/new/uart_rx.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (2#1) [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/sources_1/new/uart_rx.v:1]
+INFO: [Synth 8-6157] synthesizing module 'FIFO_mem' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:8]
+	Parameter FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter FIFO_DEPTH bound to: 128 - type: integer 
+	Parameter ADDR_SIZE bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_mem' (3#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:8]
+INFO: [Synth 8-6157] synthesizing module 'zeropadding' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/zeropadding.v:8]
+	Parameter payload_w bound to: 8 - type: integer 
+	Parameter rate_mode bound to: H - type: string 
+	Parameter max_payload_length bound to: 127 - type: integer 
+	Parameter header_length bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'zeropadding' (4#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/zeropadding.v:8]
+INFO: [Synth 8-6157] synthesizing module 'e_o_demux' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/e_o_demux.v:8]
+	Parameter rate_mode bound to: H - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'e_o_demux' (5#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/e_o_demux.v:8]
+INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/controller.v:14]
+	Parameter rate_mode bound to: H - type: string 
+	Parameter max_payload_length bound to: 127 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'controller' (6#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/controller.v:14]
+INFO: [Synth 8-6157] synthesizing module 'top_sym_to_ppdu' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/top_sym_to_ppdu.v:8]
+	Parameter rate_mode bound to: H - type: string 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter PREAMBLE_BITS bound to: 80 - type: integer 
+	Parameter TOTAL_BITS bound to: 96 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'preamble_sfd_gen' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/preamble_sfd_gen.v:8]
+	Parameter rate_mode bound to: H - type: string 
+	Parameter shr_bits bound to: 96 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'preamble_sfd_gen' (7#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/preamble_sfd_gen.v:8]
+INFO: [Synth 8-6157] synthesizing module 'symbol_mapper' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/symbol_mapper.v:8]
+	Parameter rate_mode bound to: H - type: string 
+INFO: [Synth 8-226] default block is never used [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/symbol_mapper.v:214]
+INFO: [Synth 8-6155] done synthesizing module 'symbol_mapper' (8#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/symbol_mapper.v:8]
+INFO: [Synth 8-6157] synthesizing module 'FIFO_mem__parameterized0' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:8]
+	Parameter FIFO_WIDTH bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 1024 - type: integer 
+	Parameter ADDR_SIZE bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_mem__parameterized0' (8#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:8]
+INFO: [Synth 8-6157] synthesizing module 'interleaver' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/interleaver.v:35]
+	Parameter rate_mode bound to: H - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'interleaver' (9#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/interleaver.v:35]
+INFO: [Synth 8-6157] synthesizing module 'form_ppdu' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/form_ppdu.v:53]
+	Parameter rate_mode bound to: H - type: string 
+	Parameter shr_bits bound to: 96 - type: integer 
+	Parameter CNT_W bound to: 7 - type: integer 
+	Parameter ST_IDLE bound to: 2'b00 
+	Parameter ST_SHR bound to: 2'b01 
+	Parameter ST_DATA bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'form_ppdu' (10#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/form_ppdu.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'top_sym_to_ppdu' (11#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/top_sym_to_ppdu.v:8]
+INFO: [Synth 8-6157] synthesizing module 'QPSK_mapper' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/qpsk_mapper.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'QPSK_mapper' (12#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/qpsk_mapper.v:16]
+INFO: [Synth 8-6157] synthesizing module 'dqpsk_csk_top' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/dqpsk_csk_top.v:2]
+	Parameter FIFO_DEPTH bound to: 4096 - type: integer 
+	Parameter FIFO_WIDTH bound to: 2 - type: integer 
+	Parameter WL bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'DQPSK' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/DQPSK.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DQPSK' (13#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/DQPSK.v:1]
+INFO: [Synth 8-6157] synthesizing module 'FIFO_mem__parameterized1' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:8]
+	Parameter FIFO_WIDTH bound to: 2 - type: integer 
+	Parameter FIFO_DEPTH bound to: 4096 - type: integer 
+	Parameter ADDR_SIZE bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO_mem__parameterized1' (13#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:8]
+INFO: [Synth 8-6157] synthesizing module 'CSK_GEN' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/CSK_GEN.v:1]
+	Parameter WL bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CSK_GEN' (14#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/CSK_GEN.v:1]
+INFO: [Synth 8-6157] synthesizing module 'posedge_detector' [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/posedge_detector.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'posedge_detector' (15#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/posedge_detector.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dqpsk_csk_top' (16#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/dqpsk_csk_top.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'zigbee_fpga' (17#1) [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/zigbee_fpga.v:8]
+WARNING: [Synth 8-3331] design controller has unconnected port payload_length[6]
+WARNING: [Synth 8-3331] design controller has unconnected port payload_length[5]
+WARNING: [Synth 8-3331] design controller has unconnected port payload_length[4]
+WARNING: [Synth 8-3331] design controller has unconnected port payload_length[3]
+WARNING: [Synth 8-3331] design controller has unconnected port payload_length[2]
+WARNING: [Synth 8-3331] design controller has unconnected port payload_length[1]
+WARNING: [Synth 8-3331] design controller has unconnected port payload_length[0]
+WARNING: [Synth 8-3331] design controller has unconnected port fifo_empty
+WARNING: [Synth 8-3331] design controller has unconnected port demux_valid
+WARNING: [Synth 8-3331] design controller has unconnected port interleaver_valid
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 500.703 ; gain = 148.738
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 500.703 ; gain = 148.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 500.703 ; gain = 148.738
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll_0'
+Finished Parsing XDC File [d:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'pll_0'
+Parsing XDC File [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/constrs_1/new/cons.xdc]
+WARNING: [Constraints 18-619] A clock with name 'clk' already exists, overwriting the previous clock with the same name. [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/constrs_1/new/cons.xdc:51]
+CRITICAL WARNING: [Constraints 18-1056] Clock 'clk_32' completely overrides clock 'pll_0/clk_32'.
+New: create_generated_clock -name clk_32 -source [get_pins pll_0/clk_in] -divide_by 25 -multiply_by 8 [get_pins pll_0/clk_32], [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/constrs_1/new/cons.xdc:54]
+Previous: create_generated_clock -source [get_ports clk] -edges {1 2 3} -edge_shift {0.000 10.625 21.250} [get_pins pll_0/clk_32], [d:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc:2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+Finished Parsing XDC File [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/constrs_1/new/cons.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/constrs_1/new/cons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zigbee_fpga_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/zigbee_fpga_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 882.398 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 882.398 ; gain = 530.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 882.398 ; gain = 530.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  d:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  d:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for pll_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 882.398 ; gain = 530.434
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element rd_from_addr_reg_rep was removed.  [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:25]
+INFO: [Synth 8-5546] ROM "next_item" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "next_item" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "done_bytes" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "done_bytes" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element rd_from_addr_reg_rep was removed.  [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:25]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'form_ppdu'
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element rd_from_addr_reg_rep was removed.  [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/FIFO_mem.v:25]
+WARNING: [Synth 8-6014] Unused sequential element addr_ptr_reg_rep was removed.  [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/CSK_GEN.v:27]
+WARNING: [Synth 8-6014] Unused sequential element addr_ptr_reg_rep was removed.  [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/CSK_GEN.v:27]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                               00 |                               00
+                 S_START |                               01 |                               01
+                  S_DATA |                               10 |                               10
+                  S_STOP |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 ST_IDLE |                              001 |                               00
+                  ST_SHR |                              010 |                               01
+                 ST_DATA |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'form_ppdu'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 882.398 ; gain = 530.434
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 6     
+	   2 Input      8 Bit       Adders := 5     
+	   2 Input      7 Bit       Adders := 4     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 4     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               96 Bit    Registers := 5     
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 4     
+	                8 Bit    Registers := 11    
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 8     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 15    
+	                1 Bit    Registers := 44    
++---RAMs : 
+	              32K Bit         RAMs := 2     
+	               8K Bit         RAMs := 2     
+	             1024 Bit         RAMs := 1     
++---ROMs : 
+	                              ROMs := 2     
++---Muxes : 
+	   3 Input     96 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 24    
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 2     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   4 Input      8 Bit        Muxes := 1     
+	   3 Input      7 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 6     
+	   3 Input      5 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 10    
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 136   
+	   4 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module zigbee_fpga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module uart_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 5     
+Module FIFO_mem 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 3     
++---Registers : 
+	                8 Bit    Registers := 3     
++---RAMs : 
+	             1024 Bit         RAMs := 1     
+Module zeropadding 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 6     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 27    
+	   5 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 2     
+Module e_o_demux 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                6 Bit    Registers := 4     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 4     
+Module controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module preamble_sfd_gen 
+Detailed RTL Component Info : 
++---Registers : 
+	               96 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     96 Bit        Muxes := 1     
+Module symbol_mapper 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+Module FIFO_mem__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
++---RAMs : 
+	              32K Bit         RAMs := 1     
+Module interleaver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 40    
+Module form_ppdu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
++---Registers : 
+	               96 Bit    Registers := 4     
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     96 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      7 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 5     
+Module QPSK_mapper 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+Module DQPSK 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 10    
+	                1 Bit    Registers := 1     
+Module FIFO_mem__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     13 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---RAMs : 
+	               8K Bit         RAMs := 1     
+Module CSK_GEN 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---ROMs : 
+	                              ROMs := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 11    
+Module posedge_detector 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module dqpsk_csk_top 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_uart_rx/state" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element DQPSK_CSK/CSK_GEN_DUT/addr_ptr_reg_rep was removed.  [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/CSK_GEN.v:27]
+WARNING: [Synth 8-6014] Unused sequential element DQPSK_CSK/CSK_GEN_DUT/addr_ptr_reg_rep was removed.  [C:/Users/runaw/Downloads/Zigbee-main/David_Sherif_Co-veri/RTL/CSK_GEN.v:27]
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[95]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[94]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[95] )
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[94]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[90]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[93]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[92]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[92]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[91]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[91]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[89]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[90]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[86]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[89]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[88]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[88]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[87]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[87]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[85]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[86]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[84]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[85]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[80]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[84]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[83]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[83]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[82]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[82]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[81]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[81]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[79]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[80] )
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[79]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[78]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[78]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[77]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[77]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[76]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[76]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[75]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[75]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[74]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[74]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[73]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[73]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[72]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[72]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[71]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[71]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[70]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[70]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[69]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[69]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[68]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[68]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[67]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[67]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[66]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[66]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[65]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[65]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[64]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ZeroPadding/header_reg_reg[11] )
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[64]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[63]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[63]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[62]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[62]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[61]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[61]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[60]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ZeroPadding/data_i_reg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[60]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[59]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[59]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[58]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[58]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[57]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[57]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[56]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[56]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[55]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[55]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[54]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[54]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[53]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[53]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[52]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[52]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[51]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[51]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[50]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[50]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[49]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[49]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[48]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[48]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[47]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[47]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[46]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[46]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[42]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[45]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[44]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[43]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[42]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[41]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[41]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[39]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[40]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[39]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[38]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[38]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[36]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[37]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[36]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[32]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[35]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[34]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[33]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[31]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[30]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[29]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[28]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[27]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[26]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[25]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[24]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[23]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[22]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[21]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[20]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[19]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[18]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[17]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[16]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[15]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[14]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[13]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[12]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[11]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[10]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[9]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[8]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[7]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[6]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[5]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[4]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[3]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_symbol_mapper_even/gen_mapper_hybrid.o_valid_reg' (FDR) to 'symbol_mapper_to_ppdu/u_symbol_mapper_odd/gen_mapper_hybrid.o_valid_reg'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[2]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DQPSK_CSK/DQPSK_DUT/Imag_FF_reg[0][1]' (FDRE) to 'DQPSK_CSK/DQPSK_DUT/Imag_o_reg[1]'
+INFO: [Synth 8-3886] merging instance 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[1]' (FD) to 'symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'DQPSK_CSK/DQPSK_DUT/Real_FF_reg[0][1]' (FDRE) to 'DQPSK_CSK/DQPSK_DUT/Real_o_reg[1]'
+WARNING: [Synth 8-3332] Sequential element (symbol_mapper_to_ppdu/u_preamble_sfd_gen/gen_hybrid_mode.preamble_sfd_reg[80]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (symbol_mapper_to_ppdu/u_interleaver_even/gen_interleaver_hybrid.shift_reg_reg[63]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (symbol_mapper_to_ppdu/u_interleaver_odd/gen_interleaver_hybrid.shift_reg_reg[63]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[95]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (ZeroPadding/data_i_reg_reg[0]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (ZeroPadding/header_reg_reg[11]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (ZeroPadding/header_reg_reg[10]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (ZeroPadding/header_reg_reg[9]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (ZeroPadding/header_reg_reg[8]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (ZeroPadding/header_reg_reg[7]) is unused and will be removed from module zigbee_fpga.
+WARNING: [Synth 8-3332] Sequential element (ZeroPadding/header_reg_reg[6]) is unused and will be removed from module zigbee_fpga.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 882.398 ; gain = 530.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++--------------+----------------------------------------+---------------+----------------+
+|Module Name   | RTL Object                             | Depth x Width | Implemented As | 
++--------------+----------------------------------------+---------------+----------------+
+|symbol_mapper | o_data                                 | 64x32         | LUT            | 
+|CSK_GEN       | addr_ptr_reg_rep                       | 256x6         | Block RAM      | 
+|CSK_GEN       | addr_ptr_reg_rep                       | 256x6         | Block RAM      | 
+|symbol_mapper | o_data                                 | 64x32         | LUT            | 
+|symbol_mapper | o_data                                 | 64x32         | LUT            | 
+|zigbee_fpga   | DQPSK_CSK/CSK_GEN_DUT/addr_ptr_reg_rep | 256x6         | Block RAM      | 
+|zigbee_fpga   | DQPSK_CSK/CSK_GEN_DUT/addr_ptr_reg_rep | 256x6         | Block RAM      | 
++--------------+----------------------------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping  Report (see note below)
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name               | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|FIFO_mem:                 | mem_reg    | 128 x 8(READ_FIRST)    | W |   | 128 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|FIFO_mem__parameterized0: | mem_reg    | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|FIFO_mem__parameterized0: | mem_reg    | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|FIFO_mem__parameterized1: | mem_reg    | 4 K x 2(READ_FIRST)    | W |   | 4 K x 2(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|FIFO_mem__parameterized1: | mem_reg    | 4 K x 2(READ_FIRST)    | W |   | 4 K x 2(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance i_0/payload_ram/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/symbol_mapper_to_ppdu/u_sync_fifo_even/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_17/symbol_mapper_to_ppdu/u_sync_fifo_odd/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_35/DQPSK_CSK/Real_Sync_FIFO/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_36/DQPSK_CSK/Imag_Sync_FIFO/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_76/DQPSK_CSK/CSK_GEN_DUT/addr_ptr_reg_rep (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_80/DQPSK_CSK/CSK_GEN_DUT/addr_ptr_reg_rep (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'pll_0/clk_32' to pin 'pll_0/bbstub_clk_32/O'
+WARNING: [Synth 8-565] redefining clock 'clk'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'pll_0/clk_in' to 'clk'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 882.398 ; gain = 530.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 895.410 ; gain = 543.445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name               | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|FIFO_mem:                 | mem_reg    | 128 x 8(READ_FIRST)    | W |   | 128 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|FIFO_mem__parameterized0: | mem_reg    | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|FIFO_mem__parameterized0: | mem_reg    | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|FIFO_mem__parameterized1: | mem_reg    | 4 K x 2(READ_FIRST)    | W |   | 4 K x 2(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|FIFO_mem__parameterized1: | mem_reg    | 4 K x 2(READ_FIRST)    | W |   | 4 K x 2(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'payload_ram/rd_from_addr_reg_rep[0]' (FDRE) to 'payload_ram/rd_from_addr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'payload_ram/rd_from_addr_reg_rep[1]' (FDRE) to 'payload_ram/rd_from_addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'payload_ram/rd_from_addr_reg_rep[2]' (FDRE) to 'payload_ram/rd_from_addr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'payload_ram/rd_from_addr_reg_rep[3]' (FDRE) to 'payload_ram/rd_from_addr_reg[3]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4480] The timing for the instance payload_ram/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance symbol_mapper_to_ppdu/u_sync_fifo_even/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance symbol_mapper_to_ppdu/u_sync_fifo_odd/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance DQPSK_CSK/Real_Sync_FIFO/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance DQPSK_CSK/Imag_Sync_FIFO/mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 903.348 ; gain = 551.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 903.348 ; gain = 551.383
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 903.348 ; gain = 551.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 903.348 ; gain = 551.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 903.348 ; gain = 551.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 903.348 ; gain = 551.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 903.348 ; gain = 551.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|zigbee_fpga | symbol_mapper_to_ppdu/u_form_ppdu/reg_data_i_reg[95] | 48     | 2     | YES          | NO                 | YES               | 0      | 4       | 
+|zigbee_fpga | symbol_mapper_to_ppdu/u_form_ppdu/reg_data_q_reg[95] | 48     | 2     | YES          | NO                 | YES               | 0      | 4       | 
+|zigbee_fpga | symbol_mapper_to_ppdu/u_form_ppdu/reg_valid_reg[95]  | 48     | 2     | YES          | NO                 | YES               | 0      | 4       | 
+|zigbee_fpga | DQPSK_CSK/DQPSK_DUT/Real_FF_reg[3][0]                | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|zigbee_fpga | DQPSK_CSK/DQPSK_DUT/Imag_FF_reg[3][0]                | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |clk_wiz_0  |     1|
+|2     |CARRY4     |    51|
+|3     |LUT1       |    21|
+|4     |LUT2       |    85|
+|5     |LUT3       |    92|
+|6     |LUT4       |   274|
+|7     |LUT5       |   140|
+|8     |LUT6       |   210|
+|9     |RAMB18E1   |     1|
+|10    |RAMB18E1_1 |     2|
+|11    |RAMB18E1_4 |     1|
+|12    |RAMB18E1_5 |     1|
+|13    |RAMB36E1   |     2|
+|14    |SRL16E     |     2|
+|15    |SRLC32E    |    12|
+|16    |FDRE       |   688|
+|17    |FDSE       |     8|
+|18    |IBUF       |     9|
+|19    |OBUF       |    17|
++------+-----------+------+
+
+Report Instance Areas: 
++------+-------------------------+---------------------------+------+
+|      |Instance                 |Module                     |Cells |
++------+-------------------------+---------------------------+------+
+|1     |top                      |                           |  1617|
+|2     |  DEMUX                  |e_o_demux                  |   120|
+|3     |  DQPSK_CSK              |dqpsk_csk_top              |   329|
+|4     |    CSK_GEN_DUT          |CSK_GEN                    |   110|
+|5     |    DQPSK_DUT            |DQPSK                      |    26|
+|6     |    Imag_Sync_FIFO       |FIFO_mem__parameterized1   |    73|
+|7     |    Real_Sync_FIFO       |FIFO_mem__parameterized1_3 |    75|
+|8     |    posedge_detector_DUT |posedge_detector           |     2|
+|9     |  QPSK                   |QPSK_mapper                |    10|
+|10    |  ZeroPadding            |zeropadding                |    83|
+|11    |  my_controller          |controller                 |    14|
+|12    |  payload_ram            |FIFO_mem                   |    42|
+|13    |  symbol_mapper_to_ppdu  |top_sym_to_ppdu            |   869|
+|14    |    u_form_ppdu          |form_ppdu                  |   303|
+|15    |    u_interleaver_even   |interleaver                |   191|
+|16    |    u_interleaver_odd    |interleaver_0              |   188|
+|17    |    u_preamble_sfd_gen   |preamble_sfd_gen           |     2|
+|18    |    u_symbol_mapper_even |symbol_mapper              |    32|
+|19    |    u_symbol_mapper_odd  |symbol_mapper_1            |    33|
+|20    |    u_sync_fifo_even     |FIFO_mem__parameterized0   |    60|
+|21    |    u_sync_fifo_odd      |FIFO_mem__parameterized0_2 |    60|
+|22    |  u_uart_rx              |uart_rx                    |    91|
++------+-------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 903.348 ; gain = 551.383
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 903.348 ; gain = 169.688
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 903.348 ; gain = 551.383
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 67 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+185 Infos, 30 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 903.348 ; gain = 562.887
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/zigbee_fpga_implementation/zigbee_fpga_hybrid_implementation/zigbee_fpga_hybrid_implementation.runs/synth_1/zigbee_fpga.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file zigbee_fpga_utilization_synth.rpt -pb zigbee_fpga_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 903.348 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 18 07:06:42 2026...

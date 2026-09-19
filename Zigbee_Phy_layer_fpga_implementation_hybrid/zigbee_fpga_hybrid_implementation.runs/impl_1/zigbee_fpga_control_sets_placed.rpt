@@ -1,0 +1,105 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Fri Sep 18 07:07:14 2026
+| Host         : mazen running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file zigbee_fpga_control_sets_placed.rpt
+| Design       : zigbee_fpga
+| Device       : xc7z020
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    37 |
+| Unused register locations in slices containing registers |   104 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      8 |            2 |
+|     10 |            1 |
+|     12 |            5 |
+|     14 |            4 |
+|    16+ |           25 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              42 |           15 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             326 |           53 |
+| Yes          | No                    | No                     |               4 |            1 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            1020 |          137 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+----------------+
+|    Clock Signal    |                                      Enable Signal                                      |                                     Set/Reset Signal                                    | Slice Load Count | Bel Load Count |
++--------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+----------------+
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_form_ppdu/E[0]                                                  | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                1 |              8 |
+|  pll_0/inst/clk_32 | QPSK/Imag_FF_reg[3]_0_sn_1                                                              |                                                                                         |                2 |              8 |
+|  pll_0/inst/clk_32 | ZeroPadding/counter                                                                     | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             10 |
+|  pll_0/inst/clk_32 |                                                                                         | ZeroPadding/o_counter                                                                   |                2 |             12 |
+|  pll_0/inst/clk_32 |                                                                                         | my_controller/o_bits_reg_reg[5]_0                                                       |                2 |             12 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_interleaver_even/gen_interleaver_hybrid.bit_count[5]_i_2__0_n_0 | symbol_mapper_to_ppdu/u_interleaver_even/gen_interleaver_hybrid.bit_count[5]_i_1__0_n_0 |                2 |             12 |
+|  pll_0/inst/clk_32 | ZeroPadding/header_reg[5]_i_1_n_0                                                       | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             12 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_interleaver_odd/gen_interleaver_hybrid.bit_count[5]_i_2_n_0     | symbol_mapper_to_ppdu/u_interleaver_odd/gen_interleaver_hybrid.bit_count[5]_i_1_n_0     |                2 |             12 |
+|  pll_0/inst/clk_32 |                                                                                         | DQPSK_CSK/CSK_GEN_DUT/samble_cnt[6]_i_1_n_0                                             |                2 |             14 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr[94]_i_1_n_0                                   | DQPSK_CSK/reg_valid_reg[47]                                                             |                3 |             14 |
+|  pll_0/inst/clk_32 | ZeroPadding/data_i_reg[7]_i_1_n_0                                                       | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             14 |
+|  pll_0/inst/clk_32 | u_uart_rx/counter_wren                                                                  | u_uart_rx/SR[0]                                                                         |                2 |             14 |
+|  pll_0/inst/clk_32 | u_uart_rx/data_out[7]_i_1_n_0                                                           | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                3 |             16 |
+|  pll_0/inst/clk_32 | DEMUX/E[0]                                                                              | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             16 |
+|  pll_0/inst/clk_32 | payload_ram/wr_in_addr0                                                                 | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             16 |
+|  pll_0/inst/clk_32 | payload_ram/rd_from_addr[7]_i_1__1_n_0                                                  | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             16 |
+|  pll_0/inst/clk_32 | DQPSK_CSK/CSK_GEN_DUT/addr_ptr0                                                         | DQPSK_CSK/CSK_GEN_DUT/addr_ptr[7]_i_1_n_0                                               |                2 |             16 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_sync_fifo_odd/wr_in_addr0                                       | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             22 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_sync_fifo_even/wr_in_addr0                                      | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             22 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_interleaver_even/rd_from_addr_reg[10]                           | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                3 |             22 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_interleaver_odd/rd_from_addr_reg[10]                            | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                2 |             22 |
+|  pll_0/inst/clk_32 |                                                                                         | DEMUX/e_bits[5]_i_1_n_0                                                                 |                2 |             24 |
+|  pll_0/inst/clk_32 | DQPSK_CSK/Real_Sync_FIFO/wr_in_addr0                                                    | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                4 |             26 |
+|  pll_0/inst/clk_32 | DQPSK_CSK/Imag_Sync_FIFO/wr_in_addr0                                                    | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                4 |             26 |
+|  pll_0/inst/clk_32 | QPSK/Imag_FF_reg[3]_0_sn_1                                                              | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                4 |             30 |
+|  pll_0/inst/clk_32 | u_uart_rx/clk_count_0                                                                   | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                6 |             32 |
+|  pll_0/inst/clk_32 | DQPSK_CSK/CSK_GEN_DUT/E[0]                                                              | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                8 |             50 |
+|  pll_0/inst/clk_32 | DQPSK_CSK/CSK_GEN_DUT/rd_from_addr_reg[0][0]                                            | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                8 |             50 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_interleaver_odd/p_1_in__0[31]                                   | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                8 |             58 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_interleaver_even/p_1_in__0[31]                                  | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                6 |             58 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_interleaver_odd/p_1_in__0[62]                                   | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |                9 |             62 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_interleaver_even/p_1_in__0[62]                                  | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |               10 |             62 |
+|  pll_0/inst/clk_32 |                                                                                         |                                                                                         |               19 |             66 |
+|  pll_0/inst/clk_32 | DEMUX/E[0]                                                                              | my_controller/SR[0]                                                                     |                9 |            112 |
+|  pll_0/inst/clk_32 |                                                                                         | DQPSK_CSK/reg_valid_reg[47]                                                             |               12 |            122 |
+|  pll_0/inst/clk_32 |                                                                                         | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |               33 |            142 |
+|  pll_0/inst/clk_32 | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr[94]_i_1_n_0                                   | symbol_mapper_to_ppdu/u_form_ppdu/reg_shr_reg[94]_0                                     |               25 |            190 |
++--------------------+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+----------------+
+
+
