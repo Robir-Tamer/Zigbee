@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<errorData typeCount="1" majorVersion="1" minorVersion="8" name="__private_meta_data_:zigbee_F_placement_missingVia.err" designName="zigbee_F_placement" info="" checker="check_pg_missing_vias" checkerVersion="" created="1789934110" createdDate="09:21:2026:03:55:10:CST" modified="1789934364" modifiedDate="09:21:2026:03:59:24:CST" interactive="false" internal="false" metaData="true" numTypes="1" numInsts="0"/>

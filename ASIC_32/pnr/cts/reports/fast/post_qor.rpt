@@ -1,0 +1,65 @@
+****************************************
+Report : qor
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 04:46:21 2026
+****************************************
+Information: Timer using 'SI, Timing Window Analysis, CRPR'. (TIM-050)
+
+
+Scenario           'default'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                     15
+Critical Path Length:              8.00
+Critical Path Slack:              22.26
+Critical Path Clk Period:         31.25
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.23
+Total Hold Violation:             -1.29
+No. of Hold Violations:              27
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:             44
+Hierarchical Port Count:           4141
+Leaf Cell Count:                  47554
+Buf/Inv Cell Count:               28102
+Buf Cell Count:                   17714
+Inv Cell Count:                   10388
+CT Buf/Inv Cell Count:                0
+Combinational Cell Count:         41397
+Sequential Cell Count:             6157
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:           180312.37
+Noncombinational Area:         40803.07
+Buf/Inv Area:                 146823.82
+Total Buffer Area:            132350.57
+Total Inverter Area:           14473.25
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                       0.00
+Net YLength:                       0.00
+----------------------------------------
+Cell Area (netlist):                         221115.45
+Cell Area (netlist and physical only):       221115.45
+Net Length:                        0.00
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:             47787
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+1

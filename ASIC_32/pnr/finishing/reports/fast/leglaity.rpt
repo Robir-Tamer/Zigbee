@@ -1,0 +1,146 @@
+
+************************
+
+running check_legality
+
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+
+Expand check halo by 0.1520 x 0.1520
+Scanning PG objects...
+PG hash cached 2 nets; 11 viaBoxes; 0 viaMatrices.
+PG scanned 280 objects; 79325 vias; 0 staples.
+PG scan complete.  Hash key = eb822d0a7a433e8c
+Reading PG structure for 'zigbee_F.dlib:zigbee_F_finishing.design'
+Layer M1: read 0 secDefs  0 sectors
+Layer M2: read 6 secDefs  31776 sectors
+Layer M3: read 6 secDefs  31776 sectors
+Layer M4: read 6 secDefs  31776 sectors
+Layer M5: read 6 secDefs  31776 sectors
+Layer M6: read 6 secDefs  31776 sectors
+Layer M7: read 6 secDefs  31776 sectors
+Layer M8: read 12 secDefs  21253 sectors
+Layer M9: read 23 secDefs  4969 sectors
+Layer MRDL: read 0 secDefs  0 sectors
+
+Sector Array Stats:
+Num Sectors: 216878
+Num SecDefs:    71
+Shared: 63 count; 3442.4 ave; 5390 max
+SecDef Shapes: 51 Below-aligned, 0 Above-aligned, 12 Horizontal, 8 Vertical
+Referenced Patterns: 4 count; 2.0 ave; 2 max
+
+Place Cache read: 46830 elements -- 8 drcFail 46822 drcOk
+Place Cache read: 95 libcells referenced from 2 libs
+Place Cache read: 68 elements discarded
+Place Cache read: 4 lib cells not used -- saed32_hvt|saed32_hvt_std:IBUFFX16_HVT.frame saed32_rvt|saed32_rvt_std:NBUFFX32_RVT.frame saed32_hvt|saed32_hvt_std:NBUFFX32_HVT.frame saed32_hvt|saed32_hvt_std:NBUFFX16_HVT.frame
+Place Cache read: used 6 of 71 total secDefs
+Access Cache read: 48636 elements -- 3509 drcFail 45127 drcOk
+Access Cache read: 121 libcells referenced from 3 libs
+Access Cache read: 190 elements discarded
+Access Cache read: 9 lib cells not used -- saed32_hvt|saed32_hvt_std:IBUFFX16_HVT.frame saed32_lvt|saed32_lvt_std:IBUFFX16_LVT.frame saed32_lvt|saed32_lvt_std:NBUFFX32_LVT.frame saed32_rvt|saed32_rvt_std:NBUFFX32_RVT.frame saed32_hvt|saed32_hvt_std:NBUFFX32_HVT.frame saed32_lvt|saed32_lvt_std:INVX32_LVT.frame saed32_lvt|saed32_lvt_std:DELLN2X2_LVT.frame saed32_lvt|saed32_lvt_std:NBUFFX16_LVT.frame saed32_hvt|saed32_hvt_std:NBUFFX16_HVT.frame
+Access Cache read: used 6 of 71 total secDefs
+Connection checks for layer M2: blocked_pin pin_access_default track_drc pin_extend0
+Connection checks for layer M3: blocked_pin pin_access_default track_drc pin_extend1
+Connection checks for layer M4: blocked_pin pin_access_default track_drc pin_extend1
+Connection checks for layer M5: blocked_pin pin_access_default track_drc pin_extend1
+
+check_legality for block design zigbee ... 
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+Design has no advanced rules
+Checking legality
+Checking cell legality:
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Sorting rows.
+Checking spacing rule legality.
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Checking packing rule legality.
+
+
+****************************************
+  Report : Legality
+****************************************
+
+VIOLATIONS BY CATEGORY:
+   MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+         0          0          0  Two objects overlap.
+         0          0          0  A cell violates a pnet.
+         0          0          0  A cell is illegal at a site.
+         0          0          0  A cell is not aligned with a site.
+         0          0          0  A cell has an illegal orientation.
+         0          0          0  A cell spacing rule is violated.
+         0          0          0  A layer rule is violated.
+         0          0          0  A cell is in the wrong region.
+         0          0          0  Two cells violate cts margins.
+         0          0          0  Two cells violate coloring.
+
+         0          0          0  TOTAL
+
+TOTAL 0 Violations.
+
+VIOLATIONS BY SUBCATEGORY:
+     MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+
+         0          0          0    Two objects overlap.
+           0          0          0    Two cells overlap.
+           0          0          0    Two cells have overlapping keepout margins.
+           0          0          0    A cell overlaps a blockage.
+           0          0          0    A cell keepout margin overlaps a blockage.
+
+         0          0          0    A cell violates a pnet.
+
+         0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates pin-track alignment rules.
+           0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates legal index rule.
+           0          0          0    A cell has the wrong variant for its location.
+
+         0          0          0    A cell is not aligned with a site.
+           0          0          0    A cell is not aligned with the base site.
+           0          0          0    A cell is not aligned with an overlaid site.
+
+         0          0          0    A cell has an illegal orientation.
+
+         0          0          0    A cell spacing rule is violated.
+           0          0          0    A spacing rule is violated in a row.
+           0          0          0    A spacing rule is violated between adjacent rows.
+           0          0          0    A cell violates vertical abutment rule.
+           0          0          0    A cell violates metal spacing rule.
+
+         0          0          0    A layer rule is violated.
+           0          0          0    A layer VTH rule is violated.
+           0          0          0    A layer OD rule is violated.
+           0          0          0    A layer OD max-width rule is violated.
+           0          0          0    A layer ALL_OD corner rule is violated.
+           0          0          0    A layer max-vertical-length rule is violated.
+           0          0          0    A layer TPO rule is violated.
+           0          0          0    Filler cell insertion cannot satisfy layer rules.
+
+         0          0          0    A cell is in the wrong region.
+           0          0          0    A cell is outside its hard bound.
+           0          0          0    A cell is in the wrong voltage area.
+           0          0          0    A cell violates an exclusive movebound.
+
+         0          0          0    Two cells violate cts margins.
+
+         0          0          0    Two cells violate coloring.
+
+
+check_legality for block design zigbee succeeded!
+
+
+check_legality succeeded.
+
+**************************
+
+NPLDRC Place Cache: unique cache elements 47107
+NPLDRC Place Cache: read cache elements 46830
+NPLDRC Place Cache: hit rate  99.1%  (277 / 30777)
+NPLDRC Access Cache: unique cache elements 51272
+NPLDRC Access Cache: read cache elements 48636
+NPLDRC Access Cache: hit rate  95.1%  (2636 / 54071)
+NPLDRC Pin Status Cache: no calls
+NPLDRC Multi Cell Cache: no calls
+NPLDRC ViaLadder Cache: no calls
+1

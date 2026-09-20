@@ -1,0 +1,47 @@
+Using libraries: zigbee_F.dlib bumps saed32_1p9m_tech saed32_hvt saed32_iodrivers saed32_lvt saed32_rvt saed32_sram_lp
+Warning: In library zigbee_F.dlib, no block views exist for block zigbee. (LNK-064)
+Visiting block zigbee_F.dlib:zigbee_F_cts.design
+Design 'zigbee' was successfully linked.
+****************************************
+Report : qor
+        -summary
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 04:25:12 2026
+****************************************
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+************************************************************
+Warning: Corner default:  0 process number, 3 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 28771 cells affected for early, 28771 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'zigbee_F.dlib:zigbee_F_cts.design'. (TIM-125)
+Information: Design Average RC for design zigbee_F_cts  (NEX-011)
+Information: r = 1.093874 ohm/um, via_r = 0.475937 ohm/cut, c = 0.076414 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 1.411454 ohm/um, via_r = 0.584742 ohm/cut, c = 0.085908 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Information: The RC mode used is VR for design 'zigbee'. (NEX-022)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 28985, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 472, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+
+Timing
+---------------------------------------------------------------------------
+Context                                 WNS            TNS            NVE
+---------------------------------------------------------------------------
+Design             (Setup)            23.28           0.00              0
+
+Design             (Hold)             -0.59       -3036.61           6296
+---------------------------------------------------------------------------
+
+Miscellaneous
+---------------------------------------------------------------------------
+Cell Area (netlist):                          87113.19
+Cell Area (netlist and physical only):        87113.19
+Nets with DRC Violations:        0
+1

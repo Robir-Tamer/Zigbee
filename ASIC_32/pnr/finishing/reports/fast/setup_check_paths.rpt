@@ -1,0 +1,25 @@
+
+****************************************
+Report : Violation analysis
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 05:48:20 2026
+****************************************
+
+START_CMD: analyze_design_violations CPU:    151 s ( 0.04 hr) ELAPSE:    264 s ( 0.07 hr) MEM-PEAK:  2092 Mb Mon Sep 21 05:48:20 2026
+Number of Site types in the design = 1
+Setting up Chip Core
+Chip Core shape: (100000 100000) (5222400 5216320)
+Number of unique PDs = 1
+Number of Power Domains = 1
+Number of Voltage Areas = 1
+Number of supply Nets = 2
+Number of used supplies = 2
+Use advanced legalizer engine : 0
+Design utilization is 1.000000
+
+  Start analyzing MAX_TRANS violations.
+
+  No max_trans violation is found.
+
+END_CMD: analyze_design_violations CPU:    153 s ( 0.04 hr) ELAPSE:    265 s ( 0.07 hr) MEM-PEAK:  2092 Mb Mon Sep 21 05:48:21 2026

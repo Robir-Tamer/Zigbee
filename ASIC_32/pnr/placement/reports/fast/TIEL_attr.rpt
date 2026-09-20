@@ -1,0 +1,322 @@
+****************************************
+Report : Attribute
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 03:56:51 2026
+****************************************
+
+Design          Object          Type        Attribute Name        Value
+--------------------------------------------------------------------------------
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT orientations allowable_orientation R0 R90 R180 R270 MX MXR90 MY MYR90
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean always_on false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT area area 1.27072000
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string base_name TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT rect bbox {-0.1150 -0.0300} {0.8750 1.7730}
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT collection block saed32_hvt|saed32_hvt_std:TIEL_HVT.timing
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string block_name TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT coord_list boundary {0.0000 0.0000} {0.0000 1.6720} {0.7600 1.6720} {0.7600 0.0000}
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT rect boundary_bbox {0.0000 0.0000} {0.7600 1.6720}
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT collection boundary_bounding_box {0.0000 0.0000} {0.7600 1.6720}
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT collection bounding_box {-0.1150 -0.0300} {0.8750 1.7730}
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string cell_footprint TIEL
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string cmog_class a0
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT collection design TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string design_name TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string design_type lib_cell
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean disable_timing false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean dont_touch true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean dont_use true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT int ebst_processed 2
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string excluded_purposes power hold cts optimization
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string extended_name /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_hvt.ndm/L0:saed32_hvt|saed32_hvt_std/TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean frame_update false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string full_name saed32_hvt|saed32_hvt_std/TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string function_class a0
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string function_id Ia0.0
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean has_multi_power_rails false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean has_timing_model true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT distance height 1.6720
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string included_purposes none
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string input_voltage_range
+Information: Attribute is_black_box will be obsoleted, please use design_type instead. (ATTR-14)
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_black_box false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_combinational true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_current false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_diff_level_shifter false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_diode_cell false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_enable_level_shifter false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_etm_moded_cell false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_fall_edge_triggered false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_hierarchical false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_implicit true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_integrated_clock_gating_cell false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_isolation false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_level_shifter false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_linked false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_memory_cell false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_modified false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_mux false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_negative_level_sensitive false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_open true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_positive_level_sensitive false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_power_switch false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_remote false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_retention false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_rise_edge_triggered false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_sequential false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_shared_timing_model false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_soi false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean is_three_state false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string label_name
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string last_modified Fri Oct 20 20:32:19 2017
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string last_saved Fri Oct 20 20:32:21 2017
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT collection lib saed32_hvt|saed32_hvt_std
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string lib_name saed32_hvt|saed32_hvt_std
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string libgen_usage_class insert&remove
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string mb_bussed_ports
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string mb_pin_map
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string mb_scan_chain_ports
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT int multibit_width 0
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string name TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean new_pg_pin_syntax true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT int number_of_pins 1
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string object_class lib_cell
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string object_id 744864456
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT int open_count 1
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string open_mode read
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string output_voltage_range
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean pad_cell false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string read_in_by
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string sb_degen_fid
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT int sb_port_cnt 0
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string single_bit_degenerate
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT collection site_def unit
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string site_name unit
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string subset_name
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean syn_library true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string test_function_id
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string test_normal_func_id
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string threshold_voltage_group high_vt
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT collection top_module saed32_hvt|saed32_hvt_std/TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string top_module_name TIEL_HVT
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT int type 2
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT int unique_cell_number 0
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string unique_cell_prefix
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT int unique_net_number 0
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string unique_net_prefix
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean use_for_size_only false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean use_frame_blockage true
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string user_function_class
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string valid_purposes
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT boolean via0_alignment false
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT string view_name timing
+saed32_hvt|saed32_hvt_std/TIEL_HVT saed32_hvt|saed32_hvt_std/TIEL_HVT distance width 0.7600
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT orientations allowable_orientation R0 R180 MX MY
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean always_on false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT area area 1.27072000
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string base_name TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT rect bbox {-0.1150 -0.0300} {0.8750 1.7730}
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT collection block saed32_lvt|saed32_lvt_std:TIEL_LVT.timing
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string block_name TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT coord_list boundary {0.0000 0.0000} {0.0000 1.6720} {0.7600 1.6720} {0.7600 0.0000}
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT rect boundary_bbox {0.0000 0.0000} {0.7600 1.6720}
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT collection boundary_bounding_box {0.0000 0.0000} {0.7600 1.6720}
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT collection bounding_box {-0.1150 -0.0300} {0.8750 1.7730}
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string cell_footprint TIEL
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string cmog_class a0
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT collection design TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string design_name TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string design_type lib_cell
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean disable_timing false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean dont_touch true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean dont_use true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT int ebst_processed 2
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string excluded_purposes power hold cts optimization
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string extended_name /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_lvt.ndm/L0:saed32_lvt|saed32_lvt_std/TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean frame_update false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string full_name saed32_lvt|saed32_lvt_std/TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string function_class a0
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string function_id Ia0.0
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean has_multi_power_rails false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean has_timing_model true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT distance height 1.6720
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string included_purposes none
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string input_voltage_range
+Information: Attribute is_black_box will be obsoleted, please use design_type instead. (ATTR-14)
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_black_box false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_combinational true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_current false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_diff_level_shifter false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_diode_cell false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_enable_level_shifter false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_etm_moded_cell false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_fall_edge_triggered false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_hierarchical false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_implicit true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_integrated_clock_gating_cell false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_isolation false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_level_shifter false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_linked false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_memory_cell false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_modified false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_mux false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_negative_level_sensitive false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_open true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_positive_level_sensitive false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_power_switch false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_remote false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_retention false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_rise_edge_triggered false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_sequential false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_shared_timing_model false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_soi false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean is_three_state false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string label_name
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string last_modified Fri Oct 20 20:32:29 2017
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string last_saved Fri Oct 20 20:32:31 2017
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT collection lib saed32_lvt|saed32_lvt_std
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string lib_name saed32_lvt|saed32_lvt_std
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string libgen_usage_class insert&remove
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string mb_bussed_ports
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string mb_pin_map
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string mb_scan_chain_ports
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT int multibit_width 0
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string name TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean new_pg_pin_syntax true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT int number_of_pins 1
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string object_class lib_cell
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string object_id 785947336
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT int open_count 1
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string open_mode read
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string output_voltage_range
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean pad_cell false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string read_in_by
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string sb_degen_fid
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT int sb_port_cnt 0
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string single_bit_degenerate
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT collection site_def unit
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string site_name unit
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string subset_name
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean syn_library true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string test_function_id
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string test_normal_func_id
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string threshold_voltage_group low_vt
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT collection top_module saed32_lvt|saed32_lvt_std/TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string top_module_name TIEL_LVT
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT int type 2
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT int unique_cell_number 0
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string unique_cell_prefix
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT int unique_net_number 0
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string unique_net_prefix
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean use_for_size_only false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean use_frame_blockage true
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string user_function_class
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string valid_purposes
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT boolean via0_alignment false
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT string view_name timing
+saed32_lvt|saed32_lvt_std/TIEL_LVT saed32_lvt|saed32_lvt_std/TIEL_LVT distance width 0.7600
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT orientations allowable_orientation R0 R90 R180 R270 MX MXR90 MY MYR90
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean always_on false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT area area 1.27072000
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string base_name TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT rect bbox {-0.1150 -0.0300} {0.8750 1.7730}
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT collection block saed32_rvt|saed32_rvt_std:TIEL_RVT.timing
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string block_name TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT coord_list boundary {0.0000 0.0000} {0.0000 1.6720} {0.7600 1.6720} {0.7600 0.0000}
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT rect boundary_bbox {0.0000 0.0000} {0.7600 1.6720}
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT collection boundary_bounding_box {0.0000 0.0000} {0.7600 1.6720}
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT collection bounding_box {-0.1150 -0.0300} {0.8750 1.7730}
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string cell_footprint TIEL
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string cmog_class a0
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT collection design TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string design_name TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string design_type lib_cell
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean disable_timing false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean dont_touch true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean dont_use true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT int ebst_processed 2
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string excluded_purposes power hold cts optimization
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string extended_name /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_rvt.ndm/L0:saed32_rvt|saed32_rvt_std/TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean frame_update false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string full_name saed32_rvt|saed32_rvt_std/TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string function_class a0
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string function_id Ia0.0
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean has_multi_power_rails false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean has_timing_model true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT distance height 1.6720
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string included_purposes none
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string input_voltage_range
+Information: Attribute is_black_box will be obsoleted, please use design_type instead. (ATTR-14)
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_black_box false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_combinational true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_current false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_diff_level_shifter false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_diode_cell false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_enable_level_shifter false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_etm_moded_cell false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_fall_edge_triggered false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_hierarchical false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_implicit true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_integrated_clock_gating_cell false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_isolation false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_level_shifter false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_linked false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_memory_cell false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_modified false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_mux false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_negative_level_sensitive false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_open true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_positive_level_sensitive false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_power_switch false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_remote false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_retention false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_rise_edge_triggered false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_sequential false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_shared_timing_model false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_soi false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean is_three_state false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string label_name
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string last_modified Fri Oct 20 20:32:40 2017
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string last_saved Fri Oct 20 20:32:42 2017
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT collection lib saed32_rvt|saed32_rvt_std
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string lib_name saed32_rvt|saed32_rvt_std
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string libgen_usage_class insert&remove
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string mb_bussed_ports
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string mb_pin_map
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string mb_scan_chain_ports
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT int multibit_width 0
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string name TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean new_pg_pin_syntax true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT int number_of_pins 1
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string object_class lib_cell
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string object_id 822483656
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT int open_count 1
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string open_mode read
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string output_voltage_range
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean pad_cell false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string read_in_by
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string sb_degen_fid
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT int sb_port_cnt 0
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string single_bit_degenerate
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT collection site_def unit
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string site_name unit
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string subset_name
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean syn_library true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string test_function_id
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string test_normal_func_id
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string threshold_voltage_group normal_vt
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT collection top_module saed32_rvt|saed32_rvt_std/TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string top_module_name TIEL_RVT
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT int type 2
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT int unique_cell_number 0
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string unique_cell_prefix
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT int unique_net_number 0
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string unique_net_prefix
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean use_for_size_only false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean use_frame_blockage true
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string user_function_class
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string valid_purposes
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT boolean via0_alignment false
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT string view_name timing
+saed32_rvt|saed32_rvt_std/TIEL_RVT saed32_rvt|saed32_rvt_std/TIEL_RVT distance width 0.7600
+1

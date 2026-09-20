@@ -1,0 +1,96 @@
+**************************************************
+Report         : failing_points
+
+Reference      : ref:/WORK/zigbee
+Implementation : imp:/WORK/zigbee
+Version        : L-2016.03-SP1
+Date           : Sun Sep 20 00:35:43 2026
+**************************************************
+
+20 Failing compare points (20 matched, 0 unmatched):
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[133][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[133][0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[47][1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[47][1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[570][1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[570][1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][0]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][1]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][1]
+
+  Ref  DFF        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[739][0]
+  Impl DFF        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[739][0]
+
+ [BBNet: multiply-driven net
+  BBPin: black-box pin
+  Cut:   cut-point
+  DFF:   non-constant DFF register
+  DFF0:  constant 0 DFF register
+  DFF1:  constant 1 DFF register
+  DFFX:  constant X DFF register
+  DFF0X: constrained 0X DFF register
+  DFF1X: constrained 1X DFF register
+  LAT:   non-constant latch register
+  LAT0:  constant 0 latch register
+  LAT1:  constant 1 latch register
+  LATX:  constant X latch register
+  LAT0X: constrained 0X latch register
+  LAT1X: constrained 1X latch register
+  LATCG: clock-gating latch register
+  TLA:   transparent latch register
+  TLA0X: transparent constrained 0X latch register
+  TLA1X: transparent constrained 1X latch register
+  Loop:  cycle break point
+  Port:  primary (top-level) port
+  Und:   undriven signal cut-point
+  Unk:   unknown signal cut-point]
+
+1

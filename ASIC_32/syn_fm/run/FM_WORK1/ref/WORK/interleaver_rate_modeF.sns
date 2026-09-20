@@ -1,0 +1,11 @@
+# struct_name_map
+gen_interleaver_1mbps.bit_count[0]
+gen_interleaver_1mbps.bit_count_reg[0]
+gen_interleaver_1mbps.bit_count[1]
+gen_interleaver_1mbps.bit_count_reg[1]
+gen_interleaver_1mbps.shift_reg[0]
+gen_interleaver_1mbps.shift_reg_reg[0]
+gen_interleaver_1mbps.shift_reg[1]
+gen_interleaver_1mbps.shift_reg_reg[1]
+gen_interleaver_1mbps.shift_reg[2]
+gen_interleaver_1mbps.shift_reg_reg[2]

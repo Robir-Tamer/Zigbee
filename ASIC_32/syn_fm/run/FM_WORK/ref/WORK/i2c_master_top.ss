@@ -1,0 +1,2 @@
+-1 12 49 15 0 33 5022 174 2 FMR_ELAB-022/home/ICer/ROBO/ASIC/i2c/syn/rtl/i2c_master_top.v/i2c_master_topPrivate message for simsyn report
+-1 12 49 15 0 33 5022 202 2 FMR_ELAB-022/home/ICer/ROBO/ASIC/i2c/syn/rtl/i2c_master_top.v/i2c_master_topPrivate message for simsyn report

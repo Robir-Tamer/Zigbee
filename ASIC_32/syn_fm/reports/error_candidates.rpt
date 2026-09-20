@@ -1,0 +1,50 @@
+**************************************************
+Report         : error_candidates
+
+Reference      : ref:/WORK/zigbee
+Implementation : imp:/WORK/zigbee
+Version        : L-2016.03-SP1
+Date           : Sun Sep 20 00:36:23 2026
+**************************************************
+
+4 distinct errors detected in implementation.
+
+Recommended error candidate:
+
+    Cell    DQPSK_CSK/Imag_Sync_FIFO/U17
+    Cell    DQPSK_CSK/Real_Sync_FIFO/U7
+    Cell    DQPSK_CSK/CSK_GEN_DUT/boundary_d_reg
+    Cell    DQPSK_CSK/DQPSK_DUT/valid_reg
+
+Alternate error candidates:
+ 1. Cell    DQPSK_CSK/Imag_Sync_FIFO/U16
+    Cell    DQPSK_CSK/U41
+    Cell    DQPSK_CSK/Imag_Sync_FIFO/U4824
+    Pin     DQPSK_CSK/Real_Sync_FIFO/rd_from_addr_reg[5]/\*dff.00\*/QN
+
+ 2. Cell    DQPSK_CSK/Imag_Sync_FIFO/U4437
+    Cell    DQPSK_CSK/CSK_GEN_DUT/boundary_d_reg
+    Cell    DQPSK_CSK/Imag_Sync_FIFO/mem_reg[230][1]
+    Cell    DQPSK_CSK/DQPSK_DUT/valid_reg
+
+ 3. Cell    DQPSK_CSK/Imag_Sync_FIFO/U4181
+    Cell    DQPSK_CSK/Imag_Sync_FIFO/U4419
+    Cell    DQPSK_CSK/CSK_GEN_DUT/boundary_d_reg
+    Cell    DQPSK_CSK/DQPSK_DUT/valid_reg
+
+ 4. Cell    DQPSK_CSK/Imag_Sync_FIFO/U5969
+    Cell    DQPSK_CSK/Imag_Sync_FIFO/U6121
+    Cell    DQPSK_CSK/Real_Sync_FIFO/U6122
+    Cell    DQPSK_CSK/DQPSK_DUT/valid_reg
+
+ 5. Cell    DQPSK_CSK/Imag_Sync_FIFO/U6121
+    Cell    DQPSK_CSK/Real_Sync_FIFO/U6122
+    Cell    DQPSK_CSK/DQPSK_DUT/valid_reg
+    Pin     DQPSK_CSK/Real_Sync_FIFO/wr_in_addr_reg[9]/\*dff.00\*/QN
+
+ 6. Cell    DQPSK_CSK/U41
+    Cell    DQPSK_CSK/Imag_Sync_FIFO/U4832
+    Cell    DQPSK_CSK/Imag_Sync_FIFO/U4904
+    Pin     DQPSK_CSK/Real_Sync_FIFO/rd_from_addr_reg[5]/\*dff.00\*/QN
+
+1

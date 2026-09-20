@@ -1,0 +1,64 @@
+****************************************
+Report : qor
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 03:59:10 2026
+****************************************
+
+
+Scenario           'default'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                     18
+Critical Path Length:              6.99
+Critical Path Slack:              23.28
+Critical Path Clk Period:         31.25
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.59
+Total Hold Violation:          -3036.61
+No. of Hold Violations:            6296
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:             44
+Hierarchical Port Count:           1363
+Leaf Cell Count:                  28771
+Buf/Inv Cell Count:                9319
+Buf Cell Count:                     613
+Inv Cell Count:                    8706
+CT Buf/Inv Cell Count:                0
+Combinational Cell Count:         22614
+Sequential Cell Count:             6157
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:            46310.12
+Noncombinational Area:         40803.07
+Buf/Inv Area:                  12871.12
+Total Buffer Area:              1301.22
+Total Inverter Area:           11569.91
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                       0.00
+Net YLength:                       0.00
+----------------------------------------
+Cell Area (netlist):                          87113.19
+Cell Area (netlist and physical only):        87113.19
+Net Length:                        0.00
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:             29004
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+1

@@ -1,0 +1,681 @@
+****************************************
+Report : design
+        -library
+        -netlist
+        -floorplan
+        -routing
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 05:12:28 2026
+****************************************
+--------------------------------------------------------------------------------
+                              LIBRARY INFORMATION
+--------------------------------------------------------------------------------
+
+Search path : .
+
+Units : 
+    time                : 1.00ns
+    resistance          : 1.00MOhm
+    capacitance         : 1.00fF
+    voltage             : 1.00V
+    current             : 1.00uA
+    power               : 1.00pW
+
+Tech file : /home/ICer/Desktop/shared_folder/32nm_lib/tf/saed32nm_1p9m.tf
+
+Number of active scenarios 	= 1
+Number of inactive scenarios 	= 0
+
+Total number of standard cells 	= 1025
+
+Total number of dont_use lib cells 	= 74
+Total number of dont_touch lib cells 	= 74
+
+Total number of buffers 	= 69
+Total number of inverters 	= 45
+Total number of flip-flops 	= 306
+Total number of latches 	= 36
+Total number of ICGs 		= 36
+
+
+Library : bumps
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/bumps.ndm
+
+Library : saed32_1p9m_tech
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_1p9m_tech.ndm
+
+Library : saed32_hvt|saed32_hvt_std
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_hvt.ndm/L0
+  Source .db libs :
+    saed32hvt_ff0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ff0p95vn40c.db
+    saed32hvt_ff1p16vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ff1p16vn40c.db
+    saed32hvt_ff0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ff0p95v125c.db
+    saed32hvt_ff1p16v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ff1p16v125c.db
+    saed32hvt_ss0p75vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.db
+    saed32hvt_ss0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.db
+    saed32hvt_ss0p75v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75v125c.db
+    saed32hvt_ss0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db
+
+Library : saed32_hvt|saed32_hvt_pg
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_hvt.ndm/L1
+  Source .db libs :
+    saed32hvt_pg_ff0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_pg_ff0p95v125c.db
+    saed32hvt_pg_ff0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_pg_ff0p95vn40c.db
+    saed32hvt_pg_ff1p16v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_pg_ff1p16v125c.db
+    saed32hvt_pg_ff1p16vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_pg_ff1p16vn40c.db
+    saed32hvt_pg_ss0p75vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_pg_ss0p75vn40c.db
+    saed32hvt_pg_ss0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_pg_ss0p95vn40c.db
+    saed32hvt_pg_ss0p75v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_pg_ss0p75v125c.db
+    saed32hvt_pg_ss0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_pg_ss0p95v125c.db
+
+Library : saed32_hvt|saed32_hvt_lsdn
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_hvt.ndm/L2
+  Source .db libs :
+    saed32hvt_dlvl_ff0p95vn40c_i1p16v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_dlvl_ff0p95vn40c_i1p16v.db
+    saed32hvt_dlvl_ff0p95v125c_i1p16v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_dlvl_ff0p95v125c_i1p16v.db
+    saed32hvt_dlvl_ss0p75vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_dlvl_ss0p75vn40c_i0p95v.db
+    saed32hvt_dlvl_ss0p75v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_dlvl_ss0p75v125c_i0p95v.db
+
+Library : saed32_hvt|saed32_hvt_lsup
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_hvt.ndm/L3
+  Source .db libs :
+    saed32hvt_ulvl_ff1p16vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ulvl_ff1p16vn40c_i0p95v.db
+    saed32hvt_ulvl_ff1p16v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ulvl_ff1p16v125c_i0p95v.db
+    saed32hvt_ulvl_ss0p95vn40c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ulvl_ss0p95vn40c_i0p75v.db
+    saed32hvt_ulvl_ss0p95v125c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_hvt/db_nldm/saed32hvt_ulvl_ss0p95v125c_i0p75v.db
+
+Library : saed32_iodrivers
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_iodrivers.ndm
+  Source .db libs :
+    saed32io_fc_ss0p95v125c_2p25v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db
+    saed32io_fc_ss0p95vn40c_2p25v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/io_std/db_nldm/saed32io_fc_ss0p95vn40c_2p25v.db
+    saed32io_fc_ff1p16v125c_2p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/io_std/db_nldm/saed32io_fc_ff1p16v125c_2p75v.db
+    saed32io_fc_ff1p16vn40c_2p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/io_std/db_nldm/saed32io_fc_ff1p16vn40c_2p75v.db
+
+Library : saed32_lvt|saed32_lvt_std
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_lvt.ndm/L0
+  Source .db libs :
+    saed32lvt_ff0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95vn40c.db
+    saed32lvt_ff1p16vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ff1p16vn40c.db
+    saed32lvt_ff0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ff0p95v125c.db
+    saed32lvt_ff1p16v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ff1p16v125c.db
+    saed32lvt_ss0p75vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75vn40c.db
+    saed32lvt_ss0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95vn40c.db
+    saed32lvt_ss0p75v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v125c.db
+    saed32lvt_ss0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db
+
+Library : saed32_lvt|saed32_lvt_pg
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_lvt.ndm/L1
+  Source .db libs :
+    saed32lvt_pg_ff0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_pg_ff0p95v125c.db
+    saed32lvt_pg_ff0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_pg_ff0p95vn40c.db
+    saed32lvt_pg_ff1p16v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_pg_ff1p16v125c.db
+    saed32lvt_pg_ff1p16vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_pg_ff1p16vn40c.db
+    saed32lvt_pg_ss0p75v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_pg_ss0p75v125c.db
+    saed32lvt_pg_ss0p75vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_pg_ss0p75vn40c.db
+    saed32lvt_pg_ss0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_pg_ss0p95v125c.db
+    saed32lvt_pg_ss0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_pg_ss0p95vn40c.db
+
+Library : saed32_lvt|saed32_lvt_lsdn
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_lvt.ndm/L2
+  Source .db libs :
+    saed32lvt_dlvl_ff0p95vn40c_i1p16v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_dlvl_ff0p95vn40c_i1p16v.db
+    saed32lvt_dlvl_ff0p95v125c_i1p16v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_dlvl_ff0p95v125c_i1p16v.db
+    saed32lvt_dlvl_ss0p75vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_dlvl_ss0p75vn40c_i0p95v.db
+    saed32lvt_dlvl_ss0p75v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_dlvl_ss0p75v125c_i0p95v.db
+
+Library : saed32_lvt|saed32_lvt_lsup
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_lvt.ndm/L3
+  Source .db libs :
+    saed32lvt_ulvl_ff1p16vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ulvl_ff1p16vn40c_i0p95v.db
+    saed32lvt_ulvl_ff1p16v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ulvl_ff1p16v125c_i0p95v.db
+    saed32lvt_ulvl_ss0p95vn40c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ulvl_ss0p95vn40c_i0p75v.db
+    saed32lvt_ulvl_ss0p95v125c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_lvt/db_nldm/saed32lvt_ulvl_ss0p95v125c_i0p75v.db
+
+Library : saed32_rvt|saed32_rvt_std
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_rvt.ndm/L0
+  Source .db libs :
+    saed32rvt_ff1p16vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ff1p16vn40c.db
+    saed32rvt_ff1p16v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ff1p16v125c.db
+    saed32rvt_ff0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ff0p95v125c.db
+    saed32rvt_ff0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ff0p95vn40c.db
+    saed32rvt_ss0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95vn40c.db
+    saed32rvt_ss0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db
+    saed32rvt_ss0p75v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db
+    saed32rvt_ss0p75vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75vn40c.db
+
+Library : saed32_rvt|saed32_rvt_pg
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_rvt.ndm/L1
+  Source .db libs :
+    saed32rvt_pg_ff0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_pg_ff0p95v125c.db
+    saed32rvt_pg_ff0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_pg_ff0p95vn40c.db
+    saed32rvt_pg_ff1p16v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_pg_ff1p16v125c.db
+    saed32rvt_pg_ff1p16vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_pg_ff1p16vn40c.db
+    saed32rvt_pg_ss0p75v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_pg_ss0p75v125c.db
+    saed32rvt_pg_ss0p75vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_pg_ss0p75vn40c.db
+    saed32rvt_pg_ss0p95v125c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_pg_ss0p95v125c.db
+    saed32rvt_pg_ss0p95vn40c : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_pg_ss0p95vn40c.db
+
+Library : saed32_rvt|saed32_rvt_lsdn
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_rvt.ndm/L2
+  Source .db libs :
+    saed32rvt_dlvl_ff0p95v125c_i1p16v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_dlvl_ff0p95v125c_i1p16v.db
+    saed32rvt_dlvl_ff0p95vn40c_i1p16v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_dlvl_ff0p95vn40c_i1p16v.db
+    saed32rvt_dlvl_ss0p75v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_dlvl_ss0p75v125c_i0p95v.db
+    saed32rvt_dlvl_ss0p75vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_dlvl_ss0p75vn40c_i0p95v.db
+
+Library : saed32_rvt|saed32_rvt_lsup
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_rvt.ndm/L3
+  Source .db libs :
+    saed32rvt_ulvl_ff1p16v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ulvl_ff1p16v125c_i0p95v.db
+    saed32rvt_ulvl_ff1p16vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ulvl_ff1p16vn40c_i0p95v.db
+    saed32rvt_ulvl_ss0p95v125c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ulvl_ss0p95v125c_i0p75v.db
+    saed32rvt_ulvl_ss0p95vn40c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/stdcell_rvt/db_nldm/saed32rvt_ulvl_ss0p95vn40c_i0p75v.db
+
+Library : saed32_sram_lp
+  File path : /home/ICer/Desktop/shared_folder/32nm_lib/ndm/saed32_sram_lp.ndm
+  Source .db libs :
+    saed32sramlp_ss0p75vn40c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ss0p75vn40c_i0p75v.db
+    saed32sramlp_ss0p75v125c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ss0p75v125c_i0p75v.db
+    saed32sramlp_ss0p95v125c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ss0p95v125c_i0p75v.db
+    saed32sramlp_ss0p95v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ss0p95v125c_i0p95v.db
+    saed32sramlp_ss0p95vn40c_i0p75v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ss0p95vn40c_i0p75v.db
+    saed32sramlp_ss0p95vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ss0p95vn40c_i0p95v.db
+    saed32sramlp_ff0p95v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ff0p95v125c_i0p95v.db
+    saed32sramlp_ff0p95vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ff0p95vn40c_i0p95v.db
+    saed32sramlp_ff1p16v125c_i0p85v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ff1p16v125c_i0p85v.db
+    saed32sramlp_ff1p16v125c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ff1p16v125c_i0p95v.db
+    saed32sramlp_ff1p16v125c_i1p16v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ff1p16v125c_i1p16v.db
+    saed32sramlp_ff1p16vn40c_i0p85v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ff1p16vn40c_i0p85v.db
+    saed32sramlp_ff1p16vn40c_i0p95v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ff1p16vn40c_i0p95v.db
+    saed32sramlp_ff1p16vn40c_i1p16v : /global/gtsna_training/projects/IC_Compiler_II_SoC_DP/dev_2017.09/ref/SAED32_2012-12-25/lib/sram_lp/db_nldm/saed32sramlp_ff1p16vn40c_i1p16v.db
+
+--------------------------------------------------------------------------------
+                              NETLIST INFORMATION
+--------------------------------------------------------------------------------
+
+CELL INSTANCE INFORMATION
+-----------------------------------------------------------------------------
+Cell Instance Type          Count % of         Area  % of siteAreaPerSite
+                                  total             total
+-----------------------------------------------------------------------------
+TOTAL LEAF CELLS            47293  100   220357.842   100 unit:867059  
+
+  Standard cells            47293  100   220357.842   100 unit:867059  
+  Filler cells                  0    0        0.000     0 
+  Diode cells                   0    0        0.000     0 
+  Hard macro cells              0    0        0.000     0 
+  Soft macro cells              0    0        0.000     0 
+    Black box cells             0    0        0.000     0 
+  Analog block cells            0    0        0.000     0 
+  Pad cells                     0    0        0.000     0 
+    Flip-chip pad cells         0    0        0.000     0 
+  Cover cells                   0    0        0.000     0 
+  Flip-chip driver cells        0    0        0.000     0 
+  Corner pad cells              0    0        0.000     0 
+  Pad spacer cells              0    0        0.000     0 
+  Others                        0    0        0.000     0 
+
+Special cells                 238    0      302.431     0 unit:1190  
+  Level shifter                 0    0        0.000     0 
+  Isolation                     0    0        0.000     0 
+  Switch                        0    0        0.000     0 
+  Always on                     0    0        0.000     0 
+  Retention                     0    0        0.000     0 
+  Tie off                     238    0      302.431     0 unit:1190  
+
+LVT                             0    0        0.000     0 
+HVT                             0    0        0.000     0 
+Normal VT                       0    0        0.000     0 
+Others                      47293  100   220357.842   100 unit:867059  
+
+Netlist cells               47293  100   220357.842   100 unit:867059  
+Physical only                   0    0        0.000     0 
+
+Fixed cells                     0    0        0.000     0 
+Moveable cells              47293  100   220357.842   100 unit:867059  
+
+Combinational               41136   86   179554.769    81 unit:706508  
+Sequential                   6157   13    40803.073    18 unit:160551  
+Others                          0    0        0.000     0 
+
+Buffer                      17485   36   131702.758    59 unit:518221  
+Inverter                    10356   21    14391.158     6 unit:56626  
+Buffer/inverter             27841   58   146093.916    66 unit:574847  
+
+Spare cells                    18    0       68.873     0 unit:271  
+ICG cells                       0    0        0.000     0 
+Flip-flop cells              6157   13    40803.073    18 unit:160551  
+Latch cells                     0    0        0.000     0 
+Antenna cells                   0    0        0.000     0 
+
+Mux logic                    1596    3     5273.742     2 unit:20751  
+Double height                   0    0        0.000     0 
+Triple height                   0    0        0.000     0 
+More than triple height         0    0        0.000     0 
+
+Logic Hierarchies          44
+
+REFERENCE DESIGN INFORMATION
+----------------------------------------------------------------------------------------------
+Number of reference designs used:115  
+----------------------------------------------------------------------------------------------
+Name           Type          Count     Width    Height        Area   PinDens SiteName siteArea
+----------------------------------------------------------------------------------------------
+DELLN3X2_HVT   lib_cell      12276      5.78      1.67       9.657     0.414 unit           38
+DFFX1_HVT      lib_cell       5948      3.95      1.67       6.608     0.908 unit           26
+AO22X1_HVT     lib_cell       5650      1.52      1.67       2.541     2.754 unit           10
+INVX1_RVT      lib_cell       5302      0.76      1.67       1.271     3.148 unit            5
+NBUFFX2_RVT    lib_cell       4394      1.22      1.67       2.033     1.967 unit            8
+NAND2X0_HVT    lib_cell       2257      0.91      1.67       1.525     3.279 unit            6
+INVX1_HVT      lib_cell       2133      0.76      1.67       1.271     3.148 unit            5
+MUX21X1_HVT    lib_cell       1588      1.98      1.67       3.304     1.816 unit           13
+AO221X1_HVT    lib_cell       1422      1.82      1.67       3.050     2.623 unit           12
+INVX2_RVT      lib_cell       1056      0.91      1.67       1.525     2.623 unit            6
+INVX2_HVT      lib_cell        919      0.91      1.67       1.525     2.623 unit            6
+AND2X1_HVT     lib_cell        534      1.22      1.67       2.033     2.459 unit            8
+NOR4X0_HVT     lib_cell        360      1.82      1.67       3.050     2.295 unit           12
+INVX2_LVT      lib_cell        260      0.91      1.67       1.525     2.623 unit            6
+DELLN1X2_RVT   lib_cell        255      3.04      1.67       5.083     0.787 unit           20
+DFFSSRX1_RVT   lib_cell        199      4.26      1.67       7.116     1.124 unit           28
+TIEH_HVT       lib_cell        189      0.76      1.67       1.271     2.361 unit            5
+INVX1_LVT      lib_cell        169      0.76      1.67       1.271     3.148 unit            5
+INVX4_RVT      lib_cell        146      1.22      1.67       2.033     1.967 unit            8
+DELLN1X2_HVT   lib_cell        136      3.04      1.67       5.083     0.787 unit           20
+OA22X1_HVT     lib_cell        134      1.52      1.67       2.541     2.754 unit           10
+DELLN3X2_RVT   lib_cell        110      5.78      1.67       9.657     0.414 unit           38
+AND3X1_HVT     lib_cell        109      1.37      1.67       2.287     2.623 unit            9
+NBUFFX4_RVT    lib_cell         98      1.52      1.67       2.541     1.574 unit           10
+OA221X1_HVT    lib_cell         98      1.82      1.67       3.050     2.623 unit           12
+INVX4_LVT      lib_cell         94      1.22      1.67       2.033     1.967 unit            8
+XOR2X1_HVT     lib_cell         90      2.58      1.67       4.320     1.157 unit           17
+HADDX1_HVT     lib_cell         80      1.98      1.67       3.304     1.816 unit           13
+NBUFFX2_LVT    lib_cell         72      1.22      1.67       2.033     1.967 unit            8
+DELLN2X2_HVT   lib_cell         71      3.95      1.67       6.608     0.605 unit           26
+XNOR2X1_HVT    lib_cell         70      2.58      1.67       4.320     1.157 unit           17
+NAND2X1_HVT    lib_cell         70      1.52      1.67       2.541     1.967 unit           10
+INVX8_LVT      lib_cell         68      1.82      1.67       3.050     1.312 unit           12
+AO222X1_HVT    lib_cell         57      1.98      1.67       3.304     2.724 unit           13
+NAND3X0_HVT    lib_cell         53      1.06      1.67       1.779     3.373 unit            7
+AO22X2_HVT     lib_cell         50      1.67      1.67       2.796     2.504 unit           11
+TIEL_HVT       lib_cell         49      0.76      1.67       1.271     2.361 unit            5
+INVX0_HVT      lib_cell         47      0.76      1.67       1.271     3.148 unit            5
+INVX0_LVT      lib_cell         42      0.76      1.67       1.271     3.148 unit            5
+NBUFFX2_HVT    lib_cell         42      1.22      1.67       2.033     1.967 unit            8
+AND4X1_HVT     lib_cell         38      1.52      1.67       2.541     2.754 unit           10
+NAND3X1_HVT    lib_cell         30      1.67      1.67       2.796     2.146 unit           11
+OR2X1_HVT      lib_cell         30      1.22      1.67       2.033     2.459 unit            8
+AO21X1_HVT     lib_cell         30      1.52      1.67       2.541     2.361 unit           10
+NAND2X0_RVT    lib_cell         29      0.91      1.67       1.525     3.279 unit            6
+NAND4X0_HVT    lib_cell         29      1.22      1.67       2.033     3.443 unit            8
+NAND2X0_LVT    lib_cell         28      0.91      1.67       1.525     3.279 unit            6
+IBUFFX2_LVT    lib_cell         22      1.52      1.67       2.541     1.574 unit           10
+NAND3X2_HVT    lib_cell         22      1.82      1.67       3.050     1.967 unit           12
+OA21X1_HVT     lib_cell         21      1.52      1.67       2.541     2.361 unit           10
+IBUFFX2_RVT    lib_cell         20      1.52      1.67       2.541     1.574 unit           10
+IBUFFX32_HVT   lib_cell         16      6.99      1.67      11.691     0.342 unit           46
+DELLN3X2_LVT   lib_cell         16      5.78      1.67       9.657     0.414 unit           38
+NOR2X0_HVT     lib_cell         15      1.52      1.67       2.541     1.967 unit           10
+FADDX1_HVT     lib_cell         14      2.89      1.67       4.829     1.450 unit           19
+INVX4_HVT      lib_cell         13      1.22      1.67       2.033     1.967 unit            8
+AOI21X1_HVT    lib_cell         12      1.82      1.67       3.050     1.967 unit           12
+OAI22X1_HVT    lib_cell         12      1.82      1.67       3.050     2.295 unit           12
+IBUFFX2_HVT    lib_cell         11      1.52      1.67       2.541     1.574 unit           10
+NAND2X2_HVT    lib_cell         11      1.67      1.67       2.796     1.789 unit           11
+AND2X1_LVT     lib_cell         11      1.22      1.67       2.033     2.459 unit            8
+AOI22X1_HVT    lib_cell          9      1.82      1.67       3.050     2.295 unit           12
+INVX8_RVT      lib_cell          9      1.82      1.67       3.050     1.312 unit           12
+XNOR3X1_HVT    lib_cell          8      3.65      1.67       6.099     0.984 unit           24
+OAI221X1_HVT   lib_cell          7      2.13      1.67       3.558     2.248 unit           14
+DFFX2_RVT      lib_cell          7      4.26      1.67       7.116     0.843 unit           28
+INVX16_LVT     lib_cell          7      3.04      1.67       5.083     0.787 unit           20
+NAND3X0_RVT    lib_cell          7      1.06      1.67       1.779     3.373 unit            7
+AO22X1_LVT     lib_cell          7      1.52      1.67       2.541     2.754 unit           10
+INVX16_RVT     lib_cell          6      3.04      1.67       5.083     0.787 unit           20
+DELLN1X2_LVT   lib_cell          6      3.04      1.67       5.083     0.787 unit           20
+INVX8_HVT      lib_cell          5      1.82      1.67       3.050     1.312 unit           12
+AOI221X1_HVT   lib_cell          5      2.13      1.67       3.558     2.248 unit           14
+OR3X1_HVT      lib_cell          4      1.37      1.67       2.287     2.623 unit            9
+NBUFFX4_HVT    lib_cell          4      1.52      1.67       2.541     1.574 unit           10
+IBUFFX4_RVT    lib_cell          4      1.82      1.67       3.050     1.312 unit           12
+HADDX2_HVT     lib_cell          3      2.28      1.67       3.812     1.574 unit           15
+SDFFX1_HVT     lib_cell          3      6.84      1.67      11.436     0.700 unit           45
+MUX21X1_LVT    lib_cell          3      1.98      1.67       3.304     1.816 unit           13
+NBUFFX8_LVT    lib_cell          3      2.28      1.67       3.812     1.049 unit           15
+AO222X2_HVT    lib_cell          3      2.13      1.67       3.558     2.529 unit           14
+NAND4X0_RVT    lib_cell          3      1.22      1.67       2.033     3.443 unit            8
+MUX21X2_HVT    lib_cell          3      2.13      1.67       3.558     1.686 unit           14
+OR4X1_HVT      lib_cell          3      2.13      1.67       3.558     1.967 unit           14
+NAND3X0_LVT    lib_cell          3      1.06      1.67       1.779     3.373 unit            7
+AND3X1_RVT     lib_cell          2      1.37      1.67       2.287     2.623 unit            9
+AND2X2_HVT     lib_cell          2      1.37      1.67       2.287     2.186 unit            9
+OAI221X2_HVT   lib_cell          2      2.28      1.67       3.812     2.099 unit           15
+MUX21X1_RVT    lib_cell          2      1.98      1.67       3.304     1.816 unit           13
+NBUFFX8_RVT    lib_cell          2      2.28      1.67       3.812     1.049 unit           15
+INVX32_RVT     lib_cell          2      5.47      1.67       9.149     0.437 unit           36
+AO222X1_LVT    lib_cell          2      1.98      1.67       3.304     2.724 unit           13
+IBUFFX8_HVT    lib_cell          2      2.58      1.67       4.320     0.926 unit           17
+NAND4X0_LVT    lib_cell          2      1.22      1.67       2.033     3.443 unit            8
+NAND4X1_HVT    lib_cell          2      1.82      1.67       3.050     2.295 unit           12
+OAI21X1_HVT    lib_cell          2      1.82      1.67       3.050     1.967 unit           12
+NOR3X0_HVT     lib_cell          2      1.67      1.67       2.796     2.146 unit           11
+AND2X4_HVT     lib_cell          2      1.67      1.67       2.796     1.789 unit           11
+AOI222X1_HVT   lib_cell          2      2.28      1.67       3.812     2.361 unit           15
+OAI222X1_LVT   lib_cell          1      2.28      1.67       3.812     2.361 unit           15
+XNOR2X1_LVT    lib_cell          1      2.58      1.67       4.320     1.157 unit           17
+HADDX2_RVT     lib_cell          1      2.28      1.67       3.812     1.574 unit           15
+XOR2X1_LVT     lib_cell          1      2.58      1.67       4.320     1.157 unit           17
+NAND2X1_LVT    lib_cell          1      1.52      1.67       2.541     1.967 unit           10
+NOR4X0_RVT     lib_cell          1      1.82      1.67       3.050     2.295 unit           12
+AND3X1_LVT     lib_cell          1      1.37      1.67       2.287     2.623 unit            9
+AO21X1_LVT     lib_cell          1      1.52      1.67       2.541     2.361 unit           10
+AND3X4_LVT     lib_cell          1      1.82      1.67       3.050     1.967 unit           12
+AND2X4_LVT     lib_cell          1      1.67      1.67       2.796     1.789 unit           11
+INVX16_HVT     lib_cell          1      3.04      1.67       5.083     0.787 unit           20
+IBUFFX8_LVT    lib_cell          1      2.58      1.67       4.320     0.926 unit           17
+IBUFFX16_RVT   lib_cell          1      3.95      1.67       6.608     0.605 unit           26
+AND3X4_HVT     lib_cell          1      1.82      1.67       3.050     1.967 unit           12
+OA222X1_HVT    lib_cell          1      1.98      1.67       3.304     2.724 unit           13
+NOR4X1_HVT     lib_cell          1      1.82      1.67       3.050     2.295 unit           12
+
+NET INFORMATION
+------------------------------------------------------------------
+NetType                 Count FloatingNets         Vias Nets/Cells
+------------------------------------------------------------------
+Total                   47526           17       436236      1.005
+Signal                  45821            0       328004      0.969
+Power                       1            0        40532      0.000
+Ground                      1            0        39006      0.000
+Analog Signal               0            0            0      0.000
+Analog Ground               0            0            0      0.000
+Analog Power                0            0            0      0.000
+Clock                    1686            0        28694      0.036
+Tie Low                     4            4            0      0.000
+Tie High                   13           13            0      0.000
+Others                      0            0            0      0.000
+
+NET FANOUT AND PIN COUNT INFORMATION
+---------------------------------------------------
+Fanout        Netcount     netPinCount     NetCount
+---------------------------------------------------
+<2               28555     <2                    17
+2                 9104     2                  28538
+3                 3620     3                   9104
+4                 2754     4                   3620
+5                 3491     5                   2754
+6-10                 0     6-10                3491
+11-20                0     11-20                  0
+21-30                0     21-30                  0
+31-50                0     31-50                  0
+51-100               0     51-100                 0
+101-500              0     101-500                0
+501-1000             0     501-1000               0
+>1000                2     >1000                  2
+
+PORT AND PIN INFORMATION
+------------------------------------------------------------------------------
+Type         Total     Input    Output     Inout      3-st     Power    Ground
+------------------------------------------------------------------------------
+Total       234194    180646     53548         0         0     47293     47293
+Macro            0         0         0         0         0         0         0
+Ports           39        22        19         2         0         2         2
+------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+                              FLOORPLAN INFORMATION
+--------------------------------------------------------------------------------
+
+CORE AND CHIP AREA INFORMATION
+---------------------------
+Core Area is :   262078.376
+Chip Area is :   282955.816
+---------------------------
+
+SITE ROW INFORMATION
+-----------------------------------------------------------------------
+Site Name    Width    Height   Total Rows     Total Tiles          Area
+-----------------------------------------------------------------------
+unit          0.15      1.67          306         1031220    262078.376
+-----------------------------------------------------------------------
+
+BLOCKAGE INFORMATION
+------------------------------------------------
+Blockage Type                Count          Area
+------------------------------------------------
+Hard placement                   0         0.000
+Soft placement                   0         0.000
+Hard macro                       0         0.000
+Partial placement                3     42950.000
+Register                         0         0.000
+Placement allow Buffer Only      0         0.000
+Placement allow RP Group Only
+                                 0         0.000
+RP Group                         0         0.000
+Category                         0         0.000
+Routing                          0         0.000
+Routing for Top                  0         0.000
+Routing For Design Rule          0         0.000
+Shaping                          0         0.000
+------------------------------------------------
+
+POWER DOMAIN INFORMATION
+--------------------------------------------------------------------
+Power Domain Name    VA Name         Primary Power Net Primary Ground Net
+--------------------------------------------------------------------
+DEFAULT_POWER_DOMAIN DEFAULT_VA      VDD               VSS
+--------------------------------------------------------------------
+
+VOLTAGE AREA INFORMATION
+-------------------------------------------------------------------------------------
+VA Name          Number             Area       Target    bbox    bbox    bbox    bbox
+              of shapes                   Utilization     llx     lly     urx     ury
+-------------------------------------------------------------------------------------
+DEFAULT_VA            1       262078.376         1.00   10.00   10.00  522.24  521.63
+-------------------------------------------------------------------------------------
+
+GROUP BOUND INFORMATION
+----------------------------------------
+No Group Bound exists
+
+EXCLUSIVE MOVEBOUND INFORMATION
+----------------------------------------
+No Exclusive MoveBound exists.
+
+HARD AND SOFT MOVEBOUND INFORMATION
+----------------------------------------
+No Hard Or Soft MoveBound exists.
+
+ROUTE GUIDE INFORMATION
+------------------------------------------------
+Route Guide Type             Count          Area
+------------------------------------------------
+Extra Detour Region              0         0.000
+Over icovl CellLayers            0         0.000
+River Routing                    0         0.000
+Area Double Via                  0         0.000
+Access Preference                0         0.000
+Default                          0         0.000
+Switched Direction Only          0         0.000
+Max Patterns                     0         0.000
+Others                           0         0.000
+------------------------------------------------
+
+MULTIBIT REGISTER INFORMATION
+-----------------------------------------------
+No Multibit cells exist
+
+MULTIBIT LS/ISO CELLS INFORMATION
+-----------------------------------------------
+No Multibit cells exist
+
+RP GROUP INFORMATION
+----------------------------------------
+No RP Group exists
+
+LAYER INFORMATION
+--------------------------------------------------------------------------
+Layer Name Direction Ignored Pitch  default minWidth minSpacing    sameNet
+                                      Width                     MinSpacing
+--------------------------------------------------------------------------
+M1         Hor       YES      0.15     0.05     0.05       0.05       0.00
+M2         Ver       NO       0.15     0.06     0.06       0.06       0.06
+M3         Hor       NO       0.30     0.06     0.06       0.06       0.06
+M4         Ver       NO       0.30     0.06     0.06       0.06       0.06
+M5         Hor       NO       0.61     0.06     0.06       0.06       0.06
+M6         Ver       NO       0.61     0.06     0.06       0.06       0.06
+M7         Hor       NO       1.22     0.06     0.06       0.06       0.06
+M8         Ver       NO       1.22     0.06     0.06       0.06       0.06
+M9         Hor       NO       2.43     0.16     0.16       0.16       0.00
+MRDL       Ver       YES      4.86     2.00     2.00       2.00       0.00
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                              ROUTING INFORMATION
+--------------------------------------------------------------------------------
+
+Total wire length = 890603.60 micron
+Total number of wires = 372574
+Total number of contacts = 436236
+
+FINAL WIRING STATISTICS
+
+Signal Wiring Statistics
+
+Metal layer     Num wires  % of total#  Wire length % of total length
+PO                      0        0.00%         0.00             0.00%
+M1                  18551        5.52%      4290.49             0.54%
+M2                 157928       46.95%    186686.12            23.41%
+M3                  92352       27.46%    249615.87            31.30%
+M4                  29423        8.75%     84725.47            10.62%
+M5                  19745        5.87%     88936.34            11.15%
+M6                  10812        3.21%     77875.54             9.77%
+M7                   5606        1.67%     57721.17             7.24%
+M8                   1897        0.56%     45813.71             5.74%
+M9                     49        0.01%      1831.30             0.23%
+MRDL                    0        0.00%         0.00             0.00%
+
+Clock wiring statistics
+
+Metal layer     Num wires  % of total#  Wire length % of total length
+PO                      0        0.00%         0.00             0.00%
+M1                   1432        3.95%       292.91             0.31%
+M2                  18910       52.22%     36161.41            38.84%
+M3                  12217       33.74%     36825.67            39.55%
+M4                   1733        4.79%      3806.14             4.09%
+M5                   1237        3.42%      7467.34             8.02%
+M6                    673        1.86%      8388.74             9.01%
+M7                      9        0.02%       165.38             0.18%
+M8                      0        0.00%         0.00             0.00%
+M9                      0        0.00%         0.00             0.00%
+MRDL                    0        0.00%         0.00             0.00%
+
+P/G wiring statistics
+
+Metal layer     Num wires  % of total#  Wire length % of total length
+PO                      0        0.00%         0.00             0.00%
+M1                    307       67.92%    157257.68            67.11%
+M2                      0        0.00%         0.00             0.00%
+M3                      0        0.00%         0.00             0.00%
+M4                      0        0.00%         0.00             0.00%
+M5                      0        0.00%         0.00             0.00%
+M6                      0        0.00%         0.00             0.00%
+M7                      0        0.00%         0.00             0.00%
+M8                     73       16.15%     38785.14            16.55%
+M9                     72       15.93%     38297.28            16.34%
+MRDL                    0        0.00%         0.00             0.00%
+
+Horizontal/Vertical Wire Distribution
+
+Metal layer  Hor. length  % of hor.    Ver. length  % of ver.
+PO                   0.00        0.00%         0.00        0.00%
+M1                4212.72        1.04%        77.77        0.02%
+M2                5394.87        1.33%    181291.25       46.38%
+M3              248517.47       61.11%      1098.40        0.28%
+M4                 470.72        0.12%     84254.75       21.56%
+M5               88508.88       21.77%       427.46        0.11%
+M6                 182.86        0.04%     77692.68       19.88%
+M7               57437.54       14.12%       283.63        0.07%
+M8                  92.11        0.02%     45721.60       11.70%
+M9                1828.86        0.45%         2.43        0.00%
+MRDL                 0.00        0.00%         0.00        0.00%
+
+FINAL VIA STATISTICS
+
+Via layer    Via def name                Count        % of layer vias
+VIA1         VIA12SQ_C                         127128       88.52%
+VIA1         VIA12SQ_C(rot)                      5830        4.06%
+VIA1         VIA12BAR_C                            48        0.03%
+VIA1         VIA12SQ_C(1X16)                    10592        7.38%
+VIA1         VIA12SQ_C(1X2)                        10        0.01%
+  Double via conversion rate for layer VIA1 = 7.38% (10602 / 143608 vias)
+    Among them, double via conversion rate of detail route vias for layer VIA1 = 0.01% (10 / 133016 vias)
+
+VIA2         VIA23SQ_C(rot)                    142746       92.59%
+VIA2         VIA23SQ_C                            836        0.54%
+VIA2         VIA23SQ_C(1X16)                    10592        6.87%
+  Double via conversion rate for layer VIA2 = 6.87% (10592 / 154174 vias)
+    Among them, double via conversion rate of detail route vias for layer VIA2 = 0.00% (0 / 143582 vias)
+
+VIA3         VIA34SQ_C                          32919       75.43%
+VIA3         VIA34SQ_C(rot)                       132        0.30%
+VIA3         VIA34SQ_C(1X16)                    10592       24.27%
+  Double via conversion rate for layer VIA3 = 24.27% (10592 / 43643 vias)
+    Among them, double via conversion rate of detail route vias for layer VIA3 = 0.00% (0 / 33051 vias)
+
+VIA4         VIA45SQ_C(rot)                     22051       65.77%
+VIA4         VIA45SQ_C                            886        2.64%
+VIA4         VIA45SQ_C(1X16)                    10592       31.59%
+  Double via conversion rate for layer VIA4 = 31.59% (10592 / 33529 vias)
+    Among them, double via conversion rate of detail route vias for layer VIA4 = 0.00% (0 / 22937 vias)
+
+VIA5         VIA56SQ_C                          13912       56.77%
+VIA5         VIA56SQ_C(rot)                         3        0.01%
+VIA5         VIA56SQ_C(1X16)                    10592       43.22%
+  Double via conversion rate for layer VIA5 = 43.22% (10592 / 24507 vias)
+    Among them, double via conversion rate of detail route vias for layer VIA5 = 0.00% (0 / 13915 vias)
+
+VIA6         VIA67SQ_C(rot)                      6704       38.74%
+VIA6         VIA67SQ_C                              8        0.05%
+VIA6         VIA67SQ_C(1X16)                    10592       61.21%
+  Double via conversion rate for layer VIA6 = 61.21% (10592 / 17304 vias)
+    Among them, double via conversion rate of detail route vias for layer VIA6 = 0.00% (0 / 6712 vias)
+
+VIA7         VIA78SQ_C                           3357       24.01%
+VIA7         VIA78BAR_C                             3        0.02%
+VIA7         VIA78SQ_C(1X16)                    10592       75.76%
+VIA7         VIA78SQ_C(1X2)                        29        0.21%
+  Double via conversion rate for layer VIA7 = 75.97% (10621 / 13981 vias)
+    Among them, double via conversion rate of detail route vias for layer VIA7 = 0.86% (29 / 3389 vias)
+
+VIA8         VIA89_C(rot)                          96        1.75%
+VIA8         VIA89_C(12X12)                        16        0.29%
+VIA8         VIA89_C(8X8)                        4830       87.98%
+VIA8         VIA89_C(12X8)                        276        5.03%
+VIA8         VIA89_C(8X12)                        272        4.95%
+  Double via conversion rate for layer VIA8 = 98.25% (5394 / 5490 vias)
+    Among them, double via conversion rate of detail route vias for layer VIA8 = 0.00% (0 / 96 vias)
+
+
+Custom Via Statistics
+
+No custom vias found in the design.
+Overall double via conversion rate = 18.24%
+  Among them, overall double via conversion rate of detail route vias = 0.01% (39 / 356698 vias)
+  *Detail route vias are vias whose shape_use is detail_route.
+
+Via Matrix Statistics
+
+No via matrices found in the design.
+
+FINAL DRC STATISTICS
+
+DRC-SUMMARY:
+Total number of nets = 47509, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 0
+Total number of antenna violations = no antenna rules defined
+Total number of tie to rail violations = not checked
+1

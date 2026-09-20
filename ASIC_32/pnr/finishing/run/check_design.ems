@@ -1,0 +1,33 @@
+<Database>
+Name/mnt/hgfs/Shared_Folder/ROBO/ASIC/i2c/pnr/finishing/run/check_design.ems
+Creation TimeSat Sep 12 18:07:34 2026
+Modified TimeSat Sep 12 18:07:34 2026
+Design Namei2c_master_top_routing
+Library Namei2c_master_top.dlib
+</Database>
+<RuleCount>
+DFT-0111
+NEX-0481
+TCK-00111
+TCK-0023
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+DFT-011reason10
+NEX-048portNameVDD10
+TCK-002cornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39pinspare_cell_3_0/CLK1[ get_pin { spare_cell_3_0/CLK } ]6
+TCK-002cornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39pinspare_cell_3_1/CLK1[ get_pin { spare_cell_3_1/CLK } ]6
+TCK-002cornerdefault1[ get_corners { default } ]40modedefault1[ get_modes { default } ]39pinspare_cell_3_2/CLK1[ get_pin { spare_cell_3_2/CLK } ]6
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_0/D1[ get_pin { spare_cell_3_0/D } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_0/SI1[ get_pin { spare_cell_3_0/SI } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_0/SE1[ get_pin { spare_cell_3_0/SE } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_1/D1[ get_pin { spare_cell_3_1/D } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_1/SI1[ get_pin { spare_cell_3_1/SI } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_1/SE1[ get_pin { spare_cell_3_1/SE } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_2/D1[ get_pin { spare_cell_3_2/D } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_2/SI1[ get_pin { spare_cell_3_2/SI } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointspare_cell_3_2/SE1[ get_pin { spare_cell_3_2/SE } ]6modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointscl_pad_o1[ get_port { scl_pad_o } ]7modedefault1[ get_modes { default } ]39reasoncase constant10
+TCK-001cornerdefault1[ get_corners { default } ]40endpointsda_pad_o1[ get_port { sda_pad_o } ]7modedefault1[ get_modes { default } ]39reasoncase constant10
+</Messages>

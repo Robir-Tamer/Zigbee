@@ -1,0 +1,34 @@
+<Database>
+Name/mnt/hgfs/Shared_Folder/ROBO/Zigbee/ASIC_32/pnr/placement/run/check_design.ems
+Creation TimeMon Sep 21 03:55:10 2026
+Modified TimeMon Sep 21 03:55:10 2026
+Design Namezigbee_F_placement
+Library Namezigbee_F.dlib
+</Database>
+<RuleCount>
+DFT-0111
+MV-02718
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+DFT-011reason10
+MV-027tieNetZeroPadding/*Logic1*1[ get_net { ZeroPadding/*Logic1* } ]8
+MV-027tieNetDEMUX/*Logic1*1[ get_net { DEMUX/*Logic1* } ]8
+MV-027tieNetmy_controller/*Logic0*1[ get_net { my_controller/*Logic0* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/*Logic0*1[ get_net { symbol_mapper_to_ppdu/*Logic0* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/*Logic1*1[ get_net { symbol_mapper_to_ppdu/*Logic1* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/u_preamble_sfd_gen/*Logic1*1[ get_net { symbol_mapper_to_ppdu/u_preamble_sfd_gen/*Logic1* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/u_symbol_mapper_even/*Logic1*1[ get_net { symbol_mapper_to_ppdu/u_symbol_mapper_even/*Logic1* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/u_interleaver_even/*Logic0*1[ get_net { symbol_mapper_to_ppdu/u_interleaver_even/*Logic0* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/u_interleaver_even/*Logic1*1[ get_net { symbol_mapper_to_ppdu/u_interleaver_even/*Logic1* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/u_symbol_mapper_odd/*Logic1*1[ get_net { symbol_mapper_to_ppdu/u_symbol_mapper_odd/*Logic1* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/u_interleaver_odd/*Logic0*1[ get_net { symbol_mapper_to_ppdu/u_interleaver_odd/*Logic0* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/u_interleaver_odd/*Logic1*1[ get_net { symbol_mapper_to_ppdu/u_interleaver_odd/*Logic1* } ]8
+MV-027tieNetsymbol_mapper_to_ppdu/u_form_ppdu/*Logic1*1[ get_net { symbol_mapper_to_ppdu/u_form_ppdu/*Logic1* } ]8
+MV-027tieNetQPSK/*Logic1*1[ get_net { QPSK/*Logic1* } ]8
+MV-027tieNetDQPSK_CSK/*Logic1*1[ get_net { DQPSK_CSK/*Logic1* } ]8
+MV-027tieNetDQPSK_CSK/DQPSK_DUT/*Logic1*1[ get_net { DQPSK_CSK/DQPSK_DUT/*Logic1* } ]8
+MV-027tieNetDQPSK_CSK/CSK_GEN_DUT/*Logic1*1[ get_net { DQPSK_CSK/CSK_GEN_DUT/*Logic1* } ]8
+MV-027tieNetDQPSK_CSK/posedge_detector_DUT/*Logic1*1[ get_net { DQPSK_CSK/posedge_detector_DUT/*Logic1* } ]8
+</Messages>

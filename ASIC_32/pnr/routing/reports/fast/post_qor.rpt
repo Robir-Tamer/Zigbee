@@ -1,0 +1,72 @@
+****************************************
+Report : qor
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 05:12:21 2026
+****************************************
+Information: Timer using 'SI, Timing Window Analysis, CRPR'. (TIM-050)
+Information: Freeing timing information from routing. (ZRT-574)
+Information: Deserialized np data
+INFO: timer data loaded from /tmp/zigbee_F_routing_107666_279478272.timdat
+Information: The RC mode used is DR for design 'zigbee'. (NEX-022)
+Extracting design(INC): zigbee_F_routing 
+Information: coupling capacitance is created explicitly. (NEX-029)
+Information: 48403 nets are successfully extracted. (NEX-028)
+
+
+Scenario           'default'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                     15
+Critical Path Length:              7.98
+Critical Path Slack:              22.28
+Critical Path Clk Period:         31.25
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.23
+Total Hold Violation:             -6.53
+No. of Hold Violations:            1376
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:             44
+Hierarchical Port Count:           4141
+Leaf Cell Count:                  47293
+Buf/Inv Cell Count:               27841
+Buf Cell Count:                   17485
+Inv Cell Count:                   10356
+CT Buf/Inv Cell Count:                0
+Combinational Cell Count:         41136
+Sequential Cell Count:             6157
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:           179554.77
+Noncombinational Area:         40803.07
+Buf/Inv Area:                 146093.92
+Total Buffer Area:            131702.76
+Total Inverter Area:           14391.16
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                       0.00
+Net YLength:                       0.00
+----------------------------------------
+Cell Area (netlist):                         220357.84
+Cell Area (netlist and physical only):       220357.84
+Net Length:                        0.00
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:             47526
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+1

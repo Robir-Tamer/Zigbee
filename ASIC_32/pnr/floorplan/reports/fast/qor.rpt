@@ -1,0 +1,84 @@
+****************************************
+Report : qor
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Sun Sep 20 02:09:35 2026
+****************************************
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+************************************************************
+Warning: Corner default:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 22972 cells affected for early, 22972 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'zigbee_F.dlib:zigbee_F_floorplan.design'. (TIM-125)
+Information: Design Average RC for design zigbee_F_floorplan  (NEX-011)
+Information: r = 1.071728 ohm/um, via_r = 0.466610 ohm/cut, c = 0.059513 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 1.384202 ohm/um, via_r = 0.578659 ohm/cut, c = 0.066710 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Information: The RC mode used is VR for design 'zigbee'. (NEX-022)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 23190, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+
+
+Scenario           'default'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                      9
+Critical Path Length:              6.82
+Critical Path Slack:              23.45
+Critical Path Clk Period:         31.25
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.58
+Total Hold Violation:          -3118.51
+No. of Hold Violations:            6296
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:             44
+Hierarchical Port Count:            810
+Leaf Cell Count:                  22972
+Buf/Inv Cell Count:                3770
+Buf Cell Count:                       4
+Inv Cell Count:                    3766
+CT Buf/Inv Cell Count:                0
+Combinational Cell Count:         16818
+Sequential Cell Count:             6154
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:            37946.75
+Noncombinational Area:         40816.80
+Buf/Inv Area:                   4973.85
+Total Buffer Area:                16.77
+Total Inverter Area:            4957.08
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                       0.00
+Net YLength:                       0.00
+----------------------------------------
+Cell Area (netlist):                          78763.55
+Cell Area (netlist and physical only):        78763.55
+Net Length:                        0.00
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:             23247
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+1

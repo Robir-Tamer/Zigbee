@@ -1,0 +1,220 @@
+
+
+
+                              IC Compiler II (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Loading user preference file /home/ICer/.synopsys_icc2_gui/preferences.tcl
+####################################################################################
+#########################################################
+#### Section 1 : Config Definition ####
+#########################################################
+####################################################################################
+##### Project Name #####
+set top_module "zigbee"
+zigbee
+set proj_path "/home/ICer/Desktop/shared_folder/ROBO/Zigbee/ASIC_32"
+/home/ICer/Desktop/shared_folder/ROBO/Zigbee/ASIC_32
+##### Library Type #####
+set lib_typ "syn"
+syn
+set SSLIB "/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db"
+/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db
+set rate "fast"
+fast
+if {$rate == "fast"} {
+       set param "F"
+} elseif {$rate == "slow"} {
+       set param "S"
+} elseif {$rate == "hybrid"} {
+       set param "H"
+}
+F
+##### Design Library #####
+set dlib_dir "${proj_path}/pnr/design_lib/outputs/${rate}"
+/home/ICer/Desktop/shared_folder/ROBO/Zigbee/ASIC_32/pnr/design_lib/outputs/fast
+##### Stages #####
+set prev_stage      "dlib"
+dlib
+set current_stage   "floorplan"
+floorplan
+###################################################################################
+#########################################################
+#### Section 2 : Design Library Setup ####
+#########################################################
+####################################################################################
+##### Open The Last Stage's Block #####
+open_block $dlib_dir/${top_module}_${param}.dlib:${top_module}_${param}_${prev_stage}.design
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'bumps', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_hvt|saed32_hvt_std', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_hvt|saed32_hvt_pg', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_hvt|saed32_hvt_lsdn', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_hvt|saed32_hvt_lsup', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_iodrivers', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_lvt|saed32_lvt_std', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_lvt|saed32_lvt_pg', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_lvt|saed32_lvt_lsdn', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_lvt|saed32_lvt_lsup', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_rvt|saed32_rvt_std', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_rvt|saed32_rvt_pg', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_rvt|saed32_rvt_lsdn', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_rvt|saed32_rvt_lsup', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_sram_lp', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Information: User units loaded from library 'saed32_hvt|saed32_hvt_std' (LNK-040)
+Opening block 'zigbee_F.dlib:zigbee_F_dlib.design' in edit mode
+{zigbee_F.dlib:zigbee_F_dlib.design}
+##### Copy The Last Stage's Block to a new one to start Editing #####
+copy_block    -from_block   ${top_module}_${param}.dlib:${top_module}_${param}_${prev_stage}.design               -to           ${top_module}_${param}.dlib:${top_module}_${param}_${current_stage}.design
+Information: Overwriting block 'zigbee_F_floorplan.design' in library 'zigbee_F.dlib'. (DES-025)
+{zigbee_F.dlib:zigbee_F_floorplan.design}
+##### Change The Current Block #####
+current_block ${top_module}_${param}_${current_stage}.design
+{zigbee_F.dlib:zigbee_F_floorplan.design}
+start_gui
+Begin building search trees for block zigbee_F.dlib:zigbee_F_floorplan.design
+Done building search trees for block zigbee_F.dlib:zigbee_F_floorplan.design (time 0s)
+###################################################################################
+#########################################################
+#### Section 3 : Layers Setup ####
+#########################################################
+####################################################################################
+##### Odd Layers >>>> Horizontal #####
+set_attribute [get_layers {M1 M3 M5 M7 M9        }] routing_direction horizontal
+Information: The design specific attribute override for layer 'M1' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M3' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M5' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M7' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M9' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+{M1 M3 M5 M7 M9}
+##### Even Layers >>>>> Vertical #####
+set_attribute [get_layers {M2 M4 M6 M8 MRDL      }] routing_direction vertical
+Information: The design specific attribute override for layer 'M2' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M4' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M6' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M8' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'MRDL' is set in the current block 'zigbee_F_floorplan', because the actual library setting may not be overwritten. (ATTR-12)
+{M2 M4 M6 M8 MRDL}
+##### Site Def Attribute #####
+set Name_unit [get_site_defs]
+{unit}
+set_attribute $Name_unit is_default true
+{unit}
+##### Flipping Symmetry #####
+# Alternate between VDD and VSS
+set_attribute $Name_unit Symmetry {Y}
+Warning: Attribute 'Symmetry' has not been defined for the site_def object class. (ATTR-1)
+##### Put and shift offset so wires are alligned with pins if not declared in tf file #####
+#set_attribute [get_layers {M1}] track_offset .037
+###################################################################################
+#########################################################
+#### Section 4 : Initailise Floor Plan ####
+#########################################################
+####################################################################################
+#set my_boundary {
+#    {0 0}    {100 0}    {100 400}  {300 0}  {300 100} 
+#    {100 500} {300 900} {300 1000}  {100 600}  {100 1000}   
+#    {0 1000}   {0 0} 
+#}
+initialize_floorplan    -control_type          core                         -core_utilization      0.3                         -shape                  R                         -core_offset           {10}                         -flip_first_row        true                         -side_ratio            {1 1}
+Using libraries: zigbee_F.dlib bumps saed32_1p9m_tech saed32_hvt saed32_iodrivers saed32_lvt saed32_rvt saed32_sram_lp
+Warning: In library zigbee_F.dlib, no block views exist for block zigbee. (LNK-064)
+Visiting block zigbee_F.dlib:zigbee_F_floorplan.design
+Design 'zigbee' was successfully linked.
+Removing existing floorplan objects
+Creating core...
+Core utilization ratio = 30.05%
+Unplacing all cells...
+Creating site array...
+Creating routing tracks...
+Initializing floorplan completed.
+#-orientation
+#-boundary $my_boundary 
+#-side_length
+###################################################################################
+#########################################################
+#### Section 5 : Pin Placment ####
+#########################################################
+####################################################################################
+#create_placement_blockage -boundary {{30 30} {50 50}}  -name B1 -type hard
+#create_placement_blockage -boundary {{5 3} {7 5}}      -name B2 -type partial -blocked_percentage 40
+#create_placement_blockage -boundary {{7 3} {9 5}}       -name B3 -type soft 
+place_pins -self -ports [get_ports *]
+
+Min routing layer: M1
+Max routing layer: MRDL
+
+
+Number of block ports: 35
+Number of block pin locations assigned from router: 0
+Number of PG ports on blocks: 0
+Number of pins created: 35
+CPU Time for Pin Placement: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+Total Pin Placement CPU Time: 00:00:00.03u 00:00:00.00s 00:00:00.03e: 
+1
+###################################################################################
+#########################################################
+#### Section 6 : TapCell Placement ####
+#########################################################
+####################################################################################
+#create_tap_cells -lib_cell [get_lib_cell */SAEDRVT14_TAPDS]   -pattern stagger       -distance 40
+#sizeof_collection [get_cells tap*]
+#remove_cell tap*
+#create_tap_cells -lib_cell [get_lib_cell */SAEDRVT14_TAPDS]   -pattern every_row     -distance 10
+#sizeof_collection [get_cells tap*]
+#remove_cell tap*
+#create_tap_cells -lib_cell [get_lib_cell */SAEDRVT14_TAPDS]   -pattern every_other_row     -distance 10
+#sizeof_collection [get_cells tap*]
+#remove_cell tap*
+###################################################################################
+#########################################################
+#### Section 7 : Reporting ####
+#########################################################
+####################################################################################
+report_qor                  > ../reports/${rate}/qor.rpt
+report_utilization          > ../reports/${rate}/untilization.rpt
+get_placement_blockages     > ../reports/${rate}/blockage.rpt
+###################################################################################
+#########################################################
+#### Section 8 : Save Block ####
+#########################################################
+####################################################################################
+save_block -as ${top_module}_${param}_${current_stage} ${top_module}_${param}.dlib:${top_module}_${param}_${current_stage}.designInformation: Saving block 'zigbee_F.dlib:zigbee_F_floorplan.design'
+1
+1
+icc2_shell> create_v
+create_via                create_via_region         create_voltage_area_rule  
+create_via_def            create_via_rule           create_voltage_area_shape 
+create_via_ladder         create_virtual_connection create_vtcell_fillers     
+create_via_matrix         create_voltage_area       
+icc2_shell> create_vi
+create_via                create_via_matrix         create_virtual_connection 
+create_via_def            create_via_region         
+create_via_ladder         create_via_rule           
+icc2_shell> create_via gui_show_error_data
+icc2_shell> exit
+Error: extra positional option 'exit' (CMD-012)
+Error: Required argument '-via_def' was not found (CMD-007)
+Error: Required argument '-origin' was not found (CMD-007)
+icc2_shell> 

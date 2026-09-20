@@ -1,0 +1,437 @@
+
+Loading user preference file /home/ICer/.synopsys_icc2_gui/preferences.tcl
+icc2_shell> open_block ../../design_lib/outputs/fast/zigbee_F.dlib:zigbee_F_cts.design
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'bumps', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_hvt|saed32_hvt_std', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_hvt|saed32_hvt_pg', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_hvt|saed32_hvt_lsdn', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_hvt|saed32_hvt_lsup', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_iodrivers', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_lvt|saed32_lvt_std', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_lvt|saed32_lvt_pg', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_lvt|saed32_lvt_lsdn', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_lvt|saed32_lvt_lsup', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_rvt|saed32_rvt_std', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_rvt|saed32_rvt_pg', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_rvt|saed32_rvt_lsdn', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_rvt|saed32_rvt_lsup', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'saed32nm_1p9m.tf' used for frame-view creation in library 'saed32_sram_lp', is inconsistent with the current technology 'saed32nm_1p9m.tf' of library "zigbee_F.dlib'. (NDM-102)
+Information: User units loaded from library 'saed32_hvt|saed32_hvt_std' (LNK-040)
+Opening block 'zigbee_F.dlib:zigbee_F_cts.design' in edit mode
+Information: loading PG routing via master rules, patterns, strategies and strategy via rules.
+{zigbee_F.dlib:zigbee_F_cts.design}
+icc2_shell> open_gui
+Error: unknown command 'open_gui' (CMD-005)
+icc2_shell> gui_start
+Begin building search trees for block zigbee_F.dlib:zigbee_F_cts.design
+Done building search trees for block zigbee_F.dlib:zigbee_F_cts.design (time 0s)
+icc2_shell> link_block
+Using libraries: zigbee_F.dlib bumps saed32_1p9m_tech saed32_hvt saed32_iodrivers saed32_lvt saed32_rvt saed32_sram_lp
+Warning: In library zigbee_F.dlib, no block views exist for block zigbee. (LNK-064)
+Visiting block zigbee_F.dlib:zigbee_F_cts.design
+Design 'zigbee' was successfully linked.
+1
+icc2_shell> gui_show_error_data
+icc2_shell> check_routes
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M3
+Cell Max-Routing-Layer = M7
+Warning: Cannot find a default contact code for layer CO. (ZRT-022)
+rule clk_network_NDR_leaf equivalent to default rule
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Info: number of net_type_blockage: 0 
+soft rule ICC2_GENERATED_DEFAULT_SPACING_RULE_3_8_wire is redundant
+soft rule LOPT_M3_M7_3_8_wire is redundant
+soft rule LOPT_M6_M7_3_8_wire is redundant
+
+
+Start checking for open nets ... 
+
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_42) has floating ports (dbId = 2 idx_ = 2 numNodes = 6 numEdges = 0 numCmps = 6)
+net(payload[7]) has floating ports (dbId = 3 idx_ = 3 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload[6]) has floating ports (dbId = 4 idx_ = 4 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload[5]) has floating ports (dbId = 5 idx_ = 5 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload[4]) has floating ports (dbId = 6 idx_ = 6 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload[3]) has floating ports (dbId = 7 idx_ = 7 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload[2]) has floating ports (dbId = 8 idx_ = 8 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload[1]) has floating ports (dbId = 9 idx_ = 9 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload[0]) has floating ports (dbId = 10 idx_ = 10 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_length[6]) has floating ports (dbId = 11 idx_ = 11 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_length[5]) has floating ports (dbId = 12 idx_ = 12 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_length[4]) has floating ports (dbId = 13 idx_ = 13 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_length[3]) has floating ports (dbId = 14 idx_ = 14 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_length[2]) has floating ports (dbId = 15 idx_ = 15 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_length[1]) has floating ports (dbId = 16 idx_ = 16 numNodes = 5 numEdges = 0 numCmps = 5)
+net(payload_length[0]) has floating ports (dbId = 17 idx_ = 17 numNodes = 5 numEdges = 0 numCmps = 5)
+net(start_tx) has floating ports (dbId = 18 idx_ = 18 numNodes = 5 numEdges = 0 numCmps = 5)
+net(tx_real[7]) has floating ports (dbId = 19 idx_ = 19 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_real[6]) has floating ports (dbId = 20 idx_ = 20 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_real[5]) has floating ports (dbId = 21 idx_ = 21 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_real[4]) has floating ports (dbId = 22 idx_ = 22 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_real[3]) has floating ports (dbId = 23 idx_ = 23 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_real[2]) has floating ports (dbId = 24 idx_ = 24 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_real[1]) has floating ports (dbId = 25 idx_ = 25 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_real[0]) has floating ports (dbId = 26 idx_ = 26 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_imag[7]) has floating ports (dbId = 27 idx_ = 27 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_imag[6]) has floating ports (dbId = 28 idx_ = 28 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_imag[5]) has floating ports (dbId = 29 idx_ = 29 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_imag[4]) has floating ports (dbId = 30 idx_ = 30 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_imag[3]) has floating ports (dbId = 31 idx_ = 31 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_imag[2]) has floating ports (dbId = 32 idx_ = 32 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_imag[1]) has floating ports (dbId = 33 idx_ = 33 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_imag[0]) has floating ports (dbId = 34 idx_ = 34 numNodes = 2 numEdges = 0 numCmps = 2)
+net(PLACE_HFSNET_5273) has floating ports (dbId = 35 idx_ = 35 numNodes = 4 numEdges = 0 numCmps = 4)
+net(n3) has floating ports (dbId = 36 idx_ = 36 numNodes = 2 numEdges = 0 numCmps = 2)
+net(DEMUX/PLACE_HFSNET_0) has floating ports (dbId = 37 idx_ = 37 numNodes = 4 numEdges = 0 numCmps = 4)
+net(DEMUX/PLACE_HFSNET_1) has floating ports (dbId = 38 idx_ = 38 numNodes = 2 numEdges = 0 numCmps = 2)
+net(DQPSK_CSK/CSK_GEN_DUT/PLACE_HFSNET_1) has floating ports (dbId = 39 idx_ = 39 numNodes = 4 numEdges = 0 numCmps = 4)
+net(counter_wren) has floating ports (dbId = 40 idx_ = 40 numNodes = 3 numEdges = 0 numCmps = 3)
+net(zeropadding_nextitem) has floating ports (dbId = 41 idx_ = 41 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_fifo_full) has floating ports (dbId = 42 idx_ = 42 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_fifo_empty) has floating ports (dbId = 43 idx_ = 43 numNodes = 3 numEdges = 0 numCmps = 3)
+net(zeropadding_en) has floating ports (dbId = 44 idx_ = 44 numNodes = 4 numEdges = 0 numCmps = 4)
+net(zeropadding_valid) has floating ports (dbId = 45 idx_ = 45 numNodes = 6 numEdges = 0 numCmps = 6)
+net(zeropadding_out) has floating ports (dbId = 46 idx_ = 46 numNodes = 4 numEdges = 0 numCmps = 4)
+net(demux_valid) has floating ports (dbId = 47 idx_ = 47 numNodes = 2 numEdges = 0 numCmps = 2)
+net(ppdu_i) has floating ports (dbId = 48 idx_ = 48 numNodes = 2 numEdges = 0 numCmps = 2)
+net(ppdu_q) has floating ports (dbId = 49 idx_ = 49 numNodes = 3 numEdges = 0 numCmps = 3)
+net(ppdu_valid) has floating ports (dbId = 50 idx_ = 50 numNodes = 2 numEdges = 0 numCmps = 2)
+net(qpsk_valid) has floating ports (dbId = 51 idx_ = 51 numNodes = 2 numEdges = 0 numCmps = 2)
+net(tx_done) has floating ports (dbId = 52 idx_ = 52 numNodes = 4 numEdges = 0 numCmps = 4)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_43) has floating ports (dbId = 53 idx_ = 53 numNodes = 6 numEdges = 0 numCmps = 6)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_44) has floating ports (dbId = 54 idx_ = 54 numNodes = 6 numEdges = 0 numCmps = 6)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_45) has floating ports (dbId = 55 idx_ = 55 numNodes = 4 numEdges = 0 numCmps = 4)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_46) has floating ports (dbId = 56 idx_ = 56 numNodes = 6 numEdges = 0 numCmps = 6)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_47) has floating ports (dbId = 57 idx_ = 57 numNodes = 4 numEdges = 0 numCmps = 4)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_48) has floating ports (dbId = 58 idx_ = 58 numNodes = 6 numEdges = 0 numCmps = 6)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_49) has floating ports (dbId = 59 idx_ = 59 numNodes = 5 numEdges = 0 numCmps = 5)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_50) has floating ports (dbId = 60 idx_ = 60 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_fifo_out[7]) has floating ports (dbId = 61 idx_ = 61 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_fifo_out[6]) has floating ports (dbId = 62 idx_ = 62 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_fifo_out[5]) has floating ports (dbId = 63 idx_ = 63 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_fifo_out[4]) has floating ports (dbId = 64 idx_ = 64 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_fifo_out[3]) has floating ports (dbId = 65 idx_ = 65 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_fifo_out[2]) has floating ports (dbId = 66 idx_ = 66 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_fifo_out[1]) has floating ports (dbId = 67 idx_ = 67 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_fifo_out[0]) has floating ports (dbId = 68 idx_ = 68 numNodes = 3 numEdges = 0 numCmps = 3)
+net(e_demux_branch[2]) has floating ports (dbId = 69 idx_ = 69 numNodes = 2 numEdges = 0 numCmps = 2)
+net(e_demux_branch[1]) has floating ports (dbId = 70 idx_ = 70 numNodes = 2 numEdges = 0 numCmps = 2)
+net(e_demux_branch[0]) has floating ports (dbId = 71 idx_ = 71 numNodes = 2 numEdges = 0 numCmps = 2)
+net(o_demux_branch[2]) has floating ports (dbId = 72 idx_ = 72 numNodes = 2 numEdges = 0 numCmps = 2)
+net(o_demux_branch[1]) has floating ports (dbId = 73 idx_ = 73 numNodes = 2 numEdges = 0 numCmps = 2)
+net(o_demux_branch[0]) has floating ports (dbId = 74 idx_ = 74 numNodes = 2 numEdges = 0 numCmps = 2)
+net(qpsk_real_o[1]) has floating ports (dbId = 75 idx_ = 75 numNodes = 4 numEdges = 0 numCmps = 4)
+net(qpsk_real_o[0]) has floating ports (dbId = 76 idx_ = 76 numNodes = 6 numEdges = 0 numCmps = 6)
+net(qpsk_imag_o[1]) has floating ports (dbId = 77 idx_ = 77 numNodes = 4 numEdges = 0 numCmps = 4)
+net(qpsk_imag_o[0]) has floating ports (dbId = 78 idx_ = 78 numNodes = 3 numEdges = 0 numCmps = 3)
+net(PLACE_HFSNET_5275) has floating ports (dbId = 80 idx_ = 79 numNodes = 2 numEdges = 0 numCmps = 2)
+net(ZeroPadding/PLACE_HFSNET_957) has floating ports (dbId = 83 idx_ = 80 numNodes = 5 numEdges = 0 numCmps = 5)
+net(payload_ram/PLACE_HFSNET_906) has floating ports (dbId = 84 idx_ = 81 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_ram/PLACE_HFSNET_853) has floating ports (dbId = 85 idx_ = 82 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_ram/PLACE_HFSNET_800) has floating ports (dbId = 86 idx_ = 83 numNodes = 5 numEdges = 0 numCmps = 5)
+net(payload_ram/PLACE_HFSNET_748) has floating ports (dbId = 87 idx_ = 84 numNodes = 5 numEdges = 0 numCmps = 5)
+net(payload_ram/PLACE_HFSNET_694) has floating ports (dbId = 88 idx_ = 85 numNodes = 5 numEdges = 0 numCmps = 5)
+net(payload_ram/PLACE_HFSNET_645) has floating ports (dbId = 89 idx_ = 86 numNodes = 5 numEdges = 0 numCmps = 5)
+net(payload_ram/PLACE_HFSNET_593) has floating ports (dbId = 90 idx_ = 87 numNodes = 5 numEdges = 0 numCmps = 5)
+net(payload_ram/aps_rename_1_) has floating ports (dbId = 91 idx_ = 88 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/aps_rename_2_) has floating ports (dbId = 94 idx_ = 89 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/aps_rename_3_) has floating ports (dbId = 96 idx_ = 90 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/aps_rename_4_) has floating ports (dbId = 97 idx_ = 91 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/aps_rename_5_) has floating ports (dbId = 98 idx_ = 92 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/aps_rename_6_) has floating ports (dbId = 100 idx_ = 93 numNodes = 2 numEdges = 0 numCmps = 2)
+net(symbol_mapper_to_ppdu/u_form_ppdu/net_aps_51) has floating ports (dbId = 101 idx_ = 94 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_ram/N16) has floating ports (dbId = 102 idx_ = 95 numNodes = 6 numEdges = 0 numCmps = 6)
+net(payload_ram/N17) has floating ports (dbId = 103 idx_ = 96 numNodes = 6 numEdges = 0 numCmps = 6)
+net(payload_ram/N18) has floating ports (dbId = 104 idx_ = 97 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_ram/N19) has floating ports (dbId = 105 idx_ = 98 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N20) has floating ports (dbId = 106 idx_ = 99 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N21) has floating ports (dbId = 107 idx_ = 100 numNodes = 4 numEdges = 0 numCmps = 4)
+net(payload_ram/rd_from_addr[7]) has floating ports (dbId = 108 idx_ = 101 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/PLACE_HFSNET_5281) has floating ports (dbId = 109 idx_ = 102 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N159) has floating ports (dbId = 110 idx_ = 103 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N160) has floating ports (dbId = 111 idx_ = 104 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N161) has floating ports (dbId = 112 idx_ = 105 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N162) has floating ports (dbId = 113 idx_ = 106 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N163) has floating ports (dbId = 114 idx_ = 107 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N164) has floating ports (dbId = 115 idx_ = 108 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/N165) has floating ports (dbId = 116 idx_ = 109 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[0][7]) has floating ports (dbId = 117 idx_ = 110 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[0][6]) has floating ports (dbId = 118 idx_ = 111 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[0][5]) has floating ports (dbId = 119 idx_ = 112 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[0][4]) has floating ports (dbId = 120 idx_ = 113 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[0][3]) has floating ports (dbId = 121 idx_ = 114 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[0][2]) has floating ports (dbId = 122 idx_ = 115 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[0][1]) has floating ports (dbId = 123 idx_ = 116 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[0][0]) has floating ports (dbId = 124 idx_ = 117 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[1][7]) has floating ports (dbId = 125 idx_ = 118 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[1][6]) has floating ports (dbId = 126 idx_ = 119 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[1][5]) has floating ports (dbId = 127 idx_ = 120 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[1][4]) has floating ports (dbId = 128 idx_ = 121 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[1][3]) has floating ports (dbId = 129 idx_ = 122 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[1][2]) has floating ports (dbId = 130 idx_ = 123 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[1][1]) has floating ports (dbId = 131 idx_ = 124 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[1][0]) has floating ports (dbId = 132 idx_ = 125 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[2][7]) has floating ports (dbId = 133 idx_ = 126 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[2][6]) has floating ports (dbId = 134 idx_ = 127 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[2][5]) has floating ports (dbId = 135 idx_ = 128 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[2][4]) has floating ports (dbId = 136 idx_ = 129 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[2][3]) has floating ports (dbId = 137 idx_ = 130 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[2][2]) has floating ports (dbId = 138 idx_ = 131 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[2][1]) has floating ports (dbId = 139 idx_ = 132 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[2][0]) has floating ports (dbId = 140 idx_ = 133 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[3][7]) has floating ports (dbId = 141 idx_ = 134 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[3][6]) has floating ports (dbId = 142 idx_ = 135 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[3][5]) has floating ports (dbId = 143 idx_ = 136 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[3][4]) has floating ports (dbId = 144 idx_ = 137 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[3][3]) has floating ports (dbId = 145 idx_ = 138 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[3][2]) has floating ports (dbId = 146 idx_ = 139 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[3][1]) has floating ports (dbId = 147 idx_ = 140 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[3][0]) has floating ports (dbId = 148 idx_ = 141 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[4][7]) has floating ports (dbId = 149 idx_ = 142 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[4][6]) has floating ports (dbId = 150 idx_ = 143 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[4][5]) has floating ports (dbId = 151 idx_ = 144 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[4][4]) has floating ports (dbId = 152 idx_ = 145 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[4][3]) has floating ports (dbId = 153 idx_ = 146 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[4][2]) has floating ports (dbId = 154 idx_ = 147 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[4][1]) has floating ports (dbId = 155 idx_ = 148 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[4][0]) has floating ports (dbId = 156 idx_ = 149 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[5][7]) has floating ports (dbId = 157 idx_ = 150 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[5][6]) has floating ports (dbId = 158 idx_ = 151 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[5][5]) has floating ports (dbId = 159 idx_ = 152 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[5][4]) has floating ports (dbId = 160 idx_ = 153 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[5][3]) has floating ports (dbId = 161 idx_ = 154 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[5][2]) has floating ports (dbId = 162 idx_ = 155 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[5][1]) has floating ports (dbId = 163 idx_ = 156 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[5][0]) has floating ports (dbId = 164 idx_ = 157 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[6][7]) has floating ports (dbId = 165 idx_ = 158 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[6][6]) has floating ports (dbId = 166 idx_ = 159 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[6][5]) has floating ports (dbId = 167 idx_ = 160 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[6][4]) has floating ports (dbId = 168 idx_ = 161 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[6][3]) has floating ports (dbId = 169 idx_ = 162 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[6][2]) has floating ports (dbId = 170 idx_ = 163 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[6][1]) has floating ports (dbId = 171 idx_ = 164 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[6][0]) has floating ports (dbId = 172 idx_ = 165 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[7][7]) has floating ports (dbId = 173 idx_ = 166 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[7][6]) has floating ports (dbId = 174 idx_ = 167 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[7][5]) has floating ports (dbId = 175 idx_ = 168 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[7][4]) has floating ports (dbId = 176 idx_ = 169 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[7][3]) has floating ports (dbId = 177 idx_ = 170 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[7][2]) has floating ports (dbId = 178 idx_ = 171 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[7][1]) has floating ports (dbId = 179 idx_ = 172 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[7][0]) has floating ports (dbId = 180 idx_ = 173 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[8][7]) has floating ports (dbId = 181 idx_ = 174 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[8][6]) has floating ports (dbId = 182 idx_ = 175 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[8][5]) has floating ports (dbId = 183 idx_ = 176 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[8][4]) has floating ports (dbId = 184 idx_ = 177 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[8][3]) has floating ports (dbId = 185 idx_ = 178 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[8][2]) has floating ports (dbId = 186 idx_ = 179 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[8][1]) has floating ports (dbId = 187 idx_ = 180 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[8][0]) has floating ports (dbId = 188 idx_ = 181 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[9][7]) has floating ports (dbId = 189 idx_ = 182 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[9][6]) has floating ports (dbId = 190 idx_ = 183 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[9][5]) has floating ports (dbId = 191 idx_ = 184 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[9][4]) has floating ports (dbId = 192 idx_ = 185 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[9][3]) has floating ports (dbId = 193 idx_ = 186 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[9][2]) has floating ports (dbId = 194 idx_ = 187 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[9][1]) has floating ports (dbId = 195 idx_ = 188 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[9][0]) has floating ports (dbId = 196 idx_ = 189 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[10][7]) has floating ports (dbId = 197 idx_ = 190 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[10][6]) has floating ports (dbId = 198 idx_ = 191 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[10][5]) has floating ports (dbId = 199 idx_ = 192 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[10][4]) has floating ports (dbId = 200 idx_ = 193 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[10][3]) has floating ports (dbId = 201 idx_ = 194 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[10][2]) has floating ports (dbId = 202 idx_ = 195 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[10][1]) has floating ports (dbId = 203 idx_ = 196 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[10][0]) has floating ports (dbId = 204 idx_ = 197 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[11][7]) has floating ports (dbId = 205 idx_ = 198 numNodes = 3 numEdges = 0 numCmps = 3)
+net(payload_ram/mem[11][6]) has floating ports (dbId = 206 idx_ = 199 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[11][5]) has floating ports (dbId = 207 idx_ = 200 numNodes = 2 numEdges = 0 numCmps = 2)
+net(payload_ram/mem[11][4]) has floating ports (dbId = 208 idx_ = 201 numNodes = 2 numEdges = 0 numCmps = 2)
+
+... and 45882 more nets has floating ports 
+
+Total number of nets = 47770, of which 0 are not extracted
+Total number of open nets = 46082, of which 0 are frozen
+
+Check 47770 nets, 46082 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used  117  Alloctr  122  Proc 1749 
+Printing options for 'route.common.*'
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :        true                
+detail.force_end_on_preferred_grid                      :        true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+
+Begin full DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+Checked 1/64 Partitions, Violations =   0
+Checked 2/64 Partitions, Violations =   0
+Checked 4/64 Partitions, Violations =   0
+Checked 6/64 Partitions, Violations =   0
+Checked 8/64 Partitions, Violations =   0
+Checked 10/64 Partitions, Violations =  0
+Checked 12/64 Partitions, Violations =  0
+Checked 14/64 Partitions, Violations =  0
+Checked 16/64 Partitions, Violations =  0
+Checked 18/64 Partitions, Violations =  0
+Checked 20/64 Partitions, Violations =  0
+Checked 22/64 Partitions, Violations =  0
+Checked 24/64 Partitions, Violations =  0
+Checked 26/64 Partitions, Violations =  0
+Checked 28/64 Partitions, Violations =  0
+Checked 30/64 Partitions, Violations =  0
+Checked 32/64 Partitions, Violations =  0
+Checked 34/64 Partitions, Violations =  0
+Checked 36/64 Partitions, Violations =  0
+Checked 38/64 Partitions, Violations =  0
+Checked 40/64 Partitions, Violations =  0
+Checked 42/64 Partitions, Violations =  0
+Checked 44/64 Partitions, Violations =  0
+Checked 46/64 Partitions, Violations =  0
+Checked 48/64 Partitions, Violations =  0
+Checked 50/64 Partitions, Violations =  0
+Checked 52/64 Partitions, Violations =  0
+Checked 54/64 Partitions, Violations =  0
+Checked 56/64 Partitions, Violations =  0
+Checked 58/64 Partitions, Violations =  0
+Checked 60/64 Partitions, Violations =  0
+Checked 62/64 Partitions, Violations =  0
+Checked 64/64 Partitions, Violations =  0
+[DRC CHECK] Elapsed real time: 0:00:07 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:00 usr=0:00:07 total=0:00:07
+[DRC CHECK] Stage (MB): Used    0  Alloctr    0  Proc   98 
+[DRC CHECK] Total (MB): Used  138  Alloctr  142  Proc 1862 
+Warning: No antenna rules defined, Skip antenna analysis. (ZRT-309)
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      0
+
+
+Total Wire Length =                    93078 micron
+Total Number of Contacts =             28684
+Total Number of Wires =                32024
+Total Number of PtConns =              6324
+Total Number of Routed Wires =       32024
+Total Routed Wire Length =           92270 micron
+Total Number of Routed Contacts =       28684
+        Layer             M1 :        277 micron
+        Layer             M2 :      36161 micron
+        Layer             M3 :      36831 micron
+        Layer             M4 :       3796 micron
+        Layer             M5 :       7465 micron
+        Layer             M6 :       8383 micron
+        Layer             M7 :        165 micron
+        Layer             M8 :          0 micron
+        Layer             M9 :          0 micron
+        Layer           MRDL :          0 micron
+        Via        VIA67SQ_C :          8
+        Via        VIA56SQ_C :        711
+        Via        VIA45SQ_C :        873
+        Via   VIA45SQ_C(rot) :          2
+        Via        VIA34SQ_C :       1832
+        Via   VIA34SQ_C(rot) :          3
+        Via        VIA23SQ_C :          9
+        Via   VIA23SQ_C(rot) :      15660
+        Via        VIA12SQ_C :       9419
+        Via   VIA12SQ_C(rot) :        167
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 28684 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 9586    vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (9586    vias)
+    Layer VIA2       =  0.00% (0      / 15669   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (15669   vias)
+    Layer VIA3       =  0.00% (0      / 1835    vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (1835    vias)
+    Layer VIA4       =  0.00% (0      / 875     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (875     vias)
+    Layer VIA5       =  0.00% (0      / 711     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (711     vias)
+    Layer VIA6       =  0.00% (0      / 8       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (8       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 28684 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 9586    vias)
+    Layer VIA2       =  0.00% (0      / 15669   vias)
+    Layer VIA3       =  0.00% (0      / 1835    vias)
+    Layer VIA4       =  0.00% (0      / 875     vias)
+    Layer VIA5       =  0.00% (0      / 711     vias)
+    Layer VIA6       =  0.00% (0      / 8       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 28684 vias)
+ 
+    Layer VIA1       =  0.00% (0      / 9586    vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (9586    vias)
+    Layer VIA2       =  0.00% (0      / 15669   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (15669   vias)
+    Layer VIA3       =  0.00% (0      / 1835    vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (1835    vias)
+    Layer VIA4       =  0.00% (0      / 875     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (875     vias)
+    Layer VIA5       =  0.00% (0      / 711     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (711     vias)
+    Layer VIA6       =  0.00% (0      / 8       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (8       vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 47770, of which 0 are not extracted
+Total number of open nets = 46082, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 0
+Total number of antenna violations = no antenna rules defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+
+icc2_shell> gui_show_error_data
+icc2_shell> exit
+Maximum memory usage for this session: 640.02 MB
+CPU usage for this session:     16 seconds (  0.00 hours)
+Elapsed time for this session:    183 seconds (  0.05 hours)
+Thank you for using IC Compiler II.
+

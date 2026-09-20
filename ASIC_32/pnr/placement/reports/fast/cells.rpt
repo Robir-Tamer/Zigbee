@@ -1,0 +1,344 @@
+****************************************
+Report : cell
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 03:59:10 2026
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model
+    U - Unbound (missing)
+    s - user size_only
+    S - implicit size_only
+    d - user dont_touch
+    D - derived dont_touch
+    o - synthetic operator
+
+
+Cell                      Reference       Library          Attributes
+--------------------------------------------------------------------------------
+DEMUX                     e_o_demux_46                     h
+DQPSK_CSK                 dqpsk_csk_top_46_1024_2_6        h
+PLACE_HFSINV_11215_5357   INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_1362_627     INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_141_5396     INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_1612_5393    INVX4_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_19796_5385   INVX8_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_198_760      INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_203_621      INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_216_622      INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_243_711      INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_246_918      INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_2850_5365    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_292_626      INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_302_766      INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_3035_5367    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_31_705       INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_391_767      INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_4402_5374    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_4467_5375    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_4577_5376    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_458_5397     INVX16_LVT      saed32_lvt|saed32_lvt_std
+PLACE_HFSINV_4695_5377    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_50_822       INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_5843_1022    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_6000_5384    INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_6068_5363    INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_635_5398     INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_8810_5343    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_896_823      INVX2_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_9063_5338    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_9131_5340    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_9183_5341    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_HFSINV_9590_5345    INVX1_RVT       saed32_rvt|saed32_rvt_std
+PLACE_optlc_7687          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7688          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7689          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7690          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7691          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7692          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7693          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7694          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7695          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7696          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7697          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7698          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7699          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7700          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7701          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7702          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7703          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7704          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7705          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7706          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7707          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7708          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7709          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7710          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7711          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7712          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7713          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7714          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7715          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7716          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7717          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7718          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7719          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7720          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7721          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7722          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7723          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7724          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7725          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7726          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7727          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7728          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7729          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7730          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7731          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7732          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7733          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7734          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7735          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7736          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7737          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7738          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7739          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7740          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7741          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7742          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7743          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7744          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7745          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7746          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7747          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7748          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7749          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7750          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7751          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7752          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7753          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7754          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7755          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7756          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7757          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7758          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7759          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7760          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7761          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7762          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7763          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7764          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7765          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7766          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7767          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7768          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7769          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7770          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7771          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7772          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7773          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7774          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7775          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7776          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7777          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7778          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7779          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7780          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7781          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7782          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7783          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7784          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7785          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7786          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7787          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7788          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7789          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7790          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7791          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7792          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7793          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7794          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7795          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7796          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7797          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7798          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7799          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7800          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7801          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7802          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7803          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7804          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7805          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7806          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7807          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7808          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7809          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7810          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7811          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7812          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7813          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7814          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7815          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7816          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7817          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7818          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7819          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7820          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7821          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7822          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7823          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7824          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7825          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7826          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7827          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7828          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7829          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7830          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7831          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7832          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7833          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7834          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7835          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7836          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7837          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7838          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7839          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7840          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7841          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7842          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7843          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7844          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7845          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7846          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7847          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7848          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7849          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7850          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7851          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7852          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7853          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7854          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7855          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7856          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7857          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7858          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7859          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7860          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7861          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7862          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7863          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7864          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7865          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7866          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7867          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7868          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7869          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7870          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7871          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7872          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7873          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7874          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7875          TIEH_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7877          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7878          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7879          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7880          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7881          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7882          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7883          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7884          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7885          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7886          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7887          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7888          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7889          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7890          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7891          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7892          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7893          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7894          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7895          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7896          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7897          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7898          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7899          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7900          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7901          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7902          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7903          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7904          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7905          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7906          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7907          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7908          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7909          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7910          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7911          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7912          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7913          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7914          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7915          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7916          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7917          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7918          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7919          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7920          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7921          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7922          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7923          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7924          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PLACE_optlc_7925          TIEL_HVT        saed32_hvt|saed32_hvt_std
+PayLoad_Counter           payload_counter_payload_w8_max_payload_length127
+                                                           h
+QPSK                      QPSK_mapper                      h
+ZeroPadding               zeropadding_8_46_127_12          h
+my_controller             controller_46_127                h
+payload_ram               FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128
+                                                           h
+spare_cell_0              NAND2X1_HVT     saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_0_0            INVX1_HVT       saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_0_1            INVX1_HVT       saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_0_2            INVX1_HVT       saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_0_3            INVX1_HVT       saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_1              NAND2X1_HVT     saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_1_0            MUX21X1_HVT     saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_1_1            MUX21X1_HVT     saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_1_2            MUX21X1_HVT     saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_1_3            MUX21X1_HVT     saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_2              NAND2X1_HVT     saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_2_0            OR2X1_HVT       saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_2_1            OR2X1_HVT       saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_2_2            OR2X1_HVT       saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_3              NAND2X1_HVT     saed32_hvt|saed32_hvt_std
+                                                           d
+spare_cell_3_0            SDFFX1_HVT      saed32_hvt|saed32_hvt_std
+                                                           n, d
+spare_cell_3_1            SDFFX1_HVT      saed32_hvt|saed32_hvt_std
+                                                           n, d
+spare_cell_3_2            SDFFX1_HVT      saed32_hvt|saed32_hvt_std
+                                                           n, d
+symbol_mapper_to_ppdu     top_sym_to_ppdu_46               h
+--------------------------------------------------------------------------------
+Total 296 cells
+
+1

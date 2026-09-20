@@ -1,0 +1,186 @@
+****************************************
+Report : Data Mismatches
+Version: O-2018.06-SP1
+Date   : Sun Sep 20 22:12:57 2026
+****************************************
+No mismatches exist on the design.
+1
+1
+NEX: 40965 nets
+NEX: 99.96%(40948/40965) nets are valid placed
+
+Histogram of "num of nodes per net"
+  value: 	percent%
+     0: 	0.0% 
+     2: 	53.5% (peak)
+     3: 	22.2% 
+     4: 	9.1% (average = 4) 
+     5: 	15.2% 
+    10000: 	0.0% 
+
+
+Histogram of "net bbox size(um)"
+  value: 	percent%
+   0.00: 	0.0% 
+   0.50: 	0.0% 
+   1.00: 	3.4% 
+   2.00: 	7.7% 
+   3.00: 	3.7% 
+   4.00: 	7.7% (peak)
+   5.00: 	25.1% 
+   10.00: 	19.8% 
+   20.00: 	9.9% (average = 29.1) 
+   40.00: 	14.2% 
+   100.00: 	7.9% 
+   200.00: 	0.4% 
+   400.00: 	0.0% 
+
+
+Histogram of "net bbox aspect()"
+  value: 	percent%
+   0.00: 	0.0% 
+   1.00: 	7.8% 
+   1.10: 	8.6% (peak)
+   1.20: 	6.5% 
+   1.30: 	6.3% 
+   1.40: 	4.9% 
+   1.50: 	4.7% 
+   1.60: 	4.4% 
+   1.70: 	4.0% 
+   1.80: 	3.7% 
+   1.90: 	3.3% 
+   2.00: 	13.4% 
+   2.50: 	8.8% (average = 2.7) 
+   3.00: 	10.3% 
+   4.00: 	5.0% 
+   5.00: 	5.9% 
+   10.00: 	1.6% 
+   20.00: 	0.4% 
+   30.00: 	0.1% 
+   40.00: 	0.1% 
+   50.00: 	0.1% 
+
+NEX: 40732 insts
+
+Histogram of "inst bbox size(um)"
+  value: 	percent%
+   1.00: 	53.6% (peak)
+   2.00: 	9.7% 
+   3.00: 	0.8% (average = 3.1) 
+   4.00: 	15.5% 
+   5.00: 	20.4% 
+
+NEX: 9 NDR rules: 
+  [0] clk_network_NDR_root
+  [1] clk_network_NDR_internal
+  [2] clk_network_NDR_leaf
+  [3] default_rule_equivalent_ndr_double_spacing
+  [4] clk_network_NDR_root_ext_spacing
+  [5] clk_network_NDR_internal_ext_spacing
+  [6] LOPT_M6_M7
+  [7] LOPT_M3_M7
+  [8] ICC2_GENERATED_DEFAULT_SPACING_RULE
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 enabled
+Timing Window Analysis:                    enabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     enabled
+Advanced Receiver Model:                   disabled
+************************************************************
+1
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M3
+Cell Max-Routing-Layer = M7
+Warning: Cannot find a default contact code for layer CO. (ZRT-022)
+rule clk_network_NDR_leaf equivalent to default rule
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Info: number of net_type_blockage: 0 
+soft rule ICC2_GENERATED_DEFAULT_SPACING_RULE_3_8_wire is redundant
+soft rule LOPT_M3_M7_3_8_wire is redundant
+soft rule LOPT_M6_M7_3_8_wire is redundant
+Printing options for 'route.common.*'
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :	 true                
+detail.force_end_on_preferred_grid                      :	 true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+
+============================================
+==  Check for overlap of standard cells   ==
+============================================
+
+>>>>>> No overlap of standard cells found
+
+============================================
+==     Check for min-grid violations      ==
+============================================
+
+>>>>>> No min-grid violations found
+
+
+============================================
+==    Check for out-of-boundary ports     ==
+============================================
+
+>>>>>> No out-of-boundary error found
+
+============================================
+==        Check for blocked ports         ==
+============================================
+
+>>>>>> No blocked ports found
+
+>>>>>> No blocked nets found
+
+============================================
+==     Check for shielding violations     ==
+============================================
+
+>>>>>> The following Non-PG net has a shape with shape_use shield_route
+
+>>> No non-PG net has a shape with shape_use shield_route.
+
+>>>>>> The following PG net has shape with shape_use detail_route and shape length is too long.
+
+>>> No PG net has shape with shape_use detail_route and shape length is too long.
+
+>>>>>> The following nets with shield non-default rule has no internal data representation in Zroute.
+
+>>> No nets with shield non-default rule has no internal data representation in Zroute.
+
+============================================
+==     Check for via cut blockage violation   ==
+============================================
+
+>>>>>> The following via cut blockages are wrongly treated as real vias.
+
+>>> No via cut blockage is wrongly treated as real via.
+
+============================================
+==     Check for custom via definition    ==
+============================================
+
+>>> No custom via definition has too many cuts
+
+============================================
+==          Check for via master          ==
+============================================
+
+>>> The total number of via master definition is 306
+
+===============================================
+==     Check non-default rule setting        ==
+===============================================
+
+>>> No NDR width is larger than signalRouteMaxWidth
+
+>>> No NDR shield width is larger than signalRouteMaxWidth
+
+End of check_routability
+1

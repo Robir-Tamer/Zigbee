@@ -1,0 +1,15 @@
+****************************************
+Report : congestion
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 05:48:05 2026
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |    3791 |    11 |    2981  ( 1.47%) |       2
+H routing |    1414 |     3 |    1347  ( 1.33%) |       5
+V routing |    2377 |    11 |    1634  ( 1.62%) |       2
+
+1

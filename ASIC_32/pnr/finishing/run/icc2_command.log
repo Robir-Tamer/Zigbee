@@ -1,0 +1,212 @@
+#@ # 
+#@ # Running icc2_shell Version O-2018.06-SP1 for linux64 -- Jul 17, 2018
+#@ # Date:   Mon Sep 21 05:43:57 2026
+#@ # Run by: ICer@IC_EDA
+#@ 
+
+####################################################################################
+#########################################################
+#### Section 1 : Config Definition ####
+#########################################################
+####################################################################################
+##### Project Name #####
+set top_module "zigbee"
+set proj_path "/home/ICer/Desktop/shared_folder/ROBO/Zigbee/ASIC_32"
+##### Library Type #####
+set lib_typ "syn"
+set SSLIB "/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db"
+set rate "fast"
+if {$rate == "fast"} {
+       set param "F"
+} elseif {$rate == "slow"} {
+       set param "S"
+} elseif {$rate == "hybrid"} {
+       set param "H"
+}
+##### Design Library #####
+set dlib_dir "${proj_path}/pnr/design_lib/outputs/${rate}"
+set clock_names [list clk]
+##### Layers #####
+set hm_top M9
+set vm_top M8
+##### Stages #####
+set prev_stage      "routing"
+set current_stage   "finishing"
+###################################################################################
+#########################################################
+#### Section 2 : Design Library Setup ####
+#########################################################
+####################################################################################
+##### Open The Last Stage's Block #####
+open_block $dlib_dir/${top_module}_${param}.dlib:${top_module}_${param}_${prev_stage}.design
+##### Copy The Last Stage's Block to a new one to start Editing #####
+copy_block    -from_block   ${top_module}_${param}.dlib:${top_module}_${param}_${prev_stage}.design               -to           ${top_module}_${param}.dlib:${top_module}_${param}_${current_stage}.design
+##### Change The Current Block #####
+current_block ${top_module}_${param}_${current_stage}.design
+###################################################################################
+#########################################################
+#### Section 3 : Tool Setup ####
+#########################################################
+####################################################################################
+##### For MultiThreading #####
+set_host_options -max_cores 12
+##### DcapCell #####
+set dcap_fillers [get_lib_cell */*DCAP*HVT]
+##### Filler Cells #####
+set std_filler [get_lib_cell */*SHFILL*HVT]
+set_app_options -list {place.legalize.enable_advanced_legalizer {false}}
+###################################################################################
+#########################################################
+#### Section 5 : Connect ####
+#########################################################
+####################################################################################
+connect_pg_net -net "VDD" [get_pins -hierarchical */VDD]
+connect_pg_net -net "VSS" [get_pins -hierarchical */VSS]
+connect_pg_net -automatic
+###################################################################################
+#########################################################
+#### Section 7 : Filler Cells ####
+#########################################################
+####################################################################################
+set_attribute  [get_lib_cells */*SHFILL*HVT]  dont_touch false
+set_attribute  [get_lib_cells */*SHFILL*HVT]  dont_use false
+set std_fillers_128  "saed32_hvt|saed32_hvt_std/SHFILL128_HVT "
+set std_fillers_64   "saed32_hvt|saed32_hvt_std/SHFILL64_HVT"
+set std_fillers_3    "saed32_hvt|saed32_hvt_std/SHFILL3_HVT"
+set std_fillers_2    "saed32_hvt|saed32_hvt_std/SHFILL2_HVT"
+set std_fillers_1    "saed32_hvt|saed32_hvt_std/SHFILL1_HVT"
+create_stdcell_fillers  -lib_cells      $std_fillers_128                         -prefix         "FILLER128_"                         -post_eco                         -continue_on_error
+create_stdcell_fillers  -lib_cells  $std_fillers_64                         -prefix     "FILLER64_"                         -post_eco                         -continue_on_error
+create_stdcell_fillers  -lib_cells  $std_fillers_2                         -prefix     "FILLER2_"                         -post_eco                         -continue_on_error                         -ignore_hard_blockages                        -rules no_1x
+create_stdcell_fillers  -lib_cells  $std_fillers_1                         -prefix     "FILLER1_"                         -post_eco                         -continue_on_error                         -rules no_1x
+sizeof_collection   [get_cells "*FILLER128_*"]
+sizeof_collection   [get_cells "*FILLER64_*"]
+sizeof_collection   [get_cells "*FILLER3_*"]
+sizeof_collection   [get_cells "*FILLER2_*"]
+sizeof_collection   [get_cells "*FILLER1_*"]
+sizeof_collection   [get_cells "*DCAP_*"]
+sizeof_collection   [get_cells "*FILLER*"]
+check_routes
+###################################################################################
+#########################################################
+#### Section 9 : Connect ####
+#########################################################
+####################################################################################
+connect_pg_net -net "VDD" [get_pins -hierarchical */VDD]
+connect_pg_net -net "VSS" [get_pins -hierarchical */VSS]
+###################################################################################
+#########################################################
+#### Section 10 : Reporting  ####
+#########################################################
+####################################################################################
+report_congestion                         > ../reports/${rate}/Congestion.rpt
+check_pg_drc                              > ../reports/${rate}/drc.rpt
+report_qor                                > ../reports/${rate}/post_qor.rpt
+# If there is a timing Violations go to prime time to solve them before proceeding to the next steps
+report_timing                               > ../reports/timing.rpt
+report_timing -delay max -max_paths 10      > ../reports/crit_paths.rpt
+report_routing_status                       > ../reports/routing_status.rpt
+check_routes -drc true                                   > ../reports/${rate}/DRC.rpt
+check_pg_connectivity                                    > ../reports/${rate}/pg_drc_connection.rpt
+analyze_design_violations                                > ../reports/${rate}/setup_check_paths.rpt
+report_design  -all                                      > ../reports/${rate}/design.rpt
+check_legality                                           > ../reports/${rate}/leglaity.rpt
+report_utilization                                       > ../reports/${rate}/Utilization.rpt
+####################################################################################
+#########################################################
+#### Section 11 : Saving The Block  ####
+#########################################################
+####################################################################################
+write_def                                               ../outputs/${rate}/${top_module}.write_def
+write_verilog -include_physical_only_cells -output      ../outputs/${rate}/${top_module}.v
+write_sdc     -output                                   ../outputs/${rate}/${top_module}.sdc
+write_gds -output                                       ../outputs/${rate}/${top_module}.gds
+# Extract the RC parasitics from the routed layout
+#extract_parasitics
+# Write out the SPEF file for signoff STA
+write_parasitics -format spef -output ../outputs/${rate}/${top_module}.spef
+gui_start
+gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Logical Cells}
+win_set_filter -visible -class cell -filter {hard_macro_margin hard_margin route_blockage_margin soft_margin}
+win_set_filter -visible -class placement_blockage -filter {wiring} -layer {0-82}
+win_set_filter -expand_cell_types {soft_macro  }
+win_set_select_class -visible {cell port bound routing_blockage shaping_blockage pg_region pin_blockage block_shielding topology_node topology_edge core_area die_area edit_group shape via terminal fill_cell placement_blockage }
+win_set_filter -class cell -filter {cell_array hard_macro_margin hard_margin route_blockage_margin soft_margin}
+win_set_filter -class placement_blockage -filter {wiring} -layer {0-82}
+win_set_select_class {cell port bound routing_blockage shaping_blockage pg_region pin_blockage topology_node topology_edge edit_group shape via placement_blockage }
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {231.699 271.440}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {231.595 271.374}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {231.404 271.565}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {234.668 267.941}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {234.684 267.947}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {234.674 267.955}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {234.675 267.951}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {234.677 267.947}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {234.689 267.934}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {234.657 267.892}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {234.653 267.935}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {234.653 267.935}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {234.653 267.935}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {235.417 268.699}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {235.417 268.699}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {235.930 269.488}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {235.930 269.488}
+gui_show_error_data
+gui_set_error_browser_option -show_mode selected
+gui_set_error_browser_option -view_mode zoom
+gui_set_error_browser_option -zoom_factor 1.000000
+gui_set_error_browser_option -grouping type
+gui_error_browser -show
+gui_open_error_data -name {DRC_report_by_check_pg_drc}
+gui_open_error_data -name {__zigbee_F_finishing_check_legality.err}
+gui_open_error_data -name {zroute.err}
+gui_open_error_data -name {zigbee_F_finishing_floatingPG.err}
+gui_error_browser -hide
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {cellDensityMap} -show {true}
+gui_set_map_option -map {cellDensityMap} -option {area_type} -value {Reset}
+gui_set_map_option -map {cellDensityMap} -option {area_type} -value {WholeDesign}
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {cellMapUtilMap} -show {true}
+cm_density_map -reload -grid_width 5 -grid_height 5
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {273.613 293.245}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {273.613 293.245}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {273.613 293.245}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {273.612 293.219}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {273.611 293.194}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {273.606 293.197}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {273.606 293.197}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {273.605 293.223}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {273.613 293.245}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {273.613 293.245}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {273.613 293.245}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {273.613 294.064}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {275.251 295.702}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {275.251 295.702}
+gui_start
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {cellDensityMap} -show {true}
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {globalCongestionMap} -show {true}
+gui_set_map_option -map {globalCongestionMap} -option {rule_level} -value {hard}
+gui_set_map_option -map {globalCongestionMap} -option {layers} -value {M2 M3 M4 M5 M6 M7 M8 M9}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {320.179 353.921}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {320.259 353.923}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {305.163 352.776}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {305.125 352.815}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {305.134 352.806}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {305.140 352.800}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {305.163 352.776}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {305.354 352.776}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {304.972 352.776}
+gui_zoom -window [gui_get_current_window -view] -full
+report_constraint > ../reports/fast/constraints.rpt
+report_constraints > ../reports/fast/constraints.rpt
+sizeof_collection   [get_cells "*FILLER*"]
+report_constraints -max_transition
+report_constraints -max_transition -verbose
+report_constraints -max_transition -significant_digits
+report_constraints -max_transition -significant_digits 10
+report_constraints -max_transition -max_capacitance -nosplit
+report_constraint_groups
+report_timing -transition_time
+report_timing -transition_time -capacitance -max_paths 1
+exit
+save_block
+exit

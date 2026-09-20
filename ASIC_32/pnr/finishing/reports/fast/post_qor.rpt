@@ -1,0 +1,106 @@
+****************************************
+Report : qor
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 05:48:10 2026
+****************************************
+Information: Timer using 'SI, Timing Window Analysis, CRPR'. (TIM-050)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 enabled
+Timing Window Analysis:                    enabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     enabled
+Advanced Receiver Model:                   disabled
+************************************************************
+Warning: Corner default:  0 process number, 3 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 114189 cells affected for early, 114189 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned ON for design 'zigbee_F.dlib:zigbee_F_finishing.design'. (TIM-125)
+Information: Design zigbee_F_finishing has 47509 nets, 0 global routed, 47507 detail routed. (NEX-024)
+Information: The RC mode used is DR for design 'zigbee'. (NEX-022)
+---extraction options---
+Corner: default
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ late_ccap_scale               : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+ early_ccap_scale              : 1
+Global options:
+ late_ccap_threshold       : 0.003pf
+ late_ccap_ratio           : 0.03
+ reference_direction       : use_from_tluplus
+ real_metalfill_extraction : none
+ virtual_shield_extraction : true
+---app options---
+ host.max_cores                   : 12
+ extract.connect_open           : true
+ extract.incremental_extraction : true
+ extract.enable_coupling_cap    : true
+Extracting design: zigbee_F_finishing 
+Information: coupling capacitance is created explicitly. (NEX-029)
+Information: 47507 nets are successfully extracted. (NEX-028)
+Information: Advanced receiver model has not been enabled for detailed routed design. (TIM-204)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 47507, routed nets = 47507, across physical hierarchy nets = 0, parasitics cached nets = 47507, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+
+
+Scenario           'default'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                     15
+Critical Path Length:              7.98
+Critical Path Slack:              22.28
+Critical Path Clk Period:         31.25
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.23
+Total Hold Violation:             -5.89
+No. of Hold Violations:            1341
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:             44
+Hierarchical Port Count:           4141
+Leaf Cell Count:                  47293
+Buf/Inv Cell Count:               27841
+Buf Cell Count:                   17485
+Inv Cell Count:                   10356
+CT Buf/Inv Cell Count:                0
+Combinational Cell Count:         41136
+Sequential Cell Count:             6157
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:           179554.77
+Noncombinational Area:         40803.07
+Buf/Inv Area:                 146093.92
+Total Buffer Area:            131702.76
+Total Inverter Area:           14391.16
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                       0.00
+Net YLength:                       0.00
+----------------------------------------
+Cell Area (netlist):                         220357.84
+Cell Area (netlist and physical only):       262078.38
+Net Length:                        0.00
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:             47526
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+1

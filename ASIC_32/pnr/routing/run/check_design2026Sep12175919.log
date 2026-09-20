@@ -1,0 +1,174 @@
+****************************************
+Report : Data Mismatches
+Version: O-2018.06-SP1
+Date   : Sat Sep 12 17:59:19 2026
+****************************************
+No mismatches exist on the design.
+1
+1
+NEX: 841 nets
+NEX: 99.52%(837/841) nets are valid placed
+
+Histogram of "num of nodes per net"
+  value: 	percent%
+     0: 	0.5% 
+     2: 	52.0% (peak)
+     3: 	16.1% 
+     4: 	11.7% 
+     5: 	16.6% (average = 5) 
+    10: 	3.0% 
+    400: 	0.2% 
+
+
+Histogram of "net bbox size(um)"
+  value: 	percent%
+   0.00: 	0.5% 
+   1.00: 	0.2% 
+   2.00: 	2.0% 
+   3.00: 	6.4% 
+   4.00: 	8.2% (peak)
+   5.00: 	27.2% 
+   10.00: 	25.8% 
+   20.00: 	16.6% (average = 20.4) 
+   40.00: 	10.3% 
+   100.00: 	2.6% 
+
+
+Histogram of "net bbox aspect()"
+  value: 	percent%
+   0.00: 	0.5% 
+   1.00: 	9.2% (peak)
+   1.10: 	8.2% 
+   1.20: 	8.2% 
+   1.30: 	6.1% 
+   1.40: 	4.8% 
+   1.50: 	5.9% 
+   1.60: 	4.0% 
+   1.70: 	3.6% 
+   1.80: 	3.3% 
+   1.90: 	3.1% 
+   2.00: 	14.0% 
+   2.50: 	8.4% (average = 2.6) 
+   3.00: 	7.4% 
+   4.00: 	4.9% 
+   5.00: 	6.7% 
+   10.00: 	1.2% 
+   20.00: 	0.5% 
+   40.00: 	0.1% 
+
+NEX: 772 insts
+
+Histogram of "inst bbox size(um)"
+  value: 	percent%
+   3.00: 	62.6% (peak)
+   4.00: 	12.7% (average = 4.9) 
+   5.00: 	6.0% 
+   10.00: 	18.8% 
+
+NEX: 9 NDR rules: 
+  [0] clk_network_NDR_root
+  [1] clk_network_NDR_internal
+  [2] clk_network_NDR_leaf
+  [3] default_rule_equivalent_ndr_double_spacing
+  [4] clk_network_NDR_root_ext_spacing
+  [5] clk_network_NDR_internal_ext_spacing
+  [6] LOPT_M6_M7
+  [7] LOPT_M3_M7
+  [8] ICC2_GENERATED_DEFAULT_SPACING_RULE
+1
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Warning: Ignore contact DIFFCON. (ZRT-015)
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M3
+Cell Max-Routing-Layer = M7
+rule clk_network_NDR_leaf equivalent to default rule
+Info: number of net_type_blockage: 0 
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.320 may be too small: wire/via-down 0.315, wire/via-up 0.330. (ZRT-026)
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M2 pitch 0.320 may be too small: wire/via-down 0.360, wire/via-up 0.320. (ZRT-026)
+soft rule ICC2_GENERATED_DEFAULT_SPACING_RULE_3_8_wire is redundant
+soft rule LOPT_M3_M7_3_8_wire is redundant
+soft rule LOPT_M6_M7_3_8_wire is redundant
+Printing options for 'route.common.*'
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :	 true                
+detail.force_end_on_preferred_grid                      :	 true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+
+============================================
+==  Check for overlap of standard cells   ==
+============================================
+
+>>>>>> No overlap of standard cells found
+
+============================================
+==     Check for min-grid violations      ==
+============================================
+
+>>>>>> No min-grid violations found
+
+
+============================================
+==    Check for out-of-boundary ports     ==
+============================================
+
+>>>>>> No out-of-boundary error found
+
+============================================
+==        Check for blocked ports         ==
+============================================
+
+>>>>>> No blocked ports found
+
+>>>>>> No blocked nets found
+
+============================================
+==     Check for shielding violations     ==
+============================================
+
+>>>>>> The following Non-PG net has a shape with shape_use shield_route
+
+>>> No non-PG net has a shape with shape_use shield_route.
+
+>>>>>> The following PG net has shape with shape_use detail_route and shape length is too long.
+
+>>> No PG net has shape with shape_use detail_route and shape length is too long.
+
+>>>>>> The following nets with shield non-default rule has no internal data representation in Zroute.
+
+>>> No nets with shield non-default rule has no internal data representation in Zroute.
+
+============================================
+==     Check for via cut blockage violation   ==
+============================================
+
+>>>>>> The following via cut blockages are wrongly treated as real vias.
+
+>>> No via cut blockage is wrongly treated as real via.
+
+============================================
+==     Check for custom via definition    ==
+============================================
+
+>>> No custom via definition has too many cuts
+
+============================================
+==          Check for via master          ==
+============================================
+
+>>> The total number of via master definition is 85
+
+===============================================
+==     Check non-default rule setting        ==
+===============================================
+
+>>> No NDR width is larger than signalRouteMaxWidth
+
+>>> No NDR shield width is larger than signalRouteMaxWidth
+
+End of check_routability
+1

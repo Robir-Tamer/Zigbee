@@ -1,0 +1,8 @@
+#@ # 
+#@ # Running icc2_shell Version O-2018.06-SP1 for linux64 -- Jul 17, 2018
+#@ # Date:   Sun Sep 20 00:55:16 2026
+#@ # Run by: ICer@IC_EDA
+#@ 
+
+source -echo -verbose ../script/design_lib.tcl
+exit

@@ -1,0 +1,74 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 03:59:10 2026
+****************************************
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: DQPSK_CSK/Imag_Sync_FIFO/mem_reg[957][0] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  input external delay                             6.25      6.25
+
+  rst_n (in)                                       0.00      6.25 r
+  PLACE_HFSINV_19796_5385/Y (INVX8_RVT)            0.02      6.27 f
+  PLACE_HFSINV_11215_5357/Y (INVX2_RVT)            0.04      6.30 r
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSINV_7486_5356/Y (INVX1_RVT)
+                                                   0.01      6.32 f
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSINV_7445_5355/Y (INVX2_RVT)
+                                                   0.03      6.35 r
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSINV_7322_5354/Y (INVX1_RVT)
+                                                   0.01      6.36 f
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSINV_7309_5353/Y (INVX1_RVT)
+                                                   0.02      6.38 r
+  DQPSK_CSK/Imag_Sync_FIFO/U49/Y (NAND2X0_RVT)     0.06      6.44 f
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSINV_1317_4976/Y (INVX1_RVT)
+                                                   0.02      6.47 r
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_RLB_7641/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_RLB_7643/Y (INVX1_LVT)
+                                                   0.02      6.52 r
+  DQPSK_CSK/Imag_Sync_FIFO/U21/Y (NAND3X1_HVT)     0.17      6.69 f
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSBUF_2763_2075/Y (NBUFFX4_RVT)
+                                                   0.06      6.75 f
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSINV_2177_2070/Y (INVX4_RVT)
+                                                   0.03      6.78 r
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSINV_1784_2069/Y (INVX1_RVT)
+                                                   0.01      6.79 f
+  DQPSK_CSK/Imag_Sync_FIFO/PLACE_HFSINV_1778_2068/Y (INVX1_RVT)
+                                                   0.03      6.82 r
+  DQPSK_CSK/Imag_Sync_FIFO/U3949/Y (NAND2X0_HVT)   0.08      6.90 f
+  DQPSK_CSK/Imag_Sync_FIFO/U252/Y (INVX1_HVT)      0.02      6.92 r
+  DQPSK_CSK/Imag_Sync_FIFO/U3948/Y (AO22X1_HVT)    0.06      6.99 r
+  DQPSK_CSK/Imag_Sync_FIFO/mem_reg[957][0]/D (DFFX1_HVT)
+                                                   0.00      6.99 r
+  data arrival time                                          6.99
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (ideal)                      0.00     31.25
+  DQPSK_CSK/Imag_Sync_FIFO/mem_reg[957][0]/CLK (DFFX1_HVT)
+                                                   0.00     31.25 r
+  clock uncertainty                               -0.94     30.31
+  library setup time                              -0.04     30.27
+  data required time                                        30.27
+  ------------------------------------------------------------------------
+  data required time                                        30.27
+  data arrival time                                         -6.99
+  ------------------------------------------------------------------------
+  slack (MET)                                               23.28
+
+
+1

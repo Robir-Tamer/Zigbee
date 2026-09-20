@@ -1,0 +1,173 @@
+Info:  Net imp:/WORK/dqpsk_csk_top_46_1024_2_6_DW01_sub_0/CO is undriven.
+Info:  Net imp:/WORK/dqpsk_csk_top_46_1024_2_6_DW01_add_0/CO is undriven.
+Info:  guide_replace 17 (Line: 111)  Could not find pre_resource 'add_56' in design 'e_o_demux_46'.
+Info:  SVF Operation 17 (Line: 111) - replace.  Status: rejected
+
+Info:  guide_replace 18 (Line: 126)  Could not find pre_resource 'add_65' in design 'e_o_demux_46'.
+Info:  SVF Operation 18 (Line: 126) - replace.  Status: rejected
+
+Info:  guide_uniquify 55 (Line: 291)  Cannot find object "alt64" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 55 (Line: 291) - uniquify.  Status: rejected
+Info:  guide_uniquify 56 (Line: 296)  Cannot find object "alt63" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 56 (Line: 296) - uniquify.  Status: rejected
+Info:  guide_uniquify 57 (Line: 301)  Cannot find object "alt62" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 57 (Line: 301) - uniquify.  Status: rejected
+Info:  guide_uniquify 58 (Line: 306)  Cannot find object "alt61" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 58 (Line: 306) - uniquify.  Status: rejected
+Info:  guide_uniquify 59 (Line: 311)  Cannot find object "alt60" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 59 (Line: 311) - uniquify.  Status: rejected
+Info:  guide_uniquify 60 (Line: 316)  Cannot find object "alt59" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 60 (Line: 316) - uniquify.  Status: rejected
+Info:  guide_uniquify 61 (Line: 321)  Cannot find object "alt52" in design 'zigbee_rate_modeF'.
+Info:  guide_transformation 110 (Line: 801)  Could not find pre_resource 'add_76' in design 'zeropadding_8_46_127_12'.
+Info:  guide_transformation 110 (Line: 801)  Could not find pre_resource 'add_91' in design 'zeropadding_8_46_127_12'.
+Info:  guide_transformation 110 (Line: 801)  Could not find pre_resource 'add_128' in design 'zeropadding_8_46_127_12'.
+Info:  guide_transformation 110 (Line: 801)  Could not find pre_resource 'add_139' in design 'zeropadding_8_46_127_12'.
+Info:  SVF Operation 110 (Line: 801) - transformation_share.  Status: rejected
+
+Info:  guide_transformation 111 (Line: 823)  Could not find pre_resource 'add_102' in design 'zeropadding_8_46_127_12'.
+Info:  guide_transformation 111 (Line: 823)  Could not find pre_resource 'add_154' in design 'zeropadding_8_46_127_12'.
+Info:  SVF Operation 111 (Line: 823) - transformation_share.  Status: rejected
+
+Warning:  guide_reg_constant 91 (Line: 647) Could not verify SVF constant 0 register: ref:/WORK/form_ppdu_46/reg_shr_reg[47] due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 93 (Line: 663) Could not verify SVF constant 1 register: ref:/WORK/interleaver_46_0/next_item_reg due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 98 (Line: 711) Could not verify SVF constant 0 register: ref:/WORK/preamble_sfd_gen_46/preamble_sfd_reg[47] due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 99 (Line: 717) Could not verify SVF constant 0 register: ref:/WORK/preamble_sfd_gen_46/preamble_sfd_reg[46] due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 100 (Line: 723) Could not verify SVF constant 0 register: ref:/WORK/preamble_sfd_gen_46/preamble_sfd_reg[42] due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 101 (Line: 729) Could not verify SVF constant 0 register: ref:/WORK/preamble_sfd_gen_46/preamble_sfd_reg[41] due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 102 (Line: 735) Could not verify SVF constant 0 register: ref:/WORK/preamble_sfd_gen_46/preamble_sfd_reg[39] due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 103 (Line: 741) Could not verify SVF constant 0 register: ref:/WORK/preamble_sfd_gen_46/preamble_sfd_reg[38] due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 104 (Line: 747) Could not verify SVF constant 0 register: ref:/WORK/preamble_sfd_gen_46/preamble_sfd_reg[36] due to register pre-verification failure (FM-348)
+Warning:  guide_reg_constant 105 (Line: 753) Could not verify SVF constant 0 register: ref:/WORK/preamble_sfd_gen_46/preamble_sfd_reg[32] due to register pre-verification failure (FM-348)
+Info:  SVF Operation 91 (Line: 647) - reg_constant.  Status: rejected
+Info:  SVF Operation 93 (Line: 663) - reg_constant.  Status: rejected
+Info:  SVF Operation 98 (Line: 711) - reg_constant.  Status: rejected
+Info:  SVF Operation 99 (Line: 717) - reg_constant.  Status: rejected
+Info:  SVF Operation 100 (Line: 723) - reg_constant.  Status: rejected
+Info:  SVF Operation 101 (Line: 729) - reg_constant.  Status: rejected
+Info:  SVF Operation 102 (Line: 735) - reg_constant.  Status: rejected
+Info:  SVF Operation 103 (Line: 741) - reg_constant.  Status: rejected
+Info:  SVF Operation 104 (Line: 747) - reg_constant.  Status: rejected
+Info:  SVF Operation 105 (Line: 753) - reg_constant.  Status: rejected
+Info:  guide_uniquify 120 (Line: 912)  Cannot find object "DQPSK_CSK/Imag_Sync_FIFO/C31139" in design 'zigbee'.
+Info:  guide_uniquify 120 (Line: 912)  Cannot find object "DQPSK_CSK/Real_Sync_FIFO/C31139" in design 'zigbee'.
+Info:  guide_uniquify 120 (Line: 912)  Cannot find object "symbol_mapper_to_ppdu/u_sync_fifo_odd/C3803" in design 'zigbee'.
+Info:  guide_uniquify 120 (Line: 912)  Cannot find object "symbol_mapper_to_ppdu/u_sync_fifo_even/C3803" in design 'zigbee'.
+Info:  guide_uniquify 137 (Line: 1097)  Cannot find object "DQPSK_CSK/dp_cluster_1/mult_138_2" in design 'zigbee'.
+Info:  SVF Operation 137 (Line: 1097) - uniquify.  Status: rejected
+Info:  guide_uniquify 138 (Line: 1101)  Cannot find object "DQPSK_CSK/dp_cluster_1/mult_138" in design 'zigbee'.
+Info:  SVF Operation 138 (Line: 1101) - uniquify.  Status: rejected
+Info:  guide_uniquify 139 (Line: 1105)  Cannot find object "DQPSK_CSK/dp_cluster_0/mult_137_2" in design 'zigbee'.
+Info:  SVF Operation 139 (Line: 1105) - uniquify.  Status: rejected
+Info:  guide_uniquify 140 (Line: 1109)  Cannot find object "DQPSK_CSK/dp_cluster_0/mult_137" in design 'zigbee'.
+Info:  SVF Operation 140 (Line: 1109) - uniquify.  Status: rejected
+Info:  guide_uniquify 141 (Line: 1113)  Cannot find object "DEMUX/dp_cluster_0/mult_add_56_aco" in design 'zigbee'.
+Info:  SVF Operation 141 (Line: 1113) - uniquify.  Status: rejected
+Info:  guide_uniquify 142 (Line: 1117)  Cannot find object "DEMUX/dp_cluster_1/mult_add_65_aco" in design 'zigbee'.
+Info:  SVF Operation 142 (Line: 1117) - uniquify.  Status: rejected
+Info:  guide_uniquify 143 (Line: 1121)  Cannot find object "DQPSK_CSK/DQPSK_DUT/dp_cluster_1/r80" in design 'zigbee'.
+Info:  SVF Operation 143 (Line: 1121) - uniquify.  Status: rejected
+Info:  guide_uniquify 144 (Line: 1125)  Cannot find object "DQPSK_CSK/DQPSK_DUT/dp_cluster_1/r79" in design 'zigbee'.
+Info:  SVF Operation 144 (Line: 1125) - uniquify.  Status: rejected
+Info:  guide_uniquify 145 (Line: 1129)  Cannot find object "DQPSK_CSK/DQPSK_DUT/dp_cluster_0/r83" in design 'zigbee'.
+Info:  SVF Operation 145 (Line: 1129) - uniquify.  Status: rejected
+Info:  guide_uniquify 146 (Line: 1133)  Cannot find object "DQPSK_CSK/DQPSK_DUT/dp_cluster_0/r82" in design 'zigbee'.
+Info:  guide_multiplier 151 (Line: 1157) Cannot find reference cell for instance 'DEMUX/mult_add_56_aco' in design 'zigbee'.
+Info:  guide_multiplier 151 (Line: 1157) Cannot find reference cell for instance 'DEMUX/mult_add_56_aco' in design 'zigbee'.
+Info:  guide_multiplier 151 (Line: 1157) Cannot find reference cell for instance 'DEMUX/mult_add_56_aco' in design 'zigbee'.
+Info:  SVF Operation 151 (Line: 1157) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 152 (Line: 1162) Cannot find reference cell for instance 'DEMUX/mult_add_65_aco' in design 'zigbee'.
+Info:  guide_multiplier 152 (Line: 1162) Cannot find reference cell for instance 'DEMUX/mult_add_65_aco' in design 'zigbee'.
+Info:  guide_multiplier 152 (Line: 1162) Cannot find reference cell for instance 'DEMUX/mult_add_65_aco' in design 'zigbee'.
+Info:  SVF Operation 152 (Line: 1162) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 150 (Line: 1152)  Pre-verification of ref:/WORK/dqpsk_csk_top_46_1024_2_6/mult_137 INCONCLUSIVE.
+Info:  SVF Operation 150 (Line: 1152) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 149 (Line: 1147)  Pre-verification of ref:/WORK/dqpsk_csk_top_46_1024_2_6/mult_137_2 INCONCLUSIVE.
+Info:  SVF Operation 149 (Line: 1147) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 148 (Line: 1142)  Pre-verification of ref:/WORK/dqpsk_csk_top_46_1024_2_6/mult_138 INCONCLUSIVE.
+Info:  SVF Operation 148 (Line: 1142) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 147 (Line: 1137)  Pre-verification of ref:/WORK/dqpsk_csk_top_46_1024_2_6/mult_138_2 INCONCLUSIVE.
+Info:  SVF Operation 147 (Line: 1137) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 154 (Line: 1172)  Pre-verification of ref:/WORK/DQPSK/r79 INCONCLUSIVE.
+Info:  SVF Operation 154 (Line: 1172) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 153 (Line: 1167)  Pre-verification of ref:/WORK/DQPSK/r80 INCONCLUSIVE.
+Info:  SVF Operation 153 (Line: 1167) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 156 (Line: 1182)  Pre-verification of ref:/WORK/DQPSK/r82 INCONCLUSIVE.
+Info:  SVF Operation 156 (Line: 1182) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 155 (Line: 1177)  Pre-verification of ref:/WORK/DQPSK/r83 INCONCLUSIVE.
+Info:  SVF Operation 155 (Line: 1177) - multiplier.  Status: rejected
+
+Info:  Net imp:/WORK/dqpsk_csk_top_46_1024_2_6_DW01_sub_0/CO is undriven.
+Info:  Net imp:/WORK/dqpsk_csk_top_46_1024_2_6_DW01_add_0/CO is undriven.
+Info:  guide_uniquify 55 (Line: 291)  Cannot find object "alt64" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 55 (Line: 291) - uniquify.  Status: rejected
+Info:  guide_uniquify 56 (Line: 296)  Cannot find object "alt63" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 56 (Line: 296) - uniquify.  Status: rejected
+Info:  guide_uniquify 57 (Line: 301)  Cannot find object "alt62" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 57 (Line: 301) - uniquify.  Status: rejected
+Info:  guide_uniquify 58 (Line: 306)  Cannot find object "alt61" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 58 (Line: 306) - uniquify.  Status: rejected
+Info:  guide_uniquify 59 (Line: 311)  Cannot find object "alt60" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 59 (Line: 311) - uniquify.  Status: rejected
+Info:  guide_uniquify 60 (Line: 316)  Cannot find object "alt59" in design 'zigbee_rate_modeF'.
+Info:  SVF Operation 60 (Line: 316) - uniquify.  Status: rejected
+Info:  guide_uniquify 61 (Line: 321)  Cannot find object "alt52" in design 'zigbee_rate_modeF'.
+Info:  guide_transformation 110 (Line: 801)  Unmatched boundary nodes.
+Info:  guide_uniquify 120 (Line: 912)  Cannot find object "DQPSK_CSK/Imag_Sync_FIFO/C31139" in design 'zigbee'.
+Info:  guide_uniquify 120 (Line: 912)  Cannot find object "DQPSK_CSK/Real_Sync_FIFO/C31139" in design 'zigbee'.
+Info:  guide_uniquify 120 (Line: 912)  Cannot find object "symbol_mapper_to_ppdu/u_sync_fifo_odd/C3803" in design 'zigbee'.
+Info:  guide_uniquify 120 (Line: 912)  Cannot find object "symbol_mapper_to_ppdu/u_sync_fifo_even/C3803" in design 'zigbee'.
+Info:  guide_uniquify 137 (Line: 1097)  Cannot find object "DQPSK_CSK/dp_cluster_1/mult_138_2" in design 'zigbee'.
+Info:  SVF Operation 137 (Line: 1097) - uniquify.  Status: rejected
+Info:  guide_uniquify 138 (Line: 1101)  Cannot find object "DQPSK_CSK/dp_cluster_1/mult_138" in design 'zigbee'.
+Info:  SVF Operation 138 (Line: 1101) - uniquify.  Status: rejected
+Info:  guide_uniquify 139 (Line: 1105)  Cannot find object "DQPSK_CSK/dp_cluster_0/mult_137_2" in design 'zigbee'.
+Info:  SVF Operation 139 (Line: 1105) - uniquify.  Status: rejected
+Info:  guide_uniquify 140 (Line: 1109)  Cannot find object "DQPSK_CSK/dp_cluster_0/mult_137" in design 'zigbee'.
+Info:  SVF Operation 140 (Line: 1109) - uniquify.  Status: rejected
+Info:  guide_uniquify 141 (Line: 1113)  Cannot find object "DEMUX/dp_cluster_0/mult_add_56_aco" in design 'zigbee'.
+Info:  SVF Operation 141 (Line: 1113) - uniquify.  Status: rejected
+Info:  guide_uniquify 142 (Line: 1117)  Cannot find object "DEMUX/dp_cluster_1/mult_add_65_aco" in design 'zigbee'.
+Info:  SVF Operation 142 (Line: 1117) - uniquify.  Status: rejected
+Info:  guide_uniquify 143 (Line: 1121)  Cannot find object "DQPSK_CSK/DQPSK_DUT/dp_cluster_1/r80" in design 'zigbee'.
+Info:  SVF Operation 143 (Line: 1121) - uniquify.  Status: rejected
+Info:  guide_uniquify 144 (Line: 1125)  Cannot find object "DQPSK_CSK/DQPSK_DUT/dp_cluster_1/r79" in design 'zigbee'.
+Info:  SVF Operation 144 (Line: 1125) - uniquify.  Status: rejected
+Info:  guide_uniquify 145 (Line: 1129)  Cannot find object "DQPSK_CSK/DQPSK_DUT/dp_cluster_0/r83" in design 'zigbee'.
+Info:  SVF Operation 145 (Line: 1129) - uniquify.  Status: rejected
+Info:  guide_uniquify 146 (Line: 1133)  Cannot find object "DQPSK_CSK/DQPSK_DUT/dp_cluster_0/r82" in design 'zigbee'.
+Info:  guide_multiplier 150 (Line: 1152)  Pre-verification of ref:/WORK/dqpsk_csk_top_46_1024_2_6/mult_137 INCONCLUSIVE.
+Info:  SVF Operation 150 (Line: 1152) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 149 (Line: 1147)  Pre-verification of ref:/WORK/dqpsk_csk_top_46_1024_2_6/mult_137_2 INCONCLUSIVE.
+Info:  SVF Operation 149 (Line: 1147) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 148 (Line: 1142)  Pre-verification of ref:/WORK/dqpsk_csk_top_46_1024_2_6/mult_138 INCONCLUSIVE.
+Info:  SVF Operation 148 (Line: 1142) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 147 (Line: 1137)  Pre-verification of ref:/WORK/dqpsk_csk_top_46_1024_2_6/mult_138_2 INCONCLUSIVE.
+Info:  SVF Operation 147 (Line: 1137) - multiplier.  Status: rejected
+
+Info:  Pre-verification of ref:/WORK/e_o_demux_46/mult_add_56_aco SUCCEEDED.
+Info:  Pre-verification of ref:/WORK/e_o_demux_46/mult_add_65_aco SUCCEEDED.
+Info:  guide_multiplier 154 (Line: 1172)  Pre-verification of ref:/WORK/DQPSK/r79 INCONCLUSIVE.
+Info:  SVF Operation 154 (Line: 1172) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 153 (Line: 1167)  Pre-verification of ref:/WORK/DQPSK/r80 INCONCLUSIVE.
+Info:  SVF Operation 153 (Line: 1167) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 156 (Line: 1182)  Pre-verification of ref:/WORK/DQPSK/r82 INCONCLUSIVE.
+Info:  SVF Operation 156 (Line: 1182) - multiplier.  Status: rejected
+
+Info:  guide_multiplier 155 (Line: 1177)  Pre-verification of ref:/WORK/DQPSK/r83 INCONCLUSIVE.
+Info:  SVF Operation 155 (Line: 1177) - multiplier.  Status: rejected
+

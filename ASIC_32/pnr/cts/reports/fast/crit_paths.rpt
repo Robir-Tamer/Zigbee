@@ -1,0 +1,558 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 10
+        -report_by design
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Mon Sep 21 04:46:21 2026
+****************************************
+Information: Timer using 'SI, Timing Window Analysis, CRPR'. (TIM-050)
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[88][4] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U2049/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U2048/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_45150/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_45149/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/PLACE_HFSINV_325_467/Y (INVX1_RVT)   0.03      7.24 r
+  payload_ram/PLACE_HFSINV_150_464/Y (INVX1_RVT)   0.02      7.26 f
+  payload_ram/U2006/Y (AND2X1_HVT)                 0.07      7.32 f
+  payload_ram/PLACE_HFSINV_205_336/Y (INVX2_RVT)   0.05      7.37 r
+  payload_ram/PLACE_HFSINV_144_334/Y (INVX1_RVT)   0.07      7.44 f
+  payload_ram/U2001/Y (MUX21X2_HVT)                0.08      7.52 f
+  payload_ram/OPT_copt_h_inst_35088/Y (DELLN3X2_HVT)
+                                                   0.35      7.87 f
+  payload_ram/OPT_copt_h_inst_35089/Y (DELLN3X2_HVT)
+                                                   0.34      8.21 f
+  payload_ram/mem_reg[88][4]/D (DFFX1_HVT)         0.00      8.21 f
+  data arrival time                                          8.21
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.17     31.42
+  clock reconvergence pessimism                    0.00     31.42
+  payload_ram/mem_reg[88][4]/CLK (DFFX1_HVT)       0.00     31.42 r
+  clock uncertainty                               -0.94     30.48
+  library setup time                              -0.02     30.47
+  data required time                                        30.47
+  ------------------------------------------------------------------------
+  data required time                                        30.47
+  data arrival time                                         -8.21
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.26
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[90][3] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U2049/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U2048/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_45150/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_45149/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/PLACE_HFSINV_325_467/Y (INVX1_RVT)   0.03      7.24 r
+  payload_ram/PLACE_HFSINV_150_464/Y (INVX1_RVT)   0.02      7.26 f
+  payload_ram/U1986/Y (AND2X1_HVT)                 0.06      7.32 f
+  payload_ram/PLACE_HFSINV_199_330/Y (INVX2_RVT)   0.05      7.37 r
+  payload_ram/PLACE_HFSINV_90_329/Y (INVX1_RVT)    0.07      7.44 f
+  payload_ram/U1982/Y (MUX21X2_HVT)                0.08      7.51 f
+  payload_ram/OPT_copt_h_inst_35214/Y (DELLN3X2_HVT)
+                                                   0.34      7.86 f
+  payload_ram/OPT_copt_h_inst_35213/Y (DELLN3X2_HVT)
+                                                   0.34      8.20 f
+  payload_ram/mem_reg[90][3]/D (DFFX1_HVT)         0.00      8.20 f
+  data arrival time                                          8.20
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.18     31.43
+  clock reconvergence pessimism                    0.00     31.43
+  payload_ram/mem_reg[90][3]/CLK (DFFX1_HVT)       0.00     31.43 r
+  clock uncertainty                               -0.94     30.49
+  library setup time                              -0.01     30.48
+  data required time                                        30.48
+  ------------------------------------------------------------------------
+  data required time                                        30.48
+  data arrival time                                         -8.20
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.29
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[94][7] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U2049/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U2048/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_45150/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_45149/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/PLACE_HFSINV_325_467/Y (INVX1_RVT)   0.03      7.24 r
+  payload_ram/PLACE_HFSINV_111_465/Y (INVX1_RVT)   0.03      7.26 f
+  payload_ram/U1945/Y (AND2X1_HVT)                 0.06      7.33 f
+  payload_ram/PLACE_HFSINV_129_320/Y (INVX2_RVT)   0.04      7.37 r
+  payload_ram/PLACE_HFSINV_37_319/Y (INVX1_RVT)    0.06      7.43 f
+  payload_ram/U1944/Y (MUX21X2_HVT)                0.07      7.50 f
+  payload_ram/OPT_copt_h_inst_35266/Y (DELLN3X2_HVT)
+                                                   0.34      7.84 f
+  payload_ram/OPT_copt_h_inst_35267/Y (DELLN3X2_HVT)
+                                                   0.34      8.18 f
+  payload_ram/mem_reg[94][7]/D (DFFX1_HVT)         0.00      8.18 f
+  data arrival time                                          8.18
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.19     31.44
+  clock reconvergence pessimism                    0.00     31.44
+  payload_ram/mem_reg[94][7]/CLK (DFFX1_HVT)       0.00     31.44 r
+  clock uncertainty                               -0.94     30.50
+  library setup time                              -0.01     30.49
+  data required time                                        30.49
+  ------------------------------------------------------------------------
+  data required time                                        30.49
+  data arrival time                                         -8.18
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.31
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[38][2] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U1520/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U1301/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_41154/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_41153/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/PLACE_HFSINV_290_403/Y (INVX1_RVT)   0.01      7.23 r
+  payload_ram/PLACE_HFSINV_221_402/Y (INVX1_RVT)   0.03      7.25 f
+  payload_ram/PLACE_HFSINV_34_401/Y (INVX1_RVT)    0.02      7.27 r
+  payload_ram/PLACE_HFSINV_21_400/Y (INVX1_RVT)    0.02      7.29 f
+  payload_ram/U1246/Y (AND2X1_HVT)                 0.08      7.37 f
+  payload_ram/PLACE_HFSINV_41_144/Y (INVX1_RVT)    0.03      7.40 r
+  payload_ram/PLACE_HFSINV_28_143/Y (INVX2_RVT)    0.03      7.43 f
+  payload_ram/U1243/Y (MUX21X2_HVT)                0.06      7.49 f
+  payload_ram/OPT_copt_h_inst_35385/Y (DELLN3X2_HVT)
+                                                   0.34      7.83 f
+  payload_ram/OPT_copt_h_inst_35386/Y (DELLN3X2_HVT)
+                                                   0.34      8.17 f
+  payload_ram/mem_reg[38][2]/D (DFFX1_HVT)         0.00      8.17 f
+  data arrival time                                          8.17
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.19     31.44
+  clock reconvergence pessimism                    0.00     31.44
+  payload_ram/mem_reg[38][2]/CLK (DFFX1_HVT)       0.00     31.44 r
+  clock uncertainty                               -0.94     30.50
+  library setup time                              -0.01     30.49
+  data required time                                        30.49
+  ------------------------------------------------------------------------
+  data required time                                        30.49
+  data arrival time                                         -8.17
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.31
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[26][3] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U1520/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U1446/Y (AND3X1_HVT)                 0.05      6.65 f
+  payload_ram/OPT_copt_h_inst_44191/Y (DELLN1X2_HVT)
+                                                   0.14      6.80 f
+  payload_ram/OPT_copt_h_inst_44190/Y (DELLN3X2_HVT)
+                                                   0.35      7.15 f
+  payload_ram/PLACE_HFSINV_343_406/Y (INVX1_RVT)   0.02      7.18 r
+  payload_ram/PLACE_HFSINV_286_404/Y (INVX1_RVT)   0.02      7.20 f
+  payload_ram/U1355/Y (AND2X1_HVT)                 0.06      7.26 f
+  payload_ram/PLACE_HFSINV_216_173/Y (INVX2_RVT)   0.05      7.31 r
+  payload_ram/PLACE_HFSINV_96_172/Y (INVX1_RVT)    0.08      7.38 f
+  payload_ram/U1351/Y (MUX21X1_HVT)                0.09      7.47 f
+  payload_ram/OPT_copt_h_inst_35175/Y (DELLN3X2_HVT)
+                                                   0.35      7.82 f
+  payload_ram/OPT_copt_h_inst_35176/Y (DELLN3X2_HVT)
+                                                   0.34      8.16 f
+  payload_ram/mem_reg[26][3]/D (DFFX1_HVT)         0.00      8.16 f
+  data arrival time                                          8.16
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.17     31.42
+  clock reconvergence pessimism                    0.00     31.42
+  payload_ram/mem_reg[26][3]/CLK (DFFX1_HVT)       0.00     31.42 r
+  clock uncertainty                               -0.94     30.48
+  library setup time                              -0.02     30.47
+  data required time                                        30.47
+  ------------------------------------------------------------------------
+  data required time                                        30.47
+  data arrival time                                         -8.16
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.31
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[46][6] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U1520/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U1301/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_41154/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_41153/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/PLACE_HFSINV_290_403/Y (INVX1_RVT)   0.01      7.23 r
+  payload_ram/PLACE_HFSINV_221_402/Y (INVX1_RVT)   0.03      7.25 f
+  payload_ram/PLACE_HFSINV_117_399/Y (INVX1_RVT)   0.02      7.27 r
+  payload_ram/PLACE_HFSINV_104_398/Y (INVX1_RVT)   0.03      7.30 f
+  payload_ram/U1174/Y (AND2X1_HVT)                 0.07      7.37 f
+  payload_ram/PLACE_HFSINV_149_128/Y (INVX1_RVT)   0.03      7.40 r
+  payload_ram/PLACE_HFSINV_88_126/Y (INVX1_RVT)    0.03      7.43 f
+  payload_ram/U1167/Y (MUX21X2_HVT)                0.06      7.48 f
+  payload_ram/OPT_copt_h_inst_35119/Y (DELLN3X2_HVT)
+                                                   0.34      7.83 f
+  payload_ram/OPT_copt_h_inst_35120/Y (DELLN3X2_HVT)
+                                                   0.34      8.17 f
+  payload_ram/mem_reg[46][6]/D (DFFX1_HVT)         0.00      8.17 f
+  data arrival time                                          8.17
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.19     31.44
+  clock reconvergence pessimism                    0.00     31.44
+  payload_ram/mem_reg[46][6]/CLK (DFFX1_HVT)       0.00     31.44 r
+  clock uncertainty                               -0.94     30.50
+  library setup time                              -0.02     30.49
+  data required time                                        30.49
+  ------------------------------------------------------------------------
+  data required time                                        30.49
+  data arrival time                                         -8.17
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.32
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[84][3] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U2049/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U2048/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_45150/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_45149/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/U2044/Y (AND2X1_HVT)                 0.10      7.30 f
+  payload_ram/PLACE_HFSINV_50_346/Y (INVX1_RVT)    0.02      7.33 r
+  payload_ram/PLACE_HFSINV_37_345/Y (INVX1_RVT)    0.07      7.40 f
+  payload_ram/U827/Y (MUX21X2_HVT)                 0.08      7.47 f
+  payload_ram/OPT_copt_h_inst_35356/Y (DELLN3X2_HVT)
+                                                   0.35      7.82 f
+  payload_ram/OPT_copt_h_inst_35357/Y (DELLN3X2_HVT)
+                                                   0.34      8.16 f
+  payload_ram/mem_reg[84][3]/D (DFFX1_HVT)         0.00      8.16 f
+  data arrival time                                          8.16
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.18     31.43
+  clock reconvergence pessimism                    0.00     31.43
+  payload_ram/mem_reg[84][3]/CLK (DFFX1_HVT)       0.00     31.43 r
+  clock uncertainty                               -0.94     30.49
+  library setup time                              -0.01     30.48
+  data required time                                        30.48
+  ------------------------------------------------------------------------
+  data required time                                        30.48
+  data arrival time                                         -8.16
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.32
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[44][4] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U1520/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U1301/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_41154/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_41153/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/PLACE_HFSINV_290_403/Y (INVX1_RVT)   0.01      7.23 r
+  payload_ram/PLACE_HFSINV_221_402/Y (INVX1_RVT)   0.03      7.25 f
+  payload_ram/PLACE_HFSINV_117_399/Y (INVX1_RVT)   0.02      7.27 r
+  payload_ram/PLACE_HFSINV_104_398/Y (INVX1_RVT)   0.03      7.30 f
+  payload_ram/U1192/Y (AND2X1_HVT)                 0.07      7.37 f
+  payload_ram/PLACE_HFSBUF_147_132/Y (NBUFFX2_RVT)
+                                                   0.05      7.43 f
+  payload_ram/U1187/Y (MUX21X1_HVT)                0.06      7.49 f
+  payload_ram/OPT_copt_h_inst_35257/Y (DELLN3X2_HVT)
+                                                   0.34      7.83 f
+  payload_ram/OPT_copt_h_inst_35258/Y (DELLN3X2_HVT)
+                                                   0.34      8.17 f
+  payload_ram/mem_reg[44][4]/D (DFFX1_HVT)         0.00      8.17 f
+  data arrival time                                          8.17
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.19     31.44
+  clock reconvergence pessimism                    0.00     31.44
+  payload_ram/mem_reg[44][4]/CLK (DFFX1_HVT)       0.00     31.44 r
+  clock uncertainty                               -0.94     30.50
+  library setup time                              -0.01     30.49
+  data required time                                        30.49
+  ------------------------------------------------------------------------
+  data required time                                        30.49
+  data arrival time                                         -8.17
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.32
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[94][4] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U2049/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U2048/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_45150/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_45149/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/PLACE_HFSINV_325_467/Y (INVX1_RVT)   0.03      7.24 r
+  payload_ram/PLACE_HFSINV_111_465/Y (INVX1_RVT)   0.03      7.26 f
+  payload_ram/U1945/Y (AND2X1_HVT)                 0.06      7.33 f
+  payload_ram/PLACE_HFSINV_129_320/Y (INVX2_RVT)   0.04      7.37 r
+  payload_ram/PLACE_HFSINV_72_318/Y (INVX1_RVT)    0.03      7.40 f
+  payload_ram/U1940/Y (MUX21X1_HVT)                0.07      7.47 f
+  payload_ram/OPT_copt_h_inst_35526/Y (DELLN3X2_HVT)
+                                                   0.35      7.81 f
+  payload_ram/OPT_copt_h_inst_35527/Y (DELLN3X2_HVT)
+                                                   0.34      8.15 f
+  payload_ram/mem_reg[94][4]/D (DFFX1_HVT)         0.00      8.15 f
+  data arrival time                                          8.15
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.18     31.43
+  clock reconvergence pessimism                    0.00     31.43
+  payload_ram/mem_reg[94][4]/CLK (DFFX1_HVT)       0.00     31.43 r
+  clock uncertainty                               -0.94     30.49
+  library setup time                              -0.01     30.47
+  data required time                                        30.47
+  ------------------------------------------------------------------------
+  data required time                                        30.47
+  data arrival time                                         -8.15
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.32
+
+
+
+  Startpoint: rst_n (input port clocked by clk)
+  Endpoint: payload_ram/mem_reg[40][5] (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.21      0.21
+  input external delay                             6.25      6.46
+
+  rst_n (in)                                       0.00      6.46 f
+  payload_ram/PLACE_HFSINV_1061_5395/Y (INVX1_RVT)
+                                                   0.01      6.47 r
+  payload_ram/PLACE_HFSINV_926_5394/Y (INVX1_RVT)
+                                                   0.03      6.50 f
+  payload_ram/U2050/Y (AND2X1_HVT)                 0.04      6.54 f
+  payload_ram/U1520/Y (AND2X1_HVT)                 0.06      6.60 f
+  payload_ram/U1301/Y (AND3X1_HVT)                 0.06      6.66 f
+  payload_ram/OPT_copt_h_inst_41154/Y (DELLN2X2_HVT)
+                                                   0.20      6.86 f
+  payload_ram/OPT_copt_h_inst_41153/Y (DELLN3X2_HVT)
+                                                   0.35      7.21 f
+  payload_ram/PLACE_HFSINV_290_403/Y (INVX1_RVT)   0.01      7.23 r
+  payload_ram/PLACE_HFSINV_221_402/Y (INVX1_RVT)   0.03      7.25 f
+  payload_ram/PLACE_HFSINV_78_397/Y (INVX1_RVT)    0.02      7.27 r
+  payload_ram/PLACE_HFSINV_65_396/Y (INVX1_RVT)    0.02      7.29 f
+  payload_ram/U1228/Y (AND2X1_HVT)                 0.07      7.36 f
+  payload_ram/PLACE_HFSINV_41_140/Y (INVX1_RVT)    0.03      7.39 r
+  payload_ram/PLACE_HFSINV_28_139/Y (INVX2_RVT)    0.03      7.41 f
+  payload_ram/U1222/Y (MUX21X1_HVT)                0.06      7.47 f
+  payload_ram/OPT_copt_h_inst_35300/Y (DELLN3X2_HVT)
+                                                   0.34      7.82 f
+  payload_ram/OPT_copt_h_inst_35301/Y (DELLN3X2_HVT)
+                                                   0.34      8.16 f
+  payload_ram/mem_reg[40][5]/D (DFFX1_HVT)         0.00      8.16 f
+  data arrival time                                          8.16
+
+  clock clk (rise edge)                           31.25     31.25
+  clock network delay (propagated)                 0.18     31.43
+  clock reconvergence pessimism                    0.00     31.43
+  payload_ram/mem_reg[40][5]/CLK (DFFX1_HVT)       0.00     31.43 r
+  clock uncertainty                               -0.94     30.49
+  library setup time                              -0.01     30.48
+  data required time                                        30.48
+  ------------------------------------------------------------------------
+  data required time                                        30.48
+  data arrival time                                         -8.16
+  ------------------------------------------------------------------------
+  slack (MET)                                               22.32
+
+
+1

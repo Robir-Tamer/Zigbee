@@ -1,0 +1,337 @@
+Found 26 Unmatched Cone Inputs
+--------------------------------
+Unmatched cone inputs result either from mismatched compare points
+or from differences in the logic within the cones. Only unmatched
+inputs that are suspected of contributing to verification failures
+are included in the report.
+The source of the matching or logical differences may be determined
+using the schematic, cone and source views.
+--------------------------------
+ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[3799][0]
+    Is globally unmatched affecting 1 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+
+-----------
+ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/rd_from_addr_reg[11]
+    Is globally unmatched affecting 5 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+-----------
+ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[1254][1]
+    Is globally unmatched affecting 1 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+
+-----------
+ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/wr_in_addr_reg[11]
+    Is globally unmatched affecting 3 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+-----------
+ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/rd_from_addr_reg[11]
+    Is globally unmatched affecting 4 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+
+-----------
+ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[2907][1]
+    Is globally unmatched affecting 1 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+
+-----------
+ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[3931][1]
+    Is globally unmatched affecting 1 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+
+-----------
+ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/wr_in_addr_reg[11]
+    Is globally unmatched affecting 9 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[133][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[47][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[570][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[133][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[133][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[133][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][1]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][1]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][1]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][1]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][1]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][1]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[47][1]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[47][1]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[47][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[570][1]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[570][1]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[570][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][1]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][1]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[739][0]/\*dff.00\*
+    Matched with cell ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[739][0]
+    Exists in the impl cone but not in the ref cone for 1 compare point(s):
+        ref:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[739][0]
+
+-----------
+--------------------------------
+Found 1 Rejected Guidance Command
+--------------------------------
+The rejection of some SVF guidance commands will almost invariably
+cause verification failures. For more information use:
+        'report_svf_operation -status rejected -command command_name
+--------------------------------
+reg_constant
+-----------
+--------------------------------
+Found 16 Required Inputs
+--------------------------------
+A required input is one that is designated as required
+for all failing patterns for one or more cpoints and fans out 
+to more failing than passing points.
+This implies that it may be driving downstream logic that is related to
+the failure(s)
+--------------------------------
+imp:/WORK/zigbee/DQPSK_CSK/CSK_GEN_DUT/boundary_d_reg/\*dff.00\*
+    Fans out to 4 failing and 0 passing points and has
+    logic value '1' for 3 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/rd_from_addr_reg[10]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '1' for 4 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/rd_from_addr_reg[1]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '1' for 2 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/rd_from_addr_reg[2]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '1' for 2 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/rd_from_addr_reg[3]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '0' for 2 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/rd_from_addr_reg[6]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '1' for 2 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/rd_from_addr_reg[8]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '0' for 2 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/CSK_GEN_DUT/running_reg/\*dff.00\*
+    Fans out to 4 failing and 2 passing points and has
+    logic value '1' for 4 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/wr_in_addr_reg[1]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '0' for 6 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/dout_reg[1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/DQPSK_DUT/valid_reg/\*dff.00\*
+    Fans out to 16 failing and 0 passing points and has
+    logic value '1' for 16 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[133][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[268][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[31][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[47][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[570][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[573][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[739][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/wr_in_addr_reg[10]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '1' for 2 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/wr_in_addr_reg[6]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '1' for 4 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/wr_in_addr_reg[7]/\*dff.00\*
+    Fans out to 6 failing and 0 passing points and has
+    logic value '1' for 4 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[497][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[728][1]
+        imp:/WORK/zigbee/DQPSK_CSK/Imag_Sync_FIFO/mem_reg[740][0]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/rd_from_addr_reg[6]/\*dff.00\*
+    Fans out to 14 failing and 0 passing points and has
+    logic value '1' for 2 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/rd_from_addr_reg[8]/\*dff.00\*
+    Fans out to 14 failing and 0 passing points and has
+    logic value '1' for 4 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/mem_reg[251][1]
+
+-----------
+imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/rd_from_addr_reg[9]/\*dff.00\*
+    Fans out to 14 failing and 0 passing points and has
+    logic value '1' for 2 compare point(s):
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[0]
+        imp:/WORK/zigbee/DQPSK_CSK/Real_Sync_FIFO/dout_reg[1]
+
+-----------
+--------------------------------
+****************************************************************************************
+Analysis Completed
+1
