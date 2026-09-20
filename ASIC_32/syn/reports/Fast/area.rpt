@@ -1,0 +1,98 @@
+ 
+****************************************
+Report : area
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Sun Sep 20 00:44:16 2026
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p75vn40c (File: /home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db)
+
+Number of ports:                          845
+Number of nets:                         24183
+Number of cells:                        23234
+Number of combinational cells:          16818
+Number of sequential cells:              6372
+Number of macros/black boxes:               0
+Number of buf/inv:                       3770
+Number of references:                      11
+
+Combinational area:              37946.748998
+Buf/Inv area:                     4973.852247
+Noncombinational area:           40816.798380
+Macro/Black Box area:                0.000000
+Net Interconnect area:           27216.605451
+
+Total cell area:                 78763.547379
+Total area:                     105980.152829
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  -----------------------------------------------------------
+zigbee                            78763.5474    100.0     14.7404      0.0000  0.0000  zigbee
+DEMUX                               192.3870      0.2     68.8730    123.5140  0.0000  e_o_demux_46
+DQPSK_CSK                         55558.6748     70.5    201.7903    140.0333  0.0000  dqpsk_csk_top_46_1024_2_6
+DQPSK_CSK/CSK_GEN_DUT               916.6974      1.2    648.0672    221.1053  0.0000  CSK_GEN_WL6
+DQPSK_CSK/CSK_GEN_DUT/add_393        25.4144      0.0     25.4144      0.0000  0.0000  CSK_GEN_WL6_DW01_inc_0
+DQPSK_CSK/CSK_GEN_DUT/r108           22.1105      0.0     22.1105      0.0000  0.0000  CSK_GEN_WL6_DW01_inc_1
+DQPSK_CSK/DQPSK_DUT                 262.5308      0.3    123.0057    139.5251  0.0000  DQPSK
+DQPSK_CSK/Imag_Sync_FIFO          26515.0981     33.7  12753.2000  13691.2460  0.0000  FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1
+DQPSK_CSK/Imag_Sync_FIFO/add_45      35.3260      0.0     35.3260      0.0000  0.0000  FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_inc_1
+DQPSK_CSK/Imag_Sync_FIFO/add_50      35.3260      0.0     35.3260      0.0000  0.0000  FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_inc_0
+DQPSK_CSK/Real_Sync_FIFO          26515.0981     33.7  12753.2000  13691.2460  0.0000  FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0
+DQPSK_CSK/Real_Sync_FIFO/add_45      35.3260      0.0     35.3260      0.0000  0.0000  FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_inc_1
+DQPSK_CSK/Real_Sync_FIFO/add_50      35.3260      0.0     35.3260      0.0000  0.0000  FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_inc_0
+DQPSK_CSK/add_138                    40.1548      0.1     40.1548      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW01_add_0
+DQPSK_CSK/mult_137                  226.6964      0.3    164.6853      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW02_mult_3
+DQPSK_CSK/mult_137/FS_2              62.0111      0.1     62.0111      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW01_add_4
+DQPSK_CSK/mult_137_2                226.6964      0.3    164.6853      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW02_mult_2
+DQPSK_CSK/mult_137_2/FS_2            62.0111      0.1     62.0111      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW01_add_3
+DQPSK_CSK/mult_138                  226.6964      0.3    164.6853      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW02_mult_1
+DQPSK_CSK/mult_138/FS_2              62.0111      0.1     62.0111      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW01_add_2
+DQPSK_CSK/mult_138_2                226.6964      0.3    164.6853      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW02_mult_0
+DQPSK_CSK/mult_138_2/FS_2            62.0111      0.1     62.0111      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW01_add_1
+DQPSK_CSK/posedge_detector_DUT        9.4033      0.0      2.0332      7.3702  0.0000  posedge_detector
+DQPSK_CSK/sub_137                    51.0829      0.1     51.0829      0.0000  0.0000  dqpsk_csk_top_46_1024_2_6_DW01_sub_0
+PayLoad_Counter                     237.3705      0.3    102.9283    112.3317  0.0000  payload_counter_payload_w8_max_payload_length127
+PayLoad_Counter/add_47               22.1105      0.0     22.1105      0.0000  0.0000  payload_counter_payload_w8_max_payload_length127_DW01_inc_0
+QPSK                                 60.7404      0.1     26.9393     33.8012  0.0000  QPSK_mapper
+ZeroPadding                         447.8017      0.6    242.1992    205.6025  0.0000  zeropadding_8_46_127_12
+my_controller                        12.9613      0.0      6.3536      6.6077  0.0000  controller_46_127
+payload_ram                       12859.6867     16.3   5883.9420   6924.9159  0.0000  FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128
+payload_ram/add_45                   25.4144      0.0     25.4144      0.0000  0.0000  FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_inc_1
+payload_ram/add_50                   25.4144      0.0     25.4144      0.0000  0.0000  FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_inc_0
+symbol_mapper_to_ppdu              9379.1845     11.9      6.6077      0.0000  0.0000  top_sym_to_ppdu_46
+symbol_mapper_to_ppdu/u_form_ppdu  1747.7483      2.2    303.1938   1444.5545  0.0000  form_ppdu_46
+symbol_mapper_to_ppdu/u_interleaver_even
+                                     94.0333      0.1     33.0387     60.9946  0.0000  interleaver_46_0
+symbol_mapper_to_ppdu/u_interleaver_odd
+                                     94.0333      0.1     33.0387     60.9946  0.0000  interleaver_46_1
+symbol_mapper_to_ppdu/u_preamble_sfd_gen
+                                    274.4755      0.3     10.1658    264.3098  0.0000  preamble_sfd_gen_46
+symbol_mapper_to_ppdu/u_symbol_mapper_even
+                                     68.1106      0.1     34.3094     33.8012  0.0000  symbol_mapper_46_0
+symbol_mapper_to_ppdu/u_symbol_mapper_odd
+                                     68.1106      0.1     34.3094     33.8012  0.0000  symbol_mapper_46_1
+symbol_mapper_to_ppdu/u_sync_fifo_even
+                                   3513.0326      4.5   1658.2896   1810.5219  0.0000  FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0
+symbol_mapper_to_ppdu/u_sync_fifo_even/add_45
+                                     22.1105      0.0     22.1105      0.0000  0.0000  FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_inc_1
+symbol_mapper_to_ppdu/u_sync_fifo_even/add_50
+                                     22.1105      0.0     22.1105      0.0000  0.0000  FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_inc_0
+symbol_mapper_to_ppdu/u_sync_fifo_odd
+                                   3513.0326      4.5   1658.2896   1810.5219  0.0000  FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1
+symbol_mapper_to_ppdu/u_sync_fifo_odd/add_45
+                                     22.1105      0.0     22.1105      0.0000  0.0000  FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_inc_1
+symbol_mapper_to_ppdu/u_sync_fifo_odd/add_50
+                                     22.1105      0.0     22.1105      0.0000  0.0000  FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_inc_0
+--------------------------------  ----------  -------  ----------  ----------  ------  -----------------------------------------------------------
+Total                                                  37946.7490  40816.7984  0.0000
+
+1

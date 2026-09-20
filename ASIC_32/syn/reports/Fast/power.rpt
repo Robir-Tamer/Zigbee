@@ -1,0 +1,188 @@
+Loading db file '/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : zigbee
+Version: O-2018.06-SP1
+Date   : Sun Sep 20 00:44:19 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed32hvt_ss0p75vn40c (File: /home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db)
+
+
+Operating Conditions: ss0p75vn40c   Library: saed32hvt_ss0p75vn40c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+zigbee                 140000            saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128
+                       16000             saed32hvt_ss0p75vn40c
+payload_counter_payload_w8_max_payload_length127
+                       8000              saed32hvt_ss0p75vn40c
+zeropadding_8_46_127_12
+                       8000              saed32hvt_ss0p75vn40c
+e_o_demux_46           ForQA             saed32hvt_ss0p75vn40c
+controller_46_127      ForQA             saed32hvt_ss0p75vn40c
+top_sym_to_ppdu_46     16000             saed32hvt_ss0p75vn40c
+QPSK_mapper            ForQA             saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6
+                       70000             saed32hvt_ss0p75vn40c
+preamble_sfd_gen_46    8000              saed32hvt_ss0p75vn40c
+symbol_mapper_46_0     ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0
+                       8000              saed32hvt_ss0p75vn40c
+interleaver_46_0       ForQA             saed32hvt_ss0p75vn40c
+form_ppdu_46           8000              saed32hvt_ss0p75vn40c
+DQPSK                  8000              saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0
+                       35000             saed32hvt_ss0p75vn40c
+CSK_GEN_WL6            8000              saed32hvt_ss0p75vn40c
+posedge_detector       ForQA             saed32hvt_ss0p75vn40c
+symbol_mapper_46_1     ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1
+                       8000              saed32hvt_ss0p75vn40c
+interleaver_46_1       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1
+                       35000             saed32hvt_ss0p75vn40c
+CSK_GEN_WL6_DW01_inc_0 ForQA             saed32hvt_ss0p75vn40c
+CSK_GEN_WL6_DW01_inc_1 ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_inc_0
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_inc_1
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_inc_0
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_inc_1
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_inc_0
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_inc_1
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_inc_0
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_inc_1
+                       ForQA             saed32hvt_ss0p75vn40c
+payload_counter_payload_w8_max_payload_length127_DW01_inc_0
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_inc_0
+                       ForQA             saed32hvt_ss0p75vn40c
+FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_inc_1
+                       ForQA             saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW01_add_0
+                       ForQA             saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW02_mult_0
+                       8000              saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW01_add_1
+                       ForQA             saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW02_mult_1
+                       8000              saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW01_add_2
+                       ForQA             saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW01_sub_0
+                       ForQA             saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW02_mult_2
+                       8000              saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW01_add_3
+                       ForQA             saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW02_mult_3
+                       8000              saed32hvt_ss0p75vn40c
+dqpsk_csk_top_46_1024_2_6_DW01_add_4
+                       ForQA             saed32hvt_ss0p75vn40c
+
+
+Global Operating Voltage = 0.75 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+zigbee                                    0.973  667.557 6.78e+05  669.209 100.0
+  DQPSK_CSK (dqpsk_csk_top_46_1024_2_6)
+                                          0.276  452.768 4.71e+05  453.516  67.8
+    add_138 (dqpsk_csk_top_46_1024_2_6_DW01_add_0)
+                                       8.90e-06 4.16e-05  313.946 3.64e-04   0.0
+    mult_138_2 (dqpsk_csk_top_46_1024_2_6_DW02_mult_0)
+                                       2.31e-03 6.62e-03 1.34e+03 1.03e-02   0.0
+    mult_138 (dqpsk_csk_top_46_1024_2_6_DW02_mult_1)
+                                       2.47e-03 7.03e-03 1.34e+03 1.08e-02   0.0
+    sub_137 (dqpsk_csk_top_46_1024_2_6_DW01_sub_0)
+                                       7.35e-06 2.54e-05  466.921 5.00e-04   0.0
+    mult_137_2 (dqpsk_csk_top_46_1024_2_6_DW02_mult_2)
+                                       2.47e-03 7.03e-03 1.34e+03 1.08e-02   0.0
+    mult_137 (dqpsk_csk_top_46_1024_2_6_DW02_mult_3)
+                                       2.31e-03 6.62e-03 1.34e+03 1.03e-02   0.0
+    posedge_detector_DUT (posedge_detector)
+                                       2.09e-05    0.132   95.768    0.132   0.0
+    CSK_GEN_DUT (CSK_GEN_WL6)          1.82e-02    3.881 5.66e+03    3.905   0.6
+      r108 (CSK_GEN_WL6_DW01_inc_1)    4.34e-04 2.00e-03  219.112 2.65e-03   0.0
+      add_393 (CSK_GEN_WL6_DW01_inc_0) 3.67e-04 1.91e-03  257.840 2.54e-03   0.0
+    Imag_Sync_FIFO (FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1)
+                                          0.115  221.921 2.22e+05  222.258  33.2
+      add_45 (FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_inc_1)
+                                       4.76e-04 2.40e-03  373.962 3.25e-03   0.0
+      add_50 (FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_inc_0)
+                                       4.45e-05 1.70e-04  374.212 5.88e-04   0.0
+    Real_Sync_FIFO (FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0)
+                                          0.115  221.921 2.22e+05  222.258  33.2
+      add_45 (FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_inc_1)
+                                       4.76e-04 2.40e-03  373.962 3.25e-03   0.0
+      add_50 (FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_inc_0)
+                                       4.45e-05 1.70e-04  374.212 5.88e-04   0.0
+    DQPSK_DUT (DQPSK)                  1.60e-02    2.335 2.21e+03    2.353   0.4
+  QPSK (QPSK_mapper)                   3.33e-03    0.567  547.807    0.571   0.1
+  symbol_mapper_to_ppdu (top_sym_to_ppdu_46)
+                                          0.290   93.176 8.49e+04   93.551  14.0
+    u_form_ppdu (form_ppdu_46)            0.157   25.760 1.76e+04   25.934   3.9
+    u_interleaver_odd (interleaver_46_1)
+                                       9.80e-03    1.056  842.426    1.067   0.2
+    u_sync_fifo_odd (FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1)
+                                       4.30e-02   29.431 3.05e+04   29.505   4.4
+      add_45 (FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_inc_1)
+                                       1.32e-04 6.39e-04  219.108 9.90e-04   0.0
+      add_50 (FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_inc_0)
+                                       1.79e-04 8.92e-04  219.090 1.29e-03   0.0
+    u_symbol_mapper_odd (symbol_mapper_46_1)
+                                       6.49e-03    0.580  579.693    0.587   0.1
+    u_interleaver_even (interleaver_46_0)
+                                       9.69e-03    1.055  841.908    1.065   0.2
+    u_sync_fifo_even (FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0)
+                                       4.27e-02   29.428 3.05e+04   29.501   4.4
+      add_45 (FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_inc_1)
+                                       1.32e-04 6.39e-04  219.108 9.90e-04   0.0
+      add_50 (FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_inc_0)
+                                       1.79e-04 8.92e-04  219.090 1.29e-03   0.0
+    u_symbol_mapper_even (symbol_mapper_46_0)
+                                       6.55e-03    0.580  578.794    0.587   0.1
+    u_preamble_sfd_gen (preamble_sfd_gen_46)
+                                       1.45e-02    5.286 3.39e+03    5.304   0.8
+  my_controller (controller_46_127)    1.87e-03    0.132  121.581    0.134   0.0
+  DEMUX (e_o_demux_46)                 4.06e-02    2.247 1.79e+03    2.289   0.3
+  ZeroPadding (zeropadding_8_46_127_12)
+                                       4.93e-02    3.577 3.57e+03    3.630   0.5
+  PayLoad_Counter (payload_counter_payload_w8_max_payload_length127)
+                                       3.19e-02    2.093 2.12e+03    2.127   0.3
+    add_47 (payload_counter_payload_w8_max_payload_length127_DW01_inc_0)
+                                       1.98e-03 9.96e-03  217.101 1.22e-02   0.0
+  payload_ram (FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128)
+                                          0.280  113.006 1.14e+05  113.400  16.9
+    add_45 (FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_inc_1)
+                                       1.82e-03 9.11e-03  256.033 1.12e-02   0.0
+    add_50 (FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_inc_0)
+                                       7.75e-05 3.62e-04  257.939 6.97e-04   0.0
+1

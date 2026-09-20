@@ -1,0 +1,1047 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+####################################################################################
+#########################################################
+#### Section 1 : Config Definition ####
+#########################################################
+#################################################################################### 
+##### Top Module #####
+set top_module "zigbee"
+zigbee
+##### Work Library #####
+define_design_lib work -path ./work
+1
+##### Libraries #####
+set lib_path "/home/ICer/Desktop/shared_folder/32nm_lib/dbs/*"
+/home/ICer/Desktop/shared_folder/32nm_lib/dbs/*
+set worst_library "saed32hvt_ss0p75vn40c"
+saed32hvt_ss0p75vn40c
+set SSLIB "/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db"
+/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db
+##### Operating Conditions #####
+# set best_condition "BEST"
+# set worst_condition "WORST"
+##### Zigbee Related Parameters #####
+set rtl_path  "/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL"
+/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL
+set rate      "F";   #F or S or H
+F
+####################################################################################
+#########################################################
+#### Section 2 : Formality Setup file ####
+#########################################################
+####################################################################################
+if {$rate == "F"} {
+       set_svf ../generated_files/fast/svf/${top_module}_${rate}.svf 
+} elseif {$rate == "S"} {
+       set_svf ../generated_files/slow/svf/${top_module}_${rate}.svf 
+} elseif {$rate == "H"} {
+       set_svf ../generated_files/hybrid/svf/${top_module}_${rate}.svf 
+}
+1
+####################################################################################
+#########################################################
+#### Section 3 : Design Compiler Library Files Setup ####
+#########################################################
+####################################################################################
+##### Search Path #####
+lappend search_path $lib_path
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Desktop/shared_folder/32nm_lib/dbs/*
+lappend search_path "/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Desktop/shared_folder/32nm_lib/dbs/* /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL
+##### Target Library #####
+set_app_var target_library  $SSLIB
+/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db
+##### Link Library #####
+set_app_var link_library [list * $SSLIB]
+* /home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db
+##### Min Library #####
+#set_min_library ${best_library}.db -min_version ${worst_library}.db
+####################################################################################
+#########################################################
+#### Section 4 : Reading Files ####
+#########################################################
+####################################################################################
+analyze       -library work -format verilog             [glob ${rtl_path}/*.v]
+Running PRESTO HDLC
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/controller.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/DF_SYNC.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/DQPSK.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/dqpsk_csk_top.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/e_o_demux.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/e_o_demux.v:150: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/e_o_demux.v:91: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/e_o_demux.v:31: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/form_ppdu.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/interleaver.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/mux2X1.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/payload_counter.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/posedge_detector.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/preamble_sfd_gen.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/qpsk_mapper.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/symbol_mapper.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/top_sym_to_ppdu.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/zeropadding.v
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/zigbee_asic.v
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/zeropadding.v:314: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/zeropadding.v:183: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/zeropadding.v:50: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Compiling source file /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/zigbee_fpga.v
+Presto compilation completed successfully.
+Loading db file '/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db'
+1
+analyze       -library work -format sverilog            [glob ${rtl_path}/*.sv]
+Error: no files matched glob pattern "/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/*.sv"
+	Use error_info for more info. (CMD-013)
+elaborate     -lib work     $top_module   -parameters   "rate_mode = \"${rate}\""
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'saed32hvt_ss0p75vn40c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'zigbee_rate_modeF'.
+Information: Building the design 'FIFO_mem' instantiated from design 'zigbee_rate_modeF' with
+	the parameters "FIFO_WIDTH=8,FIFO_DEPTH=128". (HDL-193)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v:25: signed to unsigned assignment occurs. (VER-318)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v:29: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128 line 32 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop | 1024  |  Y  | N  | N  | N  | N  | N  | N  |
+|      dout_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rd_from_addr_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|   wr_in_addr_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================================
+|           block name/line             | Inputs | Outputs | # sel inputs |
+===========================================================================
+| FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128/49 |  128   |    8    |      7       |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'payload_counter' instantiated from design 'zigbee_rate_modeF' with
+	the parameters "payload_w=8,max_payload_length=127". (HDL-193)
+
+Inferred memory devices in process
+	in routine payload_counter_payload_w8_max_payload_length127 line 34 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/payload_counter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     wr_data_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     running_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|      wr_en_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'zeropadding' instantiated from design 'zigbee_rate_modeF' with
+	the parameters "payload_w=8,rate_mode=8'h46,max_payload_length=127,header_length=12". (HDL-193)
+
+Inferred memory devices in process
+	in routine zeropadding_8_46_127_12 line 38 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/zeropadding.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  empty_delayed_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine zeropadding_8_46_127_12 line 52 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/zeropadding.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   header_done_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   header_reg_reg    | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|    next_item_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     data_o_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  byte_counter_reg   | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|   done_bytes_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      valid_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   data_i_reg_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'e_o_demux' instantiated from design 'zigbee_rate_modeF' with
+	the parameters "rate_mode=8'h46". (HDL-193)
+
+Inferred memory devices in process
+	in routine e_o_demux_46 line 33 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/e_o_demux.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     e_bits_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|     o_bits_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|   e_bits_reg_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|      valid_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   o_bits_reg_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       odd_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    e_counter_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    o_counter_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'controller' instantiated from design 'zigbee_rate_modeF' with
+	the parameters "rate_mode=8'h46,max_payload_length=127". (HDL-193)
+
+Inferred memory devices in process
+	in routine controller_46_127 line 49 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   idle_flage_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'top_sym_to_ppdu' instantiated from design 'zigbee_rate_modeF' with
+	the parameters "rate_mode=8'h46". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'QPSK_mapper'. (HDL-193)
+
+Statistics for case statements in always block at line 28 in file
+	'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/qpsk_mapper.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            37            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine QPSK_mapper line 28 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/qpsk_mapper.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_real_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    out_imag_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      valid_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'dqpsk_csk_top' instantiated from design 'zigbee_rate_modeF' with
+	the parameters "rate_mode=8'h46,FIFO_DEPTH=1024,FIFO_WIDTH=2,WL=6". (HDL-193)
+
+Inferred memory devices in process
+	in routine dqpsk_csk_top_46_1024_2_6 line 100 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/dqpsk_csk_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ever_run_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine dqpsk_csk_top_46_1024_2_6 line 118 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/dqpsk_csk_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  tx_done_dly1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  tx_done_dly2_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine dqpsk_csk_top_46_1024_2_6 line 131 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/dqpsk_csk_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     tx_imag_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     tx_real_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'preamble_sfd_gen' instantiated from design 'top_sym_to_ppdu_46' with
+	the parameters "rate_mode=8'h46". (HDL-193)
+
+Inferred memory devices in process
+	in routine preamble_sfd_gen_46 line 28 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/preamble_sfd_gen.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  preamble_sfd_reg   | Flip-flop |  48   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'symbol_mapper' instantiated from design 'top_sym_to_ppdu_46' with
+	the parameters "rate_mode=8'h46". (HDL-193)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/symbol_mapper.v:37: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 25 in file
+	'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/symbol_mapper.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            37            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine symbol_mapper_46 line 25 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/symbol_mapper.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     o_data_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     o_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FIFO_mem' instantiated from design 'top_sym_to_ppdu_46' with
+	the parameters "FIFO_WIDTH=4,FIFO_DEPTH=64". (HDL-193)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v:25: signed to unsigned assignment occurs. (VER-318)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v:29: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64 line 32 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|      dout_reg       | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rd_from_addr_reg   | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|   wr_in_addr_reg    | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==========================================================================
+|           block name/line            | Inputs | Outputs | # sel inputs |
+==========================================================================
+| FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64/49 |   64   |    4    |      6       |
+==========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'interleaver' instantiated from design 'top_sym_to_ppdu_46' with
+	the parameters "rate_mode=8'h46". (HDL-193)
+
+Inferred memory devices in process
+	in routine interleaver_46 line 53 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/interleaver.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     i_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine interleaver_46 line 71 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/interleaver.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    next_item_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine interleaver_46 line 74 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/interleaver.v'.
+===============================================================================================
+|            Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================================
+| gen_interleaver_1mbps.bit_count_reg | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|             o_data_reg              | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| gen_interleaver_1mbps.shift_reg_reg | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|             o_valid_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   gen_interleaver_1mbps.busy_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'form_ppdu' instantiated from design 'top_sym_to_ppdu_46' with
+	the parameters "rate_mode=8'h46". (HDL-193)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/form_ppdu.v:83: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 112 in file
+	'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/form_ppdu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           135            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine form_ppdu_46 line 112 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/form_ppdu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    reg_valid_reg    | Flip-flop |  48   |  Y  | N  | N  | N  | N  | N  | N  |
+|     reg_shr_reg     | Flip-flop |  48   |  Y  | N  | N  | N  | N  | N  | N  |
+|   reg_data_i_reg    | Flip-flop |  48   |  Y  | N  | N  | N  | N  | N  | N  |
+|   reg_data_q_reg    | Flip-flop |  48   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       o_q_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     o_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       o_i_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    bit_count_reg    | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'DQPSK'. (HDL-193)
+
+Inferred memory devices in process
+	in routine DQPSK line 11 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/DQPSK.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     Imag_o_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     Real_FF_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      valid_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     Imag_FF_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     Real_o_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FIFO_mem' instantiated from design 'dqpsk_csk_top_46_1024_2_6' with
+	the parameters "FIFO_DEPTH=1024,FIFO_WIDTH=2". (HDL-193)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v:25: signed to unsigned assignment occurs. (VER-318)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v:29: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024 line 32 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/FIFO_mem.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop | 2048  |  Y  | N  | N  | N  | N  | N  | N  |
+|      dout_reg       | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rd_from_addr_reg   | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|   wr_in_addr_reg    | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+============================================================================
+|            block name/line             | Inputs | Outputs | # sel inputs |
+============================================================================
+| FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024/49 |  1024  |    2    |      10      |
+============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'CSK_GEN' instantiated from design 'dqpsk_csk_top_46_1024_2_6' with
+	the parameters "WL=6". (HDL-193)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v:364: unsigned to signed assignment occurs. (VER-318)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v:365: unsigned to signed assignment occurs. (VER-318)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v:379: unsigned to signed assignment occurs. (VER-318)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v:380: unsigned to signed assignment occurs. (VER-318)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v:402: unsigned to signed assignment occurs. (VER-318)
+Warning:  /mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v:403: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 22 in file
+	'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            23            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 180 in file
+	'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           181            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine CSK_GEN_WL6 line 356 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/CSK_GEN.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    csk_out_i_reg    | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_ptr_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|   samble_cnt_reg    | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|   boundary_d_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   first_fetch_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    which_gab_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    csk_out_r_reg    | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     running_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'posedge_detector'. (HDL-193)
+
+Inferred memory devices in process
+	in routine posedge_detector line 10 in file
+		'/mnt/hgfs/Shared_Folder/ROBO/Zigbee/RTL/posedge_detector.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   delayed_in_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+elaborate -lib work $top_module -parameters "rate_mode = \"${rate}\""
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Warning: Overwriting design file '/mnt/hgfs/Shared_Folder/ROBO/Zigbee/ASIC_32/syn/run/zigbee_rate_modeF.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'zigbee_rate_modeF'.
+1
+# Force your custom design name here
+rename_design [current_design] ${top_module}
+Current design is 'zigbee_rate_modeF'.
+Information: Renaming design /mnt/hgfs/Shared_Folder/ROBO/Zigbee/ASIC_32/syn/run/zigbee_rate_modeF.db:zigbee_rate_modeF to /mnt/hgfs/Shared_Folder/ROBO/Zigbee/ASIC_32/syn/run/zigbee_rate_modeF.db:zigbee. (UIMG-45)
+Current design is 'zigbee'.
+1
+##### Specify The Current Design #####
+current_design $top_module
+Current design is 'zigbee'.
+{zigbee}
+####################################################################################
+#########################################################
+#### Section 5 : Linking Files ####
+#########################################################
+####################################################################################
+#link
+####################################################################################
+#########################################################
+#### Section 6 : Checking Design ####
+#########################################################
+####################################################################################
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Sun Sep 20 00:42:58 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     18
+    Unconnected ports (LINT-28)                                    17
+    Constant outputs (LINT-52)                                      1
+
+Cells                                                              23
+    Cells do not drive (LINT-1)                                    23
+--------------------------------------------------------------------------------
+
+Warning: In design 'FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128', cell 'C14111' does not drive any nets. (LINT-1)
+Warning: In design 'FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128', cell 'C14115' does not drive any nets. (LINT-1)
+Warning: In design 'payload_counter_payload_w8_max_payload_length127', cell 'C116' does not drive any nets. (LINT-1)
+Warning: In design 'payload_counter_payload_w8_max_payload_length127', cell 'C119' does not drive any nets. (LINT-1)
+Warning: In design 'zeropadding_8_46_127_12', cell 'C573' does not drive any nets. (LINT-1)
+Warning: In design 'zeropadding_8_46_127_12', cell 'C578' does not drive any nets. (LINT-1)
+Warning: In design 'zeropadding_8_46_127_12', cell 'C591' does not drive any nets. (LINT-1)
+Warning: In design 'zeropadding_8_46_127_12', cell 'C595' does not drive any nets. (LINT-1)
+Warning: In design 'zeropadding_8_46_127_12', cell 'C604' does not drive any nets. (LINT-1)
+Warning: In design 'e_o_demux_46', cell 'C196' does not drive any nets. (LINT-1)
+Warning: In design 'e_o_demux_46', cell 'C197' does not drive any nets. (LINT-1)
+Warning: In design 'dqpsk_csk_top_46_1024_2_6', cell 'B_7' does not drive any nets. (LINT-1)
+Warning: In design 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64', cell 'C3817' does not drive any nets. (LINT-1)
+Warning: In design 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64', cell 'C3821' does not drive any nets. (LINT-1)
+Warning: In design 'interleaver_46', cell 'C88' does not drive any nets. (LINT-1)
+Warning: In design 'form_ppdu_46', cell 'C781' does not drive any nets. (LINT-1)
+Warning: In design 'form_ppdu_46', cell 'C782' does not drive any nets. (LINT-1)
+Warning: In design 'DQPSK', cell 'C165' does not drive any nets. (LINT-1)
+Warning: In design 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024', cell 'C31153' does not drive any nets. (LINT-1)
+Warning: In design 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024', cell 'C31157' does not drive any nets. (LINT-1)
+Warning: In design 'CSK_GEN_WL6', cell 'C6157' does not drive any nets. (LINT-1)
+Warning: In design 'CSK_GEN_WL6', cell 'C6167' does not drive any nets. (LINT-1)
+Warning: In design 'CSK_GEN_WL6', cell 'C6174' does not drive any nets. (LINT-1)
+Warning: In design 'zeropadding_8_46_127_12', port 'mode' is not connected to any nets. (LINT-28)
+Warning: In design 'e_o_demux_46', port 'mode' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'payload_length[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'payload_length[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'payload_length[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'payload_length[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'payload_length[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'payload_length[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'payload_length[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'fifo_empty' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'demux_valid' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', port 'interleaver_valid' is not connected to any nets. (LINT-28)
+Warning: In design 'preamble_sfd_gen_46', port 'mode' is not connected to any nets. (LINT-28)
+Warning: In design 'symbol_mapper_46', port 'mode' is not connected to any nets. (LINT-28)
+Warning: In design 'interleaver_46', port 'mode' is not connected to any nets. (LINT-28)
+Warning: In design 'interleaver_46', port 'tx_done' is not connected to any nets. (LINT-28)
+Warning: In design 'form_ppdu_46', port 'mode' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_46_127', output port 'mode' is connected directly to 'logic 1'. (LINT-52)
+1
+####################################################################################
+#########################################################
+#### Section 7 : Path Groups ####
+#########################################################
+####################################################################################
+#group_path -name INREG -from [all_inputs]
+#group_path -name REGOUT -to [all_outputs]
+#group_path -name INOUT -from [all_inputs] -to [all_outputs]
+####################################################################################
+#########################################################
+#### Section 8 : Constraints ####
+#########################################################
+####################################################################################
+source -echo ../cons/cons.tcl
+####################################################################################
+#########################################################
+#### Section 1 : Config Definition ####
+#########################################################
+#################################################################################### 
+##### Clock Names #####
+set fun_clk_name clk
+##### Clock Periods #####
+set fun_period 31.25
+#### Clock Uncertainty ####
+set fun_su_uncertainty [expr 0.03 * $fun_period]
+set fun_hold_uncertainty [expr 0.02 * $fun_period]
+set fun_clk_rise 0.0
+set fun_clk_fall 0.0 
+set fun_clk_latency 0
+##### Input Ports Configurations #####
+set input_delay [expr 0.2 * $fun_period]
+#set input_pad "NBUFFX2_HVT"
+#set input_pad_opin "Z"
+##### Output Ports Configurations #####
+set output_delay [expr 0.2 * $fun_period]
+set output_load 100
+##### Transition and Capacitance Configurations #####
+set max_transition 3.636620
+set max_capacitance 100
+##### Fanout Configurations #####
+set max_fanout 10
+##### Clock Edges #####
+set fun_edge [expr $fun_period / 2]
+##### Ideal Ports #####
+set fun_clk_port "clk"
+set fun_srst_port "rst_n"
+set ideal_network [list $fun_clk_port  $fun_srst_port]
+##### Wire Load Model #####
+#set wire_model "ForQA"
+####################################################################################
+#########################################################
+#### Section 2 : Clock Constriants ####
+#########################################################
+#################################################################################### 
+##### Clock Creation #####
+create_clock -name $fun_clk_name   -period $fun_period  -waveform [list 0 $fun_edge]       [get_ports $fun_clk_port]
+##### Clock Latency #####
+set_clock_latency $fun_clk_latency        [get_clocks $fun_clk_name]
+##### Clock Uncertainty #####
+set_clock_uncertainty -setup       $fun_su_uncertainty         [get_clocks $fun_clk_name]
+set_clock_uncertainty -hold        $fun_hold_uncertainty       [get_clocks $fun_clk_name]
+##### Clock Transition #####
+set_clock_transition -rise  $fun_clk_rise [get_clocks $fun_clk_name]
+set_clock_transition -fall  $fun_clk_fall [get_clocks $fun_clk_name]
+##### Clock Grouping #####
+#No Multi Clocks
+##### Ideal Network #####
+#set_dont_touch_network $ideal_network
+set_ideal_network $ideal_network
+####################################################################################
+#########################################################
+#### Section 3 : IO ports Configuration ####
+#########################################################
+####################################################################################
+##### Input Delay #####
+set_input_delay      -clock [get_clocks $fun_clk_name]  -max $input_delay                             [remove_from_collection [all_inputs] [get_ports $fun_clk_port]]
+##### Output Delay #####
+set_output_delay     -clock [get_clocks $fun_clk_name]  -max $output_delay   [all_outputs]
+##### Driving Cells #####
+# set_driving_cell     -library   $worst_library #                      -lib_cell  $input_pad -pin $input_pad_opin #                      [remove_from_collection [all_inputs] [get_ports $fun_clk_port]]
+##### Output Load #####
+set_load $output_load [all_outputs]
+####################################################################################
+#########################################################
+#### Section 4 : Operating Conditions ####
+#########################################################
+####################################################################################
+# set_operating_conditions    -analysis bc_wc      -min_library $best_library #                                                  -min $best_condition #                                                  -max_library $worst_library #                                                  -max $worst_condition
+####################################################################################
+#########################################################
+#### Section 5 : wireload Model ####
+#########################################################
+####################################################################################
+# set_wire_load_model -name $wire_model -library $worst_library
+####################################################################################
+#########################################################
+#### Section 6 : multicycle path ####
+#########################################################
+####################################################################################
+####################################################################################
+#########################################################
+#### Section 7 : exception Cells ####
+#########################################################
+####################################################################################
+#set_dont_use [get_lib_cells */*AND3*]
+####################################################################################
+#########################################################
+#### Section 8 : Optimization Constraints ####
+#########################################################
+####################################################################################
+##### set_max_area #####
+#set_max_area 0 
+##### set_max_transition #####
+set_max_transition $max_transition [current_design]
+Current design is 'zigbee'.
+##### set_max_fanout #####
+set_max_fanout $max_fanout [current_design]
+Current design is 'zigbee'.
+##### set_max_capacitance #####
+set_max_capacitance $max_capacitance [current_design]
+Current design is 'zigbee'.
+1
+####################################################################################
+#########################################################
+#### Section 9 : Compile ####
+#########################################################
+####################################################################################
+set_fix_multiple_port_nets -all -buffer_constants 
+1
+compile -map_effort high
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 41 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'posedge_detector'
+  Processing 'CSK_GEN_WL6'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0'
+  Processing 'DQPSK'
+  Processing 'dqpsk_csk_top_46_1024_2_6'
+  Processing 'QPSK_mapper'
+  Processing 'form_ppdu_46'
+Information: The register 'reg_shr_reg[47]' is a constant and will be removed. (OPT-1206)
+  Processing 'interleaver_46_0'
+Information: The register 'next_item_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0'
+  Processing 'symbol_mapper_46_0'
+  Processing 'preamble_sfd_gen_46'
+Information: The register 'preamble_sfd_reg[47]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preamble_sfd_reg[46]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preamble_sfd_reg[42]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preamble_sfd_reg[41]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preamble_sfd_reg[39]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preamble_sfd_reg[38]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preamble_sfd_reg[36]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preamble_sfd_reg[32]' is a constant and will be removed. (OPT-1206)
+  Processing 'top_sym_to_ppdu_46'
+  Processing 'controller_46_127'
+  Processing 'e_o_demux_46'
+  Processing 'zeropadding_8_46_127_12'
+Information: The register 'header_reg_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_i_reg_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'payload_counter_payload_w8_max_payload_length127'
+  Processing 'FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128'
+  Processing 'zigbee'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'CSK_GEN_WL6_DW01_inc_0'
+  Processing 'CSK_GEN_WL6_DW01_inc_1'
+  Processing 'CSK_GEN_WL6_DW01_cmp2_0'
+  Processing 'CSK_GEN_WL6_DW01_cmp2_1'
+  Processing 'CSK_GEN_WL6_DW01_cmp2_2'
+  Processing 'CSK_GEN_WL6_DW01_cmp2_3'
+  Processing 'CSK_GEN_WL6_DW01_cmp2_4'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_inc_0'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_inc_1'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_cmp6_0'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_1_DW01_cmp6_1'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_inc_0'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_inc_1'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_cmp6_0'
+  Processing 'FIFO_mem_FIFO_WIDTH2_FIFO_DEPTH1024_0_DW01_cmp6_1'
+  Processing 'form_ppdu_46_DW01_dec_0'
+  Processing 'form_ppdu_46_DW01_dec_1'
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_inc_0'
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_inc_1'
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_cmp6_0'
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_1_DW01_cmp6_1'
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_inc_0'
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_inc_1'
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_cmp6_0'
+  Processing 'FIFO_mem_FIFO_WIDTH4_FIFO_DEPTH64_0_DW01_cmp6_1'
+  Processing 'payload_counter_payload_w8_max_payload_length127_DW01_inc_0'
+  Processing 'payload_counter_payload_w8_max_payload_length127_DW01_cmp6_0'
+  Processing 'FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_inc_0'
+  Processing 'FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_inc_1'
+  Processing 'FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_cmp6_0'
+  Processing 'FIFO_mem_FIFO_WIDTH8_FIFO_DEPTH128_DW01_cmp6_1'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_add_0'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW02_mult_0'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_absval_0'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_inc_0'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_add_1'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_inc_1'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW02_mult_1'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_absval_1'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_inc_2'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_add_2'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_inc_3'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_sub_0'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW02_mult_2'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_absval_2'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_inc_4'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_add_3'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_inc_5'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW02_mult_3'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_absval_3'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_inc_6'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_add_4'
+  Processing 'dqpsk_csk_top_46_1024_2_6_DW01_inc_7'
+  Processing 'DW01_inc_width2'
+  Processing 'DW02_mult_A_width2_B_width1'
+  Processing 'DW01_inc_width2'
+  Processing 'DW02_mult_A_width2_B_width1'
+  Processing 'DW01_sub_width2'
+  Processing 'DW02_mult_A_width2_B_width2'
+  Processing 'DW02_mult_A_width2_B_width2'
+  Processing 'DW01_add_width2'
+  Processing 'DW02_mult_A_width2_B_width2'
+  Processing 'DW02_mult_A_width2_B_width2'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:24   85601.5      0.00       0.0    1633.1                          
+    0:00:24   85601.5      0.00       0.0    1633.1                          
+    0:00:29   84165.1      0.00       0.0    1628.5                          
+    0:00:29   84165.1      0.00       0.0    1628.5                          
+    0:00:29   84165.1      0.00       0.0    1628.5                          
+    0:00:30   84165.1      0.00       0.0    1628.5                          
+    0:00:30   84165.1      0.00       0.0    1628.5                          
+    0:00:32   79361.5      0.00       0.0    1627.0                          
+    0:00:33   79308.9      0.00       0.0    1627.0                          
+    0:00:35   79308.9      0.00       0.0    1627.0                          
+    0:00:35   79308.9      0.00       0.0    1627.0                          
+    0:00:35   79308.9      0.00       0.0    1627.0                          
+    0:00:35   79308.9      0.00       0.0    1627.0                          
+    0:00:35   79311.7      0.00       0.0    1609.3                          
+    0:00:35   79323.9      0.00       0.0    1523.8                          
+    0:00:36   79323.9      0.00       0.0    1523.8                          
+    0:00:36   79323.9      0.00       0.0    1523.8                          
+    0:00:36   79323.9      0.00       0.0    1523.8                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:36   79323.9      0.00       0.0    1523.8                          
+    0:00:36   79323.9      0.00       0.0    1523.8                          
+    0:00:36   79297.0      0.00       0.0    1609.2                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:36   79297.0      0.00       0.0    1609.2                          
+    0:00:36   79521.2      0.00       0.0       1.9 symbol_mapper_to_ppdu/tx_done
+    0:00:37   79542.5      0.00       0.0       0.1                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:37   79542.5      0.00       0.0       0.1                          
+    0:00:37   79542.5      0.00       0.0       0.1                          
+    0:00:38   79115.3      0.00       0.0       0.1                          
+    0:00:39   78977.0      0.00       0.0       0.1                          
+    0:00:39   78900.0      0.00       0.0       0.1                          
+    0:00:40   78825.3      0.00       0.0       7.9                          
+    0:00:40   78819.0      0.00       0.0       7.9                          
+    0:00:41   78813.9      0.00       0.0       7.9                          
+    0:00:41   78808.8      0.00       0.0       7.9                          
+    0:00:41   78803.7      0.00       0.0       7.9                          
+    0:00:41   78798.6      0.00       0.0       7.9                          
+    0:00:41   78793.5      0.00       0.0       7.9                          
+    0:00:42   78788.5      0.00       0.0       7.9                          
+    0:00:42   78783.4      0.00       0.0       7.9                          
+    0:00:42   78778.3      0.00       0.0       7.9                          
+    0:00:42   78773.2      0.00       0.0       7.9                          
+    0:00:42   78768.1      0.00       0.0       7.9                          
+    0:00:42   78763.0      0.00       0.0       7.9                          
+    0:00:42   78763.0      0.00       0.0       7.9                          
+    0:00:45   78763.0      0.00       0.0       7.9 DQPSK_CSK/Real_Sync_FIFO/C31139/net88480
+    0:00:45   78763.0      0.00       0.0       7.9 DQPSK_CSK/Real_Sync_FIFO/C31139/net88496
+    0:00:45   78763.0      0.00       0.0       7.9 DQPSK_CSK/Real_Sync_FIFO/C31139/net88488
+    0:00:46   78763.0      0.00       0.0       7.8 DQPSK_CSK/Real_Sync_FIFO/C31139/net88248
+    0:00:46   78763.0      0.00       0.0       7.8 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89512
+    0:00:46   78763.0      0.00       0.0       7.8 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89528
+    0:00:46   78763.0      0.00       0.0       7.8 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89520
+    0:00:46   78763.0      0.00       0.0       7.8 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89280
+    0:00:47   78763.0      0.00       0.0       7.8 DQPSK_CSK/Real_Sync_FIFO/C31139/net88600
+    0:00:47   78763.0      0.00       0.0       7.8 DQPSK_CSK/Real_Sync_FIFO/C31139/net88606
+    0:00:47   78763.0      0.00       0.0       7.7 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89648
+    0:00:47   78763.0      0.00       0.0       7.7 DQPSK_CSK/Real_Sync_FIFO/C31139/net88420
+    0:00:47   78763.0      0.00       0.0       7.7 DQPSK_CSK/Real_Sync_FIFO/C31139/net88308
+    0:00:48   78763.0      0.00       0.0       7.7 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89452
+    0:00:48   78763.0      0.00       0.0       7.6 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89340
+    0:00:49   78763.0      0.00       0.0       7.6 DQPSK_CSK/Real_Sync_FIFO/C31139/net88540
+    0:00:49   78763.0      0.00       0.0       7.6 DQPSK_CSK/Real_Sync_FIFO/C31139/net88546
+    0:00:49   78763.0      0.00       0.0       7.6 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89588
+    0:00:49   78763.0      0.00       0.0       7.6 DQPSK_CSK/Real_Sync_FIFO/C31139/net88510
+    0:00:50   78763.0      0.00       0.0       7.6 DQPSK_CSK/Real_Sync_FIFO/C31139/net88406
+    0:00:50   78763.0      0.00       0.0       7.5 DQPSK_CSK/Real_Sync_FIFO/C31139/net88286
+    0:00:50   78763.0      0.00       0.0       7.5 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89542
+    0:00:50   78763.0      0.00       0.0       7.5 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89438
+    0:00:51   78763.0      0.00       0.0       7.5 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89318
+    0:00:51   78763.0      0.00       0.0       7.5 DQPSK_CSK/Real_Sync_FIFO/C31139/net88630
+    0:00:51   78763.0      0.00       0.0       7.5 DQPSK_CSK/Real_Sync_FIFO/C31139/net88638
+    0:00:52   78763.0      0.00       0.0       7.4 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89678
+    0:00:53   78763.0      0.00       0.0       7.4 DQPSK_CSK/Real_Sync_FIFO/C31139/net88570
+    0:00:53   78763.0      0.00       0.0       7.4 DQPSK_CSK/Real_Sync_FIFO/C31139/net88576
+    0:00:53   78763.0      0.00       0.0       7.4 DQPSK_CSK/Real_Sync_FIFO/C31139/net88346
+    0:00:53   78763.0      0.00       0.0       7.4 DQPSK_CSK/Real_Sync_FIFO/C31139/net88218
+    0:00:54   78763.0      0.00       0.0       7.4 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89602
+    0:00:54   78763.0      0.00       0.0       7.4 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89608
+    0:00:54   78763.0      0.00       0.0       7.4 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89378
+    0:00:54   78763.0      0.00       0.0       7.4 DQPSK_CSK/Imag_Sync_FIFO/C31139/net89250
+    0:01:05   78763.0      0.00       0.0       7.4                          
+    0:01:05   78749.6      0.00       0.0       7.4                          
+    0:01:05   78749.6      0.00       0.0       7.4                          
+    0:01:05   78749.6      0.00       0.0       7.4                          
+    0:01:05   78749.6      0.00       0.0       7.4                          
+    0:01:05   78749.6      0.00       0.0       7.4                          
+    0:01:05   78749.6      0.00       0.0       7.4                          
+    0:01:06   78763.5      0.00       0.0       7.4                          
+Loading db file '/home/ICer/Desktop/shared_folder/32nm_lib/dbs/hvt/saed32hvt_ss0p75vn40c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'zigbee' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'DQPSK_CSK/Imag_Sync_FIFO/clk': 6154 load(s), 1 driver(s)
+1
+#compile_ultra                
+##### Another Compilation iterations to solve violations #####
+#compile -incremental -map_effort high
+####################################################################################
+#########################################################
+#### Section 10 : Generate Files ####
+#########################################################
+####################################################################################
+if {$rate == "F"} {
+       write_file -format verilog  -hierarchy -output ../generated_files/fast/netlist/${top_module}_${rate}.v
+       write_file -format ddc      -hierarchy -output ../generated_files/fast/netlist/${top_module}_${rate}.ddc
+       write_sdc  -nosplit ../generated_files/fast/sdc/${top_module}_${rate}.sdc
+       write_sdf           ../generated_files/fast/sdf/${top_module}_${rate}.sdf
+} elseif {$rate == "S"} {
+       write_file -format verilog  -hierarchy -output ../generated_files/slow/netlist/${top_module}_${rate}.v
+       write_file -format ddc      -hierarchy -output ../generated_files/slow/netlist/${top_module_}${rate}.ddc
+       write_sdc  -nosplit ../generated_files/slow/sdc/${top_module}_${rate}.sdc
+       write_sdf           ../generated_files/slow/sdf/${top_module}_${rate}.sdf
+} elseif {$rate == "H"} {
+       write_file -format verilog  -hierarchy -output ../generated_files/hybrid/netlist/${top_module}_${rate}.v
+       write_file -format ddc      -hierarchy -output ../generated_files/hybrid/netlist/${top_module}_${rate}.ddc
+       write_sdc  -nosplit ../generated_files/hybrid/sdc/${top_module}_${rate}.sdc
+       write_sdf           ../generated_files/hybrid/sdf/${top_module}_${rate}.sdf
+}
+Writing verilog file '/mnt/hgfs/Shared_Folder/ROBO/Zigbee/ASIC_32/syn/generated_files/fast/netlist/zigbee_F.v'.
+Warning: Changed instance name e_bits_reg[0] to e_bits_reg[0]_inst in module e_o_demux_46. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name e_bits_reg[1] to e_bits_reg[1]_inst in module e_o_demux_46. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name e_bits_reg[2] to e_bits_reg[2]_inst in module e_o_demux_46. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name o_bits_reg[0] to o_bits_reg[0]_inst in module e_o_demux_46. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name o_bits_reg[1] to o_bits_reg[1]_inst in module e_o_demux_46. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Changed instance name o_bits_reg[2] to o_bits_reg[2]_inst in module e_o_demux_46. Please use the change_names command to make the correct changes before invoking the verilog writer.   (VO-1)
+Warning: Verilog writer has added 8 nets to module top_sym_to_ppdu_46 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Writing ddc file '../generated_files/fast/netlist/zigbee_F.ddc'.
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/mnt/hgfs/Shared_Folder/ROBO/Zigbee/ASIC_32/syn/generated_files/fast/sdf/zigbee_F.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+Warning: Design 'zigbee' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+##### Close Formality Setup File #####
+set_svf -off
+1
+####################################################################################
+#########################################################
+#### Section 11 : Reporting ####
+#########################################################
+####################################################################################
+if {$rate == "F"} {
+       report_area          -hierarchy                                                            > ../reports/fast/area.rpt
+       report_power         -hierarchy                                                            > ../reports/fast/power.rpt
+       report_timing        -max_paths 100 -delay_type min -slack_lesser_than 0                   > ../reports/fast/violated_hold.rpt
+       report_timing        -max_paths 100 -delay_type min -slack_greater_than 0                  > ../reports/fast/met_hold.rpt
+       report_timing        -max_paths 100 -delay_type max -capacitance                             -transition -slack_greater_than 0                                     > ../reports/fast/met_setup.rpt
+       report_timing        -max_paths 100 -delay_type max -capacitance                             -transition -slack_lesser_than 0                                      > ../reports/fast/violated_setup.rpt
+       report_clock         -attributes                                                           > ../reports/fast/clocks.rpt
+       report_constraint    -all_violators                                                        > ../reports/fast/constraints.rpt
+} elseif {$rate == "S"} {
+       report_area          -hierarchy                                                            > ../reports/slow/area.rpt
+       report_power         -hierarchy                                                            > ../reports/slow/power.rpt
+       report_timing        -max_paths 100 -delay_type min -slack_lesser_than 0                   > ../reports/slow/violated_hold.rpt
+       report_timing        -max_paths 100 -delay_type min -slack_greater_than 0                  > ../reports/slow/met_hold.rpt
+       report_timing        -max_paths 100 -delay_type max -capacitance                             -transition -slack_greater_than 0                                     > ../reports/slow/met_setup.rpt
+       report_timing        -max_paths 100 -delay_type max -capacitance                             -transition -slack_lesser_than 0                                      > ../reports/slow/violated_setup.rpt
+       report_clock         -attributes                                                           > ../reports/slow/clocks.rpt
+       report_constraint    -all_violators                                                        > ../reports/slow/constraints.rpt
+} elseif {$rate == "H"} {
+       report_area          -hierarchy                                                            > ../reports/hybrid/area.rpt
+       report_power         -hierarchy                                                            > ../reports/hybrid/power.rpt
+       report_timing        -max_paths 100 -delay_type min -slack_lesser_than 0                   > ../reports/hybrid/violated_hold.rpt
+       report_timing        -max_paths 100 -delay_type min -slack_greater_than 0                  > ../reports/hybrid/met_hold.rpt
+       report_timing        -max_paths 100 -delay_type max -capacitance                             -transition -slack_greater_than 0                                     > ../reports/hybrid/met_setup.rpt
+       report_timing        -max_paths 100 -delay_type max -capacitance                             -transition -slack_lesser_than 0                                      > ../reports/hybrid/violated_setup.rpt
+       report_clock         -attributes                                                           > ../reports/hybrid/clocks.rpt
+       report_constraint    -all_violators                                                        > ../reports/hybrid/constraints.rpt
+}
+####################################################################################
+#########################################################
+#### Section 12 : GUI ####
+#########################################################
+####################################################################################
+gui_start
+Current design is 'zigbee'.
+4.1
+4.1
+dc_shell> dc_shell> dc_shell> exit
+
+Memory usage for main task 214 Mbytes.
+Memory usage for this session 214 Mbytes.
+CPU usage for this session 86 seconds ( 0.02 hours ).
+
+Thank you...

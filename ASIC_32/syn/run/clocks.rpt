@@ -1,0 +1,21 @@
+ 
+****************************************
+Report : clocks
+Design : i2c_master_top
+Version: O-2018.06-SP1
+Date   : Thu Aug 27 01:04:17 2026
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+fun_clk          8.00   {0 4}                         {wb_clk_i}
+scan_clk        80.00   {0 8}                         {dft_clk_i}
+--------------------------------------------------------------------------------
+1
